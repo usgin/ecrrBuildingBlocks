@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ECRR Dataset-Specific Properties",
+  "description": "Properties specific to dataset resources in ECRR. For resources typed [\"schema:CreativeWork\", \"schema:Dataset\"]. References existing building blocks for distribution, spatial/temporal coverage, and measured variables.",
+  "type": "object",
+  "properties": {
+    "schema:distribution": {
+      "description": "How to access the dataset: file downloads (DataDownload) or API access (WebAPI).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/DataDownload"
+          },
+          {
+            "$ref": "#/$defs/WebAPI"
+          }
+        ]
+      }
+    },
+    "schema:spatialCoverage": {
+      "description": "Geographic area covered by the dataset.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SpatialExtent"
+      }
+    },
+    "schema:temporalCoverage": {
+      "description": "Time period covered by the dataset. Can be ISO 8601 date ranges or structured temporal extent objects.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TemporalExtent"
+      }
+    },
+    "schema:variableMeasured": {
+      "description": "What the dataset measures (e.g. temperature, pressure).",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/VariableMeasured"
+      }
+    },
+    "schema:includedInDataCatalog": {
+      "description": "The data catalog that contains this dataset. Object with @id, name, and url identifying the containing catalog.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataCatalogRef"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DataCatalogRef"
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "DataDownload": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/dataDownload/schema.json"
+    },
+    "WebAPI": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/webAPI/schema.json"
+    },
+    "SpatialExtent": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/spatialExtent/schema.json"
+    },
+    "TemporalExtent": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/temporalExtent/schema.json"
+    },
+    "VariableMeasured": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/variableMeasured/schema.json"
+    },
+    "DataCatalogRef": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string",
+          "const": "schema:DataCatalog",
+          "default": "schema:DataCatalog"
+        },
+        "schema:name": {
+          "type": "string"
+        },
+        "schema:url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "@type",
+        "schema:name"
+      ]
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "ecrr": "https://n2t.net/ark:/23942/g2"
+  },
+  "x-jsonld-prefixes": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "dct": "http://purl.org/dc/terms/"
+  }
+}

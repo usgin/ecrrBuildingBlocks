@@ -1,0 +1,286 @@
+{
+  "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrService - ECRR Service Instance properties",
+  "bblockName": "ECRR Service Instance properties",
+  "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrService",
+  "generated": "2026-03-05T14:53:56.749065+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/metadata/ecrrProperties/ecrrService/example_1_1.json",
+        "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrService/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using exampleGMRTService.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 14,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
+              "graph": "@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:CreativeWork ;\n                    schema1:name \"HTTP\" ] ;\n            sh:resultMessage \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:datatype xsd:string ;\n                    sh:message \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n                    sh:minCount 1 ;\n                    sh:path schema1:url ;\n                    sh:pattern \"^https?:\\\\/\\\\/[^\\\\s]+$\" ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal(\"^https?:\\/\\/[^\\s]+$\") ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"HTTP\") ]\n  \tResult Path: schema1:url\n  \tMessage: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFLabeledLinkShape": {
+                  "nodes": [
+                    "_:Nd56d9cd124da4f718a024eb2b2a5127f"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: _:Nd56d9cd124da4f718a024eb2b2a5127f\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl",
+              "focusNodes": {
+                "_:n8d78869603f54f318f0707762c970f29b26": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b7": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b19": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b8": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b4": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b10": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b6": {
+                  "nodes": []
+                },
+                "_:n8d78869603f54f318f0707762c970f29b5": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n - Shape _:n8d78869603f54f318f0707762c970f29b26: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b7: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b19: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b8: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b4: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b10: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b6: *none*\n - Shape _:n8d78869603f54f318f0707762c970f29b5: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b22": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b11": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b25": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b21": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b10": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b23": {
+                  "nodes": []
+                },
+                "_:n1f3e071fa2fd4efca72d375d80203b73b20": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierTypeTermShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b22: *none*\n - Shape cdifd:CDIFIdentifierShape: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b11: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b25: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b21: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b10: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b23: *none*\n - Shape _:n1f3e071fa2fd4efca72d375d80203b73b20: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFActionShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl:\n - Shape cdifd:CDIFActionShape: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b52": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b44": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b51": {
+                  "nodes": []
+                },
+                "cdifd:CDIFVariableMeasuredShape": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b12": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b37": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b5": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b30": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b8": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b29": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b9": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b14": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b7": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b11": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b4": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b45": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b10": {
+                  "nodes": []
+                },
+                "_:nb368ac5b080e4b99973fd8d76166ea36b38": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b52: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b44: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b51: *none*\n - Shape cdifd:CDIFVariableMeasuredShape: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b12: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b37: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b5: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b30: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b8: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b29: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b9: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b14: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b7: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b11: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b4: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b45: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b10: *none*\n - Shape _:nb368ac5b080e4b99973fd8d76166ea36b38: *none*\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1
+  }
+}

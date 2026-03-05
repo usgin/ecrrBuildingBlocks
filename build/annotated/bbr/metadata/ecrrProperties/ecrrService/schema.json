@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ECRR Service Instance Properties",
+  "description": "Properties specific to service instance resources in ECRR. For resources typed [\"schema:CreativeWork\", \"schema:WebAPI\"]. Covers communication protocols, interface specifications, input/output data formats, and service invocation.",
+  "type": "object",
+  "properties": {
+    "ecrro:ECRRO_0000502": {
+      "description": "Communication protocols used by the service. PropertyValue wrapping an array of DefinedTerm objects from the CMPR (Communication Protocol) vocabulary (e.g. HTTP, HTTPS, TCP/IP, FTP).",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "schema:PropertyValue",
+          "default": "schema:PropertyValue"
+        },
+        "schema:propertyID": {
+          "type": "string",
+          "const": "ecrro:ECRRO_0000502"
+        },
+        "schema:name": {
+          "type": "string",
+          "default": "communication protocols"
+        },
+        "schema:value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DefinedTerm"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/DefinedTerm"
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "schema:propertyID",
+        "schema:value"
+      ]
+    },
+    "ecrro:ECRRO_0000503": {
+      "description": "Interface specification that the service implements. PropertyValue wrapping an array of labeled links to specification documents (e.g. WADL, WSDL, OpenAPI, OGC service specification).",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "schema:PropertyValue",
+          "default": "schema:PropertyValue"
+        },
+        "schema:propertyID": {
+          "type": "string",
+          "const": "ecrro:ECRRO_0000503"
+        },
+        "schema:name": {
+          "type": "string",
+          "default": "Interface specification"
+        },
+        "schema:value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LabeledLink"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/LabeledLink"
+              }
+            },
+            {
+              "type": "object",
+              "description": "Simple reference with identifier",
+              "properties": {
+                "@type": {
+                  "type": "string"
+                },
+                "schema:identifier": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "schema:propertyID",
+        "schema:value"
+      ]
+    },
+    "schema:supportingData": {
+      "description": "Input and output data format specifications for the service. Array of DataFeed objects with position (input/output) and encodingFormat.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataFeedSpec"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DataFeedSpec"
+          }
+        }
+      ]
+    },
+    "schema:potentialAction": {
+      "description": "Service invocation details. Uses the Action building block pattern to describe how to call the service endpoint.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Action"
+      }
+    }
+  },
+  "$defs": {
+    "LabeledLink": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
+    },
+    "DefinedTerm": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.json"
+    },
+    "Action": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/action/schema.json"
+    },
+    "DataFeedSpec": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "schema:DataFeed",
+          "default": "schema:DataFeed"
+        },
+        "schema:name": {
+          "type": "string"
+        },
+        "schema:position": {
+          "type": "string",
+          "enum": [
+            "input",
+            "output"
+          ]
+        },
+        "schema:encodingFormat": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "@type"
+      ]
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "ecrr": "https://n2t.net/ark:/23942/g2"
+  },
+  "x-jsonld-prefixes": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "dct": "http://purl.org/dc/terms/"
+  }
+}

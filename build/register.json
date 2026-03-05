@@ -1,126 +1,28 @@
 {
-  "modified": "2026-03-05T05:43:32.254498",
+  "name": "ECRR Building Blocks repository",
+  "abstract": "Building blocks for EarthCube Resource Registry (ECRR) metadata profiles,\nusing the OGC Building Blocks pattern.\n",
+  "description": "Modular schema components for ECRR resource type metadata. Imports shared\nschema.org property building blocks from the CDIF Building Blocks repository.\n",
+  "modified": "2026-03-05T14:53:48.392127",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"701faf76bc0f3f50a0bc65888e0d7433c50d30c2",
-      "shortCommitId": "\"701faf",
-      "date": "2026-03-03T10:23:06+00:00\""
+      "commitId": "\"e3240b08297fa3f3c5054fa257709812ff06320d",
+      "shortCommitId": "\"e3240b",
+      "date": "2026-03-05T10:03:47+00:00\""
     }
   },
   "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
   "gitHubRepository": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/",
-  "name": "workspace",
   "baseURL": "https://usgin.github.io/ecrrBuildingBlocks/",
   "viewerURL": "https://usgin.github.io/ecrrBuildingBlocks/",
   "validationReport": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/report.html",
   "validationReportJson": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json",
+    "https://usgin.github.io/metadataBuildingBlocks/build/register.json"
+  ],
   "bblocks": [
     {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrAssessment",
-      "$schema": "metaschema.yaml",
-      "name": "ECRR Resource Assessment",
-      "abstract": "Schema defining ECRR-specific resource assessment properties using PropertyValue pattern with ECRRO property identifiers for maturity, expected lifetime, usage level, stewardship, and registration metadata. Defines properties: ecrro:ECRRO_0000138, ecrro:ECRRO_0000219, ecrro:ECRRO_0000017, ecrro:ECRRO_0000218, ecrro:ECRRO_0000600, ecrro:ECRRO_0001301. Uses building blocks: definedTerm (schemaorgProperties), person (schemaorgProperties), organization (schemaorgProperties).",
-      "status": "under-development",
-      "dateTimeAddition": "2026-02-28T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ecrr-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2026-03-05",
-      "sources": [
-        {
-          "title": "EarthCube Resource Registry Ontology",
-          "link": "http://cor.esipfed.org/ont/earthcube/"
-        }
-      ],
-      "maturity": "draft",
-      "scope": "unstable",
-      "tags": [
-        "ecrr",
-        "templates"
-      ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrAssessment/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrAssessment/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrAssessment/schema.json"
-      },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/",
-      "rdfData": [],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrAssessment/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrAssessment/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrAssessment/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrAssessment"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrBase",
-      "$schema": "metaschema.yaml",
-      "name": "ECRR Base metadata",
-      "abstract": "Schema defining mandatory properties for all EarthCube Resource Registry (ECRR) resource types. Includes resource identity, type classification via mainEntity, and licensing. Defines properties: @id, @type, schema:name, schema:description, schema:mainEntity, schema:license. Uses building blocks: labeledLink (schemaorgProperties).",
-      "status": "under-development",
-      "dateTimeAddition": "2026-02-28T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ecrr-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2026-03-05",
-      "sources": [
-        {
-          "title": "EarthCube Resource Registry",
-          "link": "https://www.earthcube.org/resource-registry"
-        },
-        {
-          "title": "schema.org CreativeWork",
-          "link": "https://schema.org/CreativeWork"
-        }
-      ],
-      "maturity": "draft",
-      "scope": "unstable",
-      "tags": [
-        "ecrr",
-        "templates"
-      ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrBase/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrBase/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrBase/schema.json"
-      },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/",
-      "rdfData": [],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrBase/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrBase/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrBase/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrBase"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrCatalog",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
       "$schema": "metaschema.yaml",
       "name": "ECRR Catalog/Repository properties",
       "abstract": "Schema defining properties specific to catalog and repository resources in the EarthCube Resource Registry, including content type classification. Defines properties: schema:contentType.",
@@ -147,34 +49,34 @@
         "templates"
       ],
       "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/",
       "rdfData": [],
       "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrCatalog/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrCatalog/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrCatalog/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrCatalog/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrCatalog/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCatalog/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrCatalog"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCatalog"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrCollection",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
       "$schema": "metaschema.yaml",
       "name": "ECRR Collection/Bundled Object properties",
       "abstract": "Schema defining properties specific to bundled object (collection) resources in the EarthCube Resource Registry, including component resource listings. Defines properties: schema:hasPart.",
@@ -201,142 +103,34 @@
         "templates"
       ],
       "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCollection/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCollection/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCollection/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/",
       "rdfData": [],
       "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrCollection/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrCollection/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrCollection/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrCollection/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrCollection/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCollection/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrCollection"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCollection"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrCommon",
-      "$schema": "metaschema.yaml",
-      "name": "ECRR Common optional metadata",
-      "abstract": "Schema defining commonly used optional properties shared across ECRR resource types, including agents, identifiers, keywords, science domains, audience, and related resources. Defines properties: schema:identifier, schema:url, schema:datePublished, schema:version, schema:alternateName, schema:sameAs, schema:creator, schema:contributor, schema:publisher, schema:editor, schema:funding, schema:keywords, schema:about, schema:audience, schema:subjectOf, schema:isRelatedTo, schema:isBasedOn, schema:encodingFormat, dct:bibliographicCitation, dct:conformsTo. Uses building blocks: labeledLink (schemaorgProperties), identifier (schemaorgProperties), definedTerm (schemaorgProperties), person (schemaorgProperties), organization (schemaorgProperties), funder (schemaorgProperties).",
-      "status": "under-development",
-      "dateTimeAddition": "2026-02-28T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ecrr-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2026-03-05",
-      "sources": [
-        {
-          "title": "EarthCube Resource Registry",
-          "link": "https://www.earthcube.org/resource-registry"
-        },
-        {
-          "title": "schema.org",
-          "link": "https://schema.org/"
-        }
-      ],
-      "maturity": "draft",
-      "scope": "unstable",
-      "tags": [
-        "ecrr",
-        "templates"
-      ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCommon/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCommon/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCommon/schema.json"
-      },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/",
-      "rdfData": [],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrCommon/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrCommon/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrCommon/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrCommon"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrDataset",
-      "$schema": "metaschema.yaml",
-      "name": "ECRR Dataset properties",
-      "abstract": "Schema defining properties specific to dataset resources in the EarthCube Resource Registry, referencing existing distribution, spatial/temporal extent, and variable building blocks. Defines properties: schema:distribution, schema:spatialCoverage, schema:temporalCoverage, schema:variableMeasured, schema:includedInDataCatalog. Uses building blocks: dataDownload (schemaorgProperties), webAPI (schemaorgProperties), spatialExtent (schemaorgProperties), temporalExtent (schemaorgProperties), variableMeasured (schemaorgProperties).",
-      "status": "under-development",
-      "dateTimeAddition": "2026-02-28T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ecrr-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2026-03-05",
-      "sources": [
-        {
-          "title": "schema.org Dataset",
-          "link": "https://schema.org/Dataset"
-        },
-        {
-          "title": "EarthCube Resource Registry",
-          "link": "https://www.earthcube.org/resource-registry"
-        }
-      ],
-      "maturity": "draft",
-      "scope": "unstable",
-      "tags": [
-        "ecrr",
-        "templates"
-      ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrDataset/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrDataset/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrDataset/schema.json"
-      },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/",
-      "rdfData": [],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrDataset/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrDataset/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrDataset/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrDataset"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrSemanticResource",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
       "$schema": "metaschema.yaml",
       "name": "ECRR Semantic Resource properties",
       "abstract": "Schema defining properties specific to semantic resource types in the EarthCube Resource Registry, including subtype classification for ontologies, thesauri, controlled vocabularies, and other semantic resources. Defines properties: schema:programmingLanguage.",
@@ -359,34 +153,220 @@
         "templates"
       ],
       "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/",
       "rdfData": [],
       "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrSemanticResource/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrSemanticResource/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrSemanticResource/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSemanticResource/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrSemanticResource/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSemanticResource/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrSemanticResource"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrService",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+      "$schema": "metaschema.yaml",
+      "name": "ECRR Base metadata",
+      "abstract": "Schema defining mandatory properties for all EarthCube Resource Registry (ECRR) resource types. Includes resource identity, type classification via mainEntity, and licensing. Defines properties: @id, @type, schema:name, schema:description, schema:mainEntity, schema:license. Uses building blocks: labeledLink (schemaorgProperties).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-02-28T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ecrr-building-block-register",
+      "version": "0.1",
+      "dateOfLastChange": "2026-03-05",
+      "sources": [
+        {
+          "title": "EarthCube Resource Registry",
+          "link": "https://www.earthcube.org/resource-registry"
+        },
+        {
+          "title": "schema.org CreativeWork",
+          "link": "https://schema.org/CreativeWork"
+        }
+      ],
+      "maturity": "draft",
+      "scope": "unstable",
+      "tags": [
+        "ecrr",
+        "templates"
+      ],
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/",
+      "rdfData": [],
+      "validationPassed": false,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrBase/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrBase/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrBase/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrBase"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
+      "$schema": "metaschema.yaml",
+      "name": "ECRR Specification properties",
+      "abstract": "Schema defining properties specific to specification resources in the EarthCube Resource Registry, including specification subtyping and parent specification references. Defines properties: ecrro:ECRRO_0000501. Uses building blocks: labeledLink (schemaorgProperties).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-02-28T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ecrr-building-block-register",
+      "version": "0.1",
+      "dateOfLastChange": "2026-03-05",
+      "sources": [
+        {
+          "title": "EarthCube Resource Registry",
+          "link": "https://www.earthcube.org/resource-registry"
+        }
+      ],
+      "maturity": "draft",
+      "scope": "unstable",
+      "tags": [
+        "ecrr",
+        "templates"
+      ],
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/",
+      "rdfData": [],
+      "validationPassed": true,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrSpecification/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSpecification/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSpecification/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSpecification"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+      "$schema": "metaschema.yaml",
+      "name": "ECRR Resource Assessment",
+      "abstract": "Schema defining ECRR-specific resource assessment properties using PropertyValue pattern with ECRRO property identifiers for maturity, expected lifetime, usage level, stewardship, and registration metadata. Defines properties: ecrro:ECRRO_0000138, ecrro:ECRRO_0000219, ecrro:ECRRO_0000017, ecrro:ECRRO_0000218, ecrro:ECRRO_0000600, ecrro:ECRRO_0001301. Uses building blocks: definedTerm (schemaorgProperties), person (schemaorgProperties), organization (schemaorgProperties).",
+      "status": "under-development",
+      "dateTimeAddition": "2026-02-28T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ecrr-building-block-register",
+      "version": "0.1",
+      "dateOfLastChange": "2026-03-05",
+      "sources": [
+        {
+          "title": "EarthCube Resource Registry Ontology",
+          "link": "http://cor.esipfed.org/ont/earthcube/"
+        }
+      ],
+      "maturity": "draft",
+      "scope": "unstable",
+      "tags": [
+        "ecrr",
+        "templates"
+      ],
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.organization",
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.person"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/",
+      "rdfData": [],
+      "validationPassed": false,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrAssessment/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrAssessment/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrAssessment/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrService",
       "$schema": "metaschema.yaml",
       "name": "ECRR Service Instance properties",
       "abstract": "Schema defining properties specific to service instance resources in the EarthCube Resource Registry, including communication protocols, interface specifications, supporting data, and service invocation. Defines properties: ecrro:ECRRO_0000502, ecrro:ECRRO_0000503, schema:supportingData, schema:potentialAction. Uses building blocks: labeledLink (schemaorgProperties), definedTerm (schemaorgProperties), action (schemaorgProperties).",
@@ -412,35 +392,56 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrService/context.jsonld",
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink",
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.action"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrService/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrService/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/",
       "rdfData": [],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrService/",
+      "validationPassed": false,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrService/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrService/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrService/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrService/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrService/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrService"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrService"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrSoftware",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
       "$schema": "metaschema.yaml",
       "name": "ECRR Software properties",
       "abstract": "Schema defining properties specific to software and application resources in the EarthCube Resource Registry, including function categories, runtime platforms, programming languages, supporting data, code repositories, and dependencies. Defines properties: schema:applicationCategory, schema:runtimePlatform, schema:programmingLanguage, schema:supportingData, schema:codeRepository, schema:installURL, schema:potentialAction, dependencies. Uses building blocks: labeledLink (schemaorgProperties), action (schemaorgProperties).",
@@ -466,38 +467,58 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSoftware/context.jsonld",
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink",
+        "cdif.bbr.metadata.schemaorgProperties.action"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSoftware/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSoftware/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/",
       "rdfData": [],
       "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrSoftware/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrSoftware/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrSoftware/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSoftware/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrSoftware/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSoftware/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrSoftware"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSoftware"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.ecrrProperties.ecrrSpecification",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
       "$schema": "metaschema.yaml",
-      "name": "ECRR Specification properties",
-      "abstract": "Schema defining properties specific to specification resources in the EarthCube Resource Registry, including specification subtyping and parent specification references. Defines properties: ecrro:ECRRO_0000501. Uses building blocks: labeledLink (schemaorgProperties).",
+      "name": "ECRR Common optional metadata",
+      "abstract": "Schema defining commonly used optional properties shared across ECRR resource types, including agents, identifiers, keywords, science domains, audience, and related resources. Defines properties: schema:identifier, schema:url, schema:datePublished, schema:version, schema:alternateName, schema:sameAs, schema:creator, schema:contributor, schema:publisher, schema:editor, schema:funding, schema:keywords, schema:about, schema:audience, schema:subjectOf, schema:isRelatedTo, schema:isBasedOn, schema:encodingFormat, dct:bibliographicCitation, dct:conformsTo. Uses building blocks: labeledLink (schemaorgProperties), identifier (schemaorgProperties), definedTerm (schemaorgProperties), person (schemaorgProperties), organization (schemaorgProperties), funder (schemaorgProperties).",
       "status": "under-development",
       "dateTimeAddition": "2026-02-28T00:00:00Z",
       "itemClass": "schema",
@@ -508,6 +529,10 @@
         {
           "title": "EarthCube Resource Registry",
           "link": "https://www.earthcube.org/resource-registry"
+        },
+        {
+          "title": "schema.org",
+          "link": "https://schema.org/"
         }
       ],
       "maturity": "draft",
@@ -516,38 +541,65 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSpecification/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSpecification/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSpecification/schema.json"
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
       },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/",
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.organization",
+        "cdif.bbr.metadata.schemaorgProperties.identifier",
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.funder",
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink",
+        "cdif.bbr.metadata.schemaorgProperties.person"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/",
       "rdfData": [],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrSpecification/",
+      "validationPassed": false,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrCommon/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/ecrrProperties/ecrrSpecification/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrCommon/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/ecrrProperties/ecrrSpecification/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCommon/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.ecrrProperties.ecrrSpecification"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCommon"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRDataset",
+      "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrDataset",
       "$schema": "metaschema.yaml",
-      "name": "ECRR Dataset profile",
-      "abstract": "Complete ECRR metadata profile for dataset resources, extending CDIFcomplete with base, common, and assessment building blocks.",
+      "name": "ECRR Dataset properties",
+      "abstract": "Schema defining properties specific to dataset resources in the EarthCube Resource Registry, referencing existing distribution, spatial/temporal extent, and variable building blocks. Defines properties: schema:distribution, schema:spatialCoverage, schema:temporalCoverage, schema:variableMeasured, schema:includedInDataCatalog. Uses building blocks: dataDownload (schemaorgProperties), webAPI (schemaorgProperties), spatialExtent (schemaorgProperties), temporalExtent (schemaorgProperties), variableMeasured (schemaorgProperties).",
       "status": "under-development",
       "dateTimeAddition": "2026-02-28T00:00:00Z",
       "itemClass": "schema",
@@ -555,13 +607,13 @@
       "version": "0.1",
       "dateOfLastChange": "2026-03-05",
       "sources": [
-        {
-          "title": "EarthCube Resource Registry",
-          "link": "https://www.earthcube.org/resource-registry"
-        },
         {
           "title": "schema.org Dataset",
           "link": "https://schema.org/Dataset"
+        },
+        {
+          "title": "EarthCube Resource Registry",
+          "link": "https://www.earthcube.org/resource-registry"
         }
       ],
       "maturity": "draft",
@@ -570,39 +622,76 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
-      "dependsOn": [
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
-      ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRDataset/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRDataset/schema.json"
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.webAPI": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
       },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/",
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload",
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
+        "cdif.bbr.metadata.schemaorgProperties.webAPI"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRDataset/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRDataset/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrDataset/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRDataset/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrDataset/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRDataset"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrDataset"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRCatalog",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog",
       "$schema": "metaschema.yaml",
       "name": "ECRR Catalog/Registry profile",
       "abstract": "Complete ECRR metadata profile for catalog and registry resources, composing base, common, assessment, and catalog-specific building blocks.",
@@ -624,41 +713,60 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrCatalog",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRCatalog/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRCatalog/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRCatalog/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRCatalog/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRCatalog/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRCatalog"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRCollection",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCollection",
       "$schema": "metaschema.yaml",
       "name": "ECRR Collection profile",
       "abstract": "Complete ECRR metadata profile for bundled object (collection) resources, composing base, common, assessment, and collection-specific building blocks.",
@@ -680,41 +788,60 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrCollection",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRCollection/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRCollection/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRCollection/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCollection/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCollection/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCollection/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRCollection/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRCollection/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRCollection/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRCollection"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCollection"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRInterchangeFormat",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat",
       "$schema": "metaschema.yaml",
       "name": "ECRR Interchange Format profile",
       "abstract": "Complete ECRR metadata profile for interchange format resources, composing base, common, and assessment building blocks.",
@@ -736,40 +863,59 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterchangeFormat/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRInterchangeFormat/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRInterchangeFormat/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRInterchangeFormat/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRInterchangeFormat"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRInterface",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterface",
       "$schema": "metaschema.yaml",
       "name": "ECRR Interface/API profile",
       "abstract": "Complete ECRR metadata profile for interface and API resources, composing base, common, and assessment building blocks.",
@@ -791,40 +937,59 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRInterface/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRInterface/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRInterface/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterface/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterface/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterface/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRInterface/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRInterface/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRInterface/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRInterface"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterface"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRPlatform",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRPlatform",
       "$schema": "metaschema.yaml",
       "name": "ECRR Platform profile",
       "abstract": "Complete ECRR metadata profile for platform resources, composing base, common, and assessment building blocks.",
@@ -846,95 +1011,59 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRPlatform/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRPlatform/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRPlatform/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRPlatform/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRPlatform/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRPlatform/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRPlatform/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRPlatform/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRPlatform/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRPlatform"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRPlatform"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRUseCase",
-      "$schema": "metaschema.yaml",
-      "name": "ECRR Use Case profile",
-      "abstract": "Complete ECRR metadata profile for use case resources, composing base, common, and assessment building blocks.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-03-01T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ecrr-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2026-03-05",
-      "sources": [
-        {
-          "title": "EarthCube Resource Registry",
-          "link": "https://www.earthcube.org/resource-registry"
-        }
-      ],
-      "maturity": "draft",
-      "scope": "unstable",
-      "tags": [
-        "ecrr",
-        "templates"
-      ],
-      "shaclShapes": {},
-      "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
-      ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
-      "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRUseCase/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRUseCase/schema.json"
-      },
-      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/schema.yaml",
-      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
-      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/",
-      "rdfData": [],
-      "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRUseCase/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRUseCase/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRUseCase/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRUseCase"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRSemanticResource",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource",
       "$schema": "metaschema.yaml",
       "name": "ECRR Semantic Resource profile",
       "abstract": "Complete ECRR metadata profile for semantic resource types (ontologies, vocabularies, thesauri), composing base, common, assessment, and semantic-resource-specific building blocks.",
@@ -956,41 +1085,60 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrSemanticResource",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSemanticResource/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSemanticResource/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSemanticResource/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSemanticResource/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRSemanticResource/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRSemanticResource/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRSemanticResource/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRSemanticResource"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRService",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService",
       "$schema": "metaschema.yaml",
       "name": "ECRR Service Instance profile",
       "abstract": "Complete ECRR metadata profile for service instance resources, composing base, common, assessment, and service-specific building blocks.",
@@ -1016,41 +1164,66 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrService",
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrService",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRService/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRService/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRService/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRService/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRService/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRService/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRService/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRService/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRService/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRService/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRService/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRService/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRService"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRSoftware",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware",
       "$schema": "metaschema.yaml",
       "name": "ECRR Software profile",
       "abstract": "Complete ECRR metadata profile for software and application resources, composing base, common, assessment, and software-specific building blocks.",
@@ -1076,41 +1249,66 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrSoftware",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSoftware/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSoftware/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSoftware/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSoftware/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSoftware/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSoftware/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRSoftware/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRSoftware/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRSoftware/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRSoftware"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware"
         }
       }
     },
     {
-      "itemIdentifier": "ogc.profiles.ecrrProfiles.ECRRSpecification",
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification",
       "$schema": "metaschema.yaml",
       "name": "ECRR Specification profile",
       "abstract": "Complete ECRR metadata profile for specification resources, composing base, common, assessment, and specification-specific building blocks.",
@@ -1132,36 +1330,267 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": {},
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
       "dependsOn": [
-        "ogc.ecrrProperties.ecrrCommon",
-        "ogc.ecrrProperties.ecrrSpecification",
-        "ogc.ecrrProperties.ecrrAssessment",
-        "ogc.ecrrProperties.ecrrBase"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification"
       ],
-      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSpecification/context.jsonld",
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/context.jsonld",
       "schema": {
-        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSpecification/schema.yaml",
-        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/profiles/ecrrProfiles/ECRRSpecification/schema.json"
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/schema.json"
       },
       "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSpecification/schema.yaml",
       "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSpecification/context.jsonld",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSpecification/",
       "rdfData": [],
       "validationPassed": false,
-      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/profiles/ecrrProfiles/ECRRSpecification/",
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/profiles/ecrrProfiles/ECRRSpecification/index.md"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/profiles/ecrrProfiles/ECRRSpecification/index.json"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ogc.profiles.ecrrProfiles.ECRRSpecification"
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRUseCase",
+      "$schema": "metaschema.yaml",
+      "name": "ECRR Use Case profile",
+      "abstract": "Complete ECRR metadata profile for use case resources, composing base, common, and assessment building blocks.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-03-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ecrr-building-block-register",
+      "version": "0.1",
+      "dateOfLastChange": "2026-03-05",
+      "sources": [
+        {
+          "title": "EarthCube Resource Registry",
+          "link": "https://www.earthcube.org/resource-registry"
+        }
+      ],
+      "maturity": "draft",
+      "scope": "unstable",
+      "tags": [
+        "ecrr",
+        "templates"
+      ],
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/",
+      "rdfData": [],
+      "validationPassed": false,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRUseCase"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset",
+      "$schema": "metaschema.yaml",
+      "name": "ECRR Dataset profile",
+      "abstract": "Complete ECRR metadata profile for dataset resources, extending CDIFcomplete with base, common, and assessment building blocks.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-02-28T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ecrr-building-block-register",
+      "version": "0.1",
+      "dateOfLastChange": "2026-03-05",
+      "sources": [
+        {
+          "title": "EarthCube Resource Registry",
+          "link": "https://www.earthcube.org/resource-registry"
+        },
+        {
+          "title": "schema.org Dataset",
+          "link": "https://schema.org/Dataset"
+        }
+      ],
+      "maturity": "draft",
+      "scope": "unstable",
+      "tags": [
+        "ecrr",
+        "templates"
+      ],
+      "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.webAPI": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifDataCube": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifPhysicalMapping": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifProv": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProv/rules.shacl"
+        ],
+        "cdif.bbr.metadata.provProperties.generatedBy": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.additionalProperty": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.agentInRole": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifTabularData": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl"
+        ],
+        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFDiscovery": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFDiscovery/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifMandatory": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifCatalogRecord": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifOptional": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl"
+        ],
+        "cdif.bbr.metadata.qualityProperties.qualityMeasure": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.provProperties.derivedFrom": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+        ]
+      },
+      "dependsOn": [
+        "cdif.bbr.metadata.schemaorgProperties.organization",
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "cdif.bbr.metadata.schemaorgProperties.person",
+        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
+      ],
+      "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
+      "schema": {
+        "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/schema.yaml",
+        "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/schema.json"
+      },
+      "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/schema.yaml",
+      "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
+      "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/",
+      "rdfData": [],
+      "validationPassed": false,
+      "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset"
         }
       }
     }

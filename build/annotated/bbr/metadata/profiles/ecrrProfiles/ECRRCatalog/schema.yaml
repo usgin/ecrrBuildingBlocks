@@ -1,0 +1,24 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+title: ECRR Catalog/Registry Profile
+description: Complete ECRR metadata profile for catalog and registry resources. Composes
+  ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCatalog. Resources must have schema:additionalType
+  containing "EC CatalogRegistry" or "EC Repository".
+allOf:
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.yaml
+- properties:
+    schema:additionalType:
+      contains:
+        enum:
+        - EC CatalogRegistry
+        - EC Repository
+x-jsonld-extra-terms:
+  ecrr: https://n2t.net/ark:/23942/g2
+x-jsonld-prefixes:
+  schema: http://schema.org/
+  ecrro: http://cor.esipfed.org/ont/earthcube/
+  dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#

@@ -1,0 +1,157 @@
+Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrCommon - ECRR Common optional metadata
+Generated 2026-03-05T14:53:58.067790+00:00
+=== Files ===
+Using examplePyleoclimCommon.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape: _:N7f312bd1c51344beaee1af9c88f4aff3
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+ - Shape _:n7b60bb429e834376b679a89ea196c851b20: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n7b60bb429e834376b679a89ea196c851b23: *none*
+ - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape _:n7b60bb429e834376b679a89ea196c851b22: *none*
+ - Shape _:n7b60bb429e834376b679a89ea196c851b10: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
+ - Shape _:n7b60bb429e834376b679a89ea196c851b25: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n7b60bb429e834376b679a89ea196c851b11: *none*
+ - Shape _:n7b60bb429e834376b679a89ea196c851b21: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb10: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb8: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb4: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb7: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb5: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb26: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb6: *none*
+ - Shape _:n910f4f1de8754f1fbdeef8237bf0372cb19: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb25: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb17: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb15: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb4: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb13: *none*
+ - Shape cdifd:fundingShape: _:N0cc22ec318c24fdba233381744323ade,_:Na504e36de8944ae8907c3f0e83ec7d8e
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb5: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb3: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb11: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb12: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb14: *none*
+ - Shape _:n638f1bd44b2f457c948c488cb65051fbb26: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (8):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:identifier Literal("https://orcid.org/0000-0003-0454-7145") ; schema1:name Literal("Daniel Garijo") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:identifier Literal("https://orcid.org/0000-0001-7501-8430") ; schema1:name Literal("Deborah Khider") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Jun Hu") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:identifier Literal("https://orcid.org/0000-0001-5920-4751") ; schema1:name Literal("Julien Emile-Geay") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Myron Kwan") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Feng Zhu") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Pratheek Athreya") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Alexander James") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
+ - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n20605f8875e34e1d8245f94a298a48d5b14: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFContactPointShape: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape: *none*
+ - Shape cdifd:CDIFPersonShape: _:Nf066f7a163144975b42825f5facedd3e,_:Naee850d7b9c14274b0c73e0042a0dc98,_:N004046121bcf4440b7af809ba5f39d4f,_:N0380056b05124c5a8871bdfebefcde92,_:Nd8fa1e61f29841249b33a595bcbdb0f2,_:N43da3b8d09ab48b0b3d22c39a841ecae,_:N17d8b8fb019f4618a755c7ed66b0e685,_:Necaef7938ab84cd9a4806f829b6ad2a0
+ - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+ - Shape cdifd:CDIFLabeledLinkShape: _:N79bee605c501426aa9fc2c9b5292ee64,_:Nfec7ec8a9e6145e4af0e197f21a98725,_:N75d886f1e1fc4cf4befd12fe00e5cfd0
+
+=== End SHACL ===
+

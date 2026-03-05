@@ -1,0 +1,146 @@
+Validation report for ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCollection - ECRR Collection profile
+Generated 2026-03-05T14:54:01.442483+00:00
+=== Files ===
+Using exampleECRRCollection.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'@type': ['schema:CreativeWork'], 'schema:additionalType': ['dcat:CatalogRecord'], 'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'}, {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection'}], 'schema:sdDatePublished': '2026-03-03'} is not valid under any of the given schemas
+
+Failed validating 'anyOf' in schema['allOf'][1]['properties']['schema:subjectOf']:
+    {'anyOf': [{'$ref': '#/$defs/LabeledLink'},
+               {'items': {'$ref': '#/$defs/LabeledLink'}, 'type': 'array'}],
+     'description': 'Links to formal metadata records or web pages about '
+                    'this resource. Array of labeled links (CreativeWork '
+                    'objects with name and url).'}
+
+On instance['schema:subjectOf']:
+    {'@type': ['schema:CreativeWork'],
+     'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},
+                            {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection'}],
+     'schema:additionalType': ['dcat:CatalogRecord'],
+     'schema:sdDatePublished': '2026-03-03'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:creator
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+ - Shape _:n32550f4681e24fe0b0667808e568df10b11: *none*
+ - Shape _:n32550f4681e24fe0b0667808e568df10b25: *none*
+ - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n32550f4681e24fe0b0667808e568df10b20: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n32550f4681e24fe0b0667808e568df10b10: *none*
+ - Shape _:n32550f4681e24fe0b0667808e568df10b21: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n32550f4681e24fe0b0667808e568df10b22: *none*
+ - Shape _:n32550f4681e24fe0b0667808e568df10b23: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+ - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b8: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b26: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b4: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b5: *none*
+ - Shape cdifd:CDIFDefinedTermShape: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b19: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b7: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b10: *none*
+ - Shape _:n1559f60debdd4adba7f808d7179b8079b6: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b3: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b25: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b26: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b12: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b17: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b13: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b5: *none*
+ - Shape cdifd:fundingShape: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b11: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b4: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b14: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:na015c826d9cc4401932650c8fdcda7d2b15: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Example Registrant") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFContactPointShape: *none*
+ - Shape _:naee583f8bbfb47b487758c723e32c438b14: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape: *none*
+ - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-collection>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
+ - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
+  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Result Path: schema1:url
+  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-collection>
+  	Result Path: schema1:url
+  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>
+
+=== End SHACL ===
+

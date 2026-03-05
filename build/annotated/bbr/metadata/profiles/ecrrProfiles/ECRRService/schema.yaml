@@ -1,0 +1,23 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+title: ECRR Service Instance Profile
+description: Complete ECRR metadata profile for service instance resources. Composes
+  ecrrBase, ecrrCommon, ecrrAssessment, and ecrrService. Resources must have schema:additionalType
+  containing "EC Service Instance".
+allOf:
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.yaml
+- properties:
+    schema:additionalType:
+      contains:
+        enum:
+        - EC Service Instance
+x-jsonld-extra-terms:
+  ecrr: https://n2t.net/ark:/23942/g2
+x-jsonld-prefixes:
+  schema: http://schema.org/
+  ecrro: http://cor.esipfed.org/ont/earthcube/
+  dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#

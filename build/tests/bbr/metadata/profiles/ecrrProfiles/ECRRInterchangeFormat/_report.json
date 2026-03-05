@@ -1,0 +1,333 @@
+{
+  "title": "Validation report for ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat - ECRR Interchange Format profile",
+  "bblockName": "ECRR Interchange Format profile",
+  "bblockId": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat",
+  "generated": "2026-03-05T14:54:02.380827+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/example_1_1.json",
+        "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using exampleECRRInterchangeFormat.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 64,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "{'@type': ['schema:CreativeWork'], 'schema:additionalType': ['dcat:CatalogRecord'], 'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'}, {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat'}], 'schema:sdDatePublished': '2026-03-03'} is not valid under any of the given schemas",
+              "isError": true,
+              "message": "ValidationError: {'@type': ['schema:CreativeWork'], 'schema:additionalType': ['dcat:CatalogRecord'], 'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'}, {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat'}], 'schema:sdDatePublished': '2026-03-03'} is not valid under any of the given schemas\n\nFailed validating 'anyOf' in schema['allOf'][1]['properties']['schema:subjectOf']:\n    {'anyOf': [{'$ref': '#/$defs/LabeledLink'},\n               {'items': {'$ref': '#/$defs/LabeledLink'}, 'type': 'array'}],\n     'description': 'Links to formal metadata records or web pages about '\n                    'this resource. Array of labeled links (CreativeWork '\n                    'objects with name and url).'}\n\nOn instance['schema:subjectOf']:\n    {'@type': ['schema:CreativeWork'],\n     'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},\n                            {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat'}],\n     'schema:additionalType': ['dcat:CatalogRecord'],\n     'schema:sdDatePublished': '2026-03-03'}"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFOrganizationShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFOrganizationShape": {
+                  "nodes": [
+                    "<http://n2t.net/ark:/23942/g2example-interchange>/schema1:creator"
+                  ]
+                },
+                "cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-interchange>/schema1:creator\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b25": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b11": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b20": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b22": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b21": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b10": {
+                  "nodes": []
+                },
+                "_:n42c0b4c512e44a029a6f5d64d8210b09b23": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierTypeTermShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b25: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierShape: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b11: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b20: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b22: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b21: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b10: *none*\n - Shape _:n42c0b4c512e44a029a6f5d64d8210b09b23: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl",
+              "focusNodes": {
+                "_:n81662dca8fa346078c55613ea1ada8bdb4": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb6": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb10": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb7": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb8": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb19": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb26": {
+                  "nodes": []
+                },
+                "_:n81662dca8fa346078c55613ea1ada8bdb5": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb4: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb6: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb10: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb7: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb8: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb19: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb26: *none*\n - Shape _:n81662dca8fa346078c55613ea1ada8bdb5: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl",
+              "focusNodes": {
+                "_:n52c9b5e73120481188ce477601e20032b4": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b26": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b12": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b13": {
+                  "nodes": []
+                },
+                "cdifd:fundingShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b15": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b3": {
+                  "nodes": []
+                },
+                "cdifd:fundingShape": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b17": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b5": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b14": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b11": {
+                  "nodes": []
+                },
+                "_:n52c9b5e73120481188ce477601e20032b25": {
+                  "nodes": []
+                },
+                "cdifd:fundingShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:\n - Shape _:n52c9b5e73120481188ce477601e20032b4: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b26: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b12: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b13: *none*\n - Shape cdifd:fundingShape/sh:or/rdf:first: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b15: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b3: *none*\n - Shape cdifd:fundingShape: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b17: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b5: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b14: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b11: *none*\n - Shape _:n52c9b5e73120481188ce477601e20032b25: *none*\n - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl",
+              "graph": "@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .\n@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Example Registrant\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Example Registrant\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl",
+              "focusNodes": {
+                "cdifd:affiliationProperty/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:contactPointProperty/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFPersonShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFContactPointShape": {
+                  "nodes": []
+                },
+                "cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n5a89102e5be84e06961c15fa04090e52b14": {
+                  "nodes": []
+                },
+                "cdifd:maintainerOrProviderContactPointShape": {
+                  "nodes": []
+                },
+                "cdifd:CDIFPersonShape": {
+                  "nodes": [
+                    "<http://n2t.net/ark:/23942/g2example-interchange>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor"
+                  ]
+                },
+                "cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFContactPointShape: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n5a89102e5be84e06961c15fa04090e52b14: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape: *none*\n - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-interchange>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor\n - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
+              "graph": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://n2t.net/ark:/23942/g2example-interchange> ;\n            sh:resultMessage \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n023d2f7c6aa74c91b500f8aa3931c2c9b1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:CreativeWork ;\n                    dcterms:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,\n                        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat> ;\n                    schema1:additionalType \"dcat:CatalogRecord\" ;\n                    schema1:sdDatePublished \"2026-03-03\" ] ;\n            sh:resultMessage \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n023d2f7c6aa74c91b500f8aa3931c2c9b1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:CreativeWork ;\n                    schema1:name \"Public\" ] ;\n            sh:resultMessage \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n023d2f7c6aa74c91b500f8aa3931c2c9b1 ] .\n\n_:n023d2f7c6aa74c91b500f8aa3931c2c9b1 sh:datatype xsd:string ;\n    sh:message \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n    sh:minCount 1 ;\n    sh:path schema1:url ;\n    sh:pattern \"^https?:\\\\/\\\\/[^\\\\s]+$\" .\n\n",
+              "isError": true,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (3):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal(\"^https?:\\/\\/[^\\s]+$\") ]\n  \tFocus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal(\"dcat:CatalogRecord\") ; schema1:sdDatePublished Literal(\"2026-03-03\") ]\n  \tResult Path: schema1:url\n  \tMessage: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal(\"^https?:\\/\\/[^\\s]+$\") ]\n  \tFocus Node: <http://n2t.net/ark:/23942/g2example-interchange>\n  \tResult Path: schema1:url\n  \tMessage: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal(\"^https?:\\/\\/[^\\s]+$\") ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Public\") ]\n  \tResult Path: schema1:url\n  \tMessage: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFLabeledLinkShape": {
+                  "nodes": [
+                    "<http://n2t.net/ark:/23942/g2example-interchange>/schema1:subjectOf",
+                    "<http://n2t.net/ark:/23942/g2example-interchange>/schema1:mainEntity",
+                    "<http://n2t.net/ark:/23942/g2example-interchange>",
+                    "<http://n2t.net/ark:/23942/g2example-interchange>/schema1:license"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-interchange>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2example-interchange>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-interchange>,<http://n2t.net/ark:/23942/g2example-interchange>/schema1:license\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1
+  }
+}

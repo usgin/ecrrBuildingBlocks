@@ -1,0 +1,96 @@
+
+
+{
+  "itemIdentifier": "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog",
+  "$schema": "metaschema.yaml",
+  "name": "ECRR Catalog/Registry profile",
+  "abstract": "Complete ECRR metadata profile for catalog and registry resources, composing base, common, assessment, and catalog-specific building blocks.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-03-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ecrr-building-block-register",
+  "version": "0.1",
+  "dateOfLastChange": "2026-03-05",
+  "sources": [
+    {
+      "title": "EarthCube Resource Registry",
+      "link": "https://www.earthcube.org/resource-registry"
+    }
+  ],
+  "maturity": "draft",
+  "scope": "unstable",
+  "tags": [
+    "ecrr",
+    "templates"
+  ],
+  "shaclShapes": {
+    "cdif.bbr.metadata.schemaorgProperties.organization": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.identifier": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.funder": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.person": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+    ]
+  },
+  "dependsOn": [
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
+    "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+    "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+  ],
+  "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
+  "schema": {
+    "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/schema.yaml",
+    "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/schema.json"
+  },
+  "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/schema.yaml",
+  "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
+  "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/",
+  "rdfData": [],
+  "validationPassed": false,
+  "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/",
+  "description": "## ECRR Catalog/Registry Profile\n\nComplete metadata profile for registering catalog and repository resources in the EarthCube Resource Registry.\n\n### Composition\n\n1. **ecrrBase** \u2014 mandatory identity and classification\n2. **ecrrCommon** \u2014 optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)\n3. **ecrrAssessment** \u2014 resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)\n4. **ecrrCatalog** \u2014 catalog-specific (content types)\n\n### Type Requirements\n\n- `@type` must include `schema:CreativeWork`\n- `schema:additionalType` must contain `\"EC CatalogRegistry\"` or `\"EC Repository\"`\n- `mainEntity` must reference `http://cor.esipfed.org/ont/earthcube/ECRRO_0000212` (CatalogRegistry) or `http://cor.esipfed.org/ont/earthcube/ECRRO_0000209` (Repository)\n",
+  "examples": [
+    {
+      "title": "ECRR Catalog (synthetic example)",
+      "content": "Example metadata instance for ECRRCatalog profile.",
+      "prefixes": {
+        "schema": "http://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "ecrro": "http://cor.esipfed.org/ont/earthcube/"
+      },
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "exampleECRRCatalog.json",
+          "code": "{\n  \"@context\": [\n    \"https://schema.org/\",\n    {\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\",\n      \"ecrr\": \"https://n2t.net/ark:/23942/g2\",\n      \"dct\": \"http://purl.org/dc/terms/\",\n      \"dcterms\": \"http://purl.org/dc/terms/\",\n      \"dcat\": \"http://www.w3.org/ns/dcat#\"\n    }\n  ],\n  \"@id\": \"http://n2t.net/ark:/23942/g2example-catalog\",\n  \"@type\": [\n    \"schema:CreativeWork\",\n    \"schema:DataCatalog\"\n  ],\n  \"schema:name\": \"EarthCube GeoCodes Metadata Catalog\",\n  \"schema:additionalType\": [\n    \"EC CatalogRegistry\"\n  ],\n  \"schema:description\": \"A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system.\",\n  \"schema:mainEntity\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:url\": \"http://cor.esipfed.org/ont/earthcube/ECRRO_0000212\",\n    \"schema:name\": \"CatalogRegistry\"\n  },\n  \"schema:license\": [\n    {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:name\": \"Creative Commons Attribution 4.0\",\n      \"schema:url\": \"https://creativecommons.org/licenses/by/4.0/\"\n    }\n  ],\n  \"schema:subjectOf\": {\n    \"@type\": [\n      \"schema:CreativeWork\"\n    ],\n    \"schema:additionalType\": [\n      \"dcat:CatalogRecord\"\n    ],\n    \"dcterms:conformsTo\": [\n      {\n        \"@id\": \"https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory\"\n      },\n      {\n        \"@id\": \"https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog\"\n      }\n    ],\n    \"schema:sdDatePublished\": \"2026-03-03\"\n  },\n  \"schema:creator\": [\n    {\n      \"@type\": \"schema:Organization\",\n      \"schema:name\": \"EarthCube\"\n    }\n  ],\n  \"schema:about\": [\n    {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"Earth Science\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/ADO_0000021\"\n    }\n  ],\n  \"schema:contentType\": [\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Datasets\"\n    },\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Software\"\n    }\n  ],\n  \"ecrro:ECRRO_0000138\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0000138\",\n    \"schema:name\": \"has maturity state\",\n    \"schema:value\": {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"In production\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/MTU_0000002\"\n    }\n  },\n  \"ecrro:ECRRO_0000219\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0000219\",\n    \"schema:name\": \"expected lifetime\",\n    \"schema:value\": {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"Long-term\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/ELT_0000001\"\n    }\n  },\n  \"ecrro:ECRRO_0000017\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0000017\",\n    \"schema:name\": \"Usage\",\n    \"schema:value\": {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"Wide usage (>50 adopters)\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/UBA_0000001\"\n    }\n  },\n  \"ecrro:ECRRO_0001301\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0001301\",\n    \"schema:name\": \"registration metadata\",\n    \"schema:value\": {\n      \"@type\": \"schema:StructuredValue\",\n      \"schema:additionalType\": \"ecrro:ECRRO_0000156\",\n      \"schema:contributor\": {\n        \"@type\": \"schema:Person\",\n        \"schema:name\": \"Example Registrant\"\n      },\n      \"schema:datePublished\": \"2024-06-15\"\n    }\n  }\n}\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"dcterms\": \"http://purl.org/dc/terms/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld\",\n    \"https://schema.org/\",\n    {\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\",\n      \"ecrr\": \"https://n2t.net/ark:/23942/g2\",\n      \"dct\": \"http://purl.org/dc/terms/\",\n      \"dcterms\": \"http://purl.org/dc/terms/\",\n      \"dcat\": \"http://www.w3.org/ns/dcat#\"\n    }\n  ],\n  \"@id\": \"http://n2t.net/ark:/23942/g2example-catalog\",\n  \"@type\": [\n    \"schema:CreativeWork\",\n    \"schema:DataCatalog\"\n  ],\n  \"schema:name\": \"EarthCube GeoCodes Metadata Catalog\",\n  \"schema:additionalType\": [\n    \"EC CatalogRegistry\"\n  ],\n  \"schema:description\": \"A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system.\",\n  \"schema:mainEntity\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:url\": \"http://cor.esipfed.org/ont/earthcube/ECRRO_0000212\",\n    \"schema:name\": \"CatalogRegistry\"\n  },\n  \"schema:license\": [\n    {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:name\": \"Creative Commons Attribution 4.0\",\n      \"schema:url\": \"https://creativecommons.org/licenses/by/4.0/\"\n    }\n  ],\n  \"schema:subjectOf\": {\n    \"@type\": [\n      \"schema:CreativeWork\"\n    ],\n    \"schema:additionalType\": [\n      \"dcat:CatalogRecord\"\n    ],\n    \"dcterms:conformsTo\": [\n      {\n        \"@id\": \"https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory\"\n      },\n      {\n        \"@id\": \"https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog\"\n      }\n    ],\n    \"schema:sdDatePublished\": \"2026-03-03\"\n  },\n  \"schema:creator\": [\n    {\n      \"@type\": \"schema:Organization\",\n      \"schema:name\": \"EarthCube\"\n    }\n  ],\n  \"schema:about\": [\n    {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"Earth Science\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/ADO_0000021\"\n    }\n  ],\n  \"schema:contentType\": [\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Datasets\"\n    },\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Software\"\n    }\n  ],\n  \"ecrro:ECRRO_0000138\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0000138\",\n    \"schema:name\": \"has maturity state\",\n    \"schema:value\": {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"In production\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/MTU_0000002\"\n    }\n  },\n  \"ecrro:ECRRO_0000219\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0000219\",\n    \"schema:name\": \"expected lifetime\",\n    \"schema:value\": {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"Long-term\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/ELT_0000001\"\n    }\n  },\n  \"ecrro:ECRRO_0000017\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0000017\",\n    \"schema:name\": \"Usage\",\n    \"schema:value\": {\n      \"@type\": \"schema:DefinedTerm\",\n      \"schema:name\": \"Wide usage (>50 adopters)\",\n      \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/UBA_0000001\"\n    }\n  },\n  \"ecrro:ECRRO_0001301\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"ecrro:ECRRO_0001301\",\n    \"schema:name\": \"registration metadata\",\n    \"schema:value\": {\n      \"@type\": \"schema:StructuredValue\",\n      \"schema:additionalType\": \"ecrro:ECRRO_0000156\",\n      \"schema:contributor\": {\n        \"@type\": \"schema:Person\",\n        \"schema:name\": \"Example Registrant\"\n      },\n      \"schema:datePublished\": \"2024-06-15\"\n    }\n  }\n}",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix dct: <http://purl.org/dc/terms/> .\n@prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .\n@prefix schema1: <http://schema.org/> .\n\n<http://n2t.net/ark:/23942/g2example-catalog> a schema1:CreativeWork,\n        schema1:DataCatalog ;\n    ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;\n            schema1:name \"Usage\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000017\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/UBA_0000001\" ;\n                    schema1:name \"Wide usage (>50 adopters)\" ] ] ;\n    ecrro:ECRRO_0000138 [ a schema1:PropertyValue ;\n            schema1:name \"has maturity state\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000138\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/MTU_0000002\" ;\n                    schema1:name \"In production\" ] ] ;\n    ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;\n            schema1:name \"expected lifetime\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000219\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ELT_0000001\" ;\n                    schema1:name \"Long-term\" ] ] ;\n    ecrro:ECRRO_0001301 [ a schema1:PropertyValue ;\n            schema1:name \"registration metadata\" ;\n            schema1:propertyID \"ecrro:ECRRO_0001301\" ;\n            schema1:value [ a schema1:StructuredValue ;\n                    schema1:additionalType \"ecrro:ECRRO_0000156\" ;\n                    schema1:contributor [ a schema1:Person ;\n                            schema1:name \"Example Registrant\" ] ;\n                    schema1:datePublished \"2024-06-15\" ] ] ;\n    schema1:about [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000021\" ;\n            schema1:name \"Earth Science\" ] ;\n    schema1:additionalType \"EC CatalogRegistry\" ;\n    schema1:contentType [ a schema1:Thing ;\n            schema1:name \"Datasets\" ],\n        [ a schema1:Thing ;\n            schema1:name \"Software\" ] ;\n    schema1:creator [ a schema1:Organization ;\n            schema1:name \"EarthCube\" ] ;\n    schema1:description \"A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system.\" ;\n    schema1:license [ a schema1:CreativeWork ;\n            schema1:name \"Creative Commons Attribution 4.0\" ;\n            schema1:url \"https://creativecommons.org/licenses/by/4.0/\" ] ;\n    schema1:mainEntity [ a schema1:CreativeWork ;\n            schema1:name \"CatalogRegistry\" ;\n            schema1:url \"http://cor.esipfed.org/ont/earthcube/ECRRO_0000212\" ] ;\n    schema1:name \"EarthCube GeoCodes Metadata Catalog\" ;\n    schema1:subjectOf [ a schema1:CreativeWork ;\n            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,\n                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog> ;\n            schema1:additionalType \"dcat:CatalogRecord\" ;\n            schema1:sdDatePublished \"2026-03-03\" ] .\n\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\ntitle: ECRR Catalog/Registry Profile\ndescription: Complete ECRR metadata profile for catalog and registry resources. Composes\n  ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCatalog. Resources must have schema:additionalType\n  containing \"EC CatalogRegistry\" or \"EC Repository\".\nallOf:\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.yaml\n- properties:\n    schema:additionalType:\n      contains:\n        enum:\n        - EC CatalogRegistry\n        - EC Repository\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n  dcat: http://www.w3.org/ns/dcat#\n",
+  "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
+  "gitPath": "_sources/profiles/ecrrProfiles/ECRRCatalog"
+}

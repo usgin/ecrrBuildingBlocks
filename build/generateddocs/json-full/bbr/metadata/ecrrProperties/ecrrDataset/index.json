@@ -1,0 +1,115 @@
+
+
+{
+  "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrDataset",
+  "$schema": "metaschema.yaml",
+  "name": "ECRR Dataset properties",
+  "abstract": "Schema defining properties specific to dataset resources in the EarthCube Resource Registry, referencing existing distribution, spatial/temporal extent, and variable building blocks. Defines properties: schema:distribution, schema:spatialCoverage, schema:temporalCoverage, schema:variableMeasured, schema:includedInDataCatalog. Uses building blocks: dataDownload (schemaorgProperties), webAPI (schemaorgProperties), spatialExtent (schemaorgProperties), temporalExtent (schemaorgProperties), variableMeasured (schemaorgProperties).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-02-28T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ecrr-building-block-register",
+  "version": "0.1",
+  "dateOfLastChange": "2026-03-05",
+  "sources": [
+    {
+      "title": "schema.org Dataset",
+      "link": "https://schema.org/Dataset"
+    },
+    {
+      "title": "EarthCube Resource Registry",
+      "link": "https://www.earthcube.org/resource-registry"
+    }
+  ],
+  "maturity": "draft",
+  "scope": "unstable",
+  "tags": [
+    "ecrr",
+    "templates"
+  ],
+  "shaclShapes": {
+    "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.identifier": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.person": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.organization": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.webAPI": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.action": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+    ]
+  },
+  "dependsOn": [
+    "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
+    "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
+    "cdif.bbr.metadata.schemaorgProperties.dataDownload",
+    "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
+    "cdif.bbr.metadata.schemaorgProperties.webAPI"
+  ],
+  "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
+  "schema": {
+    "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.yaml",
+    "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.json"
+  },
+  "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/schema.yaml",
+  "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/context.jsonld",
+  "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/",
+  "rdfData": [],
+  "validationPassed": false,
+  "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/",
+  "description": "## ECRR Dataset-Specific Properties\n\nDefines properties specific to dataset resources in the EarthCube Resource Registry. For resources typed `[\"schema:CreativeWork\", \"schema:Dataset\"]`.\n\nThis building block heavily reuses existing schema.org building blocks.\n\n### Properties\n\n- **schema:distribution** \u2014 data access via DataDownload or WebAPI (reuses existing building blocks)\n- **schema:spatialCoverage** \u2014 geographic extent (reuses spatialExtent building block)\n- **schema:temporalCoverage** \u2014 time coverage (reuses temporalExtent building block)\n- **schema:variableMeasured** \u2014 measured variables (reuses variableMeasured building block)\n- **schema:includedInDataCatalog** \u2014 reference to containing catalog (DataCatalog with @id, name, url)\n\n### Example\n\n```json\n{\n  \"schema:distribution\": [\n    {\n      \"@type\": [\"schema:DataDownload\"],\n      \"schema:contentUrl\": \"https://example.org/data/download.csv\",\n      \"schema:encodingFormat\": [\"text/csv\"]\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"Example Data Catalog\",\n    \"schema:url\": \"https://example.org/catalog\"\n  }\n}\n```\n",
+  "examples": [
+    {
+      "title": "ECRR Dataset Properties (synthetic)",
+      "content": "Synthetic example of ECRR dataset-specific properties.",
+      "prefixes": {
+        "schema": "http://schema.org/",
+        "ecrro": "http://cor.esipfed.org/ont/earthcube/"
+      },
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "exampleECRRDataset.json",
+          "code": "{\n  \"schema:distribution\": [\n    {\n      \"@type\": [\"schema:DataDownload\"],\n      \"schema:contentUrl\": \"https://example.org/data/observations.csv\",\n      \"schema:encodingFormat\": [\"text/csv\"],\n      \"schema:name\": \"Observation data CSV download\"\n    }\n  ],\n  \"schema:spatialCoverage\": [\n    {\n      \"@type\": \"schema:Place\",\n      \"schema:name\": [\"Global\"],\n      \"schema:geo\": {\n        \"@type\": \"schema:GeoShape\",\n        \"schema:box\": \"-90 -180 90 180\"\n      }\n    }\n  ],\n  \"schema:temporalCoverage\": [\"2010-01-01/2023-12-31\"],\n  \"schema:variableMeasured\": [\n    {\n      \"@type\": [\"schema:PropertyValue\"],\n      \"schema:name\": \"Temperature\",\n      \"schema:description\": \"Surface air temperature measurements\"\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"EarthCube Data Catalog\",\n    \"schema:url\": \"https://www.earthcube.org/datasets\"\n  }\n}\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld\"\n  ],\n  \"schema:distribution\": [\n    {\n      \"@type\": [\n        \"schema:DataDownload\"\n      ],\n      \"schema:contentUrl\": \"https://example.org/data/observations.csv\",\n      \"schema:encodingFormat\": [\n        \"text/csv\"\n      ],\n      \"schema:name\": \"Observation data CSV download\"\n    }\n  ],\n  \"schema:spatialCoverage\": [\n    {\n      \"@type\": \"schema:Place\",\n      \"schema:name\": [\n        \"Global\"\n      ],\n      \"schema:geo\": {\n        \"@type\": \"schema:GeoShape\",\n        \"schema:box\": \"-90 -180 90 180\"\n      }\n    }\n  ],\n  \"schema:temporalCoverage\": [\n    \"2010-01-01/2023-12-31\"\n  ],\n  \"schema:variableMeasured\": [\n    {\n      \"@type\": [\n        \"schema:PropertyValue\"\n      ],\n      \"schema:name\": \"Temperature\",\n      \"schema:description\": \"Surface air temperature measurements\"\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"EarthCube Data Catalog\",\n    \"schema:url\": \"https://www.earthcube.org/datasets\"\n  }\n}",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:distribution [ a schema1:DataDownload ;\n            schema1:contentUrl \"https://example.org/data/observations.csv\" ;\n            schema1:encodingFormat \"text/csv\" ;\n            schema1:name \"Observation data CSV download\" ] ;\n    schema1:includedInDataCatalog [ a schema1:DataCatalog ;\n            schema1:name \"EarthCube Data Catalog\" ;\n            schema1:url \"https://www.earthcube.org/datasets\" ] ;\n    schema1:spatialCoverage [ a schema1:Place ;\n            schema1:geo [ a schema1:GeoShape ;\n                    schema1:box \"-90 -180 90 180\" ] ;\n            schema1:name \"Global\" ] ;\n    schema1:temporalCoverage \"2010-01-01/2023-12-31\" ;\n    schema1:variableMeasured [ a schema1:PropertyValue ;\n            schema1:description \"Surface air temperature measurements\" ;\n            schema1:name \"Temperature\" ] .\n\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: ECRR Dataset-Specific Properties\ndescription: Properties specific to dataset resources in ECRR. For resources typed\n  [\"schema:CreativeWork\", \"schema:Dataset\"]. References existing building blocks for\n  distribution, spatial/temporal coverage, and measured variables.\ntype: object\nproperties:\n  schema:distribution:\n    description: 'How to access the dataset: file downloads (DataDownload) or API\n      access (WebAPI).'\n    type: array\n    items:\n      anyOf:\n      - $ref: '#/$defs/DataDownload'\n      - $ref: '#/$defs/WebAPI'\n  schema:spatialCoverage:\n    description: Geographic area covered by the dataset.\n    type: array\n    items:\n      $ref: '#/$defs/SpatialExtent'\n  schema:temporalCoverage:\n    description: Time period covered by the dataset. Can be ISO 8601 date ranges or\n      structured temporal extent objects.\n    type: array\n    items:\n      $ref: '#/$defs/TemporalExtent'\n  schema:variableMeasured:\n    description: What the dataset measures (e.g. temperature, pressure).\n    type: array\n    items:\n      $ref: '#/$defs/VariableMeasured'\n  schema:includedInDataCatalog:\n    description: The data catalog that contains this dataset. Object with @id, name,\n      and url identifying the containing catalog.\n    anyOf:\n    - $ref: '#/$defs/DataCatalogRef'\n    - type: array\n      items:\n        $ref: '#/$defs/DataCatalogRef'\n$defs:\n  DataDownload:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/dataDownload/schema.yaml\n  WebAPI:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/webAPI/schema.yaml\n  SpatialExtent:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/spatialExtent/schema.yaml\n  TemporalExtent:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/temporalExtent/schema.yaml\n  VariableMeasured:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/variableMeasured/schema.yaml\n  DataCatalogRef:\n    type: object\n    properties:\n      '@id':\n        type: string\n      '@type':\n        type: string\n        const: schema:DataCatalog\n        default: schema:DataCatalog\n      schema:name:\n        type: string\n      schema:url:\n        type: string\n        format: uri\n    required:\n    - '@type'\n    - schema:name\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
+  "gitPath": "_sources/ecrrProperties/ecrrDataset"
+}

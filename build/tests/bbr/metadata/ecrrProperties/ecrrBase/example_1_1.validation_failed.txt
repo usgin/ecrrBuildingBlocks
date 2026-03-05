@@ -1,0 +1,32 @@
+Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrBase - ECRR Base metadata
+Generated 2026-03-05T14:53:54.830707+00:00
+=== Files ===
+Using examplePyleoclimBase.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
+  	Focus Node: <http://n2t.net/ark:/23942/g22914>
+  	Result Path: schema1:url
+  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g22914>/schema1:license,<http://n2t.net/ark:/23942/g22914>,<http://n2t.net/ark:/23942/g22914>/schema1:mainEntity
+
+=== End SHACL ===
+

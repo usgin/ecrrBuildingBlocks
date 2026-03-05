@@ -1,0 +1,94 @@
+
+
+{
+  "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
+  "$schema": "metaschema.yaml",
+  "name": "ECRR Software properties",
+  "abstract": "Schema defining properties specific to software and application resources in the EarthCube Resource Registry, including function categories, runtime platforms, programming languages, supporting data, code repositories, and dependencies. Defines properties: schema:applicationCategory, schema:runtimePlatform, schema:programmingLanguage, schema:supportingData, schema:codeRepository, schema:installURL, schema:potentialAction, dependencies. Uses building blocks: labeledLink (schemaorgProperties), action (schemaorgProperties).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-02-28T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ecrr-building-block-register",
+  "version": "0.1",
+  "dateOfLastChange": "2026-03-05",
+  "sources": [
+    {
+      "title": "schema.org SoftwareApplication",
+      "link": "https://schema.org/SoftwareApplication"
+    },
+    {
+      "title": "EarthCube Resource Registry",
+      "link": "https://www.earthcube.org/resource-registry"
+    }
+  ],
+  "maturity": "draft",
+  "scope": "unstable",
+  "tags": [
+    "ecrr",
+    "templates"
+  ],
+  "shaclShapes": {
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.action": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.identifier": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+    ]
+  },
+  "dependsOn": [
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink",
+    "cdif.bbr.metadata.schemaorgProperties.action"
+  ],
+  "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/context.jsonld",
+  "schema": {
+    "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.yaml",
+    "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.json"
+  },
+  "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/schema.yaml",
+  "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/context.jsonld",
+  "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/",
+  "rdfData": [],
+  "validationPassed": true,
+  "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrSoftware/",
+  "description": "## ECRR Software-Specific Properties\n\nDefines properties specific to software and application resources in the EarthCube Resource Registry. For resources typed `[\"schema:CreativeWork\", \"schema:SoftwareApplication\"]`.\n\n### Properties\n\n- **schema:applicationCategory** \u2014 function categories from the SFO vocabulary (e.g. Data Analysis, Visualization, Data Processing)\n- **schema:runtimePlatform** \u2014 runtime environments from the RTE vocabulary (e.g. Linux, Browser, HPC, Android)\n- **schema:programmingLanguage** \u2014 implementation languages (string or ComputerLanguage objects)\n- **schema:supportingData** \u2014 input/output data format specifications as DataFeed objects with position and encodingFormat\n- **schema:codeRepository** \u2014 source code repository URLs or labeled links\n- **schema:installURL** \u2014 software installation locations (e.g. PyPI, CRAN, npm)\n- **schema:potentialAction** \u2014 web application invocation using the Action pattern\n- **dependencies** \u2014 software dependencies as PropertyValue wrapping labeled links\n\n### Data Feed Specification Pattern\n\nThe `supportingData` property describes input and output data formats:\n\n```json\n{\n  \"@type\": \"schema:DataFeed\",\n  \"schema:name\": \"Input Data Type specification\",\n  \"schema:position\": \"input\",\n  \"schema:encodingFormat\": [\"application/json\", \"text/csv\"]\n}\n```\n\n### Dependencies Pattern\n\nDependencies use PropertyValue with the OBO Relations Ontology \"depends on\" property:\n\n```json\n{\n  \"@type\": \"schema:PropertyValue\",\n  \"schema:propertyID\": \"http://purl.obolibrary.org/obo/RO_0002502\",\n  \"schema:name\": \"dependencies\",\n  \"schema:value\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:name\": \"Python 3.8\"\n  }\n}\n```\n",
+  "examples": [
+    {
+      "title": "Pyleoclim Software Properties",
+      "content": "ECRR software-specific properties for Pyleoclim, including application\ncategories, runtime platform, programming language, code repository,\ninstall URL, supporting data formats, and dependencies.",
+      "prefixes": {
+        "schema": "http://schema.org/",
+        "ecrro": "http://cor.esipfed.org/ont/earthcube/"
+      },
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examplePyleoclimSoftware.json",
+          "code": "{\n  \"schema:applicationCategory\": [\n    \"Data Exploration, http://cor.esipfed.org/ont/earthcube/SFO_0000006\",\n    \"Data Preparation, http://cor.esipfed.org/ont/earthcube/SFO_0000007\",\n    \"Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008\",\n    \"Data Analysis, http://cor.esipfed.org/ont/earthcube/SFO_0000010\",\n    \"Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011\"\n  ],\n  \"schema:runtimePlatform\": [\n    \"Linux, http://cor.esipfed.org/ont/earthcube/RTE_000005\"\n  ],\n  \"schema:programmingLanguage\": \"Python 3.8\",\n  \"schema:codeRepository\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:name\": \"Pyleoclim GitHub repository\",\n    \"schema:url\": \"https://github.com/LinkedEarth/Pyleoclim_util\"\n  },\n  \"schema:installURL\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:name\": \"PyPI\",\n    \"schema:url\": \"https://pypi.org/project/pyleoclim/\"\n  },\n  \"schema:supportingData\": {\n    \"@type\": \"schema:DataFeed\",\n    \"schema:name\": \"Input Data Type specification\",\n    \"schema:position\": \"input\",\n    \"schema:encodingFormat\": [\n      \"application/zip;type=LiPD\",\n      \"application/json;type=pyleoclim\",\n      \"text/csv;application=pyleoclim\"\n    ]\n  },\n  \"dependencies\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"http://purl.obolibrary.org/obo/RO_0002502\",\n    \"schema:name\": \"dependencies\",\n    \"schema:value\": {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:name\": \"Python 3.8\",\n      \"schema:url\": \"https://www.python.org/\"\n    }\n  }\n}\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrSoftware/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/context.jsonld\"\n  ],\n  \"schema:applicationCategory\": [\n    \"Data Exploration, http://cor.esipfed.org/ont/earthcube/SFO_0000006\",\n    \"Data Preparation, http://cor.esipfed.org/ont/earthcube/SFO_0000007\",\n    \"Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008\",\n    \"Data Analysis, http://cor.esipfed.org/ont/earthcube/SFO_0000010\",\n    \"Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011\"\n  ],\n  \"schema:runtimePlatform\": [\n    \"Linux, http://cor.esipfed.org/ont/earthcube/RTE_000005\"\n  ],\n  \"schema:programmingLanguage\": \"Python 3.8\",\n  \"schema:codeRepository\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:name\": \"Pyleoclim GitHub repository\",\n    \"schema:url\": \"https://github.com/LinkedEarth/Pyleoclim_util\"\n  },\n  \"schema:installURL\": {\n    \"@type\": \"schema:CreativeWork\",\n    \"schema:name\": \"PyPI\",\n    \"schema:url\": \"https://pypi.org/project/pyleoclim/\"\n  },\n  \"schema:supportingData\": {\n    \"@type\": \"schema:DataFeed\",\n    \"schema:name\": \"Input Data Type specification\",\n    \"schema:position\": \"input\",\n    \"schema:encodingFormat\": [\n      \"application/zip;type=LiPD\",\n      \"application/json;type=pyleoclim\",\n      \"text/csv;application=pyleoclim\"\n    ]\n  },\n  \"dependencies\": {\n    \"@type\": \"schema:PropertyValue\",\n    \"schema:propertyID\": \"http://purl.obolibrary.org/obo/RO_0002502\",\n    \"schema:name\": \"dependencies\",\n    \"schema:value\": {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:name\": \"Python 3.8\",\n      \"schema:url\": \"https://www.python.org/\"\n    }\n  }\n}",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrSoftware/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:applicationCategory \"Data Analysis, http://cor.esipfed.org/ont/earthcube/SFO_0000010\",\n        \"Data Exploration, http://cor.esipfed.org/ont/earthcube/SFO_0000006\",\n        \"Data Preparation, http://cor.esipfed.org/ont/earthcube/SFO_0000007\",\n        \"Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008\",\n        \"Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011\" ;\n    schema1:codeRepository [ a schema1:CreativeWork ;\n            schema1:name \"Pyleoclim GitHub repository\" ;\n            schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util\" ] ;\n    schema1:installURL [ a schema1:CreativeWork ;\n            schema1:name \"PyPI\" ;\n            schema1:url \"https://pypi.org/project/pyleoclim/\" ] ;\n    schema1:programmingLanguage \"Python 3.8\" ;\n    schema1:runtimePlatform \"Linux, http://cor.esipfed.org/ont/earthcube/RTE_000005\" ;\n    schema1:supportingData [ a schema1:DataFeed ;\n            schema1:encodingFormat \"application/json;type=pyleoclim\",\n                \"application/zip;type=LiPD\",\n                \"text/csv;application=pyleoclim\" ;\n            schema1:name \"Input Data Type specification\" ;\n            schema1:position \"input\" ] .\n\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrSoftware/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: ECRR Software-Specific Properties\ndescription: Properties specific to software and application resources in ECRR. For\n  resources typed [\"schema:CreativeWork\", \"schema:SoftwareApplication\"]. Covers function\n  categories, runtime environments, programming languages, input/output data formats,\n  code repositories, installation, invocation, and dependencies.\ntype: object\nproperties:\n  schema:applicationCategory:\n    description: Function categories describing what the software does. Array of strings\n      combining function label and URI from the ECRR SFO (Software Function Ontology)\n      vocabulary.\n    type: array\n    items:\n      type: string\n  schema:runtimePlatform:\n    description: Runtime environments on which the software operates. Array of strings\n      referencing the ECRR RTE (Runtime Environment) vocabulary (e.g. Linux, Browser,\n      HPC).\n    type: array\n    items:\n      type: string\n  schema:programmingLanguage:\n    description: Programming languages used to implement the software. Can be a simple\n      string or an array of ComputerLanguage objects with name and identifier.\n    anyOf:\n    - type: string\n    - type: array\n      items:\n        anyOf:\n        - type: string\n        - type: object\n          properties:\n            '@type':\n              type: string\n              const: schema:ComputerLanguage\n              default: schema:ComputerLanguage\n            schema:name:\n              type: string\n            schema:identifier:\n              type: string\n          required:\n          - schema:name\n  schema:supportingData:\n    description: Input and output data format specifications. Array of DataFeed objects\n      with position (input/output) and encodingFormat indicating supported data formats.\n    anyOf:\n    - $ref: '#/$defs/DataFeedSpec'\n    - type: array\n      items:\n        $ref: '#/$defs/DataFeedSpec'\n  schema:codeRepository:\n    description: Source code repositories for the software. Array of labeled links\n      (CreativeWork objects with name and url) or simple URL strings.\n    anyOf:\n    - type: string\n      format: uri\n    - $ref: '#/$defs/LabeledLink'\n    - type: array\n      items:\n        anyOf:\n        - type: string\n          format: uri\n        - $ref: '#/$defs/LabeledLink'\n  schema:installURL:\n    description: Locations where the software can be installed from (e.g. PyPI, CRAN,\n      npm). Array of labeled links or URL strings.\n    anyOf:\n    - type: string\n      format: uri\n    - $ref: '#/$defs/LabeledLink'\n    - type: array\n      items:\n        anyOf:\n        - type: string\n          format: uri\n        - $ref: '#/$defs/LabeledLink'\n  schema:potentialAction:\n    description: Web application invocation details for software accessible via a\n      web interface. Uses the Action building block pattern.\n    type: array\n    items:\n      $ref: '#/$defs/Action'\n  dependencies:\n    description: Software dependencies encoded as a PropertyValue wrapping an array\n      of labeled links. Uses propertyID http://purl.obolibrary.org/obo/RO_0002502\n      (depends on).\n    type: object\n    properties:\n      '@type':\n        type: string\n        const: schema:PropertyValue\n        default: schema:PropertyValue\n      schema:propertyID:\n        type: string\n        const: http://purl.obolibrary.org/obo/RO_0002502\n      schema:name:\n        type: string\n        default: dependencies\n      schema:value:\n        anyOf:\n        - $ref: '#/$defs/LabeledLink'\n        - type: array\n          items:\n            $ref: '#/$defs/LabeledLink'\n    required:\n    - '@type'\n    - schema:propertyID\n$defs:\n  LabeledLink:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml\n  Action:\n    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/action/schema.yaml\n  DataFeedSpec:\n    type: object\n    properties:\n      '@type':\n        type: string\n        const: schema:DataFeed\n        default: schema:DataFeed\n      schema:name:\n        type: string\n      schema:position:\n        type: string\n        description: Indicates whether this is an input or output data specification.\n        enum:\n        - input\n        - output\n      schema:encodingFormat:\n        type: array\n        items:\n          type: string\n    required:\n    - '@type'\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
+  "gitPath": "_sources/ecrrProperties/ecrrSoftware"
+}

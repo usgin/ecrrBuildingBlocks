@@ -1,0 +1,172 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: ECRR Resource Assessment Properties
+description: ECRR-specific properties for assessing resource maturity, expected lifetime,
+  usage level, stewardship, primary publication, and registration metadata. These
+  use the PropertyValue pattern with ECRRO property identifiers as top-level keys.
+  The value field contains a DefinedTerm from a controlled vocabulary, an agent reference,
+  or a string.
+type: object
+properties:
+  ecrro:ECRRO_0000138:
+    description: Maturity state of the resource. Value is a DefinedTerm from the MTU
+      (Maturity) vocabulary (e.g. In production, Alpha, Planning).
+    type: object
+    properties:
+      '@type':
+        type: string
+        const: schema:PropertyValue
+        default: schema:PropertyValue
+      schema:propertyID:
+        type: string
+        const: ecrro:ECRRO_0000138
+      schema:name:
+        type: string
+        default: has maturity state
+      schema:value:
+        $ref: '#/$defs/DefinedTerm'
+    required:
+    - '@type'
+    - schema:propertyID
+    - schema:value
+  ecrro:ECRRO_0000219:
+    description: Expected lifetime of the resource. Value is a DefinedTerm from the
+      ELT (Expected Lifetime) vocabulary (e.g. Long-term, >5 years, 1-5 years).
+    type: object
+    properties:
+      '@type':
+        type: string
+        const: schema:PropertyValue
+        default: schema:PropertyValue
+      schema:propertyID:
+        type: string
+        const: ecrro:ECRRO_0000219
+      schema:name:
+        type: string
+        default: expected lifetime
+      schema:value:
+        $ref: '#/$defs/DefinedTerm'
+    required:
+    - '@type'
+    - schema:propertyID
+    - schema:value
+  ecrro:ECRRO_0000017:
+    description: Current usage level of the resource. Value is a DefinedTerm from
+      the UBA (Usage) vocabulary (e.g. Wide usage, Some usage, Low usage).
+    type: object
+    properties:
+      '@type':
+        type: string
+        const: schema:PropertyValue
+        default: schema:PropertyValue
+      schema:propertyID:
+        type: string
+        const: ecrro:ECRRO_0000017
+      schema:name:
+        type: string
+        default: Usage
+      schema:value:
+        $ref: '#/$defs/DefinedTerm'
+    required:
+    - '@type'
+    - schema:propertyID
+    - schema:value
+  ecrro:ECRRO_0000218:
+    description: Stewardship or maintainer of the resource. Value is an agent (Person
+      or Organization) or array of agents responsible for maintenance.
+    type: object
+    properties:
+      '@type':
+        type: string
+        const: schema:PropertyValue
+        default: schema:PropertyValue
+      schema:propertyID:
+        type: string
+        const: ecrro:ECRRO_0000218
+      schema:name:
+        type: string
+        default: Stewardship
+      schema:value:
+        anyOf:
+        - $ref: '#/$defs/Person'
+        - $ref: '#/$defs/Organization'
+        - type: array
+          items:
+            anyOf:
+            - $ref: '#/$defs/Person'
+            - $ref: '#/$defs/Organization'
+    required:
+    - '@type'
+    - schema:propertyID
+    - schema:value
+  ecrro:ECRRO_0000600:
+    description: Primary publication about the resource. Value is a citation string.
+    type: object
+    properties:
+      '@type':
+        type: string
+        const: schema:PropertyValue
+        default: schema:PropertyValue
+      schema:propertyID:
+        type: string
+        const: ecrro:ECRRO_0000600
+      schema:name:
+        type: string
+        default: primary publication
+      schema:value:
+        type: string
+    required:
+    - '@type'
+    - schema:propertyID
+    - schema:value
+  ecrro:ECRRO_0001301:
+    description: Registration metadata recording who registered the resource and when.
+      Value is a StructuredValue with contributor (Person) and datePublished.
+    type: object
+    properties:
+      '@type':
+        type: string
+        const: schema:PropertyValue
+        default: schema:PropertyValue
+      schema:propertyID:
+        type: string
+        const: ecrro:ECRRO_0001301
+      schema:name:
+        type: string
+        default: registration metadata
+      schema:value:
+        type: object
+        properties:
+          '@type':
+            type: string
+            const: schema:StructuredValue
+            default: schema:StructuredValue
+          schema:additionalType:
+            type: string
+            const: ecrro:ECRRO_0000156
+          schema:contributor:
+            anyOf:
+            - $ref: '#/$defs/Person'
+            - $ref: '#/$defs/Organization'
+          schema:datePublished:
+            type: string
+        required:
+        - '@type'
+        - schema:contributor
+        - schema:datePublished
+    required:
+    - '@type'
+    - schema:propertyID
+    - schema:value
+$defs:
+  DefinedTerm:
+    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
+  Person:
+    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.yaml
+  Organization:
+    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.yaml
+x-jsonld-extra-terms:
+  ecrr: https://n2t.net/ark:/23942/g2
+x-jsonld-prefixes:
+  schema: http://schema.org/
+  ecrro: http://cor.esipfed.org/ont/earthcube/
+  dct: http://purl.org/dc/terms/

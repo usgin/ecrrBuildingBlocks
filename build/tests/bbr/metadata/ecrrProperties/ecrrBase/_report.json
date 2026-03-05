@@ -1,0 +1,97 @@
+{
+  "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrBase - ECRR Base metadata",
+  "bblockName": "ECRR Base metadata",
+  "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+  "generated": "2026-03-05T14:53:54.830780+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/metadata/ecrrProperties/ecrrBase/example_1_1.json",
+        "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrBase/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examplePyleoclimBase.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            },
+            {
+              "op": "jsonld-create",
+              "filename": "example_1_1.jsonld",
+              "isError": false,
+              "message": "Output JSON-LD example_1_1.jsonld created"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 13,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
+              "graph": "@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://n2t.net/ark:/23942/g22914> ;\n            sh:resultMessage \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:datatype xsd:string ;\n                    sh:message \"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\" ;\n                    sh:minCount 1 ;\n                    sh:path schema1:url ;\n                    sh:pattern \"^https?:\\\\/\\\\/[^\\\\s]+$\" ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal(\"^https?:\\/\\/[^\\s]+$\") ]\n  \tFocus Node: <http://n2t.net/ark:/23942/g22914>\n  \tResult Path: schema1:url\n  \tMessage: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
+              "focusNodes": {
+                "cdifd:CDIFLabeledLinkShape": {
+                  "nodes": [
+                    "<http://n2t.net/ark:/23942/g22914>/schema1:license",
+                    "<http://n2t.net/ark:/23942/g22914>",
+                    "<http://n2t.net/ark:/23942/g22914>/schema1:mainEntity"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g22914>/schema1:license,<http://n2t.net/ark:/23942/g22914>,<http://n2t.net/ark:/23942/g22914>/schema1:mainEntity\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1
+  }
+}
