@@ -1,0 +1,17 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+title: ECRR Use Case Profile
+description: >-
+  Complete ECRR metadata profile for use case resources.
+  Composes ecrrBase, ecrrCommon, and ecrrAssessment.
+  Resources must have schema:additionalType containing "EC Use Case".
+allOf:
+  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
+  - properties:
+      "schema:additionalType":
+        contains:
+          enum:
+            - "EC Use Case"
