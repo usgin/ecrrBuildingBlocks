@@ -1,0 +1,43 @@
+{
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:contentUrl": "https://example.org/data/observations.csv",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "schema:name": "Observation data CSV download"
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": "schema:Place",
+      "schema:name": [
+        "Global"
+      ],
+      "schema:geo": {
+        "@type": "schema:GeoShape",
+        "schema:box": "-90 -180 90 180"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2010-01-01/2023-12-31"
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "Temperature",
+      "schema:description": "Surface air temperature measurements"
+    }
+  ],
+  "schema:includedInDataCatalog": {
+    "@type": "schema:DataCatalog",
+    "schema:name": "EarthCube Data Catalog",
+    "schema:url": "https://www.earthcube.org/datasets"
+  }
+}

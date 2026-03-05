@@ -1,0 +1,18 @@
+@prefix schema1: <http://schema.org/> .
+
+[] schema1:distribution [ a schema1:DataDownload ;
+            schema1:contentUrl "https://example.org/data/observations.csv" ;
+            schema1:encodingFormat "text/csv" ;
+            schema1:name "Observation data CSV download" ] ;
+    schema1:includedInDataCatalog [ a schema1:DataCatalog ;
+            schema1:name "EarthCube Data Catalog" ;
+            schema1:url "https://www.earthcube.org/datasets" ] ;
+    schema1:spatialCoverage [ a schema1:Place ;
+            schema1:geo [ a schema1:GeoShape ;
+                    schema1:box "-90 -180 90 180" ] ;
+            schema1:name "Global" ] ;
+    schema1:temporalCoverage "2010-01-01/2023-12-31" ;
+    schema1:variableMeasured [ a schema1:PropertyValue ;
+            schema1:description "Surface air temperature measurements" ;
+            schema1:name "Temperature" ] .
+

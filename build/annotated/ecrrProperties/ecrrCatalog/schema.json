@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ECRR Catalog/Repository Properties",
+  "description": "Properties specific to catalog and repository resources in ECRR. For resources with mainEntity pointing to ECRRO_0000212 (Catalog/Registry) or ECRRO_0000209 (Repository).",
+  "type": "object",
+  "properties": {
+    "schema:contentType": {
+      "description": "Types of objects cataloged or stored in the repository. Array of Thing objects with name and optional identifier describing the content categories.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "@type": {
+            "type": "string",
+            "default": "schema:Thing"
+          },
+          "schema:name": {
+            "type": "string",
+            "description": "Label for the type of cataloged content."
+          },
+          "schema:identifier": {
+            "type": "string",
+            "description": "URI identifying the content type concept."
+          }
+        },
+        "required": [
+          "schema:name"
+        ]
+      }
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "ecrr": "https://n2t.net/ark:/23942/g2"
+  },
+  "x-jsonld-prefixes": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "dct": "http://purl.org/dc/terms/"
+  }
+}

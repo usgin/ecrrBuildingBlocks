@@ -1,0 +1,54 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix schema1: <http://schema.org/> .
+
+<http://n2t.net/ark:/23942/g2example-interchange> a schema1:CreativeWork,
+        schema1:Product ;
+    ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
+            schema1:name "Usage" ;
+            schema1:propertyID "ecrro:ECRRO_0000017" ;
+            schema1:value [ a schema1:DefinedTerm ;
+                    schema1:identifier "http://cor.esipfed.org/ont/earthcube/UBA_0000001" ;
+                    schema1:name "Wide usage (>50 adopters)" ] ] ;
+    ecrro:ECRRO_0000138 [ a schema1:PropertyValue ;
+            schema1:name "has maturity state" ;
+            schema1:propertyID "ecrro:ECRRO_0000138" ;
+            schema1:value [ a schema1:DefinedTerm ;
+                    schema1:identifier "http://cor.esipfed.org/ont/earthcube/MTU_0000002" ;
+                    schema1:name "In production" ] ] ;
+    ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;
+            schema1:name "expected lifetime" ;
+            schema1:propertyID "ecrro:ECRRO_0000219" ;
+            schema1:value [ a schema1:DefinedTerm ;
+                    schema1:identifier "http://cor.esipfed.org/ont/earthcube/ELT_0000001" ;
+                    schema1:name "Long-term" ] ] ;
+    ecrro:ECRRO_0001301 [ a schema1:PropertyValue ;
+            schema1:name "registration metadata" ;
+            schema1:propertyID "ecrro:ECRRO_0001301" ;
+            schema1:value [ a schema1:StructuredValue ;
+                    schema1:additionalType "ecrro:ECRRO_0000156" ;
+                    schema1:contributor [ a schema1:Person ;
+                            schema1:name "Example Registrant" ] ;
+                    schema1:datePublished "2024-07-20" ] ] ;
+    schema1:about [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
+            schema1:name "Oceanography" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000030" ;
+            schema1:name "Atmospheric Science" ] ;
+    schema1:additionalType "EC Interchange Format" ;
+    schema1:creator [ a schema1:Organization ;
+            schema1:name "Unidata/UCAR" ] ;
+    schema1:description "NetCDF is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. It is widely used in atmospheric and ocean sciences for gridded data interchange." ;
+    schema1:license [ a schema1:CreativeWork ;
+            schema1:name "Public" ] ;
+    schema1:mainEntity [ a schema1:CreativeWork ;
+            schema1:name "Interchange Format" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
+    schema1:name "NetCDF (Network Common Data Form)" ;
+    schema1:subjectOf [ a schema1:CreativeWork ;
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat> ;
+            schema1:additionalType "dcat:CatalogRecord" ;
+            schema1:sdDatePublished "2026-03-03" ] .
+

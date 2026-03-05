@@ -1,0 +1,74 @@
+
+
+{
+  "itemIdentifier": "ogc.ecrrProperties.ecrrCatalog",
+  "$schema": "metaschema.yaml",
+  "name": "ECRR Catalog/Repository properties",
+  "abstract": "Schema defining properties specific to catalog and repository resources in the EarthCube Resource Registry, including content type classification. Defines properties: schema:contentType.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-02-28T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ecrr-building-block-register",
+  "version": "0.1",
+  "dateOfLastChange": "2026-03-05",
+  "sources": [
+    {
+      "title": "schema.org DataCatalog",
+      "link": "https://schema.org/DataCatalog"
+    },
+    {
+      "title": "EarthCube Resource Registry",
+      "link": "https://www.earthcube.org/resource-registry"
+    }
+  ],
+  "maturity": "draft",
+  "scope": "unstable",
+  "tags": [
+    "ecrr",
+    "templates"
+  ],
+  "shaclShapes": {},
+  "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/context.jsonld",
+  "schema": {
+    "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/schema.yaml",
+    "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/schema.json"
+  },
+  "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/schema.yaml",
+  "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/context.jsonld",
+  "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/",
+  "rdfData": [],
+  "validationPassed": true,
+  "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrCatalog/",
+  "description": "## ECRR Catalog/Repository Properties\n\nDefines properties specific to catalog and repository resources in the EarthCube Resource Registry. For resources with `mainEntity` pointing to `ECRRO_0000212` (Catalog/Registry) or `ECRRO_0000209` (Repository).\n\n### Properties\n\n- **schema:contentType** \u2014 types of objects cataloged or stored (array of Thing objects with name and identifier)\n\n### Example\n\n```json\n{\n  \"schema:contentType\": [\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Rock magnetic data\",\n      \"schema:identifier\": \"https://example.org/concept/rock-magnetic\"\n    },\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Paleomagnetic data\"\n    }\n  ]\n}\n```\n",
+  "examples": [
+    {
+      "title": "MagIC Data Repository Catalog Properties",
+      "content": "ECRR catalog properties for the MagIC (Magnetics Information Consortium)\ndata repository.",
+      "prefixes": {
+        "schema": "http://schema.org/",
+        "ecrro": "http://cor.esipfed.org/ont/earthcube/"
+      },
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "exampleMagICCatalog.json",
+          "code": "{\n  \"schema:contentType\": [\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Rock magnetic data\"\n    },\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Paleomagnetic data\"\n    }\n  ]\n}\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/ecrrProperties/ecrrCatalog/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrCatalog/context.jsonld\"\n  ],\n  \"schema:contentType\": [\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Rock magnetic data\"\n    },\n    {\n      \"@type\": \"schema:Thing\",\n      \"schema:name\": \"Paleomagnetic data\"\n    }\n  ]\n}",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/ecrrProperties/ecrrCatalog/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:contentType [ a schema1:Thing ;\n            schema1:name \"Paleomagnetic data\" ],\n        [ a schema1:Thing ;\n            schema1:name \"Rock magnetic data\" ] .\n\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/ecrrProperties/ecrrCatalog/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: ECRR Catalog/Repository Properties\ndescription: Properties specific to catalog and repository resources in ECRR. For\n  resources with mainEntity pointing to ECRRO_0000212 (Catalog/Registry) or ECRRO_0000209\n  (Repository).\ntype: object\nproperties:\n  schema:contentType:\n    description: Types of objects cataloged or stored in the repository. Array of\n      Thing objects with name and optional identifier describing the content categories.\n    type: array\n    items:\n      type: object\n      properties:\n        '@type':\n          type: string\n          default: schema:Thing\n        schema:name:\n          type: string\n          description: Label for the type of cataloged content.\n        schema:identifier:\n          type: string\n          description: URI identifying the content type concept.\n      required:\n      - schema:name\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
+  "gitPath": "_sources/ecrrProperties/ecrrCatalog"
+}

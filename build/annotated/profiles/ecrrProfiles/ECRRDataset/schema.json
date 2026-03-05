@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "ECRR Dataset Profile",
+  "description": "Complete ECRR metadata profile for dataset resources. Extends CDIFcomplete with ecrrBase (mainEntity, @type contains CreativeWork, requires description and license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties take precedence for overlapping concerns (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf usage (links to other metadata formats) maps to schema:relatedLink with linkRelationship \"OtherMetadataFormat\" per CDIF convention. Resources must have schema:additionalType containing \"EC Dataset\".",
+  "allOf": [
+    {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/schema.yaml"
+    },
+    {
+      "$ref": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrBase/schema.json"
+    },
+    {
+      "$ref": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrAssessment/schema.json"
+    },
+    {
+      "properties": {
+        "schema:additionalType": {
+          "contains": {
+            "enum": [
+              "EC Dataset"
+            ]
+          }
+        },
+        "schema:alternateName": {
+          "description": "Alternative names by which the resource is known.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "schema:editor": {
+          "description": "Editors of the resource.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "$ref": "#/$defs/Person"
+              },
+              {
+                "$ref": "#/$defs/Organization"
+              }
+            ]
+          }
+        },
+        "schema:about": {
+          "description": "Science domains that the resource addresses. Array of DefinedTerm objects referencing the ECRR ADO (Academic Discipline Ontology) vocabulary.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DefinedTerm"
+          }
+        },
+        "schema:audience": {
+          "description": "Target user communities for the resource. Array of Audience objects with audienceType labels and identifiers from the AUT vocabulary.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "schema:Audience",
+                "default": "schema:Audience"
+              },
+              "schema:audienceType": {
+                "type": "string",
+                "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary."
+              },
+              "schema:identifier": {
+                "type": "string",
+                "description": "URI from the ECRR AUT_ vocabulary."
+              }
+            },
+            "required": [
+              "@type",
+              "schema:audienceType"
+            ]
+          }
+        },
+        "dct:bibliographicCitation": {
+          "description": "Preferred bibliographic citation for the resource, encoded as a PropertyValue with propertyID of dct:bibliographicCitation.",
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "schema:PropertyValue",
+              "default": "schema:PropertyValue"
+            },
+            "schema:propertyID": {
+              "type": "string",
+              "const": "dct:bibliographicCitation"
+            },
+            "schema:name": {
+              "type": "string",
+              "default": "Bibliographic citation"
+            },
+            "schema:value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type",
+            "schema:propertyID",
+            "schema:value"
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "DefinedTerm": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml"
+    },
+    "Person": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml"
+    },
+    "Organization": {
+      "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml"
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "ecrr": "https://n2t.net/ark:/23942/g2"
+  },
+  "x-jsonld-prefixes": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  }
+}

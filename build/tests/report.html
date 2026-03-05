@@ -1,0 +1,1505 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Building Blocks validation report</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            .entry-message {
+                white-space: pre-wrap;
+                font-size: 80%;
+                line-height: 1.1;
+            }
+            *[data-bs-toggle] .caret {
+                display: inline-block;
+                transform: rotate(90deg);
+                transition: transform 0.25s;
+            }
+            *[data-bs-toggle].collapsed .caret {
+                transform: rotate(0deg);
+            }
+            .highlighted {
+                animation: highlight-border 3500ms ease-out;
+            }
+            .highlighted h2 button {
+                animation: highlight 3500ms ease-out;
+            }
+            @keyframes highlight {
+                0% {
+                    background: #ffff90;
+                }
+                100% {
+                    background: var(--bs-accordion-active-bg);
+                }
+            }
+            @keyframes highlight-border {
+                0% {
+                    border-color: red;
+                    border-width: 2px;
+                }
+                100% {
+                    border-color: var(--bs-accordion-border-color);
+                    border-width: var(--bs-accordion-border-width);
+                }
+            }
+            .anchor {
+                color: black;
+                opacity: 0;
+                text-decoration: none;
+                margin-left: 0.5em;
+                margin-right: 0.5em;
+            }
+            .anchor-container:hover .anchor {
+                opacity: 60%;
+            }
+            .anchor-container:hover .anchor:hover {
+                opacity: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Building blocks validation report</h1>
+            <small class="datetime">Generated at 2026-03-05T05:43:43.514229+00:00</small>
+                <p class="summary fw-semibold text-danger">
+                    Number of passing building blocks: 10 / 21 (47.62%)
+                </p>
+            <div class="text-end small" id="expand-collapse">
+                <a href="#" class="expand-all">Expand all</a>
+                <a href="#" class="collapse-all">Collapse all</a>
+            </div>
+                <div class="accordion mt-2" id="bblock-reports">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrAssessment" id="bblock-ogc.ecrrProperties.ecrrAssessment">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrAssessment">
+                                    <div class="flex-fill">
+                                        ECRR Resource Assessment
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrAssessment</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrAssessment">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrAssessment">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrAssessment-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-1"
+                                                            aria-expanded="false" aria-controls="uid-1"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrAssessment/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrAssessment-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-1">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using examplePyleoclimAssessment.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrBase" id="bblock-ogc.ecrrProperties.ecrrBase">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrBase">
+                                    <div class="flex-fill">
+                                        ECRR Base metadata
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrBase</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrBase">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrBase">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrBase-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-2"
+                                                            aria-expanded="false" aria-controls="uid-2"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrBase/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrBase-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-2">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using examplePyleoclimBase.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrCatalog" id="bblock-ogc.ecrrProperties.ecrrCatalog">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrCatalog">
+                                    <div class="flex-fill">
+                                        ECRR Catalog/Repository properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrCatalog</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrCatalog">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrCatalog">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrCatalog-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-3"
+                                                            aria-expanded="false" aria-controls="uid-3"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrCatalog/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrCatalog-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-3">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleMagICCatalog.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrCollection" id="bblock-ogc.ecrrProperties.ecrrCollection">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrCollection">
+                                    <div class="flex-fill">
+                                        ECRR Collection/Bundled Object properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrCollection</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrCollection">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrCollection">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrCollection-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-4"
+                                                            aria-expanded="false" aria-controls="uid-4"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrCollection/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrCollection-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-4">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRCollection.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrCommon" id="bblock-ogc.ecrrProperties.ecrrCommon">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrCommon">
+                                    <div class="flex-fill">
+                                        ECRR Common optional metadata
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrCommon</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrCommon">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrCommon">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrCommon-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-5"
+                                                            aria-expanded="false" aria-controls="uid-5"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrCommon/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrCommon-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-5">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using examplePyleoclimCommon.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrDataset" id="bblock-ogc.ecrrProperties.ecrrDataset">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrDataset">
+                                    <div class="flex-fill">
+                                        ECRR Dataset properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrDataset</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrDataset">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrDataset">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrDataset-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
+                                                            aria-expanded="false" aria-controls="uid-6"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrDataset/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrDataset-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRDataset.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrSemanticResource" id="bblock-ogc.ecrrProperties.ecrrSemanticResource">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrSemanticResource">
+                                    <div class="flex-fill">
+                                        ECRR Semantic Resource properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrSemanticResource</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrSemanticResource">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrSemanticResource">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrSemanticResource-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
+                                                            aria-expanded="false" aria-controls="uid-7"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrSemanticResource/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrSemanticResource-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleLiPDSemanticResource.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrService" id="bblock-ogc.ecrrProperties.ecrrService">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrService">
+                                    <div class="flex-fill">
+                                        ECRR Service Instance properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrService</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrService">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrService">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrService-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
+                                                            aria-expanded="false" aria-controls="uid-8"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrService/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrService-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleGMRTService.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrSoftware" id="bblock-ogc.ecrrProperties.ecrrSoftware">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrSoftware">
+                                    <div class="flex-fill">
+                                        ECRR Software properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrSoftware</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrSoftware">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrSoftware">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrSoftware-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
+                                                            aria-expanded="false" aria-controls="uid-9"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrSoftware/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrSoftware-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using examplePyleoclimSoftware.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.ecrrProperties.ecrrSpecification" id="bblock-ogc.ecrrProperties.ecrrSpecification">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.ecrrProperties\.ecrrSpecification">
+                                    <div class="flex-fill">
+                                        ECRR Specification properties
+                                        <small class="ms-2 bblock-id">ogc.ecrrProperties.ecrrSpecification</small>
+                                        <a class="anchor" href="#bblock-ogc.ecrrProperties.ecrrSpecification">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ecrrProperties.ecrrSpecification">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.ecrrProperties.ecrrSpecification-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
+                                                            aria-expanded="false" aria-controls="uid-10"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="ecrrProperties/ecrrSpecification/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.ecrrProperties.ecrrSpecification-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleINSPIRESpecification.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRDataset" id="bblock-ogc.profiles.ecrrProfiles.ECRRDataset">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRDataset">
+                                    <div class="flex-fill">
+                                        ECRR Dataset profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRDataset</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRDataset">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRDataset">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRDataset-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-11"
+                                                            aria-expanded="false" aria-controls="uid-11"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRDataset/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRDataset-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-11">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRDataset.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;schema:identifier&#x27; is a required property
+
+Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0]:
+    {&#x27;required&#x27;: [&#x27;@id&#x27;,
+                  &#x27;@type&#x27;,
+                  &#x27;@context&#x27;,
+                  &#x27;schema:name&#x27;,
+                  &#x27;schema:identifier&#x27;,
+                  &#x27;schema:dateModified&#x27;,
+                  &#x27;schema:subjectOf&#x27;]}
+
+On instance:
+    {&#x27;@context&#x27;: [&#x27;https://schema.org/&#x27;,
+                  {&#x27;dcat&#x27;: &#x27;http://www.w3.org/ns/dcat#&#x27;,
+                   &#x27;dct&#x27;: &#x27;http://purl.org/dc/terms/&#x27;,
+                   &#x27;dcterms&#x27;: &#x27;http://purl.org/dc/terms/&#x27;,
+                   &#x27;ecrr&#x27;: &#x27;https://n2t.net/ark:/23942/g2&#x27;,
+                   &#x27;ecrro&#x27;: &#x27;http://cor.esipfed.org/ont/earthcube/&#x27;}],
+     &#x27;@id&#x27;: &#x27;http://n2t.net/ark:/23942/g2example-dataset&#x27;,
+     &#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;, &#x27;schema:Dataset&#x27;],
+     &#x27;ecrro:ECRRO_0000017&#x27;: {&#x27;@type&#x27;: &#x27;schema:PropertyValue&#x27;,
+                             &#x27;schema:name&#x27;: &#x27;Usage&#x27;,
+                             &#x27;schema:propertyID&#x27;: &#x27;ecrro:ECRRO_0000017&#x27;,
+                             &#x27;schema:value&#x27;: {&#x27;@type&#x27;: &#x27;schema:DefinedTerm&#x27;,
+                                              &#x27;schema:identifier&#x27;: &#x27;http://cor.esipfed.org/ont/earthcube/UBA_0000001&#x27;,
+                                              &#x27;schema:name&#x27;: &#x27;Wide usage &#x27;
+                                                             &#x27;(&gt;50 &#x27;
+                                                             &#x27;adopters)&#x27;}},
+     &#x27;ecrro:ECRRO_0000138&#x27;: {&#x27;@type&#x27;: &#x27;schema:PropertyValue&#x27;,
+                             &#x27;schema:name&#x27;: &#x27;has maturity state&#x27;,
+                             &#x27;schema:propertyID&#x27;: &#x27;ecrro:ECRRO_0000138&#x27;,
+                             &#x27;schema:value&#x27;: {&#x27;@type&#x27;: &#x27;schema:DefinedTerm&#x27;,
+                                              &#x27;schema:identifier&#x27;: &#x27;http://cor.esipfed.org/ont/earthcube/MTU_0000002&#x27;,
+                                              &#x27;schema:name&#x27;: &#x27;In &#x27;
+                                                             &#x27;production&#x27;}},
+     &#x27;ecrro:ECRRO_0000219&#x27;: {&#x27;@type&#x27;: &#x27;schema:PropertyValue&#x27;,
+                             &#x27;schema:name&#x27;: &#x27;expected lifetime&#x27;,
+                             &#x27;schema:propertyID&#x27;: &#x27;ecrro:ECRRO_0000219&#x27;,
+                             &#x27;schema:value&#x27;: {&#x27;@type&#x27;: &#x27;schema:DefinedTerm&#x27;,
+                                              &#x27;schema:identifier&#x27;: &#x27;http://cor.esipfed.org/ont/earthcube/ELT_0000001&#x27;,
+                                              &#x27;schema:name&#x27;: &#x27;Long-term&#x27;}},
+     &#x27;ecrro:ECRRO_0001301&#x27;: {&#x27;@type&#x27;: &#x27;schema:PropertyValue&#x27;,
+                             &#x27;schema:name&#x27;: &#x27;registration metadata&#x27;,
+                             &#x27;schema:propertyID&#x27;: &#x27;ecrro:ECRRO_0001301&#x27;,
+                             &#x27;schema:value&#x27;: {&#x27;@type&#x27;: &#x27;schema:StructuredValue&#x27;,
+                                              &#x27;schema:additionalType&#x27;: &#x27;ecrro:ECRRO_0000156&#x27;,
+                                              &#x27;schema:contributor&#x27;: {&#x27;@type&#x27;: &#x27;schema:Person&#x27;,
+                                                                     &#x27;schema:name&#x27;: &#x27;Example &#x27;
+                                                                                    &#x27;Registrant&#x27;},
+                                              &#x27;schema:datePublished&#x27;: &#x27;2024-01-15&#x27;}},
+     &#x27;schema:about&#x27;: [{&#x27;@type&#x27;: &#x27;schema:DefinedTerm&#x27;,
+                       &#x27;schema:identifier&#x27;: &#x27;http://cor.esipfed.org/ont/earthcube/ADO_0000035&#x27;,
+                       &#x27;schema:name&#x27;: &#x27;Climatology&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;EC Dataset&#x27;],
+     &#x27;schema:creator&#x27;: [{&#x27;@type&#x27;: &#x27;schema:Organization&#x27;,
+                         &#x27;schema:name&#x27;: &#x27;Example Climate Institute&#x27;}],
+     &#x27;schema:description&#x27;: &#x27;Monthly global surface temperature anomaly &#x27;
+                           &#x27;data relative to the 1951-1980 base period, &#x27;
+                           &#x27;derived from meteorological station and ocean &#x27;
+                           &#x27;observations.&#x27;,
+     &#x27;schema:distribution&#x27;: [{&#x27;@type&#x27;: [&#x27;schema:DataDownload&#x27;],
+                              &#x27;schema:contentUrl&#x27;: &#x27;https://example.org/data/temperature-anomalies.csv&#x27;,
+                              &#x27;schema:encodingFormat&#x27;: [&#x27;text/csv&#x27;],
+                              &#x27;schema:name&#x27;: &#x27;Temperature anomaly CSV &#x27;
+                                             &#x27;download&#x27;}],
+     &#x27;schema:includedInDataCatalog&#x27;: {&#x27;@type&#x27;: &#x27;schema:DataCatalog&#x27;,
+                                      &#x27;schema:name&#x27;: &#x27;EarthCube Data &#x27;
+                                                     &#x27;Catalog&#x27;,
+                                      &#x27;schema:url&#x27;: &#x27;https://www.earthcube.org/datasets&#x27;},
+     &#x27;schema:license&#x27;: [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;,
+                         &#x27;schema:name&#x27;: &#x27;Creative Commons Attribution 4.0&#x27;,
+                         &#x27;schema:url&#x27;: &#x27;https://creativecommons.org/licenses/by/4.0/&#x27;}],
+     &#x27;schema:mainEntity&#x27;: {&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;,
+                           &#x27;schema:name&#x27;: &#x27;Dataset&#x27;,
+                           &#x27;schema:url&#x27;: &#x27;http://cor.esipfed.org/ont/earthcube/ECRRO_0000214&#x27;},
+     &#x27;schema:name&#x27;: &#x27;Global Surface Temperature Anomalies&#x27;,
+     &#x27;schema:spatialCoverage&#x27;: [{&#x27;@type&#x27;: &#x27;schema:Place&#x27;,
+                                 &#x27;schema:geo&#x27;: {&#x27;@type&#x27;: &#x27;schema:GeoShape&#x27;,
+                                                &#x27;schema:box&#x27;: &#x27;-90 -180 90 &#x27;
+                                                              &#x27;180&#x27;},
+                                 &#x27;schema:name&#x27;: [&#x27;Global&#x27;]}],
+     &#x27;schema:subjectOf&#x27;: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+                          &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                                                 {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset&#x27;}],
+                          &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+                          &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;},
+     &#x27;schema:temporalCoverage&#x27;: [&#x27;1880-01-01/2023-12-31&#x27;],
+     &#x27;schema:variableMeasured&#x27;: [{&#x27;@type&#x27;: [&#x27;schema:PropertyValue&#x27;],
+                                  &#x27;schema:description&#x27;: &#x27;Deviation of &#x27;
+                                                        &#x27;monthly surface &#x27;
+                                                        &#x27;temperature from &#x27;
+                                                        &#x27;1951-1980 average&#x27;,
+                                  &#x27;schema:name&#x27;: &#x27;Surface Temperature &#x27;
+                                                 &#x27;Anomaly&#x27;,
+                                  &#x27;schema:unitText&#x27;: &#x27;degrees Celsius&#x27;}]}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRCatalog" id="bblock-ogc.profiles.ecrrProfiles.ECRRCatalog">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRCatalog">
+                                    <div class="flex-fill">
+                                        ECRR Catalog/Registry profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRCatalog</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRCatalog">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRCatalog">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRCatalog-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-12"
+                                                            aria-expanded="false" aria-controls="uid-12"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRCatalog/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRCatalog-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-12">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRCatalog.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRCollection" id="bblock-ogc.profiles.ecrrProfiles.ECRRCollection">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRCollection">
+                                    <div class="flex-fill">
+                                        ECRR Collection profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRCollection</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRCollection">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRCollection">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRCollection-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-13"
+                                                            aria-expanded="false" aria-controls="uid-13"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRCollection/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRCollection-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-13">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRCollection.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRInterchangeFormat" id="bblock-ogc.profiles.ecrrProfiles.ECRRInterchangeFormat">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRInterchangeFormat">
+                                    <div class="flex-fill">
+                                        ECRR Interchange Format profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRInterchangeFormat</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRInterchangeFormat">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRInterchangeFormat">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRInterchangeFormat-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-14"
+                                                            aria-expanded="false" aria-controls="uid-14"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRInterchangeFormat/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRInterchangeFormat-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-14">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRInterchangeFormat.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRInterface" id="bblock-ogc.profiles.ecrrProfiles.ECRRInterface">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRInterface">
+                                    <div class="flex-fill">
+                                        ECRR Interface/API profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRInterface</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRInterface">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRInterface">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRInterface-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-15"
+                                                            aria-expanded="false" aria-controls="uid-15"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRInterface/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRInterface-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-15">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRInterface.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRPlatform" id="bblock-ogc.profiles.ecrrProfiles.ECRRPlatform">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRPlatform">
+                                    <div class="flex-fill">
+                                        ECRR Platform profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRPlatform</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRPlatform">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRPlatform">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRPlatform-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-16"
+                                                            aria-expanded="false" aria-controls="uid-16"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRPlatform/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRPlatform-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-16">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRPlatform.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRUseCase" id="bblock-ogc.profiles.ecrrProfiles.ECRRUseCase">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRUseCase">
+                                    <div class="flex-fill">
+                                        ECRR Use Case profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRUseCase</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRUseCase">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRUseCase">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRUseCase-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-17"
+                                                            aria-expanded="false" aria-controls="uid-17"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRUseCase/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRUseCase-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-17">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRUseCase.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRSemanticResource" id="bblock-ogc.profiles.ecrrProfiles.ECRRSemanticResource">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRSemanticResource">
+                                    <div class="flex-fill">
+                                        ECRR Semantic Resource profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRSemanticResource</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRSemanticResource">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRSemanticResource">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRSemanticResource-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-18"
+                                                            aria-expanded="false" aria-controls="uid-18"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRSemanticResource/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRSemanticResource-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-18">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleECRRSemanticResource.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+     &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                            {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource&#x27;}],
+     &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+     &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRService" id="bblock-ogc.profiles.ecrrProfiles.ECRRService">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRService">
+                                    <div class="flex-fill">
+                                        ECRR Service Instance profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRService</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRService">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRService">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRService-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-19"
+                                                            aria-expanded="false" aria-controls="uid-19"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRService/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRService-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-19">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleGMRT.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;, &#x27;schema:name&#x27;: &#x27;GMRT GridServer info page&#x27;, &#x27;schema:url&#x27;: &#x27;https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid&#x27;}, {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}] is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;,
+      &#x27;schema:name&#x27;: &#x27;GMRT GridServer info page&#x27;,
+      &#x27;schema:url&#x27;: &#x27;https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid&#x27;},
+     {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+      &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                             {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService&#x27;}],
+      &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+      &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}]</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRSoftware" id="bblock-ogc.profiles.ecrrProfiles.ECRRSoftware">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRSoftware">
+                                    <div class="flex-fill">
+                                        ECRR Software profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRSoftware</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRSoftware">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRSoftware">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRSoftware-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-20"
+                                                            aria-expanded="false" aria-controls="uid-20"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRSoftware/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRSoftware-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-20">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using examplePyleoclim.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;, &#x27;schema:name&#x27;: &#x27;Pyleoclim GitHub page&#x27;, &#x27;schema:url&#x27;: &#x27;https://github.com/LinkedEarth/Pyleoclim_util&#x27;}, {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}] is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;,
+      &#x27;schema:name&#x27;: &#x27;Pyleoclim GitHub page&#x27;,
+      &#x27;schema:url&#x27;: &#x27;https://github.com/LinkedEarth/Pyleoclim_util&#x27;},
+     {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+      &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                             {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware&#x27;}],
+      &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+      &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}]</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.profiles.ecrrProfiles.ECRRSpecification" id="bblock-ogc.profiles.ecrrProfiles.ECRRSpecification">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.profiles\.ecrrProfiles\.ECRRSpecification">
+                                    <div class="flex-fill">
+                                        ECRR Specification profile
+                                        <small class="ms-2 bblock-id">ogc.profiles.ecrrProfiles.ECRRSpecification</small>
+                                        <a class="anchor" href="#bblock-ogc.profiles.ecrrProfiles.ECRRSpecification">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.profiles.ecrrProfiles.ECRRSpecification">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.profiles.ecrrProfiles.ECRRSpecification-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-21"
+                                                            aria-expanded="false" aria-controls="uid-21"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="profiles/ecrrProfiles/ECRRSpecification/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.profiles.ecrrProfiles.ECRRSpecification-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-21">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exampleINSPIRE.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;, &#x27;schema:name&#x27;: &#x27;INSPIRE specification document&#x27;, &#x27;schema:url&#x27;: &#x27;https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3&#x27;}, {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;], &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;], &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;}, {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification&#x27;}], &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}] is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;schema:subjectOf&#x27;]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;},
+               {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/LabeledLink&#x27;}, &#x27;type&#x27;: &#x27;array&#x27;}],
+     &#x27;description&#x27;: &#x27;Links to formal metadata records or web pages about &#x27;
+                    &#x27;this resource. Array of labeled links (CreativeWork &#x27;
+                    &#x27;objects with name and url).&#x27;}
+
+On instance[&#x27;schema:subjectOf&#x27;]:
+    [{&#x27;@type&#x27;: &#x27;schema:CreativeWork&#x27;,
+      &#x27;schema:name&#x27;: &#x27;INSPIRE specification document&#x27;,
+      &#x27;schema:url&#x27;: &#x27;https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3&#x27;},
+     {&#x27;@type&#x27;: [&#x27;schema:CreativeWork&#x27;],
+      &#x27;dcterms:conformsTo&#x27;: [{&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory&#x27;},
+                             {&#x27;@id&#x27;: &#x27;https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification&#x27;}],
+      &#x27;schema:additionalType&#x27;: [&#x27;dcat:CatalogRecord&#x27;],
+      &#x27;schema:sdDatePublished&#x27;: &#x27;2026-03-03&#x27;}]</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const accordionEntries = [...document.querySelectorAll('#bblock-reports .accordion-collapse')];
+                document.querySelector('#expand-collapse').addEventListener('click', ev => {
+                    ev.preventDefault();
+                    if (ev.target.matches('.expand-all')) {
+                        accordionEntries.forEach(e => e.classList.add('show'));
+                    } else if (ev.target.matches('.collapse-all')) {
+                        accordionEntries.forEach(e => e.classList.remove('show'));
+                    }
+                });
+                if (/^#(bblock|item)-/.test(location.hash)) {
+                    const highlight = document.querySelector(location.hash.replaceAll('.', '\\.'));
+                    if (highlight) {
+                        highlight.closest('.accordion-collapse').classList.add('show');
+                        highlight.classList.add('highlighted');
+                    }
+                }
+                document.addEventListener('click', ev => {
+                    if (!ev.target.classList.contains('anchor') || !ev.target.href) {
+                      return;
+                    }
+                    ev.stopPropagation();
+                    navigator?.clipboard?.writeText(ev.target.href);
+                });
+            });
+        </script>
+    </body>
+</html>

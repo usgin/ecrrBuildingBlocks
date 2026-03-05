@@ -1,0 +1,70 @@
+
+
+{
+  "itemIdentifier": "ogc.ecrrProperties.ecrrSemanticResource",
+  "$schema": "metaschema.yaml",
+  "name": "ECRR Semantic Resource properties",
+  "abstract": "Schema defining properties specific to semantic resource types in the EarthCube Resource Registry, including subtype classification for ontologies, thesauri, controlled vocabularies, and other semantic resources. Defines properties: schema:programmingLanguage.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-02-28T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ecrr-building-block-register",
+  "version": "0.1",
+  "dateOfLastChange": "2026-03-05",
+  "sources": [
+    {
+      "title": "EarthCube Resource Registry",
+      "link": "https://www.earthcube.org/resource-registry"
+    }
+  ],
+  "maturity": "draft",
+  "scope": "unstable",
+  "tags": [
+    "ecrr",
+    "templates"
+  ],
+  "shaclShapes": {},
+  "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/context.jsonld",
+  "schema": {
+    "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/schema.yaml",
+    "application/json": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/schema.json"
+  },
+  "sourceSchema": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/schema.yaml",
+  "sourceLdContext": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/context.jsonld",
+  "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/",
+  "rdfData": [],
+  "validationPassed": true,
+  "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/ecrrProperties/ecrrSemanticResource/",
+  "description": "## ECRR Semantic Resource Properties\n\nDefines properties specific to semantic resources in the EarthCube Resource Registry. For resources with `mainEntity` pointing to `ECRRO_0000210` (Semantic Resource).\n\n### Properties\n\n- **schema:programmingLanguage** \u2014 representation language (OWL, SKOS, RDF, etc.) as string or ComputerLanguage object\n\nOther relevant properties from `ecrrCommon`:\n- **schema:encodingFormat** \u2014 serialization formats (RDF/XML, Turtle, N-Triples, JSON-LD)\n- **schema:isBasedOn** \u2014 other semantic resources this one builds on\n\n### Semantic Resource Subtypes (srt_ vocabulary)\n\nSubtypes are conveyed via additional entries in the `mainEntity` array:\n\n| Subtype | srt_ URI |\n|---------|----------|\n| Glossary | `srt_0000001` |\n| Thesaurus | `srt_0000002` |\n| Ontology | `srt_0000003` |\n| Controlled Vocabulary | `srt_0000004` |\n| Taxonomy | `srt_0000005` |\n| Conceptual Model | `srt_0000006` |\n| RDF Vocabulary | `srt_0000007` |\n| SKOS Vocabulary | `srt_0000008` |\n\n### Example mainEntity with Semantic Resource Subtype\n\n```json\n{\n  \"schema:mainEntity\": [\n    {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:url\": \"http://cor.esipfed.org/ont/earthcube/ECRRO_0000210\",\n      \"schema:name\": \"Semantic Resource\"\n    },\n    {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:url\": \"http://cor.esipfed.org/ont/earthcube/srt_0000003\",\n      \"schema:name\": \"Ontology\"\n    }\n  ]\n}\n```\n",
+  "examples": [
+    {
+      "title": "LiPD Ontology Semantic Resource Properties",
+      "content": "ECRR semantic resource properties for the LiPD (Linked Paleo Data) ontology.",
+      "prefixes": {
+        "schema": "http://schema.org/",
+        "ecrro": "http://cor.esipfed.org/ont/earthcube/"
+      },
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "exampleLiPDSemanticResource.json",
+          "code": "{\n  \"schema:programmingLanguage\": {\n    \"@type\": \"schema:ComputerLanguage\",\n    \"schema:name\": \"OWL\",\n    \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/MOLA_0000001\"\n  }\n}\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/ecrrProperties/ecrrSemanticResource/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/ecrrProperties/ecrrSemanticResource/context.jsonld\"\n  ],\n  \"schema:programmingLanguage\": {\n    \"@type\": \"schema:ComputerLanguage\",\n    \"schema:name\": \"OWL\",\n    \"schema:identifier\": \"http://cor.esipfed.org/ont/earthcube/MOLA_0000001\"\n  }\n}",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/ecrrProperties/ecrrSemanticResource/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:programmingLanguage [ a schema1:ComputerLanguage ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/MOLA_0000001\" ;\n            schema1:name \"OWL\" ] .\n\n",
+          "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/ecrrProperties/ecrrSemanticResource/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: ECRR Semantic Resource Properties\ndescription: Properties specific to semantic resource types in ECRR. For resources\n  with mainEntity pointing to ECRRO_0000210 (Semantic Resource). The semantic resource\n  subtype is conveyed via additional entries in the mainEntity array using srt_ vocabulary\n  URIs. Additional properties like programmingLanguage and encodingFormat from ecrrCommon\n  are particularly relevant for semantic resources.\ntype: object\nproperties:\n  schema:programmingLanguage:\n    description: The representation language of the semantic resource (e.g. OWL, SKOS,\n      RDF). Can be a string or a ComputerLanguage object with name and identifier\n      referencing the MOLA vocabulary.\n    anyOf:\n    - type: string\n    - type: object\n      properties:\n        '@type':\n          type: string\n          const: schema:ComputerLanguage\n          default: schema:ComputerLanguage\n        schema:name:\n          type: string\n          description: Name of the representation language (e.g. OWL, SKOS, RDF/XML)\n        schema:identifier:\n          type: string\n          description: URI from the MOLA vocabulary\n      required:\n      - schema:name\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
+  "gitPath": "_sources/ecrrProperties/ecrrSemanticResource"
+}

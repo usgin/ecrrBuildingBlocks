@@ -1,0 +1,32 @@
+Validation report for ogc.profiles.ecrrProfiles.ECRRService - ECRR Service Instance profile
+Generated 2026-03-05T05:43:42.945114+00:00
+=== Files ===
+Using exampleGMRT.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: [{'@type': 'schema:CreativeWork', 'schema:name': 'GMRT GridServer info page', 'schema:url': 'https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid'}, {'@type': ['schema:CreativeWork'], 'schema:additionalType': ['dcat:CatalogRecord'], 'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'}, {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService'}], 'schema:sdDatePublished': '2026-03-03'}] is not valid under any of the given schemas
+
+Failed validating 'anyOf' in schema['allOf'][1]['properties']['schema:subjectOf']:
+    {'anyOf': [{'$ref': '#/$defs/LabeledLink'},
+               {'items': {'$ref': '#/$defs/LabeledLink'}, 'type': 'array'}],
+     'description': 'Links to formal metadata records or web pages about '
+                    'this resource. Array of labeled links (CreativeWork '
+                    'objects with name and url).'}
+
+On instance['schema:subjectOf']:
+    [{'@type': 'schema:CreativeWork',
+      'schema:name': 'GMRT GridServer info page',
+      'schema:url': 'https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid'},
+     {'@type': ['schema:CreativeWork'],
+      'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},
+                             {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService'}],
+      'schema:additionalType': ['dcat:CatalogRecord'],
+      'schema:sdDatePublished': '2026-03-03'}]
+=== End JSON Schema ===
+

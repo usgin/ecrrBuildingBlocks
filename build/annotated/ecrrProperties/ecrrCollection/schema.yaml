@@ -1,0 +1,47 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: ECRR Collection/Bundled Object Properties
+description: Properties specific to bundled object (collection) resources in ECRR.
+  For resources typed ["schema:CreativeWork", "schema:Product"]. A bundled object
+  groups multiple related resources together.
+type: object
+properties:
+  schema:hasPart:
+    description: Component resources that are part of this collection/bundle. Array
+      of objects identifying each component with its type, name, URL, and optional
+      encoding format.
+    type: array
+    items:
+      type: object
+      properties:
+        '@type':
+          description: Schema.org type of the component resource (e.g. schema:SoftwareApplication,
+            schema:Dataset, schema:CreativeWork).
+          anyOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+        schema:name:
+          type: string
+          description: Name of the component resource.
+        schema:url:
+          type: string
+          format: uri
+          description: URL where the component can be accessed.
+        schema:description:
+          type: string
+          description: Brief description of the component.
+        schema:encodingFormat:
+          description: Format(s) of the component resource.
+          type: array
+          items:
+            type: string
+      required:
+      - schema:name
+    minItems: 1
+x-jsonld-extra-terms:
+  ecrr: https://n2t.net/ark:/23942/g2
+x-jsonld-prefixes:
+  schema: http://schema.org/
+  ecrro: http://cor.esipfed.org/ont/earthcube/
+  dct: http://purl.org/dc/terms/

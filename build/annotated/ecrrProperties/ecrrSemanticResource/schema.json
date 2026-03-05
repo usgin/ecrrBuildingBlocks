@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ECRR Semantic Resource Properties",
+  "description": "Properties specific to semantic resource types in ECRR. For resources with mainEntity pointing to ECRRO_0000210 (Semantic Resource). The semantic resource subtype is conveyed via additional entries in the mainEntity array using srt_ vocabulary URIs. Additional properties like programmingLanguage and encodingFormat from ecrrCommon are particularly relevant for semantic resources.",
+  "type": "object",
+  "properties": {
+    "schema:programmingLanguage": {
+      "description": "The representation language of the semantic resource (e.g. OWL, SKOS, RDF). Can be a string or a ComputerLanguage object with name and identifier referencing the MOLA vocabulary.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "schema:ComputerLanguage",
+              "default": "schema:ComputerLanguage"
+            },
+            "schema:name": {
+              "type": "string",
+              "description": "Name of the representation language (e.g. OWL, SKOS, RDF/XML)"
+            },
+            "schema:identifier": {
+              "type": "string",
+              "description": "URI from the MOLA vocabulary"
+            }
+          },
+          "required": [
+            "schema:name"
+          ]
+        }
+      ]
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "ecrr": "https://n2t.net/ark:/23942/g2"
+  },
+  "x-jsonld-prefixes": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "dct": "http://purl.org/dc/terms/"
+  }
+}

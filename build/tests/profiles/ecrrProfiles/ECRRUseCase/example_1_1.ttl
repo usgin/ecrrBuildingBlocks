@@ -1,0 +1,52 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix schema1: <http://schema.org/> .
+
+<http://n2t.net/ark:/23942/g2example-usecase> a schema1:CreativeWork ;
+    ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
+            schema1:name "Usage" ;
+            schema1:propertyID "ecrro:ECRRO_0000017" ;
+            schema1:value [ a schema1:DefinedTerm ;
+                    schema1:identifier "http://cor.esipfed.org/ont/earthcube/UBA_0000002" ;
+                    schema1:name "Some usage (10-50 adopters)" ] ] ;
+    ecrro:ECRRO_0000138 [ a schema1:PropertyValue ;
+            schema1:name "has maturity state" ;
+            schema1:propertyID "ecrro:ECRRO_0000138" ;
+            schema1:value [ a schema1:DefinedTerm ;
+                    schema1:identifier "http://cor.esipfed.org/ont/earthcube/MTU_0000003" ;
+                    schema1:name "Research / Experimental use" ] ] ;
+    ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;
+            schema1:name "expected lifetime" ;
+            schema1:propertyID "ecrro:ECRRO_0000219" ;
+            schema1:value [ a schema1:DefinedTerm ;
+                    schema1:identifier "http://cor.esipfed.org/ont/earthcube/ELT_0000003" ;
+                    schema1:name "1 - 5 years" ] ] ;
+    ecrro:ECRRO_0001301 [ a schema1:PropertyValue ;
+            schema1:name "registration metadata" ;
+            schema1:propertyID "ecrro:ECRRO_0001301" ;
+            schema1:value [ a schema1:StructuredValue ;
+                    schema1:additionalType "ecrro:ECRRO_0000156" ;
+                    schema1:contributor [ a schema1:Person ;
+                            schema1:name "Example Registrant" ] ;
+                    schema1:datePublished "2025-01-15" ] ] ;
+    schema1:about [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000048" ;
+            schema1:name "Seismology" ] ;
+    schema1:additionalType "EC Use Case" ;
+    schema1:creator [ a schema1:Person ;
+            schema1:identifier "https://orcid.org/0000-0002-1234-5678" ;
+            schema1:name "Jane Geophysicist" ] ;
+    schema1:description "A use case describing an end-to-end workflow for seismic hazard analysis, integrating USGS earthquake catalog data with community velocity models and site characterization datasets." ;
+    schema1:license [ a schema1:CreativeWork ;
+            schema1:name "Creative Commons Attribution 4.0" ;
+            schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
+    schema1:mainEntity [ a schema1:CreativeWork ;
+            schema1:name "Use Case" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000205" ] ;
+    schema1:name "Integrated Seismic Hazard Analysis Workflow" ;
+    schema1:subjectOf [ a schema1:CreativeWork ;
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase> ;
+            schema1:additionalType "dcat:CatalogRecord" ;
+            schema1:sdDatePublished "2026-03-03" ] .
+
