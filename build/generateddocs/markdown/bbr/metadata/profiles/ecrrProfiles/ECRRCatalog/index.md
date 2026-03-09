@@ -320,9 +320,9 @@ Example metadata instance for ECRRCatalog profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC CatalogRegistry" ;
     schema1:contentType [ a schema1:Thing ;
-            schema1:name "Datasets" ],
+            schema1:name "Software" ],
         [ a schema1:Thing ;
-            schema1:name "Software" ] ;
+            schema1:name "Datasets" ] ;
     schema1:creator [ a schema1:Organization ;
             schema1:name "EarthCube" ] ;
     schema1:description "A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system." ;

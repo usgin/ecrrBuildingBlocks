@@ -323,11 +323,11 @@ Example metadata instance for ECRRPlatform profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC Platform" ;
     schema1:audience [ a schema1:Audience ;
-            schema1:audienceType "Developers" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Scientists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Developers" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ] ;
     schema1:creator [ a schema1:Organization ;
             schema1:name "CyberGIS Center, University of Illinois" ] ;
     schema1:description "CyberGISX is a cyberGIS science gateway platform based on JupyterHub that provides access to high-performance geospatial computing resources, geospatial software tools, and community-contributed geospatial notebooks for reproducible geoscience research." ;

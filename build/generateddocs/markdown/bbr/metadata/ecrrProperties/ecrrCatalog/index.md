@@ -85,9 +85,9 @@ data repository.
 @prefix schema1: <http://schema.org/> .
 
 [] schema1:contentType [ a schema1:Thing ;
-            schema1:name "Rock magnetic data" ],
+            schema1:name "Paleomagnetic data" ],
         [ a schema1:Thing ;
-            schema1:name "Paleomagnetic data" ] .
+            schema1:name "Rock magnetic data" ] .
 
 
 ```
