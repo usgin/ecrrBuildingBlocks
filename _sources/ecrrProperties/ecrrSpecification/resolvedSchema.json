@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ECRR Specification-Specific Properties",
+  "description": "Properties specific to specification resources in ECRR. For resources with mainEntity pointing to ECRRO_0000204 (Specification). Includes profile/parent specification references and specification subtype classification via SPKT vocabulary entries in mainEntity.",
+  "type": "object",
+  "properties": {
+    "ecrro:ECRRO_0000501": {
+      "description": "Parent specifications that this specification profiles or extends. PropertyValue wrapping an array of labeled links pointing to the parent specification documents.",
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "schema:PropertyValue",
+          "default": "schema:PropertyValue"
+        },
+        "schema:propertyID": {
+          "type": "string",
+          "const": "ecrro:ECRRO_0000501"
+        },
+        "schema:name": {
+          "type": "string",
+          "default": "profile of"
+        },
+        "schema:value": {
+          "anyOf": [
+            {
+              "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
+              "type": "object",
+              "properties": {
+                "@type": {
+                  "type": "string",
+                  "default": "schema:CreativeWork",
+                  "const": "schema:CreativeWork"
+                },
+                "schema:name": {
+                  "type": "string"
+                },
+                "schema:description": {
+                  "type": "string"
+                },
+                "schema:url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "@type",
+                "schema:url"
+              ]
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
+                "type": "object",
+                "properties": {
+                  "@type": {
+                    "type": "string",
+                    "default": "schema:CreativeWork",
+                    "const": "schema:CreativeWork"
+                  },
+                  "schema:name": {
+                    "type": "string"
+                  },
+                  "schema:description": {
+                    "type": "string"
+                  },
+                  "schema:url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "@type",
+                  "schema:url"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "schema:propertyID",
+        "schema:value"
+      ]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ECRR Base metadata",
+  "description": "Mandatory properties for all EarthCube Resource Registry (ECRR) resource types. Every ECRR resource must have identity (@id), type classification (@type), name, description, resource type classification (mainEntity), and licensing.",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "Globally unique identifier for the resource, typically an ARK identifier (e.g. http://n2t.net/ark:/23942/g22914)."
+    },
+    "@type": {
+      "description": "Array of schema.org types. Must include schema:CreativeWork. Additional types (schema:SoftwareApplication, schema:WebAPI, schema:Dataset, schema:Product) indicate the nature of the resource.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "schema:CreativeWork",
+          "schema:SoftwareApplication",
+          "schema:SoftwareSourceCode",
+          "schema:Product",
+          "schema:WebAPI",
+          "schema:Dataset",
+          "schema:DataCatalog",
+          "schema:DefinedTermSet"
+        ]
+      },
+      "contains": {
+        "const": "schema:CreativeWork"
+      },
+      "minItems": 1
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "A text description of the resource, providing enough detail for discovery and basic understanding of the resource purpose and content."
+    },
+    "schema:mainEntity": {
+      "description": "ECRR resource type classification. Array of labeled links (CreativeWork objects) with name and url pointing to ECRRO resource type URIs. The first entry identifies the base resource type (e.g. Software, Service Instance, Specification). Additional entries may specify subtypes from SPKT_ or srt_ vocabularies.",
+      "anyOf": [
+        {
+          "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "default": "schema:CreativeWork",
+              "const": "schema:CreativeWork"
+            },
+            "schema:name": {
+              "type": "string"
+            },
+            "schema:description": {
+              "type": "string"
+            },
+            "schema:url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "@type",
+            "schema:url"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "default": "schema:CreativeWork",
+                "const": "schema:CreativeWork"
+              },
+              "schema:name": {
+                "type": "string"
+              },
+              "schema:description": {
+                "type": "string"
+              },
+              "schema:url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "@type",
+              "schema:url"
+            ]
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "schema:license": {
+      "description": "Legal conditions governing use and access. Array of labeled links identifying the license(s), ideally with URIs from https://spdx.org/licenses/ or http://cor.esipfed.org/ont/earthcube/swl.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "@id": {
+                "type": "string",
+                "description": "a reference to a license definition"
+              }
+            }
+          },
+          {
+            "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "default": "schema:CreativeWork",
+                "const": "schema:CreativeWork"
+              },
+              "schema:name": {
+                "type": "string"
+              },
+              "schema:description": {
+                "type": "string"
+              },
+              "schema:url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "@type",
+              "schema:url"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "schema:name",
+    "schema:description",
+    "schema:mainEntity",
+    "schema:license"
+  ]
+}
