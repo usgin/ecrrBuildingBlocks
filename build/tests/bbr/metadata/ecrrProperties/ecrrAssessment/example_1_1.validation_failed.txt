@@ -1,5 +1,5 @@
 Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrAssessment - ECRR Resource Assessment
-Generated 2026-03-05T14:53:56.149228+00:00
+Generated 2026-03-09T19:13:54.290242+00:00
 === Files ===
 Using examplePyleoclimAssessment.json from examples
 JSON-LD context is present - uplifting
@@ -12,52 +12,6 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
- - Shape cdifd:CDIFOrganizationShape: *none*
- - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
- - Shape _:nc9bda07516f0449baeee23843d434ff5b11: *none*
- - Shape _:nc9bda07516f0449baeee23843d434ff5b23: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
- - Shape _:nc9bda07516f0449baeee23843d434ff5b21: *none*
- - Shape cdifd:CDIFIdentifierShape: *none*
- - Shape _:nc9bda07516f0449baeee23843d434ff5b10: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nc9bda07516f0449baeee23843d434ff5b22: *none*
- - Shape _:nc9bda07516f0449baeee23843d434ff5b20: *none*
- - Shape _:nc9bda07516f0449baeee23843d434ff5b25: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b4: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b5: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b19: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFDefinedTermShape: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b6: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b7: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b26: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b8: *none*
- - Shape _:nd6bcce03ef5b4070b8e53fda3a04e358b10: *none*
-
 
 ** Validation error **
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
@@ -84,17 +38,63 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+ - Shape _:nac5935fe3f3b4d50bf38866de263ee0db14: *none*
+ - Shape cdifd:CDIFPersonShape: _:Ndf72607650824c099b7277457ff3ec70,_:Na0c5eeeda6ac45caad5b2183b5cee0f4,_:N341c2411cb104fcdb32a5eec5152a893
  - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
  - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
  - Shape cdifd:CDIFContactPointShape: *none*
- - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
  - Shape cdifd:maintainerOrProviderContactPointShape: *none*
- - Shape cdifd:CDIFPersonShape: _:N50f14efa7c9a48608d4b8dde71e445a1,_:N728412802715441fadd9e22508e14b4e,_:N9bc44f68591c4dbeb66ff21f12e431ea
- - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
- - Shape _:ne1f680925bfb46d2981264ae7440ac01b14: *none*
- - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b11: *none*
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b21: *none*
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b22: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b10: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b25: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b23: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape _:n09c7308724e34d479c8002f06bcaf1d1b20: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+ - Shape cdifd:CDIFOrganizationShape: *none*
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+ - Shape cdifd:CDIFDefinedTermShape: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b6: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b26: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b10: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b19: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b5: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b8: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b7: *none*
+ - Shape _:nbcdd50d48eb146e79e078716a99a5691b4: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
 
 === End SHACL ===
 

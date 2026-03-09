@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ecrr-building-block-register",
   "version": "0.1",
-  "dateOfLastChange": "2026-03-05",
+  "dateOfLastChange": "2026-03-09",
   "sources": [
     {
       "title": "EarthCube Resource Registry Ontology",
@@ -24,23 +24,23 @@
     "templates"
   ],
   "shaclShapes": {
-    "cdif.bbr.metadata.schemaorgProperties.organization": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+    "cdif.bbr.metadata.schemaorgProperties.person": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
     ],
     "cdif.bbr.metadata.schemaorgProperties.identifier": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
     ],
+    "cdif.bbr.metadata.schemaorgProperties.organization": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+    ],
     "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-    ],
-    "cdif.bbr.metadata.schemaorgProperties.person": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
     ]
   },
   "dependsOn": [
-    "cdif.bbr.metadata.schemaorgProperties.organization",
+    "cdif.bbr.metadata.schemaorgProperties.person",
     "cdif.bbr.metadata.schemaorgProperties.definedTerm",
-    "cdif.bbr.metadata.schemaorgProperties.person"
+    "cdif.bbr.metadata.schemaorgProperties.organization"
   ],
   "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld",
   "schema": {
@@ -76,7 +76,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .\n@prefix schema1: <http://schema.org/> .\n\n[] ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;\n            schema1:name \"Usage\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000017\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/UBA_0000002\" ;\n                    schema1:name \"Some usage (10-50 adopters)\" ] ] ;\n    ecrro:ECRRO_0000138 [ a schema1:PropertyValue ;\n            schema1:name \"has maturity state\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000138\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/MTU_0000002\" ;\n                    schema1:name \"In production\" ] ] ;\n    ecrro:ECRRO_0000218 [ a schema1:PropertyValue ;\n            schema1:name \"Stewardship\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000218\" ;\n            schema1:value [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0001-7501-8430\" ;\n                    schema1:name \"Deborah Khider\" ],\n                [ a schema1:Person ;\n                    schema1:name \"Feng Zhu\" ] ] ;\n    ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;\n            schema1:name \"expected lifetime\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000219\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ELT_0000003\" ;\n                    schema1:name \"1 - 5 years\" ] ] ;\n    ecrro:ECRRO_0001301 [ a schema1:PropertyValue ;\n            schema1:name \"registration metadata\" ;\n            schema1:propertyID \"ecrro:ECRRO_0001301\" ;\n            schema1:value [ a schema1:StructuredValue ;\n                    schema1:additionalType \"ecrro:ECRRO_0000156\" ;\n                    schema1:contributor [ a schema1:Person ;\n                            schema1:name \"Stephen M. Richard\" ] ;\n                    schema1:datePublished \"2021-03-02\" ] ] .\n\n",
+          "code": "@prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .\n@prefix schema1: <http://schema.org/> .\n\n[] ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;\n            schema1:name \"Usage\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000017\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/UBA_0000002\" ;\n                    schema1:name \"Some usage (10-50 adopters)\" ] ] ;\n    ecrro:ECRRO_0000138 [ a schema1:PropertyValue ;\n            schema1:name \"has maturity state\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000138\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/MTU_0000002\" ;\n                    schema1:name \"In production\" ] ] ;\n    ecrro:ECRRO_0000218 [ a schema1:PropertyValue ;\n            schema1:name \"Stewardship\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000218\" ;\n            schema1:value [ a schema1:Person ;\n                    schema1:name \"Feng Zhu\" ],\n                [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0001-7501-8430\" ;\n                    schema1:name \"Deborah Khider\" ] ] ;\n    ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;\n            schema1:name \"expected lifetime\" ;\n            schema1:propertyID \"ecrro:ECRRO_0000219\" ;\n            schema1:value [ a schema1:DefinedTerm ;\n                    schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ELT_0000003\" ;\n                    schema1:name \"1 - 5 years\" ] ] ;\n    ecrro:ECRRO_0001301 [ a schema1:PropertyValue ;\n            schema1:name \"registration metadata\" ;\n            schema1:propertyID \"ecrro:ECRRO_0001301\" ;\n            schema1:value [ a schema1:StructuredValue ;\n                    schema1:additionalType \"ecrro:ECRRO_0000156\" ;\n                    schema1:contributor [ a schema1:Person ;\n                            schema1:name \"Stephen M. Richard\" ] ;\n                    schema1:datePublished \"2021-03-02\" ] ] .\n\n",
           "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrAssessment/example_1_1.ttl"
         }
       ]
