@@ -54,7 +54,8 @@ Synthetic example of ECRR dataset-specific properties.
       "@type": ["schema:DataDownload"],
       "schema:contentUrl": "https://example.org/data/observations.csv",
       "schema:encodingFormat": ["text/csv"],
-      "schema:name": "Observation data CSV download"
+      "schema:name": "Observation data CSV download",
+      "dcterms:conformsTo": [{"@id": "http://www.opengis.net/def/nil/OGC/0/missing"}]
     }
   ],
   "schema:spatialCoverage": [
@@ -103,7 +104,12 @@ Synthetic example of ECRR dataset-specific properties.
       "schema:encodingFormat": [
         "text/csv"
       ],
-      "schema:name": "Observation data CSV download"
+      "schema:name": "Observation data CSV download",
+      "dcterms:conformsTo": [
+        {
+          "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+        }
+      ]
     }
   ],
   "schema:spatialCoverage": [
@@ -140,9 +146,11 @@ Synthetic example of ECRR dataset-specific properties.
 
 #### ttl
 ```ttl
+@prefix ns1: <dcterms:> .
 @prefix schema1: <http://schema.org/> .
 
 [] schema1:distribution [ a schema1:DataDownload ;
+            ns1:conformsTo <http://www.opengis.net/def/nil/OGC/0/missing> ;
             schema1:contentUrl "https://example.org/data/observations.csv" ;
             schema1:encodingFormat "text/csv" ;
             schema1:name "Observation data CSV download" ] ;

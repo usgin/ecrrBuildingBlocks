@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ecrr-building-block-register",
   "version": "0.1",
-  "dateOfLastChange": "2026-03-09",
+  "dateOfLastChange": "2026-03-10",
   "sources": [
     {
       "title": "schema.org Dataset",
@@ -28,46 +28,46 @@
     "templates"
   ],
   "shaclShapes": {
-    "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
-    ],
-    "cdif.bbr.metadata.schemaorgProperties.person": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-    ],
-    "cdif.bbr.metadata.schemaorgProperties.identifier": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
-    ],
-    "cdif.bbr.metadata.schemaorgProperties.organization": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+    "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
     ],
     "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
-    ],
-    "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+    "cdif.bbr.metadata.schemaorgProperties.identifier": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
     ],
     "cdif.bbr.metadata.schemaorgProperties.webAPI": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-    ],
     "cdif.bbr.metadata.schemaorgProperties.action": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
     ],
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+    ],
     "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.organization": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.person": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
     ]
   },
   "dependsOn": [
-    "cdif.bbr.metadata.schemaorgProperties.dataDownload",
     "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
-    "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
     "cdif.bbr.metadata.schemaorgProperties.webAPI",
-    "cdif.bbr.metadata.schemaorgProperties.temporalExtent"
+    "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
+    "cdif.bbr.metadata.schemaorgProperties.dataDownload",
+    "cdif.bbr.metadata.schemaorgProperties.spatialExtent"
   ],
   "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
   "schema": {
@@ -93,17 +93,17 @@
         {
           "language": "json",
           "ref": "exampleECRRDataset.json",
-          "code": "{\n  \"schema:distribution\": [\n    {\n      \"@type\": [\"schema:DataDownload\"],\n      \"schema:contentUrl\": \"https://example.org/data/observations.csv\",\n      \"schema:encodingFormat\": [\"text/csv\"],\n      \"schema:name\": \"Observation data CSV download\"\n    }\n  ],\n  \"schema:spatialCoverage\": [\n    {\n      \"@type\": \"schema:Place\",\n      \"schema:name\": [\"Global\"],\n      \"schema:geo\": {\n        \"@type\": \"schema:GeoShape\",\n        \"schema:box\": \"-90 -180 90 180\"\n      }\n    }\n  ],\n  \"schema:temporalCoverage\": [\"2010-01-01/2023-12-31\"],\n  \"schema:variableMeasured\": [\n    {\n      \"@type\": [\"schema:PropertyValue\"],\n      \"schema:name\": \"Temperature\",\n      \"schema:description\": \"Surface air temperature measurements\"\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"EarthCube Data Catalog\",\n    \"schema:url\": \"https://www.earthcube.org/datasets\"\n  }\n}\n",
+          "code": "{\n  \"schema:distribution\": [\n    {\n      \"@type\": [\"schema:DataDownload\"],\n      \"schema:contentUrl\": \"https://example.org/data/observations.csv\",\n      \"schema:encodingFormat\": [\"text/csv\"],\n      \"schema:name\": \"Observation data CSV download\",\n      \"dcterms:conformsTo\": [{\"@id\": \"http://www.opengis.net/def/nil/OGC/0/missing\"}]\n    }\n  ],\n  \"schema:spatialCoverage\": [\n    {\n      \"@type\": \"schema:Place\",\n      \"schema:name\": [\"Global\"],\n      \"schema:geo\": {\n        \"@type\": \"schema:GeoShape\",\n        \"schema:box\": \"-90 -180 90 180\"\n      }\n    }\n  ],\n  \"schema:temporalCoverage\": [\"2010-01-01/2023-12-31\"],\n  \"schema:variableMeasured\": [\n    {\n      \"@type\": [\"schema:PropertyValue\"],\n      \"schema:name\": \"Temperature\",\n      \"schema:description\": \"Surface air temperature measurements\"\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"EarthCube Data Catalog\",\n    \"schema:url\": \"https://www.earthcube.org/datasets\"\n  }\n}\n",
           "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/example_1_1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld\"\n  ],\n  \"schema:distribution\": [\n    {\n      \"@type\": [\n        \"schema:DataDownload\"\n      ],\n      \"schema:contentUrl\": \"https://example.org/data/observations.csv\",\n      \"schema:encodingFormat\": [\n        \"text/csv\"\n      ],\n      \"schema:name\": \"Observation data CSV download\"\n    }\n  ],\n  \"schema:spatialCoverage\": [\n    {\n      \"@type\": \"schema:Place\",\n      \"schema:name\": [\n        \"Global\"\n      ],\n      \"schema:geo\": {\n        \"@type\": \"schema:GeoShape\",\n        \"schema:box\": \"-90 -180 90 180\"\n      }\n    }\n  ],\n  \"schema:temporalCoverage\": [\n    \"2010-01-01/2023-12-31\"\n  ],\n  \"schema:variableMeasured\": [\n    {\n      \"@type\": [\n        \"schema:PropertyValue\"\n      ],\n      \"schema:name\": \"Temperature\",\n      \"schema:description\": \"Surface air temperature measurements\"\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"EarthCube Data Catalog\",\n    \"schema:url\": \"https://www.earthcube.org/datasets\"\n  }\n}",
+          "code": "{\n  \"@context\": [\n    {\n      \"schema\": \"http://schema.org/\",\n      \"ecrro\": \"http://cor.esipfed.org/ont/earthcube/\"\n    },\n    \"https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld\"\n  ],\n  \"schema:distribution\": [\n    {\n      \"@type\": [\n        \"schema:DataDownload\"\n      ],\n      \"schema:contentUrl\": \"https://example.org/data/observations.csv\",\n      \"schema:encodingFormat\": [\n        \"text/csv\"\n      ],\n      \"schema:name\": \"Observation data CSV download\",\n      \"dcterms:conformsTo\": [\n        {\n          \"@id\": \"http://www.opengis.net/def/nil/OGC/0/missing\"\n        }\n      ]\n    }\n  ],\n  \"schema:spatialCoverage\": [\n    {\n      \"@type\": \"schema:Place\",\n      \"schema:name\": [\n        \"Global\"\n      ],\n      \"schema:geo\": {\n        \"@type\": \"schema:GeoShape\",\n        \"schema:box\": \"-90 -180 90 180\"\n      }\n    }\n  ],\n  \"schema:temporalCoverage\": [\n    \"2010-01-01/2023-12-31\"\n  ],\n  \"schema:variableMeasured\": [\n    {\n      \"@type\": [\n        \"schema:PropertyValue\"\n      ],\n      \"schema:name\": \"Temperature\",\n      \"schema:description\": \"Surface air temperature measurements\"\n    }\n  ],\n  \"schema:includedInDataCatalog\": {\n    \"@type\": \"schema:DataCatalog\",\n    \"schema:name\": \"EarthCube Data Catalog\",\n    \"schema:url\": \"https://www.earthcube.org/datasets\"\n  }\n}",
           "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/example_1_1.jsonld"
         },
         {
           "language": "ttl",
-          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:distribution [ a schema1:DataDownload ;\n            schema1:contentUrl \"https://example.org/data/observations.csv\" ;\n            schema1:encodingFormat \"text/csv\" ;\n            schema1:name \"Observation data CSV download\" ] ;\n    schema1:includedInDataCatalog [ a schema1:DataCatalog ;\n            schema1:name \"EarthCube Data Catalog\" ;\n            schema1:url \"https://www.earthcube.org/datasets\" ] ;\n    schema1:spatialCoverage [ a schema1:Place ;\n            schema1:geo [ a schema1:GeoShape ;\n                    schema1:box \"-90 -180 90 180\" ] ;\n            schema1:name \"Global\" ] ;\n    schema1:temporalCoverage \"2010-01-01/2023-12-31\" ;\n    schema1:variableMeasured [ a schema1:PropertyValue ;\n            schema1:description \"Surface air temperature measurements\" ;\n            schema1:name \"Temperature\" ] .\n\n",
+          "code": "@prefix ns1: <dcterms:> .\n@prefix schema1: <http://schema.org/> .\n\n[] schema1:distribution [ a schema1:DataDownload ;\n            ns1:conformsTo <http://www.opengis.net/def/nil/OGC/0/missing> ;\n            schema1:contentUrl \"https://example.org/data/observations.csv\" ;\n            schema1:encodingFormat \"text/csv\" ;\n            schema1:name \"Observation data CSV download\" ] ;\n    schema1:includedInDataCatalog [ a schema1:DataCatalog ;\n            schema1:name \"EarthCube Data Catalog\" ;\n            schema1:url \"https://www.earthcube.org/datasets\" ] ;\n    schema1:spatialCoverage [ a schema1:Place ;\n            schema1:geo [ a schema1:GeoShape ;\n                    schema1:box \"-90 -180 90 180\" ] ;\n            schema1:name \"Global\" ] ;\n    schema1:temporalCoverage \"2010-01-01/2023-12-31\" ;\n    schema1:variableMeasured [ a schema1:PropertyValue ;\n            schema1:description \"Surface air temperature measurements\" ;\n            schema1:name \"Temperature\" ] .\n\n",
           "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrDataset/example_1_1.ttl"
         }
       ]

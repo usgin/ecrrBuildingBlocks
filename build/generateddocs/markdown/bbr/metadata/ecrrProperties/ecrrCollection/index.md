@@ -119,11 +119,7 @@ parts including software, dataset, and documentation components.
 ```ttl
 @prefix schema1: <http://schema.org/> .
 
-[] schema1:hasPart [ a schema1:SoftwareApplication ;
-            schema1:description "Main analysis software component" ;
-            schema1:name "Analysis Tool v2.0" ;
-            schema1:url "https://example.org/analysis-tool" ],
-        [ a schema1:CreativeWork ;
+[] schema1:hasPart [ a schema1:CreativeWork ;
             schema1:encodingFormat "text/html" ;
             schema1:name "User Documentation" ;
             schema1:url "https://example.org/docs" ],
@@ -131,7 +127,11 @@ parts including software, dataset, and documentation components.
             schema1:encodingFormat "application/json",
                 "text/csv" ;
             schema1:name "Sample Observation Data" ;
-            schema1:url "https://example.org/sample-data" ] .
+            schema1:url "https://example.org/sample-data" ],
+        [ a schema1:SoftwareApplication ;
+            schema1:description "Main analysis software component" ;
+            schema1:name "Analysis Tool v2.0" ;
+            schema1:url "https://example.org/analysis-tool" ] .
 
 
 ```

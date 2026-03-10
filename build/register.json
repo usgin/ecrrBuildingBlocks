@@ -2,7 +2,7 @@
   "name": "ECRR Building Blocks repository",
   "abstract": "Building blocks for EarthCube Resource Registry (ECRR) metadata profiles,\nusing the OGC Building Blocks pattern.\n",
   "description": "Modular schema components for ECRR resource type metadata. Imports shared\nschema.org property building blocks from the CDIF Building Blocks repository.\n",
-  "modified": "2026-03-09T21:51:55.059107",
+  "modified": "2026-03-10T13:54:50.178507",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"e3240b08297fa3f3c5054fa257709812ff06320d",
@@ -31,7 +31,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "schema.org DataCatalog",
@@ -85,7 +85,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "schema.org Product",
@@ -139,7 +139,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -189,7 +189,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -250,7 +250,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -307,7 +307,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry Ontology",
@@ -321,23 +321,23 @@
         "templates"
       ],
       "shaclShapes": {
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.person": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.organization",
         "cdif.bbr.metadata.schemaorgProperties.definedTerm",
-        "cdif.bbr.metadata.schemaorgProperties.person"
+        "cdif.bbr.metadata.schemaorgProperties.person",
+        "cdif.bbr.metadata.schemaorgProperties.organization"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld",
       "schema": {
@@ -375,7 +375,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "schema.org WebAPI",
@@ -393,14 +393,14 @@
         "templates"
       ],
       "shaclShapes": {
-        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.action": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
@@ -410,8 +410,8 @@
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.labeledLink",
         "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink",
         "cdif.bbr.metadata.schemaorgProperties.action"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/context.jsonld",
@@ -450,7 +450,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "schema.org SoftwareApplication",
@@ -524,7 +524,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -542,32 +542,32 @@
         "templates"
       ],
       "shaclShapes": {
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.identifier": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.person": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.organization",
-        "cdif.bbr.metadata.schemaorgProperties.person",
-        "cdif.bbr.metadata.schemaorgProperties.identifier",
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
         "cdif.bbr.metadata.schemaorgProperties.labeledLink",
-        "cdif.bbr.metadata.schemaorgProperties.funder"
+        "cdif.bbr.metadata.schemaorgProperties.person",
+        "cdif.bbr.metadata.schemaorgProperties.organization",
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.funder",
+        "cdif.bbr.metadata.schemaorgProperties.identifier"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld",
       "schema": {
@@ -605,7 +605,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "schema.org Dataset",
@@ -623,46 +623,46 @@
         "templates"
       ],
       "shaclShapes": {
-        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.identifier": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.webAPI": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.action": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.dataDownload",
         "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
-        "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
         "cdif.bbr.metadata.schemaorgProperties.webAPI",
-        "cdif.bbr.metadata.schemaorgProperties.temporalExtent"
+        "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload",
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
       "schema": {
@@ -700,7 +700,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -717,27 +717,27 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
       "schema": {
@@ -775,7 +775,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -792,26 +792,26 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/context.jsonld",
@@ -850,7 +850,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -867,25 +867,25 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld",
@@ -924,7 +924,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -941,25 +941,25 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/context.jsonld",
@@ -998,7 +998,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1015,25 +1015,25 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/context.jsonld",
@@ -1072,7 +1072,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1089,26 +1089,26 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
@@ -1147,7 +1147,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1168,17 +1168,17 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
@@ -1191,10 +1191,10 @@
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrService"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrService",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/context.jsonld",
       "schema": {
@@ -1232,7 +1232,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1253,14 +1253,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.action": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -1268,17 +1262,23 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
         ]
       },
       "dependsOn": [
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
         "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/context.jsonld",
@@ -1317,7 +1317,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1334,27 +1334,27 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/context.jsonld",
       "schema": {
@@ -1392,7 +1392,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1409,25 +1409,25 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
@@ -1466,7 +1466,7 @@
       "itemClass": "schema",
       "register": "ecrr-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2026-03-09",
+      "dateOfLastChange": "2026-03-10",
       "sources": [
         {
           "title": "EarthCube Resource Registry",
@@ -1484,29 +1484,35 @@
         "templates"
       ],
       "shaclShapes": {
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
-        "cdif.bbr.metadata.cdifProperties.cdifDataCube": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifTabularData": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl"
         ],
         "cdif.bbr.metadata.cdifProperties.cdifPhysicalMapping": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl"
         ],
+        "cdif.bbr.metadata.cdifProperties.cdifDataCube": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl"
+        ],
         "cdif.bbr.metadata.cdifProperties.cdifProv": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProv/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.additionalProperty": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
         ],
         "cdif.bbr.metadata.provProperties.generatedBy": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl"
@@ -1514,14 +1520,11 @@
         "cdif.bbr.metadata.schemaorgProperties.agentInRole": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.additionalProperty": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.webAPI": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
@@ -1535,20 +1538,14 @@
         "cdif.bbr.metadata.profiles.cdifProfiles.CDIFDiscovery": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFDiscovery/rules.shacl"
         ],
-        "cdif.bbr.metadata.cdifProperties.cdifMandatory": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl"
-        ],
-        "cdif.bbr.metadata.cdifProperties.cdifCatalogRecord": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl"
-        ],
         "cdif.bbr.metadata.cdifProperties.cdifOptional": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ],
         "cdif.bbr.metadata.provProperties.derivedFrom": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl"
@@ -1556,17 +1553,20 @@
         "cdif.bbr.metadata.qualityProperties.qualityMeasure": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl"
         ],
-        "cdif.bbr.metadata.cdifProperties.cdifTabularData": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl"
+        "cdif.bbr.metadata.cdifProperties.cdifMandatory": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifCatalogRecord": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl"
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.organization",
-        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete",
         "cdif.bbr.metadata.schemaorgProperties.person",
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
+        "cdif.bbr.metadata.schemaorgProperties.organization",
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
       "schema": {
