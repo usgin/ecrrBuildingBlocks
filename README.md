@@ -23,20 +23,20 @@ Modular metadata schemas for [EarthCube Resource Registry (ECRR)](https://www.ea
 
 ECRRCatalog, ECRRCollection, ECRRDataset, ECRRInterchangeFormat, ECRRInterface, ECRRPlatform, ECRRSemanticResource, ECRRService, ECRRSoftware, ECRRSpecification, ECRRUseCase
 
-Each profile composes ecrrBase + ecrrCommon + ecrrAssessment with resource-type-specific properties via `allOf`. ECRRDataset additionally extends [CDIFcomplete](https://usgin.github.io/metadataBuildingBlocks/bblock/bbr.metadata.profiles.CDIFcomplete).
+Each profile composes ecrrBase + ecrrCommon + ecrrAssessment with resource-type-specific properties via `allOf`. ECRRDataset additionally extends [CDIFcomplete](https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/bblock/bbr.metadata.profiles.CDIFcomplete).
 
 ## Cross-repo imports
 
-This repository imports shared schema.org property building blocks from [USGIN/metadataBuildingBlocks](https://github.com/USGIN/metadataBuildingBlocks) via the OGC Building Blocks import mechanism:
+This repository imports shared schema.org property building blocks from [Cross-Domain-Interoperability-Framework/metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks) via the OGC Building Blocks import mechanism:
 
 ```yaml
 # bblocks-config.yaml
 imports:
   - default
-  - https://usgin.github.io/metadataBuildingBlocks/build/register.json
+  - https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/register.json
 ```
 
-External `$ref` paths in ecrrProperties schemas point to published URLs at `https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/`.
+External `$ref` paths in ecrrProperties schemas point to published URLs at `https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/`.
 
 ## Viewer
 
