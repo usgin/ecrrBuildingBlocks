@@ -1,0 +1,22 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Catalog/Repository properties: validates contentType array.
+# For resources with mainEntity pointing to ECRRO_0000212 or ECRRO_0000209.
+
+cdifd:ECRRCatalogPropertiesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# contentType: array of Thing objects describing types of cataloged content
+	sh:property [
+		sh:path schema:contentType ;
+		sh:severity sh:Warning ;
+		sh:message "A catalog/repository resource should specify the types of content it catalogs (schema:contentType)." ;
+	] ;
+	.

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "ECRR Software Profile",
+    "description": "Complete ECRR metadata profile for software and application resources. Composes ecrrBase (mandatory identity and classification), ecrrCommon (optional shared properties), ecrrAssessment (maturity, lifetime, usage), and ecrrSoftware (application categories, languages, repositories, etc.). Resources must have schema:additionalType containing \"EC Software\".",
+    "allOf": [
+        {
+            "$ref": "../../../ecrrProperties/ecrrBase/ecrrBaseSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrCommon/ecrrCommonSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrAssessment/ecrrAssessmentSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrSoftware/ecrrSoftwareSchema.json"
+        },
+        {
+            "properties": {
+                "schema:additionalType": {
+                    "contains": {
+                        "enum": [
+                            "EC Software"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Semantic Resource properties: validates programmingLanguage
+# (representation language) for ontologies, vocabularies, thesauri, etc.
+
+cdifd:ECRRSemanticResourcePropertiesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# Recommended: representation language (e.g. OWL, SKOS, RDF)
+	sh:property [
+		sh:path schema:programmingLanguage ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "A semantic resource should specify its representation language (schema:programmingLanguage)." ;
+	] ;
+	.

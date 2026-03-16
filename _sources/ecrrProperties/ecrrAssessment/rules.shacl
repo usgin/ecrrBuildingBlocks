@@ -1,0 +1,65 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix ecrro:       <http://purl.obolibrary.org/obo/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Assessment properties: maturity, expected lifetime, usage,
+# stewardship, primary publication, and registration metadata.
+# These are PropertyValue objects keyed by ECRRO property identifiers.
+
+cdifd:ECRRAssessmentShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# Maturity state (PropertyValue with propertyID ecrro:ECRRO_0000138)
+	sh:property [
+		sh:path ecrro:ECRRO_0000138 ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include a maturity state assessment (ecrro:ECRRO_0000138)." ;
+	] ;
+
+	# Expected lifetime (PropertyValue with propertyID ecrro:ECRRO_0000219)
+	sh:property [
+		sh:path ecrro:ECRRO_0000219 ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include an expected lifetime assessment (ecrro:ECRRO_0000219)." ;
+	] ;
+
+	# Usage level (PropertyValue with propertyID ecrro:ECRRO_0000017)
+	sh:property [
+		sh:path ecrro:ECRRO_0000017 ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include a usage level assessment (ecrro:ECRRO_0000017)." ;
+	] ;
+
+	# Stewardship (PropertyValue with propertyID ecrro:ECRRO_0000218)
+	sh:property [
+		sh:path ecrro:ECRRO_0000218 ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should identify a steward (ecrro:ECRRO_0000218)." ;
+	] ;
+
+	# Primary publication (PropertyValue with propertyID ecrro:ECRRO_0000600)
+	sh:property [
+		sh:path ecrro:ECRRO_0000600 ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include a primary publication reference (ecrro:ECRRO_0000600)." ;
+	] ;
+
+	# Registration metadata (PropertyValue with propertyID ecrro:ECRRO_0001301)
+	sh:property [
+		sh:path ecrro:ECRRO_0001301 ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include registration metadata (ecrro:ECRRO_0001301)." ;
+	] ;
+	.

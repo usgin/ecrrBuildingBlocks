@@ -1,0 +1,92 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix ecrro:       <http://purl.obolibrary.org/obo/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRRInterface profile: extends ecrrBase with ecrrCommon and ecrrAssessment.
+# This file adds profile-level constraints for interface/API resources.
+
+# Root resource must include "EC Interface_API" in additionalType.
+cdifd:ECRRInterfaceTypeShape
+	a sh:NodeShape ;
+	sh:target [
+	  a sh:SPARQLTarget ;
+    sh:select """
+       PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+              ?this a schema:CreativeWork .
+              MINUS {
+                ?parent a schema:CreativeWork .
+                ?parent ?p ?this .
+                FILTER (?parent != ?this)
+                FILTER (?p != schema:about)
+              }
+            }
+          """ ;
+	] ;
+
+	sh:property [
+		sh:path schema:additionalType ;
+		sh:hasValue "EC Interface_API" ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Interface should include 'EC Interface_API' in schema:additionalType." ;
+	] ;
+
+	# ECRR resources should have science domain classification
+	sh:property [
+		sh:path schema:about ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Interface should specify science domains (schema:about) using DefinedTerm references to the ECRR ADO vocabulary." ;
+	] ;
+
+	# ECRR assessment: maturity state
+	sh:property [
+		sh:path ecrro:ECRRO_0000138 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Interface should include a maturity state assessment (ecrro:ECRRO_0000138)." ;
+	] ;
+
+	# ECRR assessment: expected lifetime
+	sh:property [
+		sh:path ecrro:ECRRO_0000219 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Interface should include an expected lifetime assessment (ecrro:ECRRO_0000219)." ;
+	] ;
+
+	# ECRR assessment: stewardship
+	sh:property [
+		sh:path ecrro:ECRRO_0000218 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Interface should identify a steward (ecrro:ECRRO_0000218)." ;
+	] ;
+	.
+
+# Conformance declaration for the ECRR Interface profile.
+cdifd:ECRRInterfaceConformsToShape a sh:NodeShape ;
+    sh:target [
+      a sh:SPARQLTarget ;
+        sh:select  """
+            PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+            ?this a schema:CreativeWork ;
+             schema:about ?parent.
+            }
+        """;
+    ] ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path <http://purl.org/dc/terms/conformsTo> ;
+        sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface> ;
+        sh:severity sh:Warning ;
+        sh:message "Metadata record for ECRR Interface profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface" ;
+    ] .

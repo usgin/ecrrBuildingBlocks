@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "ECRR Collection Profile",
+    "description": "Complete ECRR metadata profile for bundled object (collection) resources. Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCollection. Resources must have schema:additionalType containing \"EC Bundled Object\".",
+    "allOf": [
+        {
+            "$ref": "../../../ecrrProperties/ecrrBase/ecrrBaseSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrCommon/ecrrCommonSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrAssessment/ecrrAssessmentSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrCollection/ecrrCollectionSchema.json"
+        },
+        {
+            "properties": {
+                "schema:additionalType": {
+                    "contains": {
+                        "enum": [
+                            "EC Bundled Object"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

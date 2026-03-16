@@ -1,0 +1,23 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Collection/Bundled Object properties: validates hasPart array.
+# For resources typed ["schema:CreativeWork", "schema:Product"].
+
+cdifd:ECRRCollectionPropertiesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# hasPart: component resources in the collection (minItems: 1 in JSON Schema)
+	sh:property [
+		sh:path schema:hasPart ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "A collection/bundled object should specify at least one component resource (schema:hasPart)." ;
+	] ;
+	.

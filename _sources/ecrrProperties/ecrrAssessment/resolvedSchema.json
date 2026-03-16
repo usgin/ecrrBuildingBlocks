@@ -26,7 +26,21 @@
           "type": "object",
           "properties": {
             "@type": {
-              "const": "schema:DefinedTerm"
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "schema:DefinedTerm"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "contains": {
+                    "const": "schema:DefinedTerm"
+                  }
+                }
+              ]
             },
             "schema:name": {
               "type": "string",
@@ -38,7 +52,7 @@
                   "type": "string"
                 },
                 {
-                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                 }
               ]
             },
@@ -51,23 +65,29 @@
               "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
             }
           },
-          "required": [
-            "@type"
-          ],
-          "anyOf": [
+          "allOf": [
             {
               "required": [
-                "schema:name"
+                "@type"
               ]
             },
             {
-              "required": [
-                "schema:identifier"
-              ]
-            },
-            {
-              "required": [
-                "schema:termCode"
+              "anyOf": [
+                {
+                  "required": [
+                    "schema:name"
+                  ]
+                },
+                {
+                  "required": [
+                    "schema:identifier"
+                  ]
+                },
+                {
+                  "required": [
+                    "schema:termCode"
+                  ]
+                }
               ]
             }
           ]
@@ -101,7 +121,21 @@
           "type": "object",
           "properties": {
             "@type": {
-              "const": "schema:DefinedTerm"
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "schema:DefinedTerm"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "contains": {
+                    "const": "schema:DefinedTerm"
+                  }
+                }
+              ]
             },
             "schema:name": {
               "type": "string",
@@ -113,7 +147,7 @@
                   "type": "string"
                 },
                 {
-                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                 }
               ]
             },
@@ -126,23 +160,29 @@
               "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
             }
           },
-          "required": [
-            "@type"
-          ],
-          "anyOf": [
+          "allOf": [
             {
               "required": [
-                "schema:name"
+                "@type"
               ]
             },
             {
-              "required": [
-                "schema:identifier"
-              ]
-            },
-            {
-              "required": [
-                "schema:termCode"
+              "anyOf": [
+                {
+                  "required": [
+                    "schema:name"
+                  ]
+                },
+                {
+                  "required": [
+                    "schema:identifier"
+                  ]
+                },
+                {
+                  "required": [
+                    "schema:termCode"
+                  ]
+                }
               ]
             }
           ]
@@ -176,7 +216,21 @@
           "type": "object",
           "properties": {
             "@type": {
-              "const": "schema:DefinedTerm"
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "schema:DefinedTerm"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "contains": {
+                    "const": "schema:DefinedTerm"
+                  }
+                }
+              ]
             },
             "schema:name": {
               "type": "string",
@@ -188,7 +242,7 @@
                   "type": "string"
                 },
                 {
-                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                 }
               ]
             },
@@ -201,23 +255,29 @@
               "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
             }
           },
-          "required": [
-            "@type"
-          ],
-          "anyOf": [
+          "allOf": [
             {
               "required": [
-                "schema:name"
+                "@type"
               ]
             },
             {
-              "required": [
-                "schema:identifier"
-              ]
-            },
-            {
-              "required": [
-                "schema:termCode"
+              "anyOf": [
+                {
+                  "required": [
+                    "schema:name"
+                  ]
+                },
+                {
+                  "required": [
+                    "schema:identifier"
+                  ]
+                },
+                {
+                  "required": [
+                    "schema:termCode"
+                  ]
+                }
               ]
             }
           ]
@@ -256,8 +316,21 @@
                   "type": "string"
                 },
                 "@type": {
-                  "type": "string",
-                  "const": "schema:Person"
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "schema:Person"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "contains": {
+                        "const": "schema:Person"
+                      }
+                    }
+                  ]
                 },
                 "schema:name": {
                   "type": "string",
@@ -270,7 +343,7 @@
                   "description": "identifier for person, recommend ORCID",
                   "anyOf": [
                     {
-                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                     },
                     {
                       "type": "string"
@@ -282,16 +355,29 @@
                   "description": "other labels by which the person might be known"
                 },
                 "schema:affiliation": {
-                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\organization\\schema.yaml",
+                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\organization\\schema.yaml",
                   "description": "if affiliation is present, value must be a schema:Organization."
                 },
                 "schema:contactPoint": {
                   "type": "object",
                   "properties": {
                     "@type": {
-                      "type": "string",
-                      "const": "schema:ContactPoint",
-                      "default": "schema:ContactPoint"
+                      "default": "schema:ContactPoint",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "schema:ContactPoint"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "contains": {
+                            "const": "schema:ContactPoint"
+                          }
+                        }
+                      ]
                     },
                     "schema:email": {
                       "type": "string"
@@ -303,22 +389,43 @@
                   "type": "array",
                   "description": "other identifiers for the person",
                   "items": {
-                    "type": "string"
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "@id": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      {
+                        "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                      }
+                    ]
                   }
                 }
               },
-              "required": [
-                "@type"
-              ],
-              "anyOf": [
+              "allOf": [
                 {
                   "required": [
-                    "schema:name"
+                    "@type"
                   ]
                 },
                 {
-                  "required": [
-                    "schema:identifier"
+                  "anyOf": [
+                    {
+                      "required": [
+                        "schema:name"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "schema:identifier"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -330,9 +437,22 @@
                   "type": "string"
                 },
                 "@type": {
-                  "type": "string",
-                  "const": "schema:Organization",
-                  "default": "schema:Organization"
+                  "default": "schema:Organization",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "schema:Organization"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "contains": {
+                        "const": "schema:Organization"
+                      }
+                    }
+                  ]
                 },
                 "schema:additionalType": {
                   "type": "array",
@@ -357,7 +477,21 @@
                         "type": "object",
                         "properties": {
                           "@type": {
-                            "const": "schema:DefinedTerm"
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "const": "schema:DefinedTerm"
+                              },
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "contains": {
+                                  "const": "schema:DefinedTerm"
+                                }
+                              }
+                            ]
                           },
                           "schema:name": {
                             "type": "string",
@@ -369,7 +503,7 @@
                                 "type": "string"
                               },
                               {
-                                "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                                "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                               }
                             ]
                           },
@@ -382,23 +516,29 @@
                             "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                           }
                         },
-                        "required": [
-                          "@type"
-                        ],
-                        "anyOf": [
+                        "allOf": [
                           {
                             "required": [
-                              "schema:name"
+                              "@type"
                             ]
                           },
                           {
-                            "required": [
-                              "schema:identifier"
-                            ]
-                          },
-                          {
-                            "required": [
-                              "schema:termCode"
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "schema:name"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "schema:identifier"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "schema:termCode"
+                                ]
+                              }
                             ]
                           }
                         ]
@@ -424,7 +564,7 @@
                   "description": "identifier for organization",
                   "anyOf": [
                     {
-                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                     },
                     {
                       "type": "string"
@@ -435,22 +575,43 @@
                   "type": "array",
                   "description": "other identifiers for the organization",
                   "items": {
-                    "type": "string"
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "@id": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      {
+                        "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                      }
+                    ]
                   }
                 }
               },
-              "required": [
-                "@type"
-              ],
-              "anyOf": [
+              "allOf": [
                 {
                   "required": [
-                    "schema:name"
+                    "@type"
                   ]
                 },
                 {
-                  "required": [
-                    "schema:identifier"
+                  "anyOf": [
+                    {
+                      "required": [
+                        "schema:name"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "schema:identifier"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -467,8 +628,21 @@
                         "type": "string"
                       },
                       "@type": {
-                        "type": "string",
-                        "const": "schema:Person"
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "schema:Person"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "schema:Person"
+                            }
+                          }
+                        ]
                       },
                       "schema:name": {
                         "type": "string",
@@ -481,7 +655,7 @@
                         "description": "identifier for person, recommend ORCID",
                         "anyOf": [
                           {
-                            "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                            "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                           },
                           {
                             "type": "string"
@@ -493,16 +667,29 @@
                         "description": "other labels by which the person might be known"
                       },
                       "schema:affiliation": {
-                        "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\organization\\schema.yaml",
+                        "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\organization\\schema.yaml",
                         "description": "if affiliation is present, value must be a schema:Organization."
                       },
                       "schema:contactPoint": {
                         "type": "object",
                         "properties": {
                           "@type": {
-                            "type": "string",
-                            "const": "schema:ContactPoint",
-                            "default": "schema:ContactPoint"
+                            "default": "schema:ContactPoint",
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "const": "schema:ContactPoint"
+                              },
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "contains": {
+                                  "const": "schema:ContactPoint"
+                                }
+                              }
+                            ]
                           },
                           "schema:email": {
                             "type": "string"
@@ -514,22 +701,43 @@
                         "type": "array",
                         "description": "other identifiers for the person",
                         "items": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "@id": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            {
+                              "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                            }
+                          ]
                         }
                       }
                     },
-                    "required": [
-                      "@type"
-                    ],
-                    "anyOf": [
+                    "allOf": [
                       {
                         "required": [
-                          "schema:name"
+                          "@type"
                         ]
                       },
                       {
-                        "required": [
-                          "schema:identifier"
+                        "anyOf": [
+                          {
+                            "required": [
+                              "schema:name"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "schema:identifier"
+                            ]
+                          }
                         ]
                       }
                     ]
@@ -541,9 +749,22 @@
                         "type": "string"
                       },
                       "@type": {
-                        "type": "string",
-                        "const": "schema:Organization",
-                        "default": "schema:Organization"
+                        "default": "schema:Organization",
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "schema:Organization"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "schema:Organization"
+                            }
+                          }
+                        ]
                       },
                       "schema:additionalType": {
                         "type": "array",
@@ -568,7 +789,21 @@
                               "type": "object",
                               "properties": {
                                 "@type": {
-                                  "const": "schema:DefinedTerm"
+                                  "anyOf": [
+                                    {
+                                      "type": "string",
+                                      "const": "schema:DefinedTerm"
+                                    },
+                                    {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "contains": {
+                                        "const": "schema:DefinedTerm"
+                                      }
+                                    }
+                                  ]
                                 },
                                 "schema:name": {
                                   "type": "string",
@@ -580,7 +815,7 @@
                                       "type": "string"
                                     },
                                     {
-                                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                                     }
                                   ]
                                 },
@@ -593,23 +828,29 @@
                                   "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                                 }
                               },
-                              "required": [
-                                "@type"
-                              ],
-                              "anyOf": [
+                              "allOf": [
                                 {
                                   "required": [
-                                    "schema:name"
+                                    "@type"
                                   ]
                                 },
                                 {
-                                  "required": [
-                                    "schema:identifier"
-                                  ]
-                                },
-                                {
-                                  "required": [
-                                    "schema:termCode"
+                                  "anyOf": [
+                                    {
+                                      "required": [
+                                        "schema:name"
+                                      ]
+                                    },
+                                    {
+                                      "required": [
+                                        "schema:identifier"
+                                      ]
+                                    },
+                                    {
+                                      "required": [
+                                        "schema:termCode"
+                                      ]
+                                    }
                                   ]
                                 }
                               ]
@@ -635,7 +876,7 @@
                         "description": "identifier for organization",
                         "anyOf": [
                           {
-                            "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                            "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                           },
                           {
                             "type": "string"
@@ -646,22 +887,43 @@
                         "type": "array",
                         "description": "other identifiers for the organization",
                         "items": {
-                          "type": "string"
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "@id": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            {
+                              "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                            }
+                          ]
                         }
                       }
                     },
-                    "required": [
-                      "@type"
-                    ],
-                    "anyOf": [
+                    "allOf": [
                       {
                         "required": [
-                          "schema:name"
+                          "@type"
                         ]
                       },
                       {
-                        "required": [
-                          "schema:identifier"
+                        "anyOf": [
+                          {
+                            "required": [
+                              "schema:name"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "schema:identifier"
+                            ]
+                          }
                         ]
                       }
                     ]
@@ -744,8 +1006,21 @@
                       "type": "string"
                     },
                     "@type": {
-                      "type": "string",
-                      "const": "schema:Person"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "schema:Person"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "contains": {
+                            "const": "schema:Person"
+                          }
+                        }
+                      ]
                     },
                     "schema:name": {
                       "type": "string",
@@ -758,7 +1033,7 @@
                       "description": "identifier for person, recommend ORCID",
                       "anyOf": [
                         {
-                          "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                          "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                         },
                         {
                           "type": "string"
@@ -770,16 +1045,29 @@
                       "description": "other labels by which the person might be known"
                     },
                     "schema:affiliation": {
-                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\organization\\schema.yaml",
+                      "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\organization\\schema.yaml",
                       "description": "if affiliation is present, value must be a schema:Organization."
                     },
                     "schema:contactPoint": {
                       "type": "object",
                       "properties": {
                         "@type": {
-                          "type": "string",
-                          "const": "schema:ContactPoint",
-                          "default": "schema:ContactPoint"
+                          "default": "schema:ContactPoint",
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "const": "schema:ContactPoint"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "contains": {
+                                "const": "schema:ContactPoint"
+                              }
+                            }
+                          ]
                         },
                         "schema:email": {
                           "type": "string"
@@ -791,22 +1079,43 @@
                       "type": "array",
                       "description": "other identifiers for the person",
                       "items": {
-                        "type": "string"
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "@id": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          {
+                            "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                          }
+                        ]
                       }
                     }
                   },
-                  "required": [
-                    "@type"
-                  ],
-                  "anyOf": [
+                  "allOf": [
                     {
                       "required": [
-                        "schema:name"
+                        "@type"
                       ]
                     },
                     {
-                      "required": [
-                        "schema:identifier"
+                      "anyOf": [
+                        {
+                          "required": [
+                            "schema:name"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "schema:identifier"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -818,9 +1127,22 @@
                       "type": "string"
                     },
                     "@type": {
-                      "type": "string",
-                      "const": "schema:Organization",
-                      "default": "schema:Organization"
+                      "default": "schema:Organization",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "schema:Organization"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "contains": {
+                            "const": "schema:Organization"
+                          }
+                        }
+                      ]
                     },
                     "schema:additionalType": {
                       "type": "array",
@@ -845,7 +1167,21 @@
                             "type": "object",
                             "properties": {
                               "@type": {
-                                "const": "schema:DefinedTerm"
+                                "anyOf": [
+                                  {
+                                    "type": "string",
+                                    "const": "schema:DefinedTerm"
+                                  },
+                                  {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "contains": {
+                                      "const": "schema:DefinedTerm"
+                                    }
+                                  }
+                                ]
                               },
                               "schema:name": {
                                 "type": "string",
@@ -857,7 +1193,7 @@
                                     "type": "string"
                                   },
                                   {
-                                    "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                                    "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                                   }
                                 ]
                               },
@@ -870,23 +1206,29 @@
                                 "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                               }
                             },
-                            "required": [
-                              "@type"
-                            ],
-                            "anyOf": [
+                            "allOf": [
                               {
                                 "required": [
-                                  "schema:name"
+                                  "@type"
                                 ]
                               },
                               {
-                                "required": [
-                                  "schema:identifier"
-                                ]
-                              },
-                              {
-                                "required": [
-                                  "schema:termCode"
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "schema:name"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "schema:identifier"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "schema:termCode"
+                                    ]
+                                  }
                                 ]
                               }
                             ]
@@ -912,7 +1254,7 @@
                       "description": "identifier for organization",
                       "anyOf": [
                         {
-                          "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                          "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
                         },
                         {
                           "type": "string"
@@ -923,22 +1265,43 @@
                       "type": "array",
                       "description": "other identifiers for the organization",
                       "items": {
-                        "type": "string"
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "@id": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          {
+                            "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\identifier\\schema.yaml"
+                          }
+                        ]
                       }
                     }
                   },
-                  "required": [
-                    "@type"
-                  ],
-                  "anyOf": [
+                  "allOf": [
                     {
                       "required": [
-                        "schema:name"
+                        "@type"
                       ]
                     },
                     {
-                      "required": [
-                        "schema:identifier"
+                      "anyOf": [
+                        {
+                          "required": [
+                            "schema:name"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "schema:identifier"
+                          ]
+                        }
                       ]
                     }
                   ]

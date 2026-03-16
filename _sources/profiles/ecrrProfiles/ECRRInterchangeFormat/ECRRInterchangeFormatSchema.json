@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "ECRR Interchange Format Profile",
+    "description": "Complete ECRR metadata profile for interchange format resources. Composes ecrrBase, ecrrCommon, and ecrrAssessment. Resources must have schema:additionalType containing \"EC Interchange Format\".",
+    "allOf": [
+        {
+            "$ref": "../../../ecrrProperties/ecrrBase/ecrrBaseSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrCommon/ecrrCommonSchema.json"
+        },
+        {
+            "$ref": "../../../ecrrProperties/ecrrAssessment/ecrrAssessmentSchema.json"
+        },
+        {
+            "properties": {
+                "schema:additionalType": {
+                    "contains": {
+                        "enum": [
+                            "EC Interchange Format"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

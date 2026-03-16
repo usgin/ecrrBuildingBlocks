@@ -1,0 +1,49 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix dct:         <http://purl.org/dc/terms/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Common optional metadata: shared properties across multiple ECRR
+# resource types. Validates recommended optional properties.
+
+cdifd:ECRRCommonShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# Recommended: at least one creator
+	sh:property [
+		sh:path schema:creator ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should identify at least one creator (schema:creator)." ;
+	] ;
+
+	# Recommended: publication date
+	sh:property [
+		sh:path schema:datePublished ;
+		sh:maxCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include a publication date (schema:datePublished)." ;
+	] ;
+
+	# Recommended: keywords
+	sh:property [
+		sh:path schema:keywords ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include keywords (schema:keywords)." ;
+	] ;
+
+	# Recommended: URL
+	sh:property [
+		sh:path schema:url ;
+		sh:maxCount 1 ;
+		sh:nodeKind sh:IRI ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR resource should include a URL for a landing page (schema:url)." ;
+	] ;
+	.

@@ -1,0 +1,23 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix ecrro:       <http://purl.obolibrary.org/obo/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Specification properties: parent specification references
+# (profile-of relationships) via ECRRO_0000501.
+
+cdifd:ECRRSpecificationPropertiesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# Profile-of / parent specification (PropertyValue with ecrro:ECRRO_0000501)
+	sh:property [
+		sh:path ecrro:ECRRO_0000501 ;
+		sh:severity sh:Warning ;
+		sh:message "A specification resource should identify parent specifications it profiles (ecrro:ECRRO_0000501)." ;
+	] ;
+	.

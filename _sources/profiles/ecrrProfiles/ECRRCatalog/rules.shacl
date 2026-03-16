@@ -1,0 +1,96 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix ecrro:       <http://purl.obolibrary.org/obo/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRRCatalog profile: extends ecrrBase with ecrrCommon, ecrrAssessment,
+# and ecrrCatalog. Base validation rules are in their respective rules.shacl
+# files. This file adds profile-level constraints.
+
+# Root resource must include "EC CatalogRegistry" or "EC Repository" in additionalType.
+cdifd:ECRRCatalogTypeShape
+	a sh:NodeShape ;
+	sh:target [
+	  a sh:SPARQLTarget ;
+    sh:select """
+       PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+              ?this a schema:CreativeWork .
+              MINUS {
+                ?parent a schema:CreativeWork .
+                ?parent ?p ?this .
+                FILTER (?parent != ?this)
+                FILTER (?p != schema:about)
+              }
+            }
+          """ ;
+	] ;
+
+	sh:property [
+		sh:path schema:additionalType ;
+		sh:or (
+			[sh:hasValue "EC CatalogRegistry"]
+			[sh:hasValue "EC Repository"]
+		) ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Catalog should include 'EC CatalogRegistry' or 'EC Repository' in schema:additionalType." ;
+	] ;
+
+	# ECRR resources should have science domain classification
+	sh:property [
+		sh:path schema:about ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Catalog should specify science domains (schema:about) using DefinedTerm references to the ECRR ADO vocabulary." ;
+	] ;
+
+	# ECRR assessment: maturity state
+	sh:property [
+		sh:path ecrro:ECRRO_0000138 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Catalog should include a maturity state assessment (ecrro:ECRRO_0000138)." ;
+	] ;
+
+	# ECRR assessment: expected lifetime
+	sh:property [
+		sh:path ecrro:ECRRO_0000219 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Catalog should include an expected lifetime assessment (ecrro:ECRRO_0000219)." ;
+	] ;
+
+	# ECRR assessment: stewardship
+	sh:property [
+		sh:path ecrro:ECRRO_0000218 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Catalog should identify a steward (ecrro:ECRRO_0000218)." ;
+	] ;
+	.
+
+# Conformance declaration for the ECRR Catalog profile.
+cdifd:ECRRCatalogConformsToShape a sh:NodeShape ;
+    sh:target [
+      a sh:SPARQLTarget ;
+        sh:select  """
+            PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+            ?this a schema:CreativeWork ;
+             schema:about ?parent.
+            }
+        """;
+    ] ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path <http://purl.org/dc/terms/conformsTo> ;
+        sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog> ;
+        sh:severity sh:Warning ;
+        sh:message "Metadata record for ECRR Catalog profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog" ;
+    ] .

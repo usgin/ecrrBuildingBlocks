@@ -30,6 +30,10 @@
               "schema:name": {
                 "type": "string"
               },
+              "schema:description": {
+                "type": "string",
+                "description": "Description of this distribution, e.g. what format, access constraints, etc."
+              },
               "schema:contentUrl": {
                 "type": "string",
                 "format": "uri"
@@ -73,6 +77,20 @@
                   "@type"
                 ]
               },
+              "dcterms:conformsTo": {
+                "description": "An identifier for a standard or specification that the distribution conforms to. Recommended to enable machine-actionable data access.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@id": {
+                      "type": "string",
+                      "description": "uri for specification that this distribution conforms to"
+                    }
+                  }
+                }
+              },
               "schema:provider": {
                 "type": "array",
                 "description": "Party who maintains this particular distribution option for the dataset. Use this property if there are multiple distributions from different providers",
@@ -85,7 +103,10 @@
                           "type": "string",
                           "description": "a identifier for an agent defined in this metadata, or externally; must be dereferenceable"
                         }
-                      }
+                      },
+                      "required": [
+                        "@id"
+                      ]
                     },
                     {
                       "description": "schema for cdif profile of schema.org/Person",
@@ -95,8 +116,21 @@
                           "type": "string"
                         },
                         "@type": {
-                          "type": "string",
-                          "const": "schema:Person"
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "const": "schema:Person"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "contains": {
+                                "const": "schema:Person"
+                              }
+                            }
+                          ]
                         },
                         "schema:name": {
                           "type": "string",
@@ -113,8 +147,21 @@
                               "type": "object",
                               "properties": {
                                 "@type": {
-                                  "type": "string",
-                                  "const": "schema:PropertyValue"
+                                  "anyOf": [
+                                    {
+                                      "type": "string",
+                                      "const": "schema:PropertyValue"
+                                    },
+                                    {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "contains": {
+                                        "const": "schema:PropertyValue"
+                                      }
+                                    }
+                                  ]
                                 },
                                 "schema:propertyID": {
                                   "type": "string",
@@ -130,18 +177,24 @@
                                   "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                                 }
                               },
-                              "required": [
-                                "@type"
-                              ],
-                              "anyOf": [
+                              "allOf": [
                                 {
                                   "required": [
-                                    "schema:value"
+                                    "@type"
                                   ]
                                 },
                                 {
-                                  "required": [
-                                    "schema:url"
+                                  "anyOf": [
+                                    {
+                                      "required": [
+                                        "schema:value"
+                                      ]
+                                    },
+                                    {
+                                      "required": [
+                                        "schema:url"
+                                      ]
+                                    }
                                   ]
                                 }
                               ]
@@ -162,9 +215,22 @@
                               "type": "string"
                             },
                             "@type": {
-                              "type": "string",
-                              "const": "schema:Organization",
-                              "default": "schema:Organization"
+                              "default": "schema:Organization",
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "const": "schema:Organization"
+                                },
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "contains": {
+                                    "const": "schema:Organization"
+                                  }
+                                }
+                              ]
                             },
                             "schema:additionalType": {
                               "type": "array",
@@ -189,7 +255,21 @@
                                     "type": "object",
                                     "properties": {
                                       "@type": {
-                                        "const": "schema:DefinedTerm"
+                                        "anyOf": [
+                                          {
+                                            "type": "string",
+                                            "const": "schema:DefinedTerm"
+                                          },
+                                          {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "contains": {
+                                              "const": "schema:DefinedTerm"
+                                            }
+                                          }
+                                        ]
                                       },
                                       "schema:name": {
                                         "type": "string",
@@ -205,8 +285,21 @@
                                             "type": "object",
                                             "properties": {
                                               "@type": {
-                                                "type": "string",
-                                                "const": "schema:PropertyValue"
+                                                "anyOf": [
+                                                  {
+                                                    "type": "string",
+                                                    "const": "schema:PropertyValue"
+                                                  },
+                                                  {
+                                                    "type": "array",
+                                                    "items": {
+                                                      "type": "string"
+                                                    },
+                                                    "contains": {
+                                                      "const": "schema:PropertyValue"
+                                                    }
+                                                  }
+                                                ]
                                               },
                                               "schema:propertyID": {
                                                 "type": "string",
@@ -222,18 +315,24 @@
                                                 "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                                               }
                                             },
-                                            "required": [
-                                              "@type"
-                                            ],
-                                            "anyOf": [
+                                            "allOf": [
                                               {
                                                 "required": [
-                                                  "schema:value"
+                                                  "@type"
                                                 ]
                                               },
                                               {
-                                                "required": [
-                                                  "schema:url"
+                                                "anyOf": [
+                                                  {
+                                                    "required": [
+                                                      "schema:value"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "required": [
+                                                      "schema:url"
+                                                    ]
+                                                  }
                                                 ]
                                               }
                                             ]
@@ -249,23 +348,29 @@
                                         "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                                       }
                                     },
-                                    "required": [
-                                      "@type"
-                                    ],
-                                    "anyOf": [
+                                    "allOf": [
                                       {
                                         "required": [
-                                          "schema:name"
+                                          "@type"
                                         ]
                                       },
                                       {
-                                        "required": [
-                                          "schema:identifier"
-                                        ]
-                                      },
-                                      {
-                                        "required": [
-                                          "schema:termCode"
+                                        "anyOf": [
+                                          {
+                                            "required": [
+                                              "schema:name"
+                                            ]
+                                          },
+                                          {
+                                            "required": [
+                                              "schema:identifier"
+                                            ]
+                                          },
+                                          {
+                                            "required": [
+                                              "schema:termCode"
+                                            ]
+                                          }
                                         ]
                                       }
                                     ]
@@ -295,8 +400,21 @@
                                   "type": "object",
                                   "properties": {
                                     "@type": {
-                                      "type": "string",
-                                      "const": "schema:PropertyValue"
+                                      "anyOf": [
+                                        {
+                                          "type": "string",
+                                          "const": "schema:PropertyValue"
+                                        },
+                                        {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "contains": {
+                                            "const": "schema:PropertyValue"
+                                          }
+                                        }
+                                      ]
                                     },
                                     "schema:propertyID": {
                                       "type": "string",
@@ -312,18 +430,24 @@
                                       "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                                     }
                                   },
-                                  "required": [
-                                    "@type"
-                                  ],
-                                  "anyOf": [
+                                  "allOf": [
                                     {
                                       "required": [
-                                        "schema:value"
+                                        "@type"
                                       ]
                                     },
                                     {
-                                      "required": [
-                                        "schema:url"
+                                      "anyOf": [
+                                        {
+                                          "required": [
+                                            "schema:value"
+                                          ]
+                                        },
+                                        {
+                                          "required": [
+                                            "schema:url"
+                                          ]
+                                        }
                                       ]
                                     }
                                   ]
@@ -337,14 +461,213 @@
                               "type": "array",
                               "description": "other identifiers for the organization",
                               "items": {
-                                "type": "string"
+                                "anyOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "@id": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "description": "Properties for a schema.org identifier",
+                                    "type": "object",
+                                    "properties": {
+                                      "@type": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string",
+                                            "const": "schema:PropertyValue"
+                                          },
+                                          {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "contains": {
+                                              "const": "schema:PropertyValue"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "schema:propertyID": {
+                                        "type": "string",
+                                        "description": "In this context for the schema:PropertyValue, this field is an identifier for the identifier schema, e.g. DOI, ARK.  Get values from https://registry.identifiers.org/registry/ for interoperability"
+                                      },
+                                      "schema:value": {
+                                        "type": "string",
+                                        "description": "the identifier string. E.g. 10.5066/F7VX0DMQ"
+                                      },
+                                      "schema:url": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
+                                      }
+                                    },
+                                    "allOf": [
+                                      {
+                                        "required": [
+                                          "@type"
+                                        ]
+                                      },
+                                      {
+                                        "anyOf": [
+                                          {
+                                            "required": [
+                                              "schema:value"
+                                            ]
+                                          },
+                                          {
+                                            "required": [
+                                              "schema:url"
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
                               }
                             }
                           },
-                          "description": "if affiliation is present, value must be a schema:Organization.",
+                          "allOf": [
+                            {
+                              "required": [
+                                "@type"
+                              ]
+                            },
+                            {
+                              "anyOf": [
+                                {
+                                  "required": [
+                                    "schema:name"
+                                  ]
+                                },
+                                {
+                                  "required": [
+                                    "schema:identifier"
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "description": "if affiliation is present, value must be a schema:Organization."
+                        },
+                        "schema:contactPoint": {
+                          "type": "object",
+                          "properties": {
+                            "@type": {
+                              "default": "schema:ContactPoint",
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "const": "schema:ContactPoint"
+                                },
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "contains": {
+                                    "const": "schema:ContactPoint"
+                                  }
+                                }
+                              ]
+                            },
+                            "schema:email": {
+                              "type": "string"
+                            }
+                          },
+                          "description": "restrict to email only. Schema.org allows telephone and postal contacts as well"
+                        },
+                        "schema:sameAs": {
+                          "type": "array",
+                          "description": "other identifiers for the person",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "@id": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              {
+                                "description": "Properties for a schema.org identifier",
+                                "type": "object",
+                                "properties": {
+                                  "@type": {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "const": "schema:PropertyValue"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "contains": {
+                                          "const": "schema:PropertyValue"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "schema:propertyID": {
+                                    "type": "string",
+                                    "description": "In this context for the schema:PropertyValue, this field is an identifier for the identifier schema, e.g. DOI, ARK.  Get values from https://registry.identifiers.org/registry/ for interoperability"
+                                  },
+                                  "schema:value": {
+                                    "type": "string",
+                                    "description": "the identifier string. E.g. 10.5066/F7VX0DMQ"
+                                  },
+                                  "schema:url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
+                                  }
+                                },
+                                "allOf": [
+                                  {
+                                    "required": [
+                                      "@type"
+                                    ]
+                                  },
+                                  {
+                                    "anyOf": [
+                                      {
+                                        "required": [
+                                          "schema:value"
+                                        ]
+                                      },
+                                      {
+                                        "required": [
+                                          "schema:url"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "allOf": [
+                        {
                           "required": [
                             "@type"
-                          ],
+                          ]
+                        },
+                        {
                           "anyOf": [
                             {
                               "required": [
@@ -357,42 +680,6 @@
                               ]
                             }
                           ]
-                        },
-                        "schema:contactPoint": {
-                          "type": "object",
-                          "properties": {
-                            "@type": {
-                              "type": "string",
-                              "const": "schema:ContactPoint",
-                              "default": "schema:ContactPoint"
-                            },
-                            "schema:email": {
-                              "type": "string"
-                            }
-                          },
-                          "description": "restrict to email only. Schema.org allows telephone and postal contacts as well"
-                        },
-                        "schema:sameAs": {
-                          "type": "array",
-                          "description": "other identifiers for the person",
-                          "items": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "required": [
-                        "@type"
-                      ],
-                      "anyOf": [
-                        {
-                          "required": [
-                            "schema:name"
-                          ]
-                        },
-                        {
-                          "required": [
-                            "schema:identifier"
-                          ]
                         }
                       ]
                     },
@@ -403,9 +690,22 @@
                           "type": "string"
                         },
                         "@type": {
-                          "type": "string",
-                          "const": "schema:Organization",
-                          "default": "schema:Organization"
+                          "default": "schema:Organization",
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "const": "schema:Organization"
+                            },
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "contains": {
+                                "const": "schema:Organization"
+                              }
+                            }
+                          ]
                         },
                         "schema:additionalType": {
                           "type": "array",
@@ -430,7 +730,21 @@
                                 "type": "object",
                                 "properties": {
                                   "@type": {
-                                    "const": "schema:DefinedTerm"
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "const": "schema:DefinedTerm"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "contains": {
+                                          "const": "schema:DefinedTerm"
+                                        }
+                                      }
+                                    ]
                                   },
                                   "schema:name": {
                                     "type": "string",
@@ -446,8 +760,21 @@
                                         "type": "object",
                                         "properties": {
                                           "@type": {
-                                            "type": "string",
-                                            "const": "schema:PropertyValue"
+                                            "anyOf": [
+                                              {
+                                                "type": "string",
+                                                "const": "schema:PropertyValue"
+                                              },
+                                              {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "contains": {
+                                                  "const": "schema:PropertyValue"
+                                                }
+                                              }
+                                            ]
                                           },
                                           "schema:propertyID": {
                                             "type": "string",
@@ -463,18 +790,24 @@
                                             "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                                           }
                                         },
-                                        "required": [
-                                          "@type"
-                                        ],
-                                        "anyOf": [
+                                        "allOf": [
                                           {
                                             "required": [
-                                              "schema:value"
+                                              "@type"
                                             ]
                                           },
                                           {
-                                            "required": [
-                                              "schema:url"
+                                            "anyOf": [
+                                              {
+                                                "required": [
+                                                  "schema:value"
+                                                ]
+                                              },
+                                              {
+                                                "required": [
+                                                  "schema:url"
+                                                ]
+                                              }
                                             ]
                                           }
                                         ]
@@ -490,23 +823,29 @@
                                     "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                                   }
                                 },
-                                "required": [
-                                  "@type"
-                                ],
-                                "anyOf": [
+                                "allOf": [
                                   {
                                     "required": [
-                                      "schema:name"
+                                      "@type"
                                     ]
                                   },
                                   {
-                                    "required": [
-                                      "schema:identifier"
-                                    ]
-                                  },
-                                  {
-                                    "required": [
-                                      "schema:termCode"
+                                    "anyOf": [
+                                      {
+                                        "required": [
+                                          "schema:name"
+                                        ]
+                                      },
+                                      {
+                                        "required": [
+                                          "schema:identifier"
+                                        ]
+                                      },
+                                      {
+                                        "required": [
+                                          "schema:termCode"
+                                        ]
+                                      }
                                     ]
                                   }
                                 ]
@@ -536,8 +875,21 @@
                               "type": "object",
                               "properties": {
                                 "@type": {
-                                  "type": "string",
-                                  "const": "schema:PropertyValue"
+                                  "anyOf": [
+                                    {
+                                      "type": "string",
+                                      "const": "schema:PropertyValue"
+                                    },
+                                    {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "contains": {
+                                        "const": "schema:PropertyValue"
+                                      }
+                                    }
+                                  ]
                                 },
                                 "schema:propertyID": {
                                   "type": "string",
@@ -553,18 +905,24 @@
                                   "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                                 }
                               },
-                              "required": [
-                                "@type"
-                              ],
-                              "anyOf": [
+                              "allOf": [
                                 {
                                   "required": [
-                                    "schema:value"
+                                    "@type"
                                   ]
                                 },
                                 {
-                                  "required": [
-                                    "schema:url"
+                                  "anyOf": [
+                                    {
+                                      "required": [
+                                        "schema:value"
+                                      ]
+                                    },
+                                    {
+                                      "required": [
+                                        "schema:url"
+                                      ]
+                                    }
                                   ]
                                 }
                               ]
@@ -578,22 +936,97 @@
                           "type": "array",
                           "description": "other identifiers for the organization",
                           "items": {
-                            "type": "string"
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "@id": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              {
+                                "description": "Properties for a schema.org identifier",
+                                "type": "object",
+                                "properties": {
+                                  "@type": {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "const": "schema:PropertyValue"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "contains": {
+                                          "const": "schema:PropertyValue"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "schema:propertyID": {
+                                    "type": "string",
+                                    "description": "In this context for the schema:PropertyValue, this field is an identifier for the identifier schema, e.g. DOI, ARK.  Get values from https://registry.identifiers.org/registry/ for interoperability"
+                                  },
+                                  "schema:value": {
+                                    "type": "string",
+                                    "description": "the identifier string. E.g. 10.5066/F7VX0DMQ"
+                                  },
+                                  "schema:url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
+                                  }
+                                },
+                                "allOf": [
+                                  {
+                                    "required": [
+                                      "@type"
+                                    ]
+                                  },
+                                  {
+                                    "anyOf": [
+                                      {
+                                        "required": [
+                                          "schema:value"
+                                        ]
+                                      },
+                                      {
+                                        "required": [
+                                          "schema:url"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         }
                       },
-                      "required": [
-                        "@type"
-                      ],
-                      "anyOf": [
+                      "allOf": [
                         {
                           "required": [
-                            "schema:name"
+                            "@type"
                           ]
                         },
                         {
-                          "required": [
-                            "schema:identifier"
+                          "anyOf": [
+                            {
+                              "required": [
+                                "schema:name"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "schema:identifier"
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -632,7 +1065,21 @@
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "const": "schema:DefinedTerm"
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "schema:DefinedTerm"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "schema:DefinedTerm"
+                            }
+                          }
+                        ]
                       },
                       "schema:name": {
                         "type": "string",
@@ -648,8 +1095,21 @@
                             "type": "object",
                             "properties": {
                               "@type": {
-                                "type": "string",
-                                "const": "schema:PropertyValue"
+                                "anyOf": [
+                                  {
+                                    "type": "string",
+                                    "const": "schema:PropertyValue"
+                                  },
+                                  {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "contains": {
+                                      "const": "schema:PropertyValue"
+                                    }
+                                  }
+                                ]
                               },
                               "schema:propertyID": {
                                 "type": "string",
@@ -665,18 +1125,24 @@
                                 "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                               }
                             },
-                            "required": [
-                              "@type"
-                            ],
-                            "anyOf": [
+                            "allOf": [
                               {
                                 "required": [
-                                  "schema:value"
+                                  "@type"
                                 ]
                               },
                               {
-                                "required": [
-                                  "schema:url"
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "schema:value"
+                                    ]
+                                  },
+                                  {
+                                    "required": [
+                                      "schema:url"
+                                    ]
+                                  }
                                 ]
                               }
                             ]
@@ -692,23 +1158,29 @@
                         "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                       }
                     },
-                    "required": [
-                      "@type"
-                    ],
-                    "anyOf": [
+                    "allOf": [
                       {
                         "required": [
-                          "schema:name"
+                          "@type"
                         ]
                       },
                       {
-                        "required": [
-                          "schema:identifier"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "schema:termCode"
+                        "anyOf": [
+                          {
+                            "required": [
+                              "schema:name"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "schema:identifier"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "schema:termCode"
+                            ]
+                          }
                         ]
                       }
                     ]
@@ -720,16 +1192,30 @@
                 "description": "Description of access privileges required to use the API, e.g. registration, licensing, payments. Note that access constraints applying to all distributions of the resource should be specified in the access constraints for the resource description as a whole.",
                 "oneOf": [
                   {
-                    "type": "string"
+                    "type": "string",
+                    "default": "not specified"
                   },
                   {
                     "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "type": "string",
                         "default": "schema:CreativeWork",
-                        "const": "schema:CreativeWork"
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "schema:CreativeWork"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "schema:CreativeWork"
+                            }
+                          }
+                        ]
                       },
                       "schema:name": {
                         "type": "string"
@@ -760,9 +1246,22 @@
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "type": "string",
                         "default": "schema:CreativeWork",
-                        "const": "schema:CreativeWork"
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "schema:CreativeWork"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "schema:CreativeWork"
+                            }
+                          }
+                        ]
                       },
                       "schema:name": {
                         "type": "string"
@@ -786,13 +1285,14 @@
                 "type": "array",
                 "description": "actions that can be invoked via the API",
                 "items": {
-                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_vgvivmgl\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\action\\schema.yaml"
+                  "$comment": "file not found: C:\\Users\\smrTu\\AppData\\Local\\Temp\\resolve_schema_t7kr5r5p\\metadataBuildingBlocks\\_sources\\schemaorgProperties\\action\\schema.yaml"
                 }
               }
             },
             "required": [
               "schema:serviceType",
-              "schema:potentialAction"
+              "schema:potentialAction",
+              "schema:termsOfService"
             ]
           }
         ]
@@ -806,9 +1306,22 @@
         "type": "object",
         "properties": {
           "@type": {
-            "type": "string",
-            "const": "schema:Place",
-            "default": "schema:Place"
+            "default": "schema:Place",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "schema:Place"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "contains": {
+                  "const": "schema:Place"
+                }
+              }
+            ]
           },
           "schema:name": {
             "description": "multiple place names or DefinedTerms that have a place name and URI for the location",
@@ -823,7 +1336,21 @@
                   "type": "object",
                   "properties": {
                     "@type": {
-                      "const": "schema:DefinedTerm"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "schema:DefinedTerm"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "contains": {
+                            "const": "schema:DefinedTerm"
+                          }
+                        }
+                      ]
                     },
                     "schema:name": {
                       "type": "string",
@@ -839,8 +1366,21 @@
                           "type": "object",
                           "properties": {
                             "@type": {
-                              "type": "string",
-                              "const": "schema:PropertyValue"
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "const": "schema:PropertyValue"
+                                },
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "contains": {
+                                    "const": "schema:PropertyValue"
+                                  }
+                                }
+                              ]
                             },
                             "schema:propertyID": {
                               "type": "string",
@@ -856,18 +1396,24 @@
                               "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                             }
                           },
-                          "required": [
-                            "@type"
-                          ],
-                          "anyOf": [
+                          "allOf": [
                             {
                               "required": [
-                                "schema:value"
+                                "@type"
                               ]
                             },
                             {
-                              "required": [
-                                "schema:url"
+                              "anyOf": [
+                                {
+                                  "required": [
+                                    "schema:value"
+                                  ]
+                                },
+                                {
+                                  "required": [
+                                    "schema:url"
+                                  ]
+                                }
                               ]
                             }
                           ]
@@ -883,23 +1429,29 @@
                       "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                     }
                   },
-                  "required": [
-                    "@type"
-                  ],
-                  "anyOf": [
+                  "allOf": [
                     {
                       "required": [
-                        "schema:name"
+                        "@type"
                       ]
                     },
                     {
-                      "required": [
-                        "schema:identifier"
-                      ]
-                    },
-                    {
-                      "required": [
-                        "schema:termCode"
+                      "anyOf": [
+                        {
+                          "required": [
+                            "schema:name"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "schema:identifier"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "schema:termCode"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -915,15 +1467,32 @@
                 "description": "A point location. Point locations are recommended for data that is associated with specific sample locations, particularly if these are widely spaced such that an enclosing bounding box would be a misleading representation of the spatial location. Be aware that some client applications might only index or display bounding box extents or a single point location.",
                 "properties": {
                   "@type": {
-                    "type": "string",
-                    "const": "schema:GeoCoordinates",
-                    "default": "schema:GeoCoordinates"
+                    "default": "schema:GeoCoordinates",
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "schema:GeoCoordinates"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "schema:GeoCoordinates"
+                        }
+                      }
+                    ]
                   },
                   "schema:latitude": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90
                   },
                   "schema:longitude": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
                   }
                 },
                 "required": [
@@ -937,9 +1506,22 @@
                 "description": "A schema:GeoShape bounding box. The geometry is described with a set of latitude/longitude pairs (in that order).The documentation for schema:GeoShape states 'Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.'",
                 "properties": {
                   "@type": {
-                    "type": "string",
-                    "const": "schema:GeoShape",
-                    "default": "schema:GeoShape"
+                    "default": "schema:GeoShape",
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "schema:GeoShape"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "schema:GeoShape"
+                        }
+                      }
+                    ]
                   },
                   "schema:box": {
                     "type": "string",
@@ -956,9 +1538,22 @@
                 "description": "A schema:GeoShape curvilinear trace, for resource related to a linear trace like a ship track or airplane flight line",
                 "properties": {
                   "@type": {
-                    "type": "string",
-                    "const": "schema:GeoShape",
-                    "default": "schema:GeoShape"
+                    "default": "schema:GeoShape",
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "schema:GeoShape"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "schema:GeoShape"
+                        }
+                      }
+                    ]
                   },
                   "schema:line": {
                     "type": "string",
@@ -977,15 +1572,38 @@
             "description": "Optional geographic extent using wkt geometry, see Ocean InfoHub (https://book.oceaninfohub.org/thematics/spatial/README.html#simple-geosparql-wkt). Other geometry schemes might be specified in a specific domain profile, e.g. for atmospheric, subsurface data, or local coordinate systems. NOTE that the location specified here should be the same as the schema.org point or contained within the specified bounding box.",
             "properties": {
               "@type": {
-                "type": "string",
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ],
                 "description": "MUST be sf: (<http://www.opengis.net/ont/sf#>) SimpleFeature geometry type. See https://opengeospatial.github.io/ogc-geosparql/geosparql11/sf_geometries.ttl"
               },
               "geosparql:asWKT": {
                 "type": "object",
                 "properties": {
                   "@type": {
-                    "type": "string",
-                    "const": "geosparql:wktLiteral"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "geosparql:wktLiteral"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "geosparql:wktLiteral"
+                        }
+                      }
+                    ]
                   },
                   "@value": {
                     "type": "string",
@@ -1018,9 +1636,22 @@
             "description": "a w3c time proper interval with bounds that are named time ordinal eras with identifier, e.g. geologic age. This is a SOSO schema.org extension",
             "properties": {
               "@type": {
-                "type": "string",
                 "default": "time:ProperInterval",
-                "const": "time:ProperInterval"
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "time:ProperInterval"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "contains": {
+                      "const": "time:ProperInterval"
+                    }
+                  }
+                ]
               },
               "schema:description": {
                 "type": "string",
@@ -1062,9 +1693,22 @@
                 "description": "Must exactly match the specified @context object."
               },
               "@type": {
-                "type": "string",
                 "default": "time:ProperInterval",
-                "const": "time:ProperInterval"
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "time:ProperInterval"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "contains": {
+                      "const": "time:ProperInterval"
+                    }
+                  }
+                ]
               },
               "schema:description": {
                 "type": "string",
@@ -1074,16 +1718,42 @@
                 "type": "object",
                 "properties": {
                   "@type": {
-                    "type": "string",
-                    "const": "time:Instant"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "time:Instant"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "time:Instant"
+                        }
+                      }
+                    ]
                   },
                   "time:inTimePosition": {
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "type": "string",
-                        "const": "time:TimePosition",
-                        "default": "time:TimePosition"
+                        "default": "time:TimePosition",
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "time:TimePosition"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "time:TimePosition"
+                            }
+                          }
+                        ]
                       },
                       "time:hasTRS": {
                         "type": "string",
@@ -1101,16 +1771,42 @@
                 "type": "object",
                 "properties": {
                   "@type": {
-                    "type": "string",
-                    "const": "time:Instant"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "time:Instant"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "time:Instant"
+                        }
+                      }
+                    ]
                   },
                   "time:inTimePosition": {
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "type": "string",
-                        "const": "time:TimePosition",
-                        "default": "time:TimePosition"
+                        "default": "time:TimePosition",
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "time:TimePosition"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "time:TimePosition"
+                            }
+                          }
+                        ]
                       },
                       "time:hasTRS": {
                         "type": "string",
@@ -1137,7 +1833,7 @@
       "description": "What the dataset measures (e.g. temperature, pressure).",
       "type": "array",
       "items": {
-        "description": "CDIF schema.org implemenation of PropertyValue to use as values for variableMeasured",
+        "description": "Schema.org PropertyValue-based variableMeasured. Defines properties for a measured variable in a dataset, typed as schema:PropertyValue.",
         "type": "object",
         "properties": {
           "@type": {
@@ -1155,7 +1851,7 @@
           },
           "schema:name": {
             "type": "string",
-            "description": "this is the string label that is expected to be associated with the variable in the dataset serialization"
+            "description": "string label associated with the variable in the dataset serialization"
           },
           "schema:description": {
             "type": "string",
@@ -1168,6 +1864,148 @@
               "description": "human intelligible name for variable that conveys semantics"
             }
           },
+          "schema:measurementTechnique": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@id": {
+                    "type": "string",
+                    "description": "reference to a skos concept"
+                  }
+                }
+              },
+              {
+                "description": "schema.org Defined Term schema",
+                "type": "object",
+                "properties": {
+                  "@type": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "schema:DefinedTerm"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "schema:DefinedTerm"
+                        }
+                      }
+                    ]
+                  },
+                  "schema:name": {
+                    "type": "string",
+                    "description": "text label for the term that is useful to human user"
+                  },
+                  "schema:identifier": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "description": "Properties for a schema.org identifier",
+                        "type": "object",
+                        "properties": {
+                          "@type": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "const": "schema:PropertyValue"
+                              },
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "contains": {
+                                  "const": "schema:PropertyValue"
+                                }
+                              }
+                            ]
+                          },
+                          "schema:propertyID": {
+                            "type": "string",
+                            "description": "In this context for the schema:PropertyValue, this field is an identifier for the identifier schema, e.g. DOI, ARK.  Get values from https://registry.identifiers.org/registry/ for interoperability"
+                          },
+                          "schema:value": {
+                            "type": "string",
+                            "description": "the identifier string. E.g. 10.5066/F7VX0DMQ"
+                          },
+                          "schema:url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
+                          }
+                        },
+                        "allOf": [
+                          {
+                            "required": [
+                              "@type"
+                            ]
+                          },
+                          {
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "schema:value"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "schema:url"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "schema:inDefinedTermSet": {
+                    "type": "string",
+                    "description": "Identifier for the controlled vocabulary responsible for this keyword."
+                  },
+                  "schema:termCode": {
+                    "type": "string",
+                    "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
+                  }
+                },
+                "allOf": [
+                  {
+                    "required": [
+                      "@type"
+                    ]
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "schema:name"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "schema:identifier"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "schema:termCode"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "description": "Text description or URI identifying the measurement method."
+          },
           "schema:propertyID": {
             "type": "array",
             "items": {
@@ -1179,8 +2017,7 @@
                   "type": "object",
                   "properties": {
                     "@id": {
-                      "type": "string",
-                      "description": "reference to a skos concept for the property"
+                      "type": "string"
                     }
                   }
                 },
@@ -1189,7 +2026,21 @@
                   "type": "object",
                   "properties": {
                     "@type": {
-                      "const": "schema:DefinedTerm"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "schema:DefinedTerm"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "contains": {
+                            "const": "schema:DefinedTerm"
+                          }
+                        }
+                      ]
                     },
                     "schema:name": {
                       "type": "string",
@@ -1205,8 +2056,21 @@
                           "type": "object",
                           "properties": {
                             "@type": {
-                              "type": "string",
-                              "const": "schema:PropertyValue"
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "const": "schema:PropertyValue"
+                                },
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "contains": {
+                                    "const": "schema:PropertyValue"
+                                  }
+                                }
+                              ]
                             },
                             "schema:propertyID": {
                               "type": "string",
@@ -1222,18 +2086,24 @@
                               "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                             }
                           },
-                          "required": [
-                            "@type"
-                          ],
-                          "anyOf": [
+                          "allOf": [
                             {
                               "required": [
-                                "schema:value"
+                                "@type"
                               ]
                             },
                             {
-                              "required": [
-                                "schema:url"
+                              "anyOf": [
+                                {
+                                  "required": [
+                                    "schema:value"
+                                  ]
+                                },
+                                {
+                                  "required": [
+                                    "schema:url"
+                                  ]
+                                }
                               ]
                             }
                           ]
@@ -1249,137 +2119,40 @@
                       "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                     }
                   },
-                  "required": [
-                    "@type"
-                  ],
-                  "anyOf": [
+                  "allOf": [
                     {
                       "required": [
-                        "schema:name"
+                        "@type"
                       ]
                     },
                     {
-                      "required": [
-                        "schema:identifier"
-                      ]
-                    },
-                    {
-                      "required": [
-                        "schema:termCode"
+                      "anyOf": [
+                        {
+                          "required": [
+                            "schema:name"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "schema:identifier"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "schema:termCode"
+                          ]
+                        }
                       ]
                     }
                   ]
                 }
               ]
             },
-            "description": "identifier or name for the property concept quantified by the values in this variable slot. Multiple values can specify the property at different levels of granularity."
-          },
-          "schema:measurementTechnique": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "@id": {
-                    "type": "string",
-                    "description": "reference to a skos concept for the property"
-                  }
-                }
-              },
-              {
-                "description": "schema.org Defined Term schema",
-                "type": "object",
-                "properties": {
-                  "@type": {
-                    "const": "schema:DefinedTerm"
-                  },
-                  "schema:name": {
-                    "type": "string",
-                    "description": "text label for the term that is useful to human user"
-                  },
-                  "schema:identifier": {
-                    "anyOf": [
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "description": "Properties for a schema.org identifier",
-                        "type": "object",
-                        "properties": {
-                          "@type": {
-                            "type": "string",
-                            "const": "schema:PropertyValue"
-                          },
-                          "schema:propertyID": {
-                            "type": "string",
-                            "description": "In this context for the schema:PropertyValue, this field is an identifier for the identifier schema, e.g. DOI, ARK.  Get values from https://registry.identifiers.org/registry/ for interoperability"
-                          },
-                          "schema:value": {
-                            "type": "string",
-                            "description": "the identifier string. E.g. 10.5066/F7VX0DMQ"
-                          },
-                          "schema:url": {
-                            "type": "string",
-                            "format": "uri",
-                            "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
-                          }
-                        },
-                        "required": [
-                          "@type"
-                        ],
-                        "anyOf": [
-                          {
-                            "required": [
-                              "schema:value"
-                            ]
-                          },
-                          {
-                            "required": [
-                              "schema:url"
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "schema:inDefinedTermSet": {
-                    "type": "string",
-                    "description": "Identifier for the controlled vocabulary responsible for this keyword."
-                  },
-                  "schema:termCode": {
-                    "type": "string",
-                    "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
-                  }
-                },
-                "required": [
-                  "@type"
-                ],
-                "anyOf": [
-                  {
-                    "required": [
-                      "schema:name"
-                    ]
-                  },
-                  {
-                    "required": [
-                      "schema:identifier"
-                    ]
-                  },
-                  {
-                    "required": [
-                      "schema:termCode"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "description": "A text description of the measurement method used to determine values for this variable. If standard measurement protocols are defined and registered, these can be identified via http URI's."
+            "description": "identifier or name for the property concept"
           },
           "schema:unitText": {
             "type": "string",
-            "description": "A string that identifies a unit of measurement that applies to all values for this variable."
+            "description": "unit of measurement as text"
           },
           "schema:unitCode": {
             "anyOf": [
@@ -1390,8 +2163,7 @@
                 "type": "object",
                 "properties": {
                   "@id": {
-                    "type": "string",
-                    "description": "reference to a skos concept for the property"
+                    "type": "string"
                   }
                 }
               },
@@ -1400,7 +2172,21 @@
                 "type": "object",
                 "properties": {
                   "@type": {
-                    "const": "schema:DefinedTerm"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "schema:DefinedTerm"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "contains": {
+                          "const": "schema:DefinedTerm"
+                        }
+                      }
+                    ]
                   },
                   "schema:name": {
                     "type": "string",
@@ -1416,8 +2202,21 @@
                         "type": "object",
                         "properties": {
                           "@type": {
-                            "type": "string",
-                            "const": "schema:PropertyValue"
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "const": "schema:PropertyValue"
+                              },
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "contains": {
+                                  "const": "schema:PropertyValue"
+                                }
+                              }
+                            ]
                           },
                           "schema:propertyID": {
                             "type": "string",
@@ -1433,18 +2232,24 @@
                             "description": "web-resolveable string for the identifier; host name part is location of a resolver that will return some representation for the given identifier value. E.g. https://doi.org/10.5066/F7VX0DMQ "
                           }
                         },
-                        "required": [
-                          "@type"
-                        ],
-                        "anyOf": [
+                        "allOf": [
                           {
                             "required": [
-                              "schema:value"
+                              "@type"
                             ]
                           },
                           {
-                            "required": [
-                              "schema:url"
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "schema:value"
+                                ]
+                              },
+                              {
+                                "required": [
+                                  "schema:url"
+                                ]
+                              }
                             ]
                           }
                         ]
@@ -1460,48 +2265,53 @@
                     "description": "A representative code for this keyword in the controlled vocabulary (Optional).  Analogous to skos:Notation"
                   }
                 },
-                "required": [
-                  "@type"
-                ],
-                "anyOf": [
+                "allOf": [
                   {
                     "required": [
-                      "schema:name"
+                      "@type"
                     ]
                   },
                   {
-                    "required": [
-                      "schema:identifier"
-                    ]
-                  },
-                  {
-                    "required": [
-                      "schema:termCode"
+                    "anyOf": [
+                      {
+                        "required": [
+                          "schema:name"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "schema:identifier"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "schema:termCode"
+                        ]
+                      }
                     ]
                   }
                 ]
               }
             ],
-            "description": "Value is expected to be TEXT or URL. We recommend providing an HTTP URI that identifies a unit of measure from a vocabulary accessible on the web. The QUDT unit vocabulary provides and extensive set of registered units of measure that can be used to populate the schema:unitCode property to specify the units of measure used to report datavalues when that is appropriate."
+            "description": "URI or code identifying the unit of measure"
           },
           "schema:minValue": {
             "type": "number",
-            "description": " If the value for the variable is numeric, this is the minimum value that occurs in the dataset. Not useful for other value types."
+            "description": "minimum numeric value in the dataset"
           },
           "schema:maxValue": {
             "type": "number",
-            "description": " If the value for the variable is numeric, this is the maximum value that occurs in the dataset. Not useful for other value types."
+            "description": "maximum numeric value in the dataset"
           },
           "schema:url": {
             "type": "string",
             "format": "uri",
-            "description": "Any schema:Thing can have a URL property, but because the value is simply a url the relationship of the linked resource can not be expressed. Usage is optional. The recommendation is that schema:url should link to a web page that would be useful for a person to interpret the variable, but is not intended to be machine-actionable."
+            "description": "link to a web page useful for interpreting the variable"
           }
         },
         "required": [
           "@type",
-          "schema:name",
-          "schema:description"
+          "schema:name"
         ]
       }
     },

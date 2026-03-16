@@ -1,0 +1,100 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix ecrro:       <http://purl.obolibrary.org/obo/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRRSpecification profile: extends ecrrBase with ecrrCommon, ecrrAssessment,
+# and ecrrSpecification. This file adds profile-level constraints for
+# specification resources.
+
+# Root resource must include "EC Specification" in additionalType.
+cdifd:ECRRSpecificationTypeShape
+	a sh:NodeShape ;
+	sh:target [
+	  a sh:SPARQLTarget ;
+    sh:select """
+       PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+              ?this a schema:CreativeWork .
+              MINUS {
+                ?parent a schema:CreativeWork .
+                ?parent ?p ?this .
+                FILTER (?parent != ?this)
+                FILTER (?p != schema:about)
+              }
+            }
+          """ ;
+	] ;
+
+	sh:property [
+		sh:path schema:additionalType ;
+		sh:hasValue "EC Specification" ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Specification should include 'EC Specification' in schema:additionalType." ;
+	] ;
+
+	# ECRR resources should have science domain classification
+	sh:property [
+		sh:path schema:about ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Specification should specify science domains (schema:about) using DefinedTerm references to the ECRR ADO vocabulary." ;
+	] ;
+
+	# Specification-specific: parent specification (profile-of)
+	sh:property [
+		sh:path ecrro:ECRRO_0000501 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Specification should identify parent specifications it profiles (ecrro:ECRRO_0000501)." ;
+	] ;
+
+	# ECRR assessment: maturity state
+	sh:property [
+		sh:path ecrro:ECRRO_0000138 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Specification should include a maturity state assessment (ecrro:ECRRO_0000138)." ;
+	] ;
+
+	# ECRR assessment: expected lifetime
+	sh:property [
+		sh:path ecrro:ECRRO_0000219 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Specification should include an expected lifetime assessment (ecrro:ECRRO_0000219)." ;
+	] ;
+
+	# ECRR assessment: stewardship
+	sh:property [
+		sh:path ecrro:ECRRO_0000218 ;
+		sh:minCount 1 ;
+		sh:severity sh:Warning ;
+		sh:message "An ECRR Specification should identify a steward (ecrro:ECRRO_0000218)." ;
+	] ;
+	.
+
+# Conformance declaration for the ECRR Specification profile.
+cdifd:ECRRSpecificationConformsToShape a sh:NodeShape ;
+    sh:target [
+      a sh:SPARQLTarget ;
+        sh:select  """
+            PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+            ?this a schema:CreativeWork ;
+             schema:about ?parent.
+            }
+        """;
+    ] ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path <http://purl.org/dc/terms/conformsTo> ;
+        sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification> ;
+        sh:severity sh:Warning ;
+        sh:message "Metadata record for ECRR Specification profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification" ;
+    ] .

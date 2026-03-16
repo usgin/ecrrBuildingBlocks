@@ -1,0 +1,44 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix ecrro:       <http://purl.obolibrary.org/obo/> .
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Service Instance properties: communication protocols, interface
+# specifications, supporting data, and service invocation.
+
+cdifd:ECRRServicePropertiesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# Communication protocols (PropertyValue with propertyID ecrro:ECRRO_0000502)
+	sh:property [
+		sh:path ecrro:ECRRO_0000502 ;
+		sh:severity sh:Warning ;
+		sh:message "A service instance should specify communication protocols (ecrro:ECRRO_0000502)." ;
+	] ;
+
+	# Interface specification (PropertyValue with propertyID ecrro:ECRRO_0000503)
+	sh:property [
+		sh:path ecrro:ECRRO_0000503 ;
+		sh:severity sh:Warning ;
+		sh:message "A service instance should specify an interface specification (ecrro:ECRRO_0000503)." ;
+	] ;
+
+	# Supporting data (input/output formats)
+	sh:property [
+		sh:path schema:supportingData ;
+		sh:severity sh:Warning ;
+		sh:message "A service instance should specify input/output data formats (schema:supportingData)." ;
+	] ;
+
+	# Potential action (service invocation endpoint)
+	sh:property [
+		sh:path schema:potentialAction ;
+		sh:severity sh:Warning ;
+		sh:message "A service instance should specify a service invocation endpoint (schema:potentialAction)." ;
+	] ;
+	.

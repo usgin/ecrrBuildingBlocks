@@ -1,0 +1,43 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Software-specific properties: application categories, runtime
+# platforms, programming languages, code repositories, and dependencies.
+
+cdifd:ECRRSoftwarePropertiesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# Application category (function classification from SFO vocabulary)
+	sh:property [
+		sh:path schema:applicationCategory ;
+		sh:severity sh:Warning ;
+		sh:message "A software resource should specify application categories (schema:applicationCategory)." ;
+	] ;
+
+	# Runtime platform
+	sh:property [
+		sh:path schema:runtimePlatform ;
+		sh:severity sh:Warning ;
+		sh:message "A software resource should specify runtime platforms (schema:runtimePlatform)." ;
+	] ;
+
+	# Programming language
+	sh:property [
+		sh:path schema:programmingLanguage ;
+		sh:severity sh:Warning ;
+		sh:message "A software resource should specify programming languages (schema:programmingLanguage)." ;
+	] ;
+
+	# Code repository
+	sh:property [
+		sh:path schema:codeRepository ;
+		sh:severity sh:Warning ;
+		sh:message "A software resource should specify a code repository (schema:codeRepository)." ;
+	] ;
+	.
