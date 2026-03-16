@@ -14,6 +14,31 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://cor.esipfed.org/ont/earthcube/> rdfs:label "EarthCube Resource Registry Ontology" .
+
+schema: rdfs:label "schema.org" .
+
+schema:CreativeWork rdfs:label "schema.org CreativeWork" .
+
+schema:DataCatalog rdfs:label "schema.org DataCatalog" .
+
+schema:Product rdfs:label "schema.org Product" .
+
+<https://usgin.github.io/ecrrBuildingBlocks/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:N782130fb85824a0586bb7eca387f4573 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-03-16T22:02:54.122621"^^xsd:dateTime ;
+            prov:startedAtTime "2026-03-16T22:02:53.902862"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:7c10aaa12fb90b445d0507b0cc64920738de0b48" ;
+                    rdfs:seeAlso <https://usgin.github.io/ecrrBuildingBlocks/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:N782130fb85824a0586bb7eca387f4573 ] .
+
 <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrDataset> a skos:Concept,
         dcat:Dataset,
         bblocks:BBlock,
@@ -21,12 +46,12 @@
     rdfs:label "ECRR Dataset properties" ;
     dct:abstract "Schema defining properties specific to dataset resources in the EarthCube Resource Registry, referencing existing distribution, spatial/temporal extent, and variable building blocks. Defines properties: schema:distribution, schema:spatialCoverage, schema:temporalCoverage, schema:variableMeasured, schema:includedInDataCatalog. Uses building blocks: dataDownload (schemaorgProperties), webAPI (schemaorgProperties), spatialExtent (schemaorgProperties), temporalExtent (schemaorgProperties), variableMeasured (schemaorgProperties)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrDataset/index.md> ],
+        [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrDataset> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrDataset/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrDataset/index.md> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrDataset/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:Dataset,
@@ -36,7 +61,17 @@
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.yaml> ;
             prof:hasRole role:schema ],
@@ -47,18 +82,19 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld> ;
-            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
@@ -69,6 +105,19 @@
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrDataset> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
@@ -76,33 +125,14 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/schema.json> ;
-            prof:hasRole role:schema ] ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.dataDownload>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent>,
@@ -120,12 +150,12 @@
     rdfs:label "ECRR Catalog/Registry profile" ;
     dct:abstract "Complete ECRR metadata profile for catalog and registry resources, composing base, common, assessment, and catalog-specific building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -134,7 +164,22 @@
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/schema.yaml> ;
             prof:hasRole role:schema ],
@@ -143,35 +188,10 @@
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld> ;
             prof:hasRole role:mapping ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
@@ -180,7 +200,37 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog>,
@@ -211,23 +261,52 @@
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/schema.yaml> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCollection> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -236,17 +315,8 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCollection> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCollection/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -255,14 +325,234 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
             prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCollection>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCollection/context.jsonld> ;
+    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed false .
+
+<bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "ECRR Dataset profile" ;
+    dct:abstract "Complete ECRR metadata profile for dataset resources, extending CDIFcomplete with base, common, and assessment building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/index.md> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-03-16"^^xsd:date ;
+    dct:source schema:Dataset,
+        <https://www.earthcube.org/resource-registry> ;
+    skos:inScheme <https://usgin.github.io/ecrrBuildingBlocks/> ;
+    skos:prefLabel "ECRR Dataset profile" ;
+    skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
+    dcat:keyword "ecrr",
+        "templates" ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifOptional> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifProvenance> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvenance/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifProvActivity> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvActivity/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifPhysicalMapping> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.agentInRole> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.qualityProperties.qualityMeasure> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifMandatory> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.provProperties.generatedBy> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifTabularData> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.statisticalVariable> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/statisticalVariable/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.additionalProperty> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.provProperties.derivedFrom> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.instrument> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/instrument/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifVariableMeasured> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifVariableMeasured/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifArchive> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchive/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifArchiveDistribution> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchiveDistribution/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifCatalogRecord> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.dataDownload> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifDataDescription> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataDescription/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifDataCube> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ] ;
+    bblocks:dependsOn <bblocks://cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete>,
+        <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm>,
+        <bblocks://cdif.bbr.metadata.schemaorgProperties.organization>,
+        <bblocks://cdif.bbr.metadata.schemaorgProperties.person>,
+        <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
+        <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+    bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed false .
@@ -274,12 +564,12 @@
     rdfs:label "ECRR Interchange Format profile" ;
     dct:abstract "Complete ECRR metadata profile for interchange format resources, composing base, common, and assessment building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/index.json> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -290,23 +580,37 @@
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterchangeFormat/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
-            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
@@ -321,10 +625,11 @@
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld> ;
             prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/schema.json> ;
-            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
@@ -332,8 +637,8 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
@@ -364,34 +669,20 @@
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
@@ -402,15 +693,44 @@
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterface> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterface/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
@@ -426,12 +746,12 @@
     rdfs:label "ECRR Platform profile" ;
     dct:abstract "Complete ECRR metadata profile for platform resources, composing base, common, and assessment building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/index.md> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/index.json> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRPlatform> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/index.json> ] ;
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -442,17 +762,17 @@
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRPlatform> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRPlatform/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/schema.json> ;
-            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -461,22 +781,14 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
@@ -484,9 +796,32 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
@@ -518,30 +853,8 @@
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -550,19 +863,61 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSemanticResource/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon>,
@@ -579,12 +934,12 @@
     rdfs:label "ECRR Service Instance profile" ;
     dct:abstract "Complete ECRR metadata profile for service instance resources, composing base, common, assessment, and service-specific building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRService/index.md> ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRService/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRService/index.md> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:WebAPI,
@@ -596,27 +951,52 @@
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRService/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrService> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -628,15 +1008,6 @@
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
@@ -647,9 +1018,13 @@
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
@@ -667,12 +1042,12 @@
     rdfs:label "ECRR Software profile" ;
     dct:abstract "Complete ECRR metadata profile for software and application resources, composing base, common, assessment, and software-specific building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:SoftwareApplication,
@@ -682,16 +1057,10 @@
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
@@ -699,26 +1068,8 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -727,8 +1078,47 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSoftware> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSoftware/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
@@ -736,8 +1126,13 @@
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
             prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
@@ -755,12 +1150,12 @@
     rdfs:label "ECRR Specification profile" ;
     dct:abstract "Complete ECRR metadata profile for specification resources, composing base, common, assessment, and specification-specific building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/index.md> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/index.json> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/index.json> ] ;
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -771,28 +1166,18 @@
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSpecification/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
@@ -809,13 +1194,43 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSpecification> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase>,
         <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon>,
@@ -832,12 +1247,12 @@
     rdfs:label "ECRR Use Case profile" ;
     dct:abstract "Complete ECRR metadata profile for use case resources, composing base, common, and assessment building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/index.json> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRUseCase> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/index.md> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -846,10 +1261,43 @@
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRUseCase> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
@@ -857,36 +1305,18 @@
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -901,30 +1331,11 @@
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed false .
 
-<http://cor.esipfed.org/ont/earthcube/> rdfs:label "EarthCube Resource Registry Ontology" .
+schema:Dataset rdfs:label "schema.org Dataset" .
 
-schema: rdfs:label "schema.org" .
+schema:WebAPI rdfs:label "schema.org WebAPI" .
 
-schema:CreativeWork rdfs:label "schema.org CreativeWork" .
-
-schema:DataCatalog rdfs:label "schema.org DataCatalog" .
-
-schema:Product rdfs:label "schema.org Product" .
-
-<https://usgin.github.io/ecrrBuildingBlocks/build/bblocks.ttl> a prov:Entity ;
-    dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Nc7961a3d195645ee8edd98bce05143d4 ;
-    prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-03-16T20:36:31.403989"^^xsd:dateTime ;
-            prov:startedAtTime "2026-03-16T20:36:31.146012"^^xsd:dateTime ;
-            prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:cd5603bc314830513da78fd863b98b1a7a1ff191" ;
-                    rdfs:seeAlso <https://usgin.github.io/ecrrBuildingBlocks/build/register.json> ],
-                [ a prov:Entity ;
-                    dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:Nc7961a3d195645ee8edd98bce05143d4 ] .
+schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
 
 <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog> a skos:Concept,
         dcat:Dataset,
@@ -948,18 +1359,23 @@ schema:Product rdfs:label "schema.org Product" .
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -974,10 +1390,10 @@ schema:Product rdfs:label "schema.org Product" .
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrCollection/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCollection/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCollection> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCollection> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCollection/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:Product,
@@ -988,21 +1404,26 @@ schema:Product rdfs:label "schema.org Product" .
     dcat:keyword "ecrr",
         "templates" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.json> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCollection> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.yaml> ;
             prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
-    bblocks:validationPassed true .
+    bblocks:validationPassed false .
 
 <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource> a skos:Concept,
         dcat:Dataset,
@@ -1011,12 +1432,12 @@ schema:Product rdfs:label "schema.org Product" .
     rdfs:label "ECRR Semantic Resource properties" ;
     dct:abstract "Schema defining properties specific to semantic resource types in the EarthCube Resource Registry, including subtype classification for ontologies, thesauri, controlled vocabularies, and other semantic resources. Defines properties: schema:programmingLanguage."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource> ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSemanticResource/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSemanticResource/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSemanticResource/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -1029,14 +1450,19 @@ schema:Product rdfs:label "schema.org Product" .
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.json> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.json> ;
+            prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -1064,28 +1490,33 @@ schema:Product rdfs:label "schema.org Product" .
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/context.jsonld> ;
             prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrService> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
@@ -1093,13 +1524,13 @@ schema:Product rdfs:label "schema.org Product" .
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
             prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.action>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm>,
@@ -1116,12 +1547,12 @@ schema:Product rdfs:label "schema.org Product" .
     rdfs:label "ECRR Software properties" ;
     dct:abstract "Schema defining properties specific to software and application resources in the EarthCube Resource Registry, including function categories, runtime platforms, programming languages, supporting data, code repositories, and dependencies. Defines properties: schema:applicationCategory, schema:runtimePlatform, schema:programmingLanguage, schema:supportingData, schema:codeRepository, schema:installURL, schema:potentialAction, dependencies. Uses building blocks: labeledLink (schemaorgProperties), action (schemaorgProperties)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSoftware/index.json> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSoftware/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSoftware> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSoftware/index.json> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSoftware> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:SoftwareApplication,
@@ -1133,18 +1564,18 @@ schema:Product rdfs:label "schema.org Product" .
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/context.jsonld> ;
             prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.yaml> ;
@@ -1156,18 +1587,23 @@ schema:Product rdfs:label "schema.org Product" .
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSoftware> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.action>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/context.jsonld> ;
@@ -1182,12 +1618,12 @@ schema:Product rdfs:label "schema.org Product" .
     rdfs:label "ECRR Specification properties" ;
     dct:abstract "Schema defining properties specific to specification resources in the EarthCube Resource Registry, including specification subtyping and parent specification references. Defines properties: ecrro:ECRRO_0000501. Uses building blocks: labeledLink (schemaorgProperties)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSpecification> ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrSpecification/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSpecification/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrSpecification> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrSpecification/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <https://www.earthcube.org/resource-registry> ;
@@ -1196,249 +1632,35 @@ schema:Product rdfs:label "schema.org Product" .
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/context.jsonld> ;
             prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/schema.yaml> ;
-            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSpecification> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
-<bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset> a skos:Concept,
-        dcat:Dataset,
-        bblocks:BBlock,
-        bblocks:Schema ;
-    rdfs:label "ECRR Dataset profile" ;
-    dct:abstract "Complete ECRR metadata profile for dataset resources, extending CDIFcomplete with base, common, and assessment building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/index.json> ] ;
-    dct:hasVersion "0.1" ;
-    dct:modified "2026-03-16"^^xsd:date ;
-    dct:source schema:Dataset,
-        <https://www.earthcube.org/resource-registry> ;
-    skos:inScheme <https://usgin.github.io/ecrrBuildingBlocks/> ;
-    skos:prefLabel "ECRR Dataset profile" ;
-    skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
-    dcat:keyword "ecrr",
-        "templates" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifMandatory> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifCatalogRecord> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.provProperties.generatedBy> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifPhysicalMapping> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifOptional> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifDataDescription> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataDescription/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifTabularData> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.dataDownload> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.additionalProperty> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.instrument> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/instrument/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifVariableMeasured> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifVariableMeasured/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifArchive> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchive/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.action> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset> ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifProvActivity> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvActivity/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.provProperties.derivedFrom> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifArchiveDistribution> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchiveDistribution/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifProvenance> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvenance/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.qualityProperties.qualityMeasure> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.statisticalVariable> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/statisticalVariable/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.agentInRole> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.cdifProperties.cdifDataCube> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ] ;
-    bblocks:dependsOn <bblocks://cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete>,
-        <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm>,
-        <bblocks://cdif.bbr.metadata.schemaorgProperties.organization>,
-        <bblocks://cdif.bbr.metadata.schemaorgProperties.person>,
-        <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
-        <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
-    bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/context.jsonld> ;
-    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> ;
-    bblocks:validationPassed false .
-
-schema:Dataset rdfs:label "schema.org Dataset" .
-
-schema:WebAPI rdfs:label "schema.org WebAPI" .
-
-schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
+<https://www.earthcube.org/resource-registry> rdfs:label "EarthCube Resource Registry" .
 
 <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> a skos:Concept,
         dcat:Dataset,
@@ -1449,10 +1671,10 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrCommon/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCommon/index.json> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrCommon/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:,
@@ -1464,19 +1686,18 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
         "templates" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier> ;
@@ -1484,13 +1705,18 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld> ;
-            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.funder> ;
@@ -1500,10 +1726,11 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.funder>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.identifier>,
@@ -1524,10 +1751,10 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrAssessment/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrAssessment/index.json> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrAssessment/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrAssessment/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source <http://cor.esipfed.org/ont/earthcube/> ;
@@ -1536,25 +1763,7 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
-            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml> ;
             prof:hasRole role:schema ],
@@ -1567,7 +1776,30 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.organization> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
+            prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment> ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.organization>,
         <bblocks://cdif.bbr.metadata.schemaorgProperties.person> ;
@@ -1575,8 +1807,6 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed false .
-
-<https://www.earthcube.org/resource-registry> rdfs:label "EarthCube Resource Registry" .
 
 <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> a skos:Concept,
         dcat:Dataset,
@@ -1587,10 +1817,10 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
     dct:created "2026-02-28T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/json-full/bbr/metadata/ecrrProperties/ecrrBase/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrBase/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrBase> ] ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/bblock/ecrr.bbr.metadata.ecrrProperties.ecrrBase> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://usgin.github.io/ecrrBuildingBlocks/build/generateddocs/markdown/bbr/metadata/ecrrProperties/ecrrBase/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-03-16"^^xsd:date ;
     dct:source schema:CreativeWork,
@@ -1600,11 +1830,7 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
     skos:topConceptOf <https://usgin.github.io/ecrrBuildingBlocks/> ;
     dcat:keyword "ecrr",
         "templates" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase> ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl> ;
@@ -1613,15 +1839,19 @@ schema:SoftwareApplication rdfs:label "schema.org SoftwareApplication" .
             dct:format "application/json" ;
             prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.json> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
             prof:hasArtifact <https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink> ;
     bblocks:hasSourceJsonLdContext <https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
@@ -1638,7 +1868,7 @@ using the OGC Building Blocks pattern.
     dct:description """Modular schema components for ECRR resource type metadata. Imports shared
 schema.org property building blocks from the CDIF Building Blocks repository.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-03-16T20:36:10.174615"^^xsd:dateTime ;
+    dct:modified "2026-03-16T22:02:33.291383"^^xsd:dateTime ;
     owl:imports <https://opengeospatial.github.io/bblocks/register.json>,
         <https://usgin.github.io/metadataBuildingBlocks/build/register.json> ;
     skos:hasTopConcept <bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment>,
@@ -1663,14 +1893,14 @@ schema.org property building blocks from the CDIF Building Blocks repository.
         <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification>,
         <bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRUseCase> ;
     skos:prefLabel "Building Blocks - ECRR Building Blocks repository" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
-            dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://usgin.github.io/ecrrBuildingBlocks/build/bblocks.jsonld> ],
-        [ rdfs:label "This Building Blocks Register in JSON format" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             ns2:hasTarget <https://usgin.github.io/ecrrBuildingBlocks/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://usgin.github.io/ecrrBuildingBlocks/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
@@ -1678,7 +1908,7 @@ schema.org property building blocks from the CDIF Building Blocks repository.
     foaf:homepage <https://usgin.github.io/ecrrBuildingBlocks/> ;
     bblocks:hasValidationReport <https://usgin.github.io/ecrrBuildingBlocks/build/tests/report.html> .
 
-_:Nc7961a3d195645ee8edd98bce05143d4 a prov:Agent,
+_:N782130fb85824a0586bb7eca387f4573 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.21" ;

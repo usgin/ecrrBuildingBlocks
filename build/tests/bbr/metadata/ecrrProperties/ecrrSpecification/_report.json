@@ -2,7 +2,7 @@
   "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrSpecification - ECRR Specification properties",
   "bblockName": "ECRR Specification properties",
   "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
-  "generated": "2026-03-16T20:36:17.690269+00:00",
+  "generated": "2026-03-16T22:02:40.227948+00:00",
   "result": true,
   "items": [
     {
@@ -64,6 +64,25 @@
           "entries": [
             {
               "op": "shacl-report",
+              "shaclFile": "_sources/ecrrProperties/ecrrSpecification/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/ecrrProperties/ecrrSpecification/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/ecrrProperties/ecrrSpecification/rules.shacl",
+              "focusNodes": {
+                "cdifd:ECRRSpecificationPropertiesShape": {
+                  "nodes": [
+                    "_:Nbd98ec0d4f9b455980f9cf527a845662"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/ecrrProperties/ecrrSpecification/rules.shacl:\n - Shape cdifd:ECRRSpecificationPropertiesShape: _:Nbd98ec0d4f9b455980f9cf527a845662\n"
+            },
+            {
+              "op": "shacl-report",
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl",
               "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
               "isError": false,
@@ -74,12 +93,12 @@
               "focusNodes": {
                 "cdifd:CDIFLabeledLinkShape": {
                   "nodes": [
-                    "_:Nae40c1e285654d599468df8df9c82a45"
+                    "_:Nbd98ec0d4f9b455980f9cf527a845662"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: _:Nae40c1e285654d599468df8df9c82a45\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: _:Nbd98ec0d4f9b455980f9cf527a845662\n"
             }
           ]
         }

@@ -1,0 +1,32 @@
+Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrCollection - ECRR Collection/Bundled Object properties
+Generated 2026-03-16T22:02:39.466361+00:00
+=== Files ===
+Using exampleECRRCollection.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for _sources/ecrrProperties/ecrrCollection/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("A collection/bundled object should specify at least one component resource (schema:hasPart).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:hasPart ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:encodingFormat Literal("text/html") ; schema1:name Literal("User Documentation") ; schema1:url Literal("https://example.org/docs") ]
+  	Result Path: schema1:hasPart
+  	Message: A collection/bundled object should specify at least one component resource (schema:hasPart).
+  
+Focus nodes for _sources/ecrrProperties/ecrrCollection/rules.shacl:
+ - Shape cdifd:ECRRCollectionPropertiesShape: _:N094a33a81b5b455ca67d7dc9d8bc8d25
+
+=== End SHACL ===
+

@@ -167,7 +167,7 @@
   "name": "Building Blocks - ECRR Building Blocks repository",
   "abstract": "Building blocks for EarthCube Resource Registry (ECRR) metadata profiles,\nusing the OGC Building Blocks pattern.\n",
   "description": "Modular schema components for ECRR resource type metadata. Imports shared\nschema.org property building blocks from the CDIF Building Blocks repository.\n",
-  "modified": "2026-03-16T20:36:10.174615",
+  "modified": "2026-03-16T22:02:33.291383",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"15b2aea346e16c9ef05b3a9f9ce3d78c6d0707a8",
@@ -240,7 +240,17 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/context.jsonld",
         "prof:hasRole": "role:mapping",
@@ -325,7 +335,17 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/context.jsonld",
         "prof:hasRole": "role:mapping",
@@ -351,7 +371,7 @@
       "resolvedSchemaProperties": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/resolvedProperties.json",
       "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/",
       "rdfData": [],
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrCollection/",
       "documentation": {
         "markdown": {
@@ -406,7 +426,17 @@
         "ecrr",
         "templates"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/context.jsonld",
         "prof:hasRole": "role:mapping",
@@ -596,6 +626,15 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
@@ -689,9 +728,9 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -722,12 +761,21 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.organization"
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld",
@@ -815,9 +863,9 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrService",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -857,12 +905,21 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.action"
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.action",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/context.jsonld",
@@ -950,9 +1007,9 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -992,11 +1049,20 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.action"
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.action",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/context.jsonld",
@@ -1084,9 +1150,27 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1111,18 +1195,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1138,12 +1213,12 @@
         }
       ],
       "dependsOn": [
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.identifier"
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.identifier",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld",
@@ -1231,27 +1306,18 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrDataset",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1276,6 +1342,24 @@
         },
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.action",
@@ -1285,9 +1369,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1321,20 +1405,20 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.webAPI",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.dataDownload",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.spatialExtent",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured"
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.dataDownload",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.temporalExtent"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
@@ -1418,9 +1502,45 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCatalog/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCatalog/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1445,18 +1565,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1472,6 +1583,15 @@
         },
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase",
@@ -1481,8 +1601,8 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
+        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
@@ -1568,9 +1688,45 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRCollection/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCollection",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1595,18 +1751,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1622,6 +1769,15 @@
         },
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase",
@@ -1631,8 +1787,8 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
+        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
@@ -1718,9 +1874,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterchangeFormat/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1745,18 +1928,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1766,6 +1940,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1867,9 +2050,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRInterface/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterface",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1894,18 +2104,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -1915,6 +2116,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2016,9 +2226,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRPlatform/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRPlatform",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2043,18 +2280,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2064,6 +2292,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2165,9 +2402,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSemanticResource/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2192,18 +2456,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2213,6 +2468,24 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2229,8 +2502,8 @@
       ],
       "dependsOn": [
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
+        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": {
@@ -2319,9 +2592,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRService/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2346,18 +2646,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2367,6 +2658,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrService/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrService",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2385,6 +2685,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.variableMeasured",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2491,9 +2800,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSoftware/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2518,18 +2854,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2539,6 +2866,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSoftware/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2563,6 +2899,15 @@
         },
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase",
@@ -2573,8 +2918,8 @@
       ],
       "dependsOn": [
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
+        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": {
@@ -2659,9 +3004,54 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSpecification/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSpecification/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2686,27 +3076,18 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2809,9 +3190,36 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRUseCase/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRUseCase",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2836,18 +3244,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.labeledLink",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2857,6 +3256,15 @@
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.funder",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -2971,6 +3379,24 @@
         },
         {
           "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm",
@@ -2989,18 +3415,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+            "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
+          "rdfs:seeAlso": "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -3268,12 +3685,12 @@
         }
       ],
       "dependsOn": [
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm",
-        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.person",
         "bblocks://cdif.bbr.metadata.schemaorgProperties.organization",
+        "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "bblocks://cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete",
-        "bblocks://cdif.bbr.metadata.schemaorgProperties.person"
+        "bblocks://cdif.bbr.metadata.schemaorgProperties.definedTerm"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld",

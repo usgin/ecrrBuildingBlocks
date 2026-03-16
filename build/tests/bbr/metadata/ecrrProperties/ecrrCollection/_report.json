@@ -2,8 +2,8 @@
   "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrCollection - ECRR Collection/Bundled Object properties",
   "bblockName": "ECRR Collection/Bundled Object properties",
   "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
-  "generated": "2026-03-16T20:36:17.255742+00:00",
-  "result": true,
+  "generated": "2026-03-16T22:02:39.466418+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -57,6 +57,31 @@
               "message": "Validation passed"
             }
           ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/ecrrProperties/ecrrCollection/rules.shacl",
+              "graph": "@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:CreativeWork ;\n                    schema1:encodingFormat \"text/html\" ;\n                    schema1:name \"User Documentation\" ;\n                    schema1:url \"https://example.org/docs\" ] ;\n            sh:resultMessage \"A collection/bundled object should specify at least one component resource (schema:hasPart).\" ;\n            sh:resultPath schema1:hasPart ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"A collection/bundled object should specify at least one component resource (schema:hasPart).\" ;\n                    sh:minCount 1 ;\n                    sh:path schema1:hasPart ;\n                    sh:severity sh:Warning ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/ecrrProperties/ecrrCollection/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"A collection/bundled object should specify at least one component resource (schema:hasPart).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:hasPart ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:encodingFormat Literal(\"text/html\") ; schema1:name Literal(\"User Documentation\") ; schema1:url Literal(\"https://example.org/docs\") ]\n  \tResult Path: schema1:hasPart\n  \tMessage: A collection/bundled object should specify at least one component resource (schema:hasPart).\n  "
+            },
+            {
+              "shaclFile": "_sources/ecrrProperties/ecrrCollection/rules.shacl",
+              "focusNodes": {
+                "cdifd:ECRRCollectionPropertiesShape": {
+                  "nodes": [
+                    "_:N094a33a81b5b455ca67d7dc9d8bc8d25"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/ecrrProperties/ecrrCollection/rules.shacl:\n - Shape cdifd:ECRRCollectionPropertiesShape: _:N094a33a81b5b455ca67d7dc9d8bc8d25\n"
+            }
+          ]
         }
       ]
     }
@@ -64,7 +89,7 @@
   "globalErrors": {},
   "counts": {
     "total": 1,
-    "passed": 1,
-    "failed": 0
+    "passed": 0,
+    "failed": 1
   }
 }

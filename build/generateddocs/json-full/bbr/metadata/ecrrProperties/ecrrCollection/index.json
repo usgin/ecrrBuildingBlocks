@@ -27,7 +27,11 @@
     "ecrr",
     "templates"
   ],
-  "shaclShapes": {},
+  "shaclShapes": {
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCollection": [
+      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/rules.shacl"
+    ]
+  },
   "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/context.jsonld",
   "schema": {
     "application/yaml": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.yaml",
@@ -38,7 +42,7 @@
   "resolvedSchemaProperties": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/resolvedProperties.json",
   "sourceFiles": "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCollection/",
   "rdfData": [],
-  "validationPassed": true,
+  "validationPassed": false,
   "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/ecrrProperties/ecrrCollection/",
   "description": "## ECRR Collection/Bundled Object Properties\n\nDefines properties specific to bundled object (collection) resources in the EarthCube Resource Registry. For resources typed `[\"schema:CreativeWork\", \"schema:Product\"]` with `mainEntity` pointing to `ECRRO_0000213` (Bundled Object).\n\nA bundled object groups multiple related resources together, such as a software package with its documentation, test data, and dependencies.\n\n### Properties\n\n- **schema:hasPart** \u2014 component resources in the collection (array of objects with @type, name, url, description, encodingFormat)\n\n### Example\n\n```json\n{\n  \"schema:hasPart\": [\n    {\n      \"@type\": \"schema:SoftwareApplication\",\n      \"schema:name\": \"Analysis Tool\",\n      \"schema:url\": \"https://example.org/tool\",\n      \"schema:description\": \"Main analysis software\"\n    },\n    {\n      \"@type\": \"schema:Dataset\",\n      \"schema:name\": \"Sample Data\",\n      \"schema:url\": \"https://example.org/data\",\n      \"schema:encodingFormat\": [\"text/csv\"]\n    },\n    {\n      \"@type\": \"schema:CreativeWork\",\n      \"schema:name\": \"User Guide\",\n      \"schema:url\": \"https://example.org/docs\"\n    }\n  ]\n}\n```\n",
   "examples": [
@@ -63,7 +67,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:hasPart [ a schema1:CreativeWork ;\n            schema1:encodingFormat \"text/html\" ;\n            schema1:name \"User Documentation\" ;\n            schema1:url \"https://example.org/docs\" ],\n        [ a schema1:Dataset ;\n            schema1:encodingFormat \"application/json\",\n                \"text/csv\" ;\n            schema1:name \"Sample Observation Data\" ;\n            schema1:url \"https://example.org/sample-data\" ],\n        [ a schema1:SoftwareApplication ;\n            schema1:description \"Main analysis software component\" ;\n            schema1:name \"Analysis Tool v2.0\" ;\n            schema1:url \"https://example.org/analysis-tool\" ] .\n\n",
+          "code": "@prefix schema1: <http://schema.org/> .\n\n[] schema1:hasPart [ a schema1:CreativeWork ;\n            schema1:encodingFormat \"text/html\" ;\n            schema1:name \"User Documentation\" ;\n            schema1:url \"https://example.org/docs\" ],\n        [ a schema1:SoftwareApplication ;\n            schema1:description \"Main analysis software component\" ;\n            schema1:name \"Analysis Tool v2.0\" ;\n            schema1:url \"https://example.org/analysis-tool\" ],\n        [ a schema1:Dataset ;\n            schema1:encodingFormat \"application/json\",\n                \"text/csv\" ;\n            schema1:name \"Sample Observation Data\" ;\n            schema1:url \"https://example.org/sample-data\" ] .\n\n",
           "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrCollection/example_1_1.ttl"
         }
       ]

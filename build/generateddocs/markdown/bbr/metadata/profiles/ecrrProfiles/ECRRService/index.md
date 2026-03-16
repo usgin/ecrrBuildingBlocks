@@ -382,11 +382,11 @@ Example metadata instance for ECRRService profile.
             schema1:name "Marine Geology" ] ;
     schema1:additionalType "EC Service Instance" ;
     schema1:audience [ a schema1:Audience ;
-            schema1:audienceType "Developers" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Scientists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Developers" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ] ;
     schema1:description "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported." ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
             schema1:name "GMRT synthesis publication" ;
