@@ -389,11 +389,11 @@ Example metadata instance for ECRRService profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ] ;
     schema1:description "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported." ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Machine-readable endpoint (WADL)" ;
-            schema1:url "https://www.gmrt.org/services/GridServer/wadl" ],
-        [ a schema1:CreativeWork ;
             schema1:name "GMRT synthesis publication" ;
-            schema1:url "http://dx.doi.org/10.1029/2008GC002332" ] ;
+            schema1:url "http://dx.doi.org/10.1029/2008GC002332" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Machine-readable endpoint (WADL)" ;
+            schema1:url "https://www.gmrt.org/services/GridServer/wadl" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
@@ -401,15 +401,15 @@ Example metadata instance for ECRRService profile.
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000202" ] ;
     schema1:name "Global Multi-resolution Topography (GMRT) GridServer Web Service" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            schema1:name "GMRT GridServer info page" ;
-            schema1:url "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid" ],
-        [ a schema1:CreativeWork ;
             dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
                 <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService>,
                 <https://w3id.org/cdif/core/1.0/>,
                 <https://w3id.org/cdif/discovery/1.0/> ;
             schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+            schema1:sdDatePublished "2026-03-03" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "GMRT GridServer info page" ;
+            schema1:url "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid" ] .
 
 
 ```

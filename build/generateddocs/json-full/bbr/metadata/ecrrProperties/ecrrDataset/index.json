@@ -28,6 +28,9 @@
     "templates"
   ],
   "shaclShapes": {
+    "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+    ],
     "cdif.bbr.metadata.schemaorgProperties.webAPI": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
     ],
@@ -46,9 +49,6 @@
     "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
-    ],
     "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
     ],
@@ -63,11 +63,11 @@
     ]
   },
   "dependsOn": [
-    "cdif.bbr.metadata.schemaorgProperties.webAPI",
     "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
-    "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
+    "cdif.bbr.metadata.schemaorgProperties.webAPI",
     "cdif.bbr.metadata.schemaorgProperties.dataDownload",
-    "cdif.bbr.metadata.schemaorgProperties.spatialExtent"
+    "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
+    "cdif.bbr.metadata.schemaorgProperties.variableMeasured"
   ],
   "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
   "schema": {

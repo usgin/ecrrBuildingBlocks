@@ -2,12 +2,12 @@
   "name": "ECRR Building Blocks repository",
   "abstract": "Building blocks for EarthCube Resource Registry (ECRR) metadata profiles,\nusing the OGC Building Blocks pattern.\n",
   "description": "Modular schema components for ECRR resource type metadata. Imports shared\nschema.org property building blocks from the CDIF Building Blocks repository.\n",
-  "modified": "2026-03-16T04:31:42.370036",
+  "modified": "2026-03-16T20:36:10.174615",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"9bbdbd37f6b127170555731c9522eadce0b76a7a",
-      "shortCommitId": "\"9bbdbd",
-      "date": "2026-03-13T13:59:56+00:00\""
+      "commitId": "\"15b2aea346e16c9ef05b3a9f9ce3d78c6d0707a8",
+      "shortCommitId": "\"15b2ae",
+      "date": "2026-03-16T15:33:17+00:00\""
     }
   },
   "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
@@ -210,6 +210,9 @@
         "templates"
       ],
       "shaclShapes": {
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ]
@@ -329,14 +332,14 @@
         "cdif.bbr.metadata.schemaorgProperties.person": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.identifier": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.identifier": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ]
       },
       "dependsOn": [
@@ -402,23 +405,23 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.action": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
         ]
       },
       "dependsOn": [
         "cdif.bbr.metadata.schemaorgProperties.labeledLink",
-        "cdif.bbr.metadata.schemaorgProperties.action",
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.action"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/context.jsonld",
       "schema": {
@@ -550,11 +553,11 @@
         "templates"
       ],
       "shaclShapes": {
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -562,20 +565,20 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.funder",
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
-        "cdif.bbr.metadata.schemaorgProperties.identifier",
-        "cdif.bbr.metadata.schemaorgProperties.person",
         "cdif.bbr.metadata.schemaorgProperties.labeledLink",
-        "cdif.bbr.metadata.schemaorgProperties.organization"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "cdif.bbr.metadata.schemaorgProperties.organization",
+        "cdif.bbr.metadata.schemaorgProperties.person",
+        "cdif.bbr.metadata.schemaorgProperties.funder",
+        "cdif.bbr.metadata.schemaorgProperties.identifier"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld",
       "schema": {
@@ -632,6 +635,9 @@
         "templates"
       ],
       "shaclShapes": {
+        "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.webAPI": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
         ],
@@ -650,9 +656,6 @@
         "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
         ],
@@ -667,11 +670,11 @@
         ]
       },
       "dependsOn": [
-        "cdif.bbr.metadata.schemaorgProperties.webAPI",
         "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
-        "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
+        "cdif.bbr.metadata.schemaorgProperties.webAPI",
         "cdif.bbr.metadata.schemaorgProperties.dataDownload",
-        "cdif.bbr.metadata.schemaorgProperties.spatialExtent"
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrDataset/context.jsonld",
       "schema": {
@@ -727,11 +730,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -739,15 +739,21 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrCatalog"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
       "schema": {
@@ -803,11 +809,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -815,15 +818,21 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrCollection"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/context.jsonld",
       "schema": {
@@ -879,11 +888,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -891,14 +897,20 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld",
       "schema": {
@@ -954,11 +966,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -966,14 +975,20 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/context.jsonld",
       "schema": {
@@ -1029,11 +1044,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -1041,14 +1053,20 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/context.jsonld",
       "schema": {
@@ -1104,11 +1122,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -1116,15 +1131,21 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
       "schema": {
@@ -1184,33 +1205,36 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.action": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.funder": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "ecrr.bbr.metadata.ecrrProperties.ecrrService",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrCommon"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/context.jsonld",
       "schema": {
@@ -1270,11 +1294,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -1282,21 +1303,27 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.action": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrSoftware"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSoftware",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/context.jsonld",
       "schema": {
@@ -1352,11 +1379,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -1364,15 +1388,21 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
         "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/context.jsonld",
       "schema": {
@@ -1428,11 +1458,8 @@
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.person": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
@@ -1440,14 +1467,20 @@
         "cdif.bbr.metadata.schemaorgProperties.organization": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.person": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
         "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
       "schema": {
@@ -1504,80 +1537,32 @@
         "templates"
       ],
       "shaclShapes": {
+        "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRDataset/rules.shacl"
+        ],
         "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.identifier": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.organization": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
-        ],
         "cdif.bbr.metadata.schemaorgProperties.person": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
         ],
-        "cdif.bbr.metadata.cdifProperties.cdifDataDescription": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataDescription/rules.shacl"
+        "cdif.bbr.metadata.schemaorgProperties.organization": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.statisticalVariable": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/statisticalVariable/rules.shacl"
-        ],
-        "cdif.bbr.metadata.cdifProperties.cdifMandatory": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl"
+        "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
+          "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
         ],
         "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.webAPI": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/rules.shacl"
         ],
-        "cdif.bbr.metadata.schemaorgProperties.action": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
-        ],
-        "cdif.bbr.metadata.cdifProperties.cdifCatalogRecord": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
-        ],
-        "cdif.bbr.metadata.cdifProperties.cdifOptional": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl"
-        ],
-        "cdif.bbr.metadata.provProperties.derivedFrom": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl"
-        ],
-        "cdif.bbr.metadata.qualityProperties.qualityMeasure": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl"
-        ],
-        "cdif.bbr.metadata.provProperties.generatedBy": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.agentInRole": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.funder": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
-        ],
-        "cdif.bbr.metadata.cdifProperties.cdifVariableMeasured": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifVariableMeasured/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
-        ],
-        "cdif.bbr.metadata.cdifProperties.cdifProvActivity": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvActivity/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.additionalProperty": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl"
-        ],
-        "cdif.bbr.metadata.schemaorgProperties.instrument": [
-          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/instrument/rules.shacl"
+        "cdif.bbr.metadata.cdifProperties.cdifArchiveDistribution": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchiveDistribution/rules.shacl"
         ],
         "cdif.bbr.metadata.cdifProperties.cdifArchive": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchive/rules.shacl"
@@ -1588,17 +1573,80 @@
         "cdif.bbr.metadata.cdifProperties.cdifPhysicalMapping": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl"
         ],
+        "cdif.bbr.metadata.schemaorgProperties.dataDownload": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl"
+        ],
         "cdif.bbr.metadata.cdifProperties.cdifTabularData": [
           "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifMandatory": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifCatalogRecord": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.webAPI": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.action": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifOptional": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.funder": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.agentInRole": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl"
+        ],
+        "cdif.bbr.metadata.qualityProperties.qualityMeasure": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifVariableMeasured": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifVariableMeasured/rules.shacl"
+        ],
+        "cdif.bbr.metadata.provProperties.generatedBy": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl"
+        ],
+        "cdif.bbr.metadata.provProperties.derivedFrom": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.statisticalVariable": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/statisticalVariable/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifDataDescription": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataDescription/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifProvenance": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvenance/rules.shacl"
+        ],
+        "cdif.bbr.metadata.cdifProperties.cdifProvActivity": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvActivity/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.instrument": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/instrument/rules.shacl"
+        ],
+        "cdif.bbr.metadata.schemaorgProperties.additionalProperty": [
+          "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl"
         ]
       },
       "dependsOn": [
         "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
         "cdif.bbr.metadata.schemaorgProperties.organization",
-        "cdif.bbr.metadata.schemaorgProperties.person",
-        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete",
         "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
-        "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment"
+        "cdif.bbr.metadata.profiles.cdifProfiles.CDIFcomplete",
+        "cdif.bbr.metadata.schemaorgProperties.person"
       ],
       "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
       "schema": {
