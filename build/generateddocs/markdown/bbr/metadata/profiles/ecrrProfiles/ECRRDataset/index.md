@@ -114,6 +114,12 @@ Example metadata instance for ECRRDataset profile.
     ],
     "dcterms:conformsTo": [
       {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
         "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
       },
       {
@@ -274,6 +280,12 @@ Example metadata instance for ECRRDataset profile.
       "dcat:CatalogRecord"
     ],
     "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
       },
@@ -446,7 +458,9 @@ Example metadata instance for ECRRDataset profile.
             schema1:name "Global" ] ;
     schema1:subjectOf [ a schema1:CreativeWork ;
             dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset> ;
+                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>,
+                <https://w3id.org/cdif/core/1.0/>,
+                <https://w3id.org/cdif/discovery/1.0/> ;
             schema1:additionalType "dcat:CatalogRecord" ;
             schema1:sdDatePublished "2026-03-03" ] ;
     schema1:temporalCoverage "1880-01-01/2023-12-31" ;
@@ -577,20 +591,22 @@ Links to the schema:
   "@context": {
     "ecrr": "https://n2t.net/ark:/23942/g2",
     "schema": "http://schema.org/",
-    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "spdx": "http://spdx.org/rdf/terms#",
     "time": "http://www.w3.org/2006/time#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "xas": "https://xas.org/dictionary/",
-    "nxs": "http://purl.org/nexusformat/definitions/",
     "prov": "http://www.w3.org/ns/prov#",
     "csvw": "http://www.w3.org/ns/csvw#",
+    "xas": "https://xas.org/dictionary/",
+    "nxs": "http://purl.org/nexusformat/definitions/",
     "ada": "https://ada.astromat.org/metadata/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
-    "dcat": "http://www.w3.org/ns/dcat#",
     "@version": 1.1
   }
 }

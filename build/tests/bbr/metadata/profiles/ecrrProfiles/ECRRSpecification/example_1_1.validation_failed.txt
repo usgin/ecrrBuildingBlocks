@@ -1,5 +1,5 @@
 Validation report for ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification - ECRR Specification profile
-Generated 2026-03-10T13:55:02.489630+00:00
+Generated 2026-03-16T04:32:00.757061+00:00
 === Files ===
 Using exampleINSPIRE.json from examples
 JSON-LD context is present - uplifting
@@ -10,24 +10,33 @@ Output Turtle example_1_1.ttl created
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: [{'@type': 'schema:CreativeWork', 'schema:name': 'INSPIRE specification document', 'schema:url': 'https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3'}, {'@type': ['schema:CreativeWork'], 'schema:additionalType': ['dcat:CatalogRecord'], 'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'}, {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification'}], 'schema:sdDatePublished': '2026-03-03'}] is not valid under any of the given schemas
+ValidationError: 'schema:url' is a required property
 
-Failed validating 'anyOf' in schema['allOf'][1]['properties']['schema:subjectOf']:
-    {'anyOf': [{'$ref': '#/$defs/LabeledLink'},
-               {'items': {'$ref': '#/$defs/LabeledLink'}, 'type': 'array'}],
-     'description': 'Links to formal metadata records or web pages about '
-                    'this resource. Array of labeled links (CreativeWork '
-                    'objects with name and url).'}
+Failed validating 'required' in schema[1]['items']:
+    {'$schema': 'https://json-schema.org/draft/2020-12/schema',
+     'description': 'schema for a labeled link, a profile of '
+                    'schema.org/CreativeWork',
+     'properties': {'@type': {'anyOf': [{'const': 'schema:CreativeWork',
+                                         'type': 'string'},
+                                        {'contains': {'const': 'schema:CreativeWork'},
+                                         'items': {'type': 'string'},
+                                         'type': 'array'}],
+                              'default': 'schema:CreativeWork'},
+                    'schema:description': {'type': 'string'},
+                    'schema:name': {'type': 'string'},
+                    'schema:url': {'format': 'uri', 'type': 'string'}},
+     'required': ['@type', 'schema:url'],
+     'type': 'object',
+     'x-jsonld-prefixes': {'schema': 'http://schema.org/'}}
 
-On instance['schema:subjectOf']:
-    [{'@type': 'schema:CreativeWork',
-      'schema:name': 'INSPIRE specification document',
-      'schema:url': 'https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3'},
-     {'@type': ['schema:CreativeWork'],
-      'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},
-                             {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification'}],
-      'schema:additionalType': ['dcat:CatalogRecord'],
-      'schema:sdDatePublished': '2026-03-03'}]
+On instance[1]:
+    {'@type': ['schema:CreativeWork'],
+     'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/core/1.0/'},
+                            {'@id': 'https://w3id.org/cdif/discovery/1.0/'},
+                            {'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},
+                            {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification'}],
+     'schema:additionalType': ['dcat:CatalogRecord'],
+     'schema:sdDatePublished': '2026-03-03'}
 === End JSON Schema ===
 
 === SHACL ===
@@ -40,7 +49,7 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
   	Result Path: schema1:url
   	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
@@ -57,7 +66,27 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
- - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2800001>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2800001>,<http://n2t.net/ark:/23942/g2800001>/schema1:isRelatedTo,<http://n2t.net/ark:/23942/g2800001>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2800001>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2800001>/schema1:isRelatedTo,<http://n2t.net/ark:/23942/g2800001>/ecrro:ECRRO_0000501/schema1:value,<http://n2t.net/ark:/23942/g2800001>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2800001>/schema1:license
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2800001>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2800001>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2800001>,<http://n2t.net/ark:/23942/g2800001>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2800001>/schema1:isRelatedTo,<http://n2t.net/ark:/23942/g2800001>/ecrro:ECRRO_0000501/schema1:value,<http://n2t.net/ark:/23942/g2800001>/schema1:license,<http://n2t.net/ark:/23942/g2800001>/schema1:isRelatedTo,<http://n2t.net/ark:/23942/g2800001>/schema1:mainEntity
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b5: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b13: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b26: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b15: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b17: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b25: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b14: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b11: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
+ - Shape cdifd:fundingShape: <http://n2t.net/ark:/23942/g2800001>/schema1:funding
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b3: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b12: *none*
+ - Shape _:n97b602967ef0442f991aee9f4b9d4a80b4: *none*
 
 
 ** Validation error **
@@ -73,43 +102,43 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
- - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFContactPointShape: *none*
- - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:maintainerOrProviderContactPointShape: *none*
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2800001>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
- - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
- - Shape _:nfbe7ace5e85b4cf9bbe5e27f4e203b80b14: *none*
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
  - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFContactPointShape: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n53ea1cbd1b39493cbe8be55aa473c723b14: *none*
  - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
 
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
- - Shape _:n71e93b56b44147668d88d33b323f231ab21: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n71e93b56b44147668d88d33b323f231ab25: *none*
- - Shape _:n71e93b56b44147668d88d33b323f231ab22: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierShape: *none*
- - Shape _:n71e93b56b44147668d88d33b323f231ab20: *none*
- - Shape _:n71e93b56b44147668d88d33b323f231ab11: *none*
- - Shape _:n71e93b56b44147668d88d33b323f231ab10: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b23: *none*
  - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n71e93b56b44147668d88d33b323f231ab23: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b21: *none*
  - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b25: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b20: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b10: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b22: *none*
+ - Shape _:n8226592fd21247b18a71fb3abfa54557b11: *none*
 
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
- - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2800001>/ecrro:ECRRO_0000218/schema1:value,<http://n2t.net/ark:/23942/g2800001>/schema1:funding/schema1:funder
+ - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2800001>/schema1:funding/schema1:funder,<http://n2t.net/ark:/23942/g2800001>/ecrro:ECRRO_0000218/schema1:value
  - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
 
@@ -118,38 +147,18 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab8: *none*
  - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab19: *none*
  - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b26: *none*
- - Shape cdifd:CDIFDefinedTermShape: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b7: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b5: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab10: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab7: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab5: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab4: *none*
  - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b6: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b10: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b4: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b19: *none*
- - Shape _:n314df56083b744cd8719884601363bf1b8: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
- - Shape _:nd52417491052406c9243fbdd2285d01eb14: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb4: *none*
- - Shape cdifd:fundingShape: <http://n2t.net/ark:/23942/g2800001>/schema1:funding
- - Shape _:nd52417491052406c9243fbdd2285d01eb26: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb11: *none*
- - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb15: *none*
- - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb5: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb13: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb12: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb25: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb17: *none*
- - Shape _:nd52417491052406c9243fbdd2285d01eb3: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab6: *none*
+ - Shape cdifd:CDIFDefinedTermShape: *none*
+ - Shape _:n5d82cab3da3c43729c761aba1ee71a4ab26: *none*
 
 === End SHACL ===
 

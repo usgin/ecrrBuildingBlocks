@@ -87,6 +87,12 @@ Example metadata instance for ECRRSpecification profile.
       ],
       "dcterms:conformsTo": [
         {
+          "@id": "https://w3id.org/cdif/core/1.0/"
+        },
+        {
+          "@id": "https://w3id.org/cdif/discovery/1.0/"
+        },
+        {
           "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
         },
         {
@@ -274,6 +280,12 @@ Example metadata instance for ECRRSpecification profile.
         "dcat:CatalogRecord"
       ],
       "dcterms:conformsTo": [
+        {
+          "@id": "https://w3id.org/cdif/core/1.0/"
+        },
+        {
+          "@id": "https://w3id.org/cdif/discovery/1.0/"
+        },
         {
           "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
         },
@@ -465,11 +477,11 @@ Example metadata instance for ECRRSpecification profile.
                     schema1:name "European Commission" ] ] ;
     schema1:identifier "http://inspire.ec.europa.eu/tg/ge/3.0" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
-            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Based on: GeoSciML version 3.2" ;
-            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ] ;
+            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
+            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
@@ -480,13 +492,15 @@ Example metadata instance for ECRRSpecification profile.
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            schema1:name "INSPIRE specification document" ;
-            schema1:url "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3" ],
-        [ a schema1:CreativeWork ;
             dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification> ;
+                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
+                <https://w3id.org/cdif/core/1.0/>,
+                <https://w3id.org/cdif/discovery/1.0/> ;
             schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+            schema1:sdDatePublished "2026-03-03" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "INSPIRE specification document" ;
+            schema1:url "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3" ] .
 
 
 ```

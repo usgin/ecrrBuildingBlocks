@@ -74,6 +74,12 @@ Example metadata instance for ECRRCollection profile.
     ],
     "dcterms:conformsTo": [
       {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
         "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
       },
       {
@@ -212,6 +218,12 @@ Example metadata instance for ECRRCollection profile.
     ],
     "dcterms:conformsTo": [
       {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
         "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
       },
       {
@@ -340,13 +352,13 @@ Example metadata instance for ECRRCollection profile.
     schema1:creator [ a schema1:Organization ;
             schema1:name "USGS Geochemistry Lab" ] ;
     schema1:description "A curated collection of geochemical reference standard datasets, software tools, and documentation for analytical laboratory calibration." ;
-    schema1:hasPart [ a schema1:Dataset ;
+    schema1:hasPart [ a schema1:SoftwareApplication ;
+            schema1:name "Standard Comparison Tool" ;
+            schema1:url "https://example.org/tools/standard-compare" ],
+        [ a schema1:Dataset ;
             schema1:encodingFormat "text/csv" ;
             schema1:name "BHVO-2 Reference Values" ;
-            schema1:url "https://example.org/standards/bhvo2" ],
-        [ a schema1:SoftwareApplication ;
-            schema1:name "Standard Comparison Tool" ;
-            schema1:url "https://example.org/tools/standard-compare" ] ;
+            schema1:url "https://example.org/standards/bhvo2" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
             schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
@@ -356,7 +368,9 @@ Example metadata instance for ECRRCollection profile.
     schema1:name "Geochemical Reference Standards Bundle" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
             dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection> ;
+                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>,
+                <https://w3id.org/cdif/core/1.0/>,
+                <https://w3id.org/cdif/discovery/1.0/> ;
             schema1:additionalType "dcat:CatalogRecord" ;
             schema1:sdDatePublished "2026-03-03" ] .
 

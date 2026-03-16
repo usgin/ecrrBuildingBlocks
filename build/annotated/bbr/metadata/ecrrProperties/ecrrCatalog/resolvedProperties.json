@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/schema:contentType",
+    "description": "Types of objects cataloged or stored in the repository. Array of Thing objects with name and optional identifier describing the content categories.",
+    "schema_type": "array",
+    "sources": [
+      "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog"
+    ]
+  },
+  {
+    "path": "/schema:contentType/schema:name",
+    "description": "Label for the type of cataloged content.",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog"
+    ]
+  },
+  {
+    "path": "/schema:contentType/schema:identifier",
+    "description": "URI identifying the content type concept.",
+    "schema_type": "string",
+    "sources": [
+      "bblocks://ecrr.bbr.metadata.ecrrProperties.ecrrCatalog"
+    ]
+  }
+]

@@ -72,6 +72,12 @@ Example metadata instance for ECRRInterface profile.
     ],
     "dcterms:conformsTo": [
       {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
         "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
       },
       {
@@ -190,6 +196,12 @@ Example metadata instance for ECRRInterface profile.
     ],
     "dcterms:conformsTo": [
       {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
         "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
       },
       {
@@ -307,7 +319,9 @@ Example metadata instance for ECRRInterface profile.
     schema1:name "OGC Web Map Service (WMS) Interface Standard" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
             dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface> ;
+                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface>,
+                <https://w3id.org/cdif/core/1.0/>,
+                <https://w3id.org/cdif/discovery/1.0/> ;
             schema1:additionalType "dcat:CatalogRecord" ;
             schema1:sdDatePublished "2026-03-03" ] .
 

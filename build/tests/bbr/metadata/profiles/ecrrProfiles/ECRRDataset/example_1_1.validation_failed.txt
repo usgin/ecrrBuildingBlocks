@@ -1,5 +1,5 @@
 Validation report for ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset - ECRR Dataset profile
-Generated 2026-03-10T13:55:04.600475+00:00
+Generated 2026-03-16T04:32:05.277324+00:00
 === Files ===
 Using exampleECRRDataset.json from examples
 JSON-LD context is present - uplifting
@@ -12,7 +12,7 @@ Output Turtle example_1_1.ttl created
 ** Validation error **
 ValidationError: 'schema:identifier' is a required property
 
-Failed validating 'required' in schema['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][0]:
+Failed validating 'required' in schema['allOf'][0]['allOf'][0]['allOf'][0]:
     {'required': ['@id',
                   '@type',
                   '@context',
@@ -92,7 +92,9 @@ On instance:
                                                               '180'},
                                  'schema:name': ['Global']}],
      'schema:subjectOf': {'@type': ['schema:CreativeWork'],
-                          'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},
+                          'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/core/1.0/'},
+                                                 {'@id': 'https://w3id.org/cdif/discovery/1.0/'},
+                                                 {'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory'},
                                                  {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset'}],
                           'schema:additionalType': ['dcat:CatalogRecord'],
                           'schema:sdDatePublished': '2026-03-03'},
@@ -108,6 +110,52 @@ On instance:
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b5: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b7: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b10: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b6: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b8: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b4: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b19: *none*
+ - Shape _:n8f72b9a11dd541ca976080877c96b8c2b26: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b22: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b20: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b11: *none*
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b21: *none*
+ - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b25: *none*
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b23: *none*
+ - Shape _:n60c2ba31bad245a9be1b2d2cc21ea767b10: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+ - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:creator
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
+
 
 ** Validation error **
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
@@ -122,446 +170,37 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
+ - Shape _:n598ccb53025540b39e6391e08fd8ce74b14: *none*
+ - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
  - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
  - Shape cdifd:CDIFContactPointShape: *none*
  - Shape cdifd:maintainerOrProviderContactPointShape: *none*
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
- - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
- - Shape _:n0b07fefdb6ab4b2ba186147a65056f35b14: *none*
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
- - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
 
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataDescription/rules.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb11: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb10: *none*
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb20: *none*
- - Shape cdifd:CDIFIdentifierShape: *none*
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb22: *none*
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb23: *none*
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb25: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n5761390a31a54ee599a7dcbbd8fb6addb21: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataDescription/rules.shacl:
+ - Shape cdifd:dataDescriptionVariableShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:dataDescriptionVariableShape: *none*
+ - Shape _:n575fd5a768f34aa7bcc9fb32a9b9e9c3b3: *none*
+ - Shape _:n575fd5a768f34aa7bcc9fb32a9b9e9c3b4: *none*
 
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/statisticalVariable/rules.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
- - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:creator
- - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b5: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b7: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFDefinedTermShape: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b6: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b10: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b4: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b8: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b19: *none*
- - Shape _:nfd3b28799b1c4e35804b12b07e4b93b4b26: *none*
-
-
-** Validation error **
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (2):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Result Path: schema1:url
-  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
-  	Result Path: schema1:url
-  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
- - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-dataset>,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:license
-
-
-** Validation error **
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Info
-  	Source Shape: [ sh:message Literal("Recommended: include dcterms:conformsTo to identify the standard or specification this distribution conforms to.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path dcterms:conformsTo ; sh:severity sh:Info ]
-  	Focus Node: [ rdf:type schema1:DataDownload ; schema1:contentUrl Literal("https://example.org/data/temperature-anomalies.csv") ; schema1:encodingFormat Literal("text/csv") ; schema1:name Literal("Temperature anomaly CSV download") ]
-  	Result Path: dcterms:conformsTo
-  	Message: Recommended: include dcterms:conformsTo to identify the standard or specification this distribution conforms to.
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl:
- - Shape <https://www.ogc.org/rules/template/#ConformsToInfo>: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:distribution
- - Shape cdifd:CDIFDataDownloadShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:distribution
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl:
- - Shape cdifd:tabularDataShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:tabularDataShape/sh:or/rdf:first: *none*
- - Shape cdifd:tabularDataShape: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl:
- - Shape cdifd:physicalMappingShape: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl:
- - Shape cdifd:dataCubeShape: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProv/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProv/rules.shacl:
- - Shape _:n286c52ef987445289ca2492861e3b111b22: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b13: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b12: *none*
- - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:cdifProvActivityShape: *none*
- - Shape cdifd:cdifProvHowToShape: *none*
- - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b36: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b5: *none*
- - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b23: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b21: *none*
- - Shape cdifd:cdifProvHowToStepShape: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b4: *none*
- - Shape _:n286c52ef987445289ca2492861e3b111b35: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl:
- - Shape _:n4d29fc345afa4a6c8688b265b245ef5bb5: *none*
- - Shape _:n4d29fc345afa4a6c8688b265b245ef5bb4: *none*
- - Shape cdifd:generatedByNode: *none*
- - Shape cdifd:generatedByNode/sh:property/sh:or/rdf:first: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl:
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b4: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFDefinedTermShape: <http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000219/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000138/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:about,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000017/schema1:value
- - Shape cdifd:CDIFRoleShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b14: *none*
- - Shape cdifd:roleNameProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b17: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b3: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b15: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b16: *none*
- - Shape cdifd:roleNameProperty/sh:or/rdf:first: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b20: *none*
- - Shape _:ne1d1739342a243c8b2a01e67c139d179b18: *none*
- - Shape cdifd:CDIFRoleShape: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl:
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb14: *none*
- - Shape cdifd:CDIFAddPropertyTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb6: *none*
- - Shape cdifd:CDIFadditionalPropertyShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFadditionalPropertyShape: *none*
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb17: *none*
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb16: *none*
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb19: *none*
- - Shape cdifd:CDIFAddPropertyTermShape: *none*
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb7: *none*
- - Shape _:nafed61106b7e4044bbde0a2bb338bf8fb15: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl:
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb37: *none*
- - Shape cdifd:spatialExtentProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb22: *none*
- - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb34: *none*
- - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb35: *none*
- - Shape cdifd:spatialExtentProperty/sh:or/rdf:first: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb4: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb33: *none*
- - Shape cdifd:geoCoordinatesNode: *none*
- - Shape cdifd:CDIFDefinedTermShape: <http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000219/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000138/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:about,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000017/schema1:value
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb9: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb3: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
- - Shape cdifd:spatialExtentProperty: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:spatialCoverage
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb17: *none*
- - Shape cdifd:geoShapeNode: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:spatialCoverage/schema1:geo
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb31: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb10: *none*
- - Shape _:n6bb43c4d535b4563851b472d936b7dbfb32: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl:
- - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b26: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b4: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b18: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b3: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b25: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b10: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b20: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b23: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b21: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b19: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b24: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b17: *none*
- - Shape cdifd:webAPINode: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b22: *none*
- - Shape _:ne22efe1cfc2047bab153d4a4ec28daa1b11: *none*
- - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl:
- - Shape cdifd:CDIFActionShape: *none*
-
-
-** Validation error **
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("a propertID must be a uri reference, a name string, or a schema:DefinedTerm") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ; sh:minLength Literal("5", datatype=xsd:integer) ] [ sh:class schema1:DefinedTerm ; sh:property [ sh:message Literal("a defined term should have an identifier that is a resolvable URI") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or <http://recursion.too.deep> ; sh:path schema1:identifier ] ] ) ; sh:path schema1:propertyID ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:PropertyValue ; schema1:description Literal("Deviation of monthly surface temperature from 1951-1980 average") ; schema1:name Literal("Surface Temperature Anomaly") ; schema1:unitText Literal("degrees Celsius") ]
-  	Result Path: schema1:propertyID
-  	Message: a propertID must be a uri reference, a name string, or a schema:DefinedTerm
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:
- - Shape _:n6f9aae176cdf49408bfbc106258af295b52: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b14: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b44: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b51: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b8: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b37: *none*
- - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b11: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b4: *none*
- - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b9: *none*
- - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFVariableMeasuredShape: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b29: *none*
- - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b10: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b12: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b45: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b38: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b5: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b7: *none*
- - Shape _:n6f9aae176cdf49408bfbc106258af295b30: *none*
- - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
-
-
-** Validation error **
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFDiscovery/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (6):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: cdifd:metadataProfileProperty
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Result Path: dcterms:conformsTo
-  	Message: provide identifiers for specifications used in this record to provide guidance for machine agents processing the metadata record
-  Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: cdifd:metadataSubjectProperty
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Value Node: [ rdf:type schema1:DefinedTerm ; schema1:identifier Literal("http://cor.esipfed.org/ont/earthcube/ADO_0000035") ; schema1:name Literal("Climatology") ]
-  	Result Path: schema1:about
-  	Message: link to the target of the metadata metadata node using the about property
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: cdifd:resourceIdentifierProperty
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Result Path: schema1:identifier
-  	Message: An identifier for the documented resource must be provided
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: cdifd:dateModifiedProperty
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Result Path: schema1:dateModified
-  	Message: Date of most recent update to resource content is required, using ISO8601 format with at least a year and a month.
-  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: cdifd:metadataIdentifierProperty
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Value Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
-  	Result Path: schema1:subjectOf
-  	Message: The URI for the metadata record should be the @id value for the 'subjectOf' element in the JSON instance document tree or '@id':{uri} in a separate graph node referencing the resource description node
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Info
-  	Source Shape: cdifd:datePublishedProperty
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Result Path: schema1:datePublished
-  	Message: Please provide a publication or release date, using ISO8601 format with at least a year and a month.
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFDiscovery/rules.shacl:
- - Shape cdifd:policiesProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:distributionProperty/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFDataDownloadDetailShape/sh:property/sh:or/rdf:first: *none*
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/statisticalVariable/rules.shacl:
  - Shape cdifd:statisticalVariableNode: *none*
- - Shape _:n22701be1f44b4151b2844ba2172d53a2b22: *none*
- - Shape _:n22701be1f44b4151b2844ba2172d53a2b80: *none*
- - Shape _:n22701be1f44b4151b2844ba2172d53a2b71: *none*
- - Shape cdifd:providerProperty/sh:or/rdf:first: *none*
- - Shape _:n22701be1f44b4151b2844ba2172d53a2b9: *none*
- - Shape cdifd:resourceIdentifierProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:keywordsNoCommaTest/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFCatalogRecordShape: *none*
- - Shape _:n22701be1f44b4151b2844ba2172d53a2b11: *none*
- - Shape cdifd:policiesProperty/sh:or/rdf:first: *none*
- - Shape cdifd:propertyNode: *none*
- - Shape cdifd:distributionProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:rightsProperty/sh:or/rdf:first: *none*
- - Shape cdifd:providerProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:resourceIdentifierProperty/sh:or/rdf:first: *none*
- - Shape cdifd:rightsProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:relatedResourceProperty/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFDatasetMandatoryShape: *none*
- - Shape cdifd:CDIFDatasetRecommendedShape: *none*
- - Shape cdifd:CDIFDataDownloadDetailShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:distribution
- - Shape _:n22701be1f44b4151b2844ba2172d53a2b56: *none*
- - Shape cdifd:keywordsNoCommaTest/sh:or/rdf:first: *none*
-
-
-** Validation error **
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("A dataset should have keywords (schema:keywords) for discoverability.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
-  	Result Path: schema1:keywords
-  	Message: A dataset should have keywords (schema:keywords) for discoverability.
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl:
- - Shape cdifd:keywordsNoCommaTest/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:keywordsNoCommaTest/sh:or/rdf:first: *none*
- - Shape _:n37ff82457b234698a9a004bd29fa1c50b13: *none*
- - Shape cdifd:relatedResourceProperty/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFDatasetOptionalShape: *none*
- - Shape _:n37ff82457b234698a9a004bd29fa1c50b14: *none*
- - Shape cdifd:creatorListValidation: <http://n2t.net/ark:/23942/g2example-dataset>
- - Shape _:n37ff82457b234698a9a004bd29fa1c50b7: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:
- - Shape cdifd:temporalExtentProperty/sh:or/rdf:first: *none*
- - Shape _:n66eaabf5ce1749638a911f5965b1d200b17: *none*
- - Shape _:n66eaabf5ce1749638a911f5965b1d200b3: *none*
- - Shape cdifd:timePositionNode/sh:property/sh:or/rdf:first: *none*
- - Shape _:n66eaabf5ce1749638a911f5965b1d200b5: *none*
- - Shape cdifd:timeInstantNode: *none*
- - Shape cdifd:timePositionNode: *none*
- - Shape cdifd:temporalExtentProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:timeIntervalNode: *none*
- - Shape _:n66eaabf5ce1749638a911f5965b1d200b4: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
- - Shape cdifd:fundingShape: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b3: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b5: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b15: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b17: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b25: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b26: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b11: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b14: *none*
- - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
- - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b13: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b4: *none*
- - Shape _:ne904a3d97e7b4ce7b4fb5d53ccc1e1d8b12: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl:
- - Shape cdifd:derivedFromProperty/sh:or/rdf:first: *none*
- - Shape _:ne65c6c02e7b34589b97bd8581f01b6d2b4: *none*
- - Shape cdifd:derivedFromProperty: *none*
- - Shape cdifd:derivedFromProperty/sh:or/rdf:rest/rdf:first: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl:
- - Shape _:nbfa4b9c8ed2d427eac2ca94e04dc1f4ab11: *none*
- - Shape _:nbfa4b9c8ed2d427eac2ca94e04dc1f4ab5: *none*
- - Shape cdifd:qualityMeasurementNode: *none*
- - Shape cdifd:qualityMeasurementNode/sh:property/sh:or/rdf:first: *none*
- - Shape _:nbfa4b9c8ed2d427eac2ca94e04dc1f4ab4: *none*
- - Shape cdifd:qualityMeasurementNode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n5b566085eb4649e283256dcfed59e2e7b6: *none*
+ - Shape cdifd:statisticalVariableNode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n5b566085eb4649e283256dcfed59e2e7b5: *none*
 
 
 ** Validation error **
@@ -596,18 +235,114 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cd
   	Message: Date of most recent update to resource content is required, using ISO8601 format with at least a year and a month.
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifMandatory/rules.shacl:
- - Shape soso:DatasetNS3Shape: *none*
  - Shape soso:DatasetNS1Shape: *none*
- - Shape cdifd:resourceIdentifierProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n76584cb079484ddd9c12b943a44bdfeeb7: *none*
- - Shape soso:DatasetNS2Shape: *none*
- - Shape _:n76584cb079484ddd9c12b943a44bdfeeb18: *none*
  - Shape cdifd:rightsProperty/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFCatalogRecordShape: *none*
- - Shape cdifd:CDIFDatasetMandatoryShape: *none*
- - Shape _:n76584cb079484ddd9c12b943a44bdfeeb5: *none*
  - Shape cdifd:rightsProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFCatalogRecordShape: *none*
  - Shape cdifd:resourceIdentifierProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDatasetMandatoryShape: *none*
+ - Shape _:n758a2888c2244904a6f686a7ff9825ffb18: *none*
+ - Shape cdifd:resourceIdentifierProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape soso:DatasetNS3Shape: *none*
+ - Shape _:n758a2888c2244904a6f686a7ff9825ffb5: *none*
+ - Shape soso:DatasetNS2Shape: *none*
+ - Shape _:n758a2888c2244904a6f686a7ff9825ffb7: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
+  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Result Path: schema1:url
+  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
+  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
+  	Result Path: schema1:url
+  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:subjectOf,<http://n2t.net/ark:/23942/g2example-dataset>,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:license
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl:
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb32: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb25: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb18: *none*
+ - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb33: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb17: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb11: *none*
+ - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb31: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb27: *none*
+ - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb26: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb34: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb29: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb3: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb10: *none*
+ - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb35: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb24: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb28: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb30: *none*
+ - Shape cdifd:webAPINode: *none*
+ - Shape _:n3fdb7c16b06d44409c2cf178f2f4caefb4: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/rules.shacl:
+ - Shape cdifd:CDIFActionShape: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("a propertID must be a uri reference, a name string, or a schema:DefinedTerm") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ; sh:minLength Literal("5", datatype=xsd:integer) ] [ sh:class schema1:DefinedTerm ; sh:property [ sh:message Literal("a defined term should have an identifier that is a resolvable URI") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or <http://recursion.too.deep> ; sh:path schema1:identifier ] ] ) ; sh:path schema1:propertyID ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:PropertyValue ; schema1:description Literal("Deviation of monthly surface temperature from 1951-1980 average") ; schema1:name Literal("Surface Temperature Anomaly") ; schema1:unitText Literal("degrees Celsius") ]
+  	Result Path: schema1:propertyID
+  	Message: a propertID must be a uri reference, a name string, or a schema:DefinedTerm
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db29: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db10: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db52: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db12: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db44: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db5: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db9: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db51: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db11: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db45: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db37: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db14: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db4: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db30: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db8: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db38: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nffa2a9e2ba0140aa9f651067d826595db7: *none*
 
 
 ** Validation error **
@@ -631,6 +366,275 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cd
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifCatalogRecord/rules.shacl:
  - Shape cdifd:CDIFCatalogRecordShape: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Info
+  	Source Shape: [ sh:message Literal("Recommended: include dcterms:conformsTo to identify the standard or specification this distribution conforms to.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path dcterms:conformsTo ; sh:severity sh:Info ]
+  	Focus Node: [ rdf:type schema1:DataDownload ; schema1:contentUrl Literal("https://example.org/data/temperature-anomalies.csv") ; schema1:encodingFormat Literal("text/csv") ; schema1:name Literal("Temperature anomaly CSV download") ]
+  	Result Path: dcterms:conformsTo
+  	Message: Recommended: include dcterms:conformsTo to identify the standard or specification this distribution conforms to.
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl:
+ - Shape cdifd:CDIFDataDownloadShape: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:distribution
+ - Shape <https://www.ogc.org/rules/template/#ConformsToInfo>: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:distribution
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("A dataset should have keywords (schema:keywords) for discoverability.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-dataset>
+  	Result Path: schema1:keywords
+  	Message: A dataset should have keywords (schema:keywords) for discoverability.
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifOptional/rules.shacl:
+ - Shape cdifd:keywordsNoCommaTest/sh:or/rdf:first: *none*
+ - Shape _:nc0ca798cdbc24c5794a5c55eb69e104bb13: *none*
+ - Shape _:nc0ca798cdbc24c5794a5c55eb69e104bb14: *none*
+ - Shape cdifd:creatorListValidation: <http://n2t.net/ark:/23942/g2example-dataset>
+ - Shape _:nc0ca798cdbc24c5794a5c55eb69e104bb7: *none*
+ - Shape cdifd:CDIFDatasetOptionalShape: *none*
+ - Shape cdifd:relatedResourceProperty/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:keywordsNoCommaTest/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/derivedFrom/rules.shacl:
+ - Shape cdifd:derivedFromProperty: *none*
+ - Shape cdifd:derivedFromProperty/sh:or/rdf:first: *none*
+ - Shape _:nec6aa7515e9c409eacc72a184685b320b4: *none*
+ - Shape cdifd:derivedFromProperty/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/qualityProperties/qualityMeasure/rules.shacl:
+ - Shape _:nd57b71978c944508bef5e9259d0286a7b4: *none*
+ - Shape cdifd:qualityMeasurementNode: *none*
+ - Shape _:nd57b71978c944508bef5e9259d0286a7b11: *none*
+ - Shape cdifd:qualityMeasurementNode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nd57b71978c944508bef5e9259d0286a7b5: *none*
+ - Shape cdifd:qualityMeasurementNode/sh:property/sh:or/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/provProperties/generatedBy/rules.shacl:
+ - Shape cdifd:generatedByNode/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:generatedByNode: *none*
+ - Shape _:na16bad69007d4b199aa4aba5ff8c6061b5: *none*
+ - Shape _:na16bad69007d4b199aa4aba5ff8c6061b4: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/agentInRole/rules.shacl:
+ - Shape cdifd:CDIFRoleShape: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb18: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb15: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb17: *none*
+ - Shape cdifd:roleNameProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb4: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb20: *none*
+ - Shape cdifd:CDIFRoleShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb16: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb14: *none*
+ - Shape _:nfeeaf871d2c54d1e88c8ec5f07598d8cb3: *none*
+ - Shape cdifd:CDIFDefinedTermShape: <http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000017/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000138/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000219/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:about
+ - Shape cdifd:roleNameProperty/sh:or/rdf:first: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b11: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b13: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b3: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b25: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b4: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
+ - Shape cdifd:fundingShape: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b5: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b26: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b15: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b12: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b17: *none*
+ - Shape _:n3fc8cb71b7d44e4f9d044537844a3077b14: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:
+ - Shape cdifd:timeInstantNode: *none*
+ - Shape cdifd:timeIntervalNode: *none*
+ - Shape _:n57b33cdd9c794b2ea11b8018b88f2756b4: *none*
+ - Shape cdifd:temporalExtentProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:temporalExtentProperty/sh:or/rdf:first: *none*
+ - Shape _:n57b33cdd9c794b2ea11b8018b88f2756b3: *none*
+ - Shape cdifd:timePositionNode: *none*
+ - Shape cdifd:timePositionNode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n57b33cdd9c794b2ea11b8018b88f2756b5: *none*
+ - Shape _:n57b33cdd9c794b2ea11b8018b88f2756b17: *none*
+
+
+** Validation error **
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifVariableMeasured/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("a propertID must be a uri reference, a name string, or a schema:DefinedTerm") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ; sh:minLength Literal("5", datatype=xsd:integer) ] [ sh:class schema1:DefinedTerm ; sh:property [ sh:message Literal("a defined term should have an identifier that is a resolvable URI") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or <http://recursion.too.deep> ; sh:path schema1:identifier ] ] ) ; sh:path schema1:propertyID ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:PropertyValue ; schema1:description Literal("Deviation of monthly surface temperature from 1951-1980 average") ; schema1:name Literal("Surface Temperature Anomaly") ; schema1:unitText Literal("degrees Celsius") ]
+  	Result Path: schema1:propertyID
+  	Message: a propertID must be a uri reference, a name string, or a schema:DefinedTerm
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifVariableMeasured/rules.shacl:
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b14: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b13: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b33: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b39: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFxasVariableMeasuredShape: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b34: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b11: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b15: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b9: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b36: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b42: *none*
+ - Shape cdifd:CDIFxasVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b8: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b38: *none*
+ - Shape cdifd:CDIFVariableMeasuredShape: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b16: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b40: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b12: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b18: *none*
+ - Shape _:na17d762cb3184fa88edd0686e73d4688b37: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl:
+ - Shape cdifd:geoShapeNode: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:spatialCoverage/schema1:geo
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b4: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b35: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b3: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b10: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b17: *none*
+ - Shape cdifd:spatialExtentProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b31: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b32: *none*
+ - Shape cdifd:spatialExtentProperty: <http://n2t.net/ark:/23942/g2example-dataset>/schema1:spatialCoverage
+ - Shape cdifd:CDIFDefinedTermShape: <http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000017/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000138/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/ecrro:ECRRO_0000219/schema1:value,<http://n2t.net/ark:/23942/g2example-dataset>/schema1:about
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b34: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b37: *none*
+ - Shape cdifd:spatialExtentProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:geoCoordinatesNode: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b9: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b33: *none*
+ - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*
+ - Shape _:ncba2bede68d6448983402d24c2e9a8f7b22: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvActivity/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifProvActivity/rules.shacl:
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb5: *none*
+ - Shape cdifd:cdifProvHowToStepShape: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb36: *none*
+ - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb13: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb22: *none*
+ - Shape cdifd:cdifProvHowToShape: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb23: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb35: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb21: *none*
+ - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:cdifProvActivityShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb12: *none*
+ - Shape cdifd:cdifProvActivityShape: *none*
+ - Shape _:n1500541ae0f54c71a56f458b9a45a75fb4: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/additionalProperty/rules.shacl:
+ - Shape cdifd:CDIFadditionalPropertyShape: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb17: *none*
+ - Shape cdifd:CDIFadditionalPropertyShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb14: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb6: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb16: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb19: *none*
+ - Shape cdifd:CDIFAddPropertyTermShape: *none*
+ - Shape cdifd:CDIFAddPropertyTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb15: *none*
+ - Shape _:n1de61a620edb4db29e9acacdf9903dfcb7: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/instrument/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/instrument/rules.shacl:
+ - Shape cdifd:instrumentNode: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchive/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifArchive/rules.shacl:
+ - Shape cdifd:archiveComponentNode: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifDataCube/rules.shacl:
+ - Shape cdifd:dataCubeShape: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifPhysicalMapping/rules.shacl:
+ - Shape cdifd:physicalMappingShape: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/cdifProperties/cdifTabularData/rules.shacl:
+ - Shape cdifd:tabularDataShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:tabularDataShape/sh:or/rdf:first: *none*
+ - Shape cdifd:tabularDataShape: *none*
 
 === End SHACL ===
 
