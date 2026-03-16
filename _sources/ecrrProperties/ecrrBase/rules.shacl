@@ -1,0 +1,57 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+# ECRR Base metadata: mandatory properties for all EarthCube Resource Registry
+# resource types. All ECRR resources are typed as schema:CreativeWork.
+
+cdifd:ECRRBaseShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;
+
+	# -- REQUIRED (Violation) --
+
+	sh:property [
+		sh:path schema:name ;
+		sh:minCount 1 ;
+		sh:datatype xsd:string ;
+		sh:minLength 3 ;
+		sh:severity sh:Violation ;
+		sh:message "An ECRR resource must have a name (schema:name) of at least 3 characters." ;
+	] ;
+
+	sh:property [
+		sh:path schema:description ;
+		sh:minCount 1 ;
+		sh:datatype xsd:string ;
+		sh:minLength 10 ;
+		sh:severity sh:Violation ;
+		sh:message "An ECRR resource must have a description (schema:description) of at least 10 characters." ;
+	] ;
+
+	sh:property [
+		sh:path schema:mainEntity ;
+		sh:minCount 1 ;
+		sh:severity sh:Violation ;
+		sh:message "An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI." ;
+	] ;
+
+	sh:property [
+		sh:path schema:license ;
+		sh:minCount 1 ;
+		sh:or (
+			[sh:nodeKind sh:IRI]
+			[sh:datatype xsd:string]
+			[sh:class schema:CreativeWork]
+		) ;
+		sh:severity sh:Violation ;
+		sh:message "An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link." ;
+	] ;
+
+	sh:nodeKind sh:IRI ;
+	sh:message "An ECRR resource must have an @id that is a URI (IRI)." ;
+	.
