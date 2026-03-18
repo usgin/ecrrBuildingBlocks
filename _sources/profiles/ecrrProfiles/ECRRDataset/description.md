@@ -44,8 +44,8 @@ The following properties are defined by both ecrrCommon and CDIF. In this profil
 |---|---|---|
 | `schema:creator` | cdifOptional (`@list` wrapper) | ECRR used plain array; CDIF preserves author order |
 | `schema:keywords` | cdifOptional (array of DefinedTerm/string) | ECRR allowed bare string; CDIF requires array |
-| `schema:subjectOf` | cdifMandatory (CdifCatalogRecord) | ECRR usage → `schema:relatedLink` instead |
-| `schema:identifier` | cdifMandatory (required) | |
+| `schema:subjectOf` | cdifCore (CdifCatalogRecord) | ECRR usage → `schema:relatedLink` instead |
+| `schema:identifier` | cdifCore (required) | |
 | `schema:distribution` | CDIFcomplete (DataDownload/WebAPI/archive) | |
 | `schema:contributor` | cdifOptional (with agentInRole support) | |
 | `schema:publisher` | cdifOptional | |
@@ -53,4 +53,4 @@ The following properties are defined by both ecrrCommon and CDIF. In this profil
 | `schema:sameAs` | cdifOptional (Identifier or string) | |
 | `schema:version` | cdifOptional | |
 | `schema:datePublished` | cdifOptional | |
-| `schema:url` | cdifMandatory | |
+| `schema:url` | cdifCore | |
