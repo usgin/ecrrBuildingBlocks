@@ -80,7 +80,7 @@ Example metadata instance for ECRRCatalog profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog"
@@ -215,7 +215,7 @@ Example metadata instance for ECRRCatalog profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog"
@@ -332,9 +332,9 @@ Example metadata instance for ECRRCatalog profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC CatalogRegistry" ;
     schema1:contentType [ a schema1:Thing ;
-            schema1:name "Datasets" ],
+            schema1:name "Software" ],
         [ a schema1:Thing ;
-            schema1:name "Software" ] ;
+            schema1:name "Datasets" ] ;
     schema1:creator [ a schema1:Organization ;
             schema1:name "EarthCube" ] ;
     schema1:description "A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system." ;
@@ -346,7 +346,7 @@ Example metadata instance for ECRRCatalog profile.
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000212" ] ;
     schema1:name "EarthCube GeoCodes Metadata Catalog" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
                 <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog>,
                 <https://w3id.org/cdif/core/1.0/>,
                 <https://w3id.org/cdif/discovery/1.0/> ;

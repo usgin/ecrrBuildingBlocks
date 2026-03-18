@@ -78,7 +78,7 @@ Example metadata instance for ECRRUseCase profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase"
@@ -203,7 +203,7 @@ Example metadata instance for ECRRUseCase profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase"
@@ -321,7 +321,7 @@ Example metadata instance for ECRRUseCase profile.
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000205" ] ;
     schema1:name "Integrated Seismic Hazard Analysis Workflow" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
                 <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase>,
                 <https://w3id.org/cdif/core/1.0/>,
                 <https://w3id.org/cdif/discovery/1.0/> ;

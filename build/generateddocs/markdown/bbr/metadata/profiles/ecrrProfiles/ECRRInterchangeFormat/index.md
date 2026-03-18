@@ -78,7 +78,7 @@ Example metadata instance for ECRRInterchangeFormat profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat"
@@ -207,7 +207,7 @@ Example metadata instance for ECRRInterchangeFormat profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat"
@@ -315,11 +315,11 @@ Example metadata instance for ECRRInterchangeFormat profile.
                             schema1:name "Example Registrant" ] ;
                     schema1:datePublished "2024-07-20" ] ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
-            schema1:name "Oceanography" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000030" ;
-            schema1:name "Atmospheric Science" ] ;
+            schema1:name "Atmospheric Science" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
+            schema1:name "Oceanography" ] ;
     schema1:additionalType "EC Interchange Format" ;
     schema1:creator [ a schema1:Organization ;
             schema1:name "Unidata/UCAR" ] ;
@@ -331,7 +331,7 @@ Example metadata instance for ECRRInterchangeFormat profile.
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
     schema1:name "NetCDF (Network Common Data Form)" ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
                 <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat>,
                 <https://w3id.org/cdif/core/1.0/>,
                 <https://w3id.org/cdif/discovery/1.0/> ;

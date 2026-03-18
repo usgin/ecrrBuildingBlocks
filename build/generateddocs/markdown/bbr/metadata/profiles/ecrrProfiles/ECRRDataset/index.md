@@ -55,8 +55,8 @@ The following properties are defined by both ecrrCommon and CDIF. In this profil
 |---|---|---|
 | `schema:creator` | cdifOptional (`@list` wrapper) | ECRR used plain array; CDIF preserves author order |
 | `schema:keywords` | cdifOptional (array of DefinedTerm/string) | ECRR allowed bare string; CDIF requires array |
-| `schema:subjectOf` | cdifMandatory (CdifCatalogRecord) | ECRR usage → `schema:relatedLink` instead |
-| `schema:identifier` | cdifMandatory (required) | |
+| `schema:subjectOf` | cdifCore (CdifCatalogRecord) | ECRR usage → `schema:relatedLink` instead |
+| `schema:identifier` | cdifCore (required) | |
 | `schema:distribution` | CDIFcomplete (DataDownload/WebAPI/archive) | |
 | `schema:contributor` | cdifOptional (with agentInRole support) | |
 | `schema:publisher` | cdifOptional | |
@@ -64,7 +64,7 @@ The following properties are defined by both ecrrCommon and CDIF. In this profil
 | `schema:sameAs` | cdifOptional (Identifier or string) | |
 | `schema:version` | cdifOptional | |
 | `schema:datePublished` | cdifOptional | |
-| `schema:url` | cdifMandatory | |
+| `schema:url` | cdifCore | |
 
 ## Examples
 
@@ -120,7 +120,7 @@ Example metadata instance for ECRRDataset profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset"
@@ -287,7 +287,7 @@ Example metadata instance for ECRRDataset profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset"
@@ -457,7 +457,7 @@ Example metadata instance for ECRRDataset profile.
                     schema1:box "-90 -180 90 180" ] ;
             schema1:name "Global" ] ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
                 <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>,
                 <https://w3id.org/cdif/core/1.0/>,
                 <https://w3id.org/cdif/discovery/1.0/> ;

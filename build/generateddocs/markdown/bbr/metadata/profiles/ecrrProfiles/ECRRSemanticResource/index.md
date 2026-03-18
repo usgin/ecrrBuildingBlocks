@@ -80,7 +80,7 @@ Example metadata instance for ECRRSemanticResource profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
@@ -209,7 +209,7 @@ Example metadata instance for ECRRSemanticResource profile.
         "@id": "https://w3id.org/cdif/discovery/1.0/"
       },
       {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory"
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
@@ -332,7 +332,7 @@ Example metadata instance for ECRRSemanticResource profile.
     schema1:programmingLanguage [ a schema1:ComputerLanguage ;
             schema1:name "SKOS (Simple Knowledge Organization System)" ] ;
     schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifMandatory>,
+            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
                 <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource>,
                 <https://w3id.org/cdif/core/1.0/>,
                 <https://w3id.org/cdif/discovery/1.0/> ;

@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ecrr-building-block-register",
   "version": "0.1",
-  "dateOfLastChange": "2026-03-16",
+  "dateOfLastChange": "2026-03-18",
   "sources": [
     {
       "title": "EarthCube Resource Registry",
@@ -31,6 +31,12 @@
     "ecrr.bbr.metadata.ecrrProperties.ecrrCommon": [
       "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
     ],
+    "cdif.bbr.metadata.schemaorgProperties.identifier": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
+    ],
+    "cdif.bbr.metadata.schemaorgProperties.funder": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+    ],
     "cdif.bbr.metadata.schemaorgProperties.person": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
     ],
@@ -40,23 +46,17 @@
     "cdif.bbr.metadata.schemaorgProperties.definedTerm": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.identifier": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
-    ],
     "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-    ],
-    "cdif.bbr.metadata.schemaorgProperties.funder": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
     ]
   },
   "dependsOn": [
-    "cdif.bbr.metadata.schemaorgProperties.person",
-    "cdif.bbr.metadata.schemaorgProperties.organization",
-    "cdif.bbr.metadata.schemaorgProperties.definedTerm",
-    "cdif.bbr.metadata.schemaorgProperties.labeledLink",
     "cdif.bbr.metadata.schemaorgProperties.identifier",
-    "cdif.bbr.metadata.schemaorgProperties.funder"
+    "cdif.bbr.metadata.schemaorgProperties.funder",
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink",
+    "cdif.bbr.metadata.schemaorgProperties.person",
+    "cdif.bbr.metadata.schemaorgProperties.definedTerm",
+    "cdif.bbr.metadata.schemaorgProperties.organization"
   ],
   "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/context.jsonld",
   "schema": {
@@ -93,7 +93,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix dct: <http://purl.org/dc/terms/> .\n@prefix schema1: <http://schema.org/> .\n\n[] dct:bibliographicCitation [ a schema1:PropertyValue ;\n            schema1:name \"Bibliographic citation\" ;\n            schema1:propertyID \"dct:bibliographicCitation\" ;\n            schema1:value \"Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692\" ] ;\n    schema1:about [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000035\" ;\n            schema1:name \"Climatology\" ],\n        [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000051\" ;\n            schema1:name \"Paleoceanography\" ],\n        [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000043\" ;\n            schema1:name \"Paleoclimatology\" ] ;\n    schema1:alternateName \"Python Package for the Analysis of Paleoclimate Data\" ;\n    schema1:audience [ a schema1:Audience ;\n            schema1:audienceType \"Data Users\" ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/AUT_0000002\" ],\n        [ a schema1:Audience ;\n            schema1:audienceType \"Developers\" ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/AUT_0000006\" ],\n        [ a schema1:Audience ;\n            schema1:audienceType \"Scientists\" ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/AUT_0000007\" ] ;\n    schema1:creator [ a schema1:Person ;\n            schema1:identifier \"https://orcid.org/0000-0001-5920-4751\" ;\n            schema1:name \"Julien Emile-Geay\" ],\n        [ a schema1:Person ;\n            schema1:name \"Feng Zhu\" ],\n        [ a schema1:Person ;\n            schema1:name \"Pratheek Athreya\" ],\n        [ a schema1:Person ;\n            schema1:name \"Alexander James\" ],\n        [ a schema1:Person ;\n            schema1:name \"Myron Kwan\" ],\n        [ a schema1:Person ;\n            schema1:identifier \"https://orcid.org/0000-0001-7501-8430\" ;\n            schema1:name \"Deborah Khider\" ],\n        [ a schema1:Person ;\n            schema1:name \"Jun Hu\" ],\n        [ a schema1:Person ;\n            schema1:identifier \"https://orcid.org/0000-0003-0454-7145\" ;\n            schema1:name \"Daniel Garijo\" ] ;\n    schema1:funding [ a schema1:MonetaryGrant ;\n            schema1:name \"US NSF, ICER-1541029, AGS-2002556\" ],\n        [ a schema1:MonetaryGrant ;\n            schema1:funder [ a schema1:Organization ;\n                    schema1:identifier \"https://ror.org/021nxhr62\" ;\n                    schema1:name \"US National Science Foundation (US NSF)\" ] ] ;\n    schema1:identifier \"https://doi.org/10.5281/zenodo.4002870\" ;\n    schema1:isRelatedTo [ a schema1:CreativeWork ;\n            schema1:name \"Example Notebooks\" ;\n            schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\" ],\n        [ a schema1:CreativeWork ;\n            schema1:name \"Documentation\" ;\n            schema1:url \"https://pyleoclim-util.readthedocs.io/en/stable/\" ] ;\n    schema1:keywords \"Paleoclimate\" ;\n    schema1:subjectOf [ a schema1:CreativeWork ;\n            schema1:name \"Pyleoclim GitHub page\" ;\n            schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util\" ] ;\n    schema1:version \"0.6.2\" .\n\n",
+          "code": "@prefix dct: <http://purl.org/dc/terms/> .\n@prefix schema1: <http://schema.org/> .\n\n[] dct:bibliographicCitation [ a schema1:PropertyValue ;\n            schema1:name \"Bibliographic citation\" ;\n            schema1:propertyID \"dct:bibliographicCitation\" ;\n            schema1:value \"Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692\" ] ;\n    schema1:about [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000043\" ;\n            schema1:name \"Paleoclimatology\" ],\n        [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000035\" ;\n            schema1:name \"Climatology\" ],\n        [ a schema1:DefinedTerm ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/ADO_0000051\" ;\n            schema1:name \"Paleoceanography\" ] ;\n    schema1:alternateName \"Python Package for the Analysis of Paleoclimate Data\" ;\n    schema1:audience [ a schema1:Audience ;\n            schema1:audienceType \"Developers\" ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/AUT_0000006\" ],\n        [ a schema1:Audience ;\n            schema1:audienceType \"Data Users\" ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/AUT_0000002\" ],\n        [ a schema1:Audience ;\n            schema1:audienceType \"Scientists\" ;\n            schema1:identifier \"http://cor.esipfed.org/ont/earthcube/AUT_0000007\" ] ;\n    schema1:creator [ a schema1:Person ;\n            schema1:name \"Feng Zhu\" ],\n        [ a schema1:Person ;\n            schema1:name \"Jun Hu\" ],\n        [ a schema1:Person ;\n            schema1:name \"Alexander James\" ],\n        [ a schema1:Person ;\n            schema1:identifier \"https://orcid.org/0000-0001-7501-8430\" ;\n            schema1:name \"Deborah Khider\" ],\n        [ a schema1:Person ;\n            schema1:name \"Myron Kwan\" ],\n        [ a schema1:Person ;\n            schema1:identifier \"https://orcid.org/0000-0003-0454-7145\" ;\n            schema1:name \"Daniel Garijo\" ],\n        [ a schema1:Person ;\n            schema1:identifier \"https://orcid.org/0000-0001-5920-4751\" ;\n            schema1:name \"Julien Emile-Geay\" ],\n        [ a schema1:Person ;\n            schema1:name \"Pratheek Athreya\" ] ;\n    schema1:funding [ a schema1:MonetaryGrant ;\n            schema1:funder [ a schema1:Organization ;\n                    schema1:identifier \"https://ror.org/021nxhr62\" ;\n                    schema1:name \"US National Science Foundation (US NSF)\" ] ],\n        [ a schema1:MonetaryGrant ;\n            schema1:name \"US NSF, ICER-1541029, AGS-2002556\" ] ;\n    schema1:identifier \"https://doi.org/10.5281/zenodo.4002870\" ;\n    schema1:isRelatedTo [ a schema1:CreativeWork ;\n            schema1:name \"Documentation\" ;\n            schema1:url \"https://pyleoclim-util.readthedocs.io/en/stable/\" ],\n        [ a schema1:CreativeWork ;\n            schema1:name \"Example Notebooks\" ;\n            schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\" ] ;\n    schema1:keywords \"Paleoclimate\" ;\n    schema1:subjectOf [ a schema1:CreativeWork ;\n            schema1:name \"Pyleoclim GitHub page\" ;\n            schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util\" ] ;\n    schema1:version \"0.6.2\" .\n\n",
           "url": "https://usgin.github.io/ecrrBuildingBlocks/build/tests/bbr/metadata/ecrrProperties/ecrrCommon/example_1_1.ttl"
         }
       ]

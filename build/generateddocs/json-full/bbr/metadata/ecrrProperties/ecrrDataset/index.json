@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ecrr-building-block-register",
   "version": "0.1",
-  "dateOfLastChange": "2026-03-16",
+  "dateOfLastChange": "2026-03-18",
   "sources": [
     {
       "title": "schema.org Dataset",
@@ -31,6 +31,9 @@
     "ecrr.bbr.metadata.ecrrProperties.ecrrDataset": [
       "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrDataset/rules.shacl"
     ],
+    "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
+    ],
     "cdif.bbr.metadata.schemaorgProperties.variableMeasured": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl"
     ],
@@ -49,9 +52,6 @@
     "cdif.bbr.metadata.schemaorgProperties.organization": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.temporalExtent": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl"
-    ],
     "cdif.bbr.metadata.schemaorgProperties.spatialExtent": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl"
     ],
@@ -66,9 +66,9 @@
     ]
   },
   "dependsOn": [
+    "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
     "cdif.bbr.metadata.schemaorgProperties.variableMeasured",
     "cdif.bbr.metadata.schemaorgProperties.dataDownload",
-    "cdif.bbr.metadata.schemaorgProperties.temporalExtent",
     "cdif.bbr.metadata.schemaorgProperties.spatialExtent",
     "cdif.bbr.metadata.schemaorgProperties.webAPI"
   ],

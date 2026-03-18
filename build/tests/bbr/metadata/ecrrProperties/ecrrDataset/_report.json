@@ -2,7 +2,7 @@
   "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrDataset - ECRR Dataset properties",
   "bblockName": "ECRR Dataset properties",
   "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrDataset",
-  "generated": "2026-03-16T22:10:54.814385+00:00",
+  "generated": "2026-03-18T20:17:52.010572+00:00",
   "result": false,
   "items": [
     {
@@ -81,6 +81,50 @@
             },
             {
               "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl",
+              "focusNodes": {
+                "_:n2162ce701c9c476bb6a375354904bce8b4": {
+                  "nodes": []
+                },
+                "cdifd:timeInstantNode": {
+                  "nodes": []
+                },
+                "cdifd:timePositionNode": {
+                  "nodes": []
+                },
+                "cdifd:timePositionNode/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:timeIntervalNode": {
+                  "nodes": []
+                },
+                "_:n2162ce701c9c476bb6a375354904bce8b5": {
+                  "nodes": []
+                },
+                "cdifd:temporalExtentProperty/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n2162ce701c9c476bb6a375354904bce8b3": {
+                  "nodes": []
+                },
+                "_:n2162ce701c9c476bb6a375354904bce8b17": {
+                  "nodes": []
+                },
+                "cdifd:temporalExtentProperty/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:\n - Shape _:n2162ce701c9c476bb6a375354904bce8b4: *none*\n - Shape cdifd:timeInstantNode: *none*\n - Shape cdifd:timePositionNode: *none*\n - Shape cdifd:timePositionNode/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:timeIntervalNode: *none*\n - Shape _:n2162ce701c9c476bb6a375354904bce8b5: *none*\n - Shape cdifd:temporalExtentProperty/sh:or/rdf:first: *none*\n - Shape _:n2162ce701c9c476bb6a375354904bce8b3: *none*\n - Shape _:n2162ce701c9c476bb6a375354904bce8b17: *none*\n - Shape cdifd:temporalExtentProperty/sh:or/rdf:rest/rdf:first: *none*\n"
+            },
+            {
+              "op": "shacl-report",
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl",
               "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:PropertyValue ;\n                    schema1:description \"Surface air temperature measurements\" ;\n                    schema1:name \"Temperature\" ] ;\n            sh:resultMessage \"a propertID must be a uri reference, a name string, or a schema:DefinedTerm\" ;\n            sh:resultPath schema1:propertyID ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"a propertID must be a uri reference, a name string, or a schema:DefinedTerm\" ;\n                    sh:minCount 1 ;\n                    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ;\n                                sh:minLength 5 ] [ sh:class schema1:DefinedTerm ;\n                                sh:property [ sh:message \"a defined term should have an identifier that is a resolvable URI\" ;\n                                        sh:minCount 1 ;\n                                        sh:or ( [ ] [ ] [ ] ) ;\n                                        sh:path schema1:identifier ] ] ) ;\n                    sh:path schema1:propertyID ;\n                    sh:severity sh:Warning ] ] .\n\n",
               "isError": true,
@@ -89,66 +133,66 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl",
               "focusNodes": {
-                "_:n560c72a1a373444a85a53036924a7b24b44": {
-                  "nodes": []
-                },
-                "_:n560c72a1a373444a85a53036924a7b24b51": {
-                  "nodes": []
-                },
-                "_:n560c72a1a373444a85a53036924a7b24b4": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b9": {
                   "nodes": []
                 },
                 "cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b14": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b14": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b30": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b5": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b10": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b11": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b38": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b4": {
+                  "nodes": []
+                },
+                "_:nf7321094500d47eb8b1eb76ffb968d44b7": {
+                  "nodes": []
+                },
+                "_:nf7321094500d47eb8b1eb76ffb968d44b45": {
+                  "nodes": []
+                },
+                "_:nf7321094500d47eb8b1eb76ffb968d44b37": {
                   "nodes": []
                 },
                 "cdifd:CDIFVariableMeasuredShape": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b5": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b8": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b7": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b10": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b9": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b12": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b29": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b38": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b12": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b30": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b37": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b52": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b8": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b29": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b52": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b44": {
                   "nodes": []
                 },
-                "_:n560c72a1a373444a85a53036924a7b24b11": {
-                  "nodes": []
-                },
-                "_:n560c72a1a373444a85a53036924a7b24b45": {
+                "_:nf7321094500d47eb8b1eb76ffb968d44b51": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:\n - Shape _:n560c72a1a373444a85a53036924a7b24b44: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b51: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b4: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b14: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b30: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b10: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b38: *none*\n - Shape cdifd:CDIFVariableMeasuredShape: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b5: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b7: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b9: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b29: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b12: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b37: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b8: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b52: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b11: *none*\n - Shape _:n560c72a1a373444a85a53036924a7b24b45: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/rules.shacl:\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b9: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b14: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b5: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b11: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b4: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b7: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b45: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b37: *none*\n - Shape cdifd:CDIFVariableMeasuredShape: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b8: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b10: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b12: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b38: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b30: *none*\n - Shape cdifd:CDIFVariableMeasuredShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b52: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b29: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b44: *none*\n - Shape _:nf7321094500d47eb8b1eb76ffb968d44b51: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -160,45 +204,45 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl",
               "focusNodes": {
-                "cdifd:CDIFDefinedTermShape": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b7": {
                   "nodes": []
                 },
-                "cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b19": {
                   "nodes": []
                 },
                 "cdifd:CDIFDefinedTermShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b5": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b26": {
                   "nodes": []
                 },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b26": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b10": {
                   "nodes": []
                 },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b4": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b6": {
                   "nodes": []
                 },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b6": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b4": {
                   "nodes": []
                 },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b8": {
+                "_:nbe63c9d531094c1b990430e354c6ac63b8": {
                   "nodes": []
                 },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b10": {
-                  "nodes": []
-                },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b7": {
-                  "nodes": []
-                },
-                "_:n39c0461ba8e741d5ac5ddeaa442719c3b19": {
+                "cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
+                },
+                "_:nbe63c9d531094c1b990430e354c6ac63b5": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n - Shape cdifd:CDIFDefinedTermShape: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b5: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b26: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b4: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b6: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b8: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b10: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b7: *none*\n - Shape _:n39c0461ba8e741d5ac5ddeaa442719c3b19: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b7: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b19: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b26: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b10: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b6: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b4: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b8: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:nbe63c9d531094c1b990430e354c6ac63b5: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -210,25 +254,19 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl",
               "focusNodes": {
-                "_:na80336f6b84443d58614d815dc0ef050b10": {
+                "cdifd:CDIFIdentifierTypeTermShape": {
                   "nodes": []
                 },
                 "cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "_:na80336f6b84443d58614d815dc0ef050b20": {
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb11": {
                   "nodes": []
                 },
-                "_:na80336f6b84443d58614d815dc0ef050b23": {
-                  "nodes": []
-                },
-                "cdifd:CDIFIdentifierTypeTermShape": {
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb22": {
                   "nodes": []
                 },
                 "cdifd:CDIFIdentifierShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "cdifd:CDIFIdentifierShape": {
                   "nodes": []
                 },
                 "cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first": {
@@ -237,21 +275,27 @@
                 "cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "_:na80336f6b84443d58614d815dc0ef050b25": {
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb20": {
                   "nodes": []
                 },
-                "_:na80336f6b84443d58614d815dc0ef050b21": {
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb21": {
                   "nodes": []
                 },
-                "_:na80336f6b84443d58614d815dc0ef050b11": {
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb23": {
                   "nodes": []
                 },
-                "_:na80336f6b84443d58614d815dc0ef050b22": {
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb25": {
+                  "nodes": []
+                },
+                "_:n50fdedb1aa5a42f2b47f491204381f4fb10": {
+                  "nodes": []
+                },
+                "cdifd:CDIFIdentifierShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n - Shape _:na80336f6b84443d58614d815dc0ef050b10: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:na80336f6b84443d58614d815dc0ef050b20: *none*\n - Shape _:na80336f6b84443d58614d815dc0ef050b23: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierShape: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:na80336f6b84443d58614d815dc0ef050b25: *none*\n - Shape _:na80336f6b84443d58614d815dc0ef050b21: *none*\n - Shape _:na80336f6b84443d58614d815dc0ef050b11: *none*\n - Shape _:na80336f6b84443d58614d815dc0ef050b22: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n - Shape cdifd:CDIFIdentifierTypeTermShape: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb11: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb22: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb20: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb21: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb23: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb25: *none*\n - Shape _:n50fdedb1aa5a42f2b47f491204381f4fb10: *none*\n - Shape cdifd:CDIFIdentifierShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -263,19 +307,19 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/template/#ConformsToInfo>": {
-                  "nodes": [
-                    "_:N67d37db8294844cdba6d95dfd84dc266"
-                  ]
-                },
                 "cdifd:CDIFDataDownloadShape": {
                   "nodes": [
-                    "_:N67d37db8294844cdba6d95dfd84dc266"
+                    "_:N69c3e5b71b944b64bc72d610c60d7963"
+                  ]
+                },
+                "<https://www.ogc.org/rules/template/#ConformsToInfo>": {
+                  "nodes": [
+                    "_:N69c3e5b71b944b64bc72d610c60d7963"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl:\n - Shape <https://www.ogc.org/rules/template/#ConformsToInfo>: _:N67d37db8294844cdba6d95dfd84dc266\n - Shape cdifd:CDIFDataDownloadShape: _:N67d37db8294844cdba6d95dfd84dc266\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/rules.shacl:\n - Shape cdifd:CDIFDataDownloadShape: _:N69c3e5b71b944b64bc72d610c60d7963\n - Shape <https://www.ogc.org/rules/template/#ConformsToInfo>: _:N69c3e5b71b944b64bc72d610c60d7963\n"
             },
             {
               "op": "shacl-report",
@@ -287,42 +331,42 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl",
               "focusNodes": {
+                "cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:maintainerOrProviderContactPointShape": {
+                  "nodes": []
+                },
+                "_:n66b9e3e7f6f7402b8bc902ff2aff15e9b14": {
+                  "nodes": []
+                },
+                "cdifd:affiliationProperty/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:CDIFPersonShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
                 "cdifd:CDIFPersonShape": {
                   "nodes": []
                 },
                 "cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "_:n9905ee9174524f09a3bbbe9083457972b14": {
-                  "nodes": []
-                },
-                "cdifd:maintainerOrProviderContactPointShape": {
-                  "nodes": []
-                },
-                "cdifd:affiliationProperty/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
-                "cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "cdifd:CDIFPersonShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "cdifd:CDIFContactPointShape": {
                   "nodes": []
                 },
                 "cdifd:contactPointProperty/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "cdifd:CDIFContactPointShape": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n - Shape cdifd:CDIFPersonShape: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n9905ee9174524f09a3bbbe9083457972b14: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFContactPointShape: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape: *none*\n - Shape _:n66b9e3e7f6f7402b8bc902ff2aff15e9b14: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFContactPointShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -334,62 +378,18 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl",
               "focusNodes": {
-                "cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
                 "cdifd:CDIFOrganizationShape/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "cdifd:CDIFOrganizationShape": {
                   "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl",
-              "focusNodes": {
-                "_:ne946838e3cf845f08992bbb4da0858e0b3": {
-                  "nodes": []
                 },
-                "_:ne946838e3cf845f08992bbb4da0858e0b17": {
-                  "nodes": []
-                },
-                "cdifd:temporalExtentProperty/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
-                "cdifd:timeInstantNode": {
-                  "nodes": []
-                },
-                "cdifd:timeIntervalNode": {
-                  "nodes": []
-                },
-                "_:ne946838e3cf845f08992bbb4da0858e0b5": {
-                  "nodes": []
-                },
-                "cdifd:temporalExtentProperty/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "_:ne946838e3cf845f08992bbb4da0858e0b4": {
-                  "nodes": []
-                },
-                "cdifd:timePositionNode": {
-                  "nodes": []
-                },
-                "cdifd:timePositionNode/sh:property/sh:or/rdf:first": {
+                "cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/rules.shacl:\n - Shape _:ne946838e3cf845f08992bbb4da0858e0b3: *none*\n - Shape _:ne946838e3cf845f08992bbb4da0858e0b17: *none*\n - Shape cdifd:temporalExtentProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:timeInstantNode: *none*\n - Shape cdifd:timeIntervalNode: *none*\n - Shape _:ne946838e3cf845f08992bbb4da0858e0b5: *none*\n - Shape cdifd:temporalExtentProperty/sh:or/rdf:first: *none*\n - Shape _:ne946838e3cf845f08992bbb4da0858e0b4: *none*\n - Shape cdifd:timePositionNode: *none*\n - Shape cdifd:timePositionNode/sh:property/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape: *none*\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -401,76 +401,76 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl",
               "focusNodes": {
-                "cdifd:geoShapeNode": {
-                  "nodes": [
-                    "_:Nc6b83badc93f4f6f9217d11906a5fa94"
-                  ]
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb22": {
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b4": {
                   "nodes": []
                 },
-                "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b10": {
                   "nodes": []
                 },
-                "_:nba693d27b08348009a43f87dc75ddd7bb3": {
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b37": {
                   "nodes": []
                 },
-                "_:nba693d27b08348009a43f87dc75ddd7bb34": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb4": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb10": {
-                  "nodes": []
-                },
-                "cdifd:spatialExtentProperty/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb37": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb35": {
-                  "nodes": []
-                },
-                "cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb9": {
-                  "nodes": []
-                },
-                "cdifd:CDIFDefinedTermShape": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb31": {
-                  "nodes": []
-                },
-                "_:nba693d27b08348009a43f87dc75ddd7bb33": {
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b35": {
                   "nodes": []
                 },
                 "cdifd:geoCoordinatesNode": {
                   "nodes": []
                 },
-                "cdifd:spatialExtentProperty/sh:or/rdf:first": {
+                "cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "cdifd:CDIFDefinedTermShape/sh:or/rdf:first": {
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b17": {
                   "nodes": []
                 },
-                "_:nba693d27b08348009a43f87dc75ddd7bb17": {
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b22": {
                   "nodes": []
                 },
-                "_:nba693d27b08348009a43f87dc75ddd7bb32": {
+                "cdifd:spatialExtentProperty/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b33": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape": {
                   "nodes": []
                 },
                 "cdifd:spatialExtentProperty": {
                   "nodes": [
-                    "_:N37df970adeb74339acee5f1a8ec118b2"
+                    "_:N1e72da63f9ac4eafb5e152f778b924c5"
                   ]
+                },
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b31": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b9": {
+                  "nodes": []
+                },
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b34": {
+                  "nodes": []
+                },
+                "cdifd:geoShapeNode": {
+                  "nodes": [
+                    "_:Nefb47fd3c69d475091330713a708a046"
+                  ]
+                },
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b32": {
+                  "nodes": []
+                },
+                "cdifd:spatialExtentProperty/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n3ef2bba4741c4fc6a2d9dd57a602b878b3": {
+                  "nodes": []
+                },
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:first": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl:\n - Shape cdifd:geoShapeNode: _:Nc6b83badc93f4f6f9217d11906a5fa94\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb22: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb3: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb34: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb4: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb10: *none*\n - Shape cdifd:spatialExtentProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb37: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb35: *none*\n - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb9: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb31: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb33: *none*\n - Shape cdifd:geoCoordinatesNode: *none*\n - Shape cdifd:spatialExtentProperty/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb17: *none*\n - Shape _:nba693d27b08348009a43f87dc75ddd7bb32: *none*\n - Shape cdifd:spatialExtentProperty: _:N37df970adeb74339acee5f1a8ec118b2\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/rules.shacl:\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b4: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b10: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b37: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b35: *none*\n - Shape cdifd:geoCoordinatesNode: *none*\n - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b17: *none*\n - Shape cdifd:geoCoordinatesNode/sh:property/sh:or/rdf:first: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b22: *none*\n - Shape cdifd:spatialExtentProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b33: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n - Shape cdifd:spatialExtentProperty: _:N1e72da63f9ac4eafb5e152f778b924c5\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b31: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b9: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b34: *none*\n - Shape cdifd:geoShapeNode: _:Nefb47fd3c69d475091330713a708a046\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b32: *none*\n - Shape cdifd:spatialExtentProperty/sh:or/rdf:first: *none*\n - Shape _:n3ef2bba4741c4fc6a2d9dd57a602b878b3: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -482,69 +482,69 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl",
               "focusNodes": {
-                "cdifd:webAPINode/sh:property/sh:or/rdf:first": {
+                "_:n103a2971a224421d88e9241e3b2d451ab18": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb29": {
+                "_:n103a2971a224421d88e9241e3b2d451ab3": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb17": {
+                "_:n103a2971a224421d88e9241e3b2d451ab28": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb10": {
-                  "nodes": []
-                },
-                "_:ne0a81a8b9abc425693754d638904c4adb11": {
-                  "nodes": []
-                },
-                "_:ne0a81a8b9abc425693754d638904c4adb27": {
-                  "nodes": []
-                },
-                "_:ne0a81a8b9abc425693754d638904c4adb3": {
-                  "nodes": []
-                },
-                "_:ne0a81a8b9abc425693754d638904c4adb32": {
-                  "nodes": []
-                },
-                "_:ne0a81a8b9abc425693754d638904c4adb33": {
+                "_:n103a2971a224421d88e9241e3b2d451ab31": {
                   "nodes": []
                 },
                 "cdifd:webAPINode": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb31": {
+                "cdifd:webAPINode/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb26": {
+                "_:n103a2971a224421d88e9241e3b2d451ab17": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb30": {
+                "_:n103a2971a224421d88e9241e3b2d451ab30": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb18": {
+                "_:n103a2971a224421d88e9241e3b2d451ab32": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb28": {
+                "_:n103a2971a224421d88e9241e3b2d451ab33": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb4": {
+                "_:n103a2971a224421d88e9241e3b2d451ab26": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb25": {
+                "_:n103a2971a224421d88e9241e3b2d451ab10": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb24": {
+                "_:n103a2971a224421d88e9241e3b2d451ab35": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb35": {
+                "_:n103a2971a224421d88e9241e3b2d451ab24": {
                   "nodes": []
                 },
-                "_:ne0a81a8b9abc425693754d638904c4adb34": {
+                "_:n103a2971a224421d88e9241e3b2d451ab25": {
+                  "nodes": []
+                },
+                "_:n103a2971a224421d88e9241e3b2d451ab29": {
+                  "nodes": []
+                },
+                "_:n103a2971a224421d88e9241e3b2d451ab4": {
+                  "nodes": []
+                },
+                "_:n103a2971a224421d88e9241e3b2d451ab27": {
+                  "nodes": []
+                },
+                "_:n103a2971a224421d88e9241e3b2d451ab34": {
+                  "nodes": []
+                },
+                "_:n103a2971a224421d88e9241e3b2d451ab11": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl:\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb29: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb17: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb10: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb11: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb27: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb3: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb32: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb33: *none*\n - Shape cdifd:webAPINode: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb31: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb26: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb30: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb18: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb28: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb4: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb25: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb24: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb35: *none*\n - Shape _:ne0a81a8b9abc425693754d638904c4adb34: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/rules.shacl:\n - Shape _:n103a2971a224421d88e9241e3b2d451ab18: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab3: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab28: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab31: *none*\n - Shape cdifd:webAPINode: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab17: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab30: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab32: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab33: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab26: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab10: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab35: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab24: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab25: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab29: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab4: *none*\n - Shape cdifd:webAPINode/sh:property/sh:or/rdf:first: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab27: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab34: *none*\n - Shape _:n103a2971a224421d88e9241e3b2d451ab11: *none*\n"
             },
             {
               "op": "shacl-report",

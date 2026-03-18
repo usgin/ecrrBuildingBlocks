@@ -124,14 +124,14 @@ parts including software, dataset, and documentation components.
                 "text/csv" ;
             schema1:name "Sample Observation Data" ;
             schema1:url "https://example.org/sample-data" ],
-        [ a schema1:CreativeWork ;
-            schema1:encodingFormat "text/html" ;
-            schema1:name "User Documentation" ;
-            schema1:url "https://example.org/docs" ],
         [ a schema1:SoftwareApplication ;
             schema1:description "Main analysis software component" ;
             schema1:name "Analysis Tool v2.0" ;
-            schema1:url "https://example.org/analysis-tool" ] .
+            schema1:url "https://example.org/analysis-tool" ],
+        [ a schema1:CreativeWork ;
+            schema1:encodingFormat "text/html" ;
+            schema1:name "User Documentation" ;
+            schema1:url "https://example.org/docs" ] .
 
 
 ```
