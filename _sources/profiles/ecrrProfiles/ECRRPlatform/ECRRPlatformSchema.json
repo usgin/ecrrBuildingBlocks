@@ -2,10 +2,10 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "title": "ECRR Platform Profile",
-    "description": "Complete ECRR metadata profile for platform resources. Composes ecrrBase, ecrrCommon, and ecrrAssessment. Resources must have schema:additionalType containing \"EC Platform\".",
+    "description": "Complete ECRR metadata profile for platform resources. Composes ecrrCore, ecrrCommon, and ecrrAssessment. Resources must have schema:additionalType containing \"EC Platform\".",
     "allOf": [
         {
-            "$ref": "../../../ecrrProperties/ecrrBase/ecrrBaseSchema.json"
+            "$ref": "../../../ecrrProperties/ecrrCore/ecrrCoreSchema.json"
         },
         {
             "$ref": "../../../ecrrProperties/ecrrCommon/ecrrCommonSchema.json"

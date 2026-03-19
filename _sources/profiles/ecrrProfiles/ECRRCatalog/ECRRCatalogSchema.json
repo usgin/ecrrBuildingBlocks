@@ -2,10 +2,10 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "title": "ECRR Catalog/Registry Profile",
-    "description": "Complete ECRR metadata profile for catalog and registry resources. Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCatalog. Resources must have schema:additionalType containing \"EC CatalogRegistry\" or \"EC Repository\".",
+    "description": "Complete ECRR metadata profile for catalog and registry resources. Composes ecrrCore, ecrrCommon, ecrrAssessment, and ecrrCatalog. Resources must have schema:additionalType containing \"EC CatalogRegistry\" or \"EC Repository\".",
     "allOf": [
         {
-            "$ref": "../../../ecrrProperties/ecrrBase/ecrrBaseSchema.json"
+            "$ref": "../../../ecrrProperties/ecrrCore/ecrrCoreSchema.json"
         },
         {
             "$ref": "../../../ecrrProperties/ecrrCommon/ecrrCommonSchema.json"

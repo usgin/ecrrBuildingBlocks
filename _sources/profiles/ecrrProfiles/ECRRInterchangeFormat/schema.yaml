@@ -4,10 +4,10 @@ type: object
 title: ECRR Interchange Format Profile
 description: >-
   Complete ECRR metadata profile for interchange format resources.
-  Composes ecrrBase, ecrrCommon, and ecrrAssessment.
+  Composes ecrrCore, ecrrCommon, and ecrrAssessment.
   Resources must have schema:additionalType containing "EC Interchange Format".
 allOf:
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - properties:

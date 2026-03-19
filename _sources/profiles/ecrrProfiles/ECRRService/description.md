@@ -4,7 +4,7 @@ Complete metadata profile for registering service instance resources in the Eart
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties
 3. **ecrrAssessment** — resource assessment properties
 4. **ecrrService** — service-specific (communication protocols, interface specification, supporting data, invocation)

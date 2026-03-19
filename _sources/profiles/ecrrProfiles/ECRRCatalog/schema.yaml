@@ -4,11 +4,11 @@ type: object
 title: ECRR Catalog/Registry Profile
 description: >-
   Complete ECRR metadata profile for catalog and registry resources.
-  Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCatalog.
+  Composes ecrrCore, ecrrCommon, ecrrAssessment, and ecrrCatalog.
   Resources must have schema:additionalType containing
   "EC CatalogRegistry" or "EC Repository".
 allOf:
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCatalog/schema.yaml

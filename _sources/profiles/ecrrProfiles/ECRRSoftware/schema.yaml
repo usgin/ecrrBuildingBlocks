@@ -4,12 +4,12 @@ type: object
 title: ECRR Software Profile
 description: >-
   Complete ECRR metadata profile for software and application resources.
-  Composes ecrrBase (mandatory identity and classification), ecrrCommon
+  Composes ecrrCore (mandatory identity and classification), ecrrCommon
   (optional shared properties), ecrrAssessment (maturity, lifetime, usage),
   and ecrrSoftware (application categories, languages, repositories, etc.).
   Resources must have schema:additionalType containing "EC Software".
 allOf:
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrSoftware/schema.yaml

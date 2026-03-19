@@ -4,10 +4,10 @@ type: object
 title: ECRR Service Instance Profile
 description: >-
   Complete ECRR metadata profile for service instance resources.
-  Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrService.
+  Composes ecrrCore, ecrrCommon, ecrrAssessment, and ecrrService.
   Resources must have schema:additionalType containing "EC Service Instance".
 allOf:
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrService/schema.yaml

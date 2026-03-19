@@ -4,10 +4,10 @@ type: object
 title: ECRR Interface/API Profile
 description: >-
   Complete ECRR metadata profile for interface and API resources.
-  Composes ecrrBase, ecrrCommon, and ecrrAssessment.
+  Composes ecrrCore, ecrrCommon, and ecrrAssessment.
   Resources must have schema:additionalType containing "EC Interface_API".
 allOf:
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - properties:

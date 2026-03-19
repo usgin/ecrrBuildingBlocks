@@ -6,7 +6,7 @@ Complete metadata profile for registering software and application resources in 
 
 This profile composes four building blocks using `allOf`:
 
-1. **ecrrBase** — mandatory identity, type, name, description, mainEntity classification, license
+1. **ecrrCore** — mandatory identity, type, name, description, mainEntity classification, license
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **ecrrSoftware** — software-specific (application categories, runtime platforms, programming languages, supporting data, code repository, install URL, dependencies)

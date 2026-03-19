@@ -2,10 +2,10 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "title": "ECRR Semantic Resource Profile",
-    "description": "Complete ECRR metadata profile for semantic resource types (ontologies, vocabularies, thesauri, etc.). Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrSemanticResource. Resources must have schema:additionalType containing \"EC Semantic Resource\".",
+    "description": "Complete ECRR metadata profile for semantic resource types (ontologies, vocabularies, thesauri, etc.). Composes ecrrCore, ecrrCommon, ecrrAssessment, and ecrrSemanticResource. Resources must have schema:additionalType containing \"EC Semantic Resource\".",
     "allOf": [
         {
-            "$ref": "../../../ecrrProperties/ecrrBase/ecrrBaseSchema.json"
+            "$ref": "../../../ecrrProperties/ecrrCore/ecrrCoreSchema.json"
         },
         {
             "$ref": "../../../ecrrProperties/ecrrCommon/ecrrCommonSchema.json"

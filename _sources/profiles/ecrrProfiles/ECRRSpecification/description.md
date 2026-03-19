@@ -4,7 +4,7 @@ Complete metadata profile for registering specification resources in the EarthCu
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties
 3. **ecrrAssessment** — resource assessment properties
 4. **ecrrSpecification** — specification-specific (parent specifications, subtype via SPKT vocabulary)

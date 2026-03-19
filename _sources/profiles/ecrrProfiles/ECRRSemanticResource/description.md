@@ -4,7 +4,7 @@ Complete metadata profile for registering semantic resources (ontologies, vocabu
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **ecrrSemanticResource** — semantic-resource-specific (programming/representation language)

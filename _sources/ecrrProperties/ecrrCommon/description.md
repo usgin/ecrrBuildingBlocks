@@ -1,6 +1,6 @@
 ## ECRR Common Optional Properties
 
-Defines optional metadata properties frequently used across multiple ECRR resource types. These properties complement the mandatory `ecrrBase` fields.
+Defines optional metadata properties frequently used across multiple ECRR resource types. These properties complement the mandatory `ecrrCore` fields.
 
 ### Agent Properties
 - **schema:creator** — authors/originators of the resource

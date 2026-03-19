@@ -7,7 +7,7 @@ Complete metadata profile for registering dataset resources in the EarthCube Res
 This profile extends CDIFcomplete with ECRR building blocks. CDIF properties take precedence for overlapping concerns; ECRR-unique properties are included inline.
 
 1. **CDIFcomplete** — full CDIF discovery + data description profile (creator, keywords, subjectOf, distribution, spatial/temporal coverage, variables, provenance, quality)
-2. **ecrrBase** — mandatory ECRR identity: mainEntity classification, `@type` must contain `schema:CreativeWork`, requires `schema:description` and `schema:license`
+2. **ecrrCore** — mandatory ECRR identity: mainEntity classification, `@type` must contain `schema:CreativeWork`, requires `schema:description` and `schema:license`
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **Inline ECRR-unique properties** — properties from ecrrCommon not covered by CDIF (see below)
 

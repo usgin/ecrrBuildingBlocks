@@ -4,7 +4,7 @@ type: object
 title: ECRR Dataset Profile
 description: >-
   Complete ECRR metadata profile for dataset resources.
-  Extends CDIFcomplete with ecrrBase (mainEntity, @type contains CreativeWork,
+  Extends CDIFcomplete with ecrrCore (mainEntity, @type contains CreativeWork,
   requires description and license) and ecrrAssessment (maturity, lifetime,
   usage, stewardship). CDIF properties take precedence for overlapping concerns
   (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties
@@ -14,7 +14,7 @@ description: >-
   Resources must have schema:additionalType containing "EC Dataset".
 allOf:
   - $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/schema.yaml
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - properties:
       "schema:additionalType":

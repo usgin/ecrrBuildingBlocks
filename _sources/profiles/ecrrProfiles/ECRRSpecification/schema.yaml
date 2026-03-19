@@ -4,10 +4,10 @@ type: object
 title: ECRR Specification Profile
 description: >-
   Complete ECRR metadata profile for specification resources.
-  Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrSpecification.
+  Composes ecrrCore, ecrrCommon, ecrrAssessment, and ecrrSpecification.
   Resources must have schema:additionalType containing "EC Specification".
 allOf:
-  - $ref: ../../../ecrrProperties/ecrrBase/schema.yaml
+  - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCommon/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrSpecification/schema.yaml

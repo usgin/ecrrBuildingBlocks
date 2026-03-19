@@ -8,7 +8,7 @@ Modular metadata schemas for [EarthCube Resource Registry (ECRR)](https://www.ea
 
 | Building Block | Description |
 |---|---|
-| ecrrBase | Mandatory identity, type, name, description, mainEntity, license |
+| ecrrCore | Mandatory identity, type, name, description, mainEntity, license |
 | ecrrCommon | Shared optional: identifiers, agents, keywords, domains, funding |
 | ecrrAssessment | Maturity, lifetime, usage, stewardship, registration |
 | ecrrCatalog | Catalog/repository content types |
@@ -23,7 +23,7 @@ Modular metadata schemas for [EarthCube Resource Registry (ECRR)](https://www.ea
 
 ECRRCatalog, ECRRCollection, ECRRDataset, ECRRInterchangeFormat, ECRRInterface, ECRRPlatform, ECRRSemanticResource, ECRRService, ECRRSoftware, ECRRSpecification, ECRRUseCase
 
-Each profile composes ecrrBase + ecrrCommon + ecrrAssessment with resource-type-specific properties via `allOf`. ECRRDataset additionally extends [CDIFcomplete](https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/bblock/bbr.metadata.profiles.CDIFcomplete).
+Each profile composes ecrrCore + ecrrCommon + ecrrAssessment with resource-type-specific properties via `allOf`. ECRRDataset additionally extends [CDIFcomplete](https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/bblock/bbr.metadata.profiles.CDIFcomplete).
 
 ## Cross-repo imports
 
