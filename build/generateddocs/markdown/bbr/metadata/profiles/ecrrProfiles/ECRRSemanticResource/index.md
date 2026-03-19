@@ -33,26 +33,27 @@ Example metadata instance for ECRRSemanticResource profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-semantic",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "CGI GeoSciML Vocabulary",
   "schema:additionalType": [
     "EC Semantic Resource"
   ],
   "schema:description": "A SKOS vocabulary of geoscience terms maintained by the IUGS Commission for the Management and Application of Geoscience Information (CGI), used as controlled terminology in GeoSciML and EarthResourceML data interchange.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-semantic",
+  "schema:url": "https://geosciml.org/resource/vocabulary/cgi/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000210",
@@ -66,8 +67,9 @@ Example metadata instance for ECRRSemanticResource profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-semanticresource-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -86,14 +88,19 @@ Example metadata instance for ECRRSemanticResource profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "IUGS Commission for Geoscience Information (CGI)"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-semantic"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "IUGS Commission for Geoscience Information (CGI)"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -163,11 +170,10 @@ Example metadata instance for ECRRSemanticResource profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -175,13 +181,17 @@ Example metadata instance for ECRRSemanticResource profile.
   "@id": "http://n2t.net/ark:/23942/g2example-semantic",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "CGI GeoSciML Vocabulary",
   "schema:additionalType": [
     "EC Semantic Resource"
   ],
   "schema:description": "A SKOS vocabulary of geoscience terms maintained by the IUGS Commission for the Management and Application of Geoscience Information (CGI), used as controlled terminology in GeoSciML and EarthResourceML data interchange.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-semantic",
+  "schema:url": "https://geosciml.org/resource/vocabulary/cgi/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000210",
@@ -195,8 +205,9 @@ Example metadata instance for ECRRSemanticResource profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-semanticresource-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -215,14 +226,19 @@ Example metadata instance for ECRRSemanticResource profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "IUGS Commission for Geoscience Information (CGI)"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-semantic"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "IUGS Commission for Geoscience Information (CGI)"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -285,9 +301,11 @@ Example metadata instance for ECRRSemanticResource profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-semantic> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -319,9 +337,11 @@ Example metadata instance for ECRRSemanticResource profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000056" ;
             schema1:name "Geology" ] ;
     schema1:additionalType "EC Semantic Resource" ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "IUGS Commission for Geoscience Information (CGI)" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "IUGS Commission for Geoscience Information (CGI)" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "A SKOS vocabulary of geoscience terms maintained by the IUGS Commission for the Management and Application of Geoscience Information (CGI), used as controlled terminology in GeoSciML and EarthResourceML data interchange." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-semantic" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
             schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
@@ -331,13 +351,17 @@ Example metadata instance for ECRRSemanticResource profile.
     schema1:name "CGI GeoSciML Vocabulary" ;
     schema1:programmingLanguage [ a schema1:ComputerLanguage ;
             schema1:name "SKOS (Simple Knowledge Organization System)" ] ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-semanticresource-catalog-record> ;
+    schema1:url "https://geosciml.org/resource/vocabulary/cgi/" .
+
+<urn:uuid:ecrr-semanticresource-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-semantic> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

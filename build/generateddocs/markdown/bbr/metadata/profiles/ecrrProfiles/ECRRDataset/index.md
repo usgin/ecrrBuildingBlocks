@@ -73,16 +73,13 @@ Example metadata instance for ECRRDataset profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-dataset",
   "@type": [
     "schema:CreativeWork",
@@ -93,6 +90,9 @@ Example metadata instance for ECRRDataset profile.
     "EC Dataset"
   ],
   "schema:description": "Monthly global surface temperature anomaly data relative to the 1951-1980 base period, derived from meteorological station and ocean observations.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-dataset",
+  "schema:url": "https://example.org/data/global-surface-temperature-anomalies",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000214",
@@ -106,8 +106,9 @@ Example metadata instance for ECRRDataset profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-dataset-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -126,14 +127,19 @@ Example metadata instance for ECRRDataset profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "Example Climate Institute"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-dataset"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "Example Climate Institute"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -167,16 +173,6 @@ Example metadata instance for ECRRDataset profile.
   ],
   "schema:temporalCoverage": [
     "1880-01-01/2023-12-31"
-  ],
-  "schema:variableMeasured": [
-    {
-      "@type": [
-        "schema:PropertyValue"
-      ],
-      "schema:name": "Surface Temperature Anomaly",
-      "schema:description": "Deviation of monthly surface temperature from 1951-1980 average",
-      "schema:unitText": "degrees Celsius"
-    }
   ],
   "schema:includedInDataCatalog": {
     "@type": "schema:DataCatalog",
@@ -241,11 +237,10 @@ Example metadata instance for ECRRDataset profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRDataset/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -260,6 +255,9 @@ Example metadata instance for ECRRDataset profile.
     "EC Dataset"
   ],
   "schema:description": "Monthly global surface temperature anomaly data relative to the 1951-1980 base period, derived from meteorological station and ocean observations.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-dataset",
+  "schema:url": "https://example.org/data/global-surface-temperature-anomalies",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000214",
@@ -273,8 +271,9 @@ Example metadata instance for ECRRDataset profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-dataset-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -293,14 +292,19 @@ Example metadata instance for ECRRDataset profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "Example Climate Institute"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-dataset"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "Example Climate Institute"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -334,16 +338,6 @@ Example metadata instance for ECRRDataset profile.
   ],
   "schema:temporalCoverage": [
     "1880-01-01/2023-12-31"
-  ],
-  "schema:variableMeasured": [
-    {
-      "@type": [
-        "schema:PropertyValue"
-      ],
-      "schema:name": "Surface Temperature Anomaly",
-      "schema:description": "Deviation of monthly surface temperature from 1951-1980 average",
-      "schema:unitText": "degrees Celsius"
-    }
   ],
   "schema:includedInDataCatalog": {
     "@type": "schema:DataCatalog",
@@ -401,6 +395,7 @@ Example metadata instance for ECRRDataset profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-dataset> a schema1:CreativeWork,
@@ -435,13 +430,15 @@ Example metadata instance for ECRRDataset profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
             schema1:name "Climatology" ] ;
     schema1:additionalType "EC Dataset" ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "Example Climate Institute" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "Example Climate Institute" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "Monthly global surface temperature anomaly data relative to the 1951-1980 base period, derived from meteorological station and ocean observations." ;
     schema1:distribution [ a schema1:DataDownload ;
             schema1:contentUrl "https://example.org/data/temperature-anomalies.csv" ;
             schema1:encodingFormat "text/csv" ;
             schema1:name "Temperature anomaly CSV download" ] ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-dataset" ;
     schema1:includedInDataCatalog [ a schema1:DataCatalog ;
             schema1:name "EarthCube Data Catalog" ;
             schema1:url "https://www.earthcube.org/datasets" ] ;
@@ -456,18 +453,18 @@ Example metadata instance for ECRRDataset profile.
             schema1:geo [ a schema1:GeoShape ;
                     schema1:box "-90 -180 90 180" ] ;
             schema1:name "Global" ] ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] ;
+    schema1:subjectOf <urn:uuid:ecrr-dataset-catalog-record> ;
     schema1:temporalCoverage "1880-01-01/2023-12-31" ;
-    schema1:variableMeasured [ a schema1:PropertyValue ;
-            schema1:description "Deviation of monthly surface temperature from 1951-1980 average" ;
-            schema1:name "Surface Temperature Anomaly" ;
-            schema1:unitText "degrees Celsius" ] .
+    schema1:url "https://example.org/data/global-surface-temperature-anomalies" .
+
+<urn:uuid:ecrr-dataset-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-dataset> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

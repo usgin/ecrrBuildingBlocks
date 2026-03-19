@@ -32,26 +32,27 @@ Example metadata instance for ECRRService profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2900003",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "Global Multi-resolution Topography (GMRT) GridServer Web Service",
   "schema:additionalType": [
     "EC Service Instance"
   ],
   "schema:description": "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2900003",
+  "schema:url": "https://www.gmrt.org/services/GridServer/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000202",
@@ -63,34 +64,42 @@ Example metadata instance for ECRRService profile.
       "schema:name": "Public"
     }
   ],
-  "schema:subjectOf": [
+  "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-service-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService"
+      }
+    ],
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2900003"
+    }
+  },
+  "schema:relatedLink": [
     {
-      "@type": "schema:CreativeWork",
-      "schema:name": "GMRT GridServer info page",
-      "schema:url": "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid"
-    },
-    {
-      "@type": [
-        "schema:CreativeWork"
-      ],
-      "schema:additionalType": [
-        "dcat:CatalogRecord"
-      ],
-      "dcterms:conformsTo": [
-        {
-          "@id": "https://w3id.org/cdif/core/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/discovery/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService"
-        }
-      ],
-      "schema:sdDatePublished": "2026-03-03"
+      "@type": "schema:LinkRole",
+      "schema:linkRelationship": "documentation",
+      "schema:target": {
+        "@type": "schema:EntryPoint",
+        "schema:name": "GMRT GridServer info page",
+        "schema:url": "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid"
+      }
     }
   ],
   "schema:audience": [
@@ -191,11 +200,10 @@ Example metadata instance for ECRRService profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRService/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -203,13 +211,17 @@ Example metadata instance for ECRRService profile.
   "@id": "http://n2t.net/ark:/23942/g2900003",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "Global Multi-resolution Topography (GMRT) GridServer Web Service",
   "schema:additionalType": [
     "EC Service Instance"
   ],
   "schema:description": "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2900003",
+  "schema:url": "https://www.gmrt.org/services/GridServer/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000202",
@@ -221,34 +233,42 @@ Example metadata instance for ECRRService profile.
       "schema:name": "Public"
     }
   ],
-  "schema:subjectOf": [
+  "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-service-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService"
+      }
+    ],
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2900003"
+    }
+  },
+  "schema:relatedLink": [
     {
-      "@type": "schema:CreativeWork",
-      "schema:name": "GMRT GridServer info page",
-      "schema:url": "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid"
-    },
-    {
-      "@type": [
-        "schema:CreativeWork"
-      ],
-      "schema:additionalType": [
-        "dcat:CatalogRecord"
-      ],
-      "dcterms:conformsTo": [
-        {
-          "@id": "https://w3id.org/cdif/core/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/discovery/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService"
-        }
-      ],
-      "schema:sdDatePublished": "2026-03-03"
+      "@type": "schema:LinkRole",
+      "schema:linkRelationship": "documentation",
+      "schema:target": {
+        "@type": "schema:EntryPoint",
+        "schema:name": "GMRT GridServer info page",
+        "schema:url": "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid"
+      }
     }
   ],
   "schema:audience": [
@@ -345,6 +365,7 @@ Example metadata instance for ECRRService profile.
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2900003> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -387,7 +408,9 @@ Example metadata instance for ECRRService profile.
         [ a schema1:Audience ;
             schema1:audienceType "Developers" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ] ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2900003" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
             schema1:name "GMRT synthesis publication" ;
             schema1:url "http://dx.doi.org/10.1029/2008GC002332" ],
@@ -400,16 +423,22 @@ Example metadata instance for ECRRService profile.
             schema1:name "Service Instance" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000202" ] ;
     schema1:name "Global Multi-resolution Topography (GMRT) GridServer Web Service" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ],
-        [ a schema1:CreativeWork ;
-            schema1:name "GMRT GridServer info page" ;
-            schema1:url "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid" ] .
+    schema1:relatedLink [ a schema1:LinkRole ;
+            schema1:linkRelationship "documentation" ;
+            schema1:target [ a schema1:EntryPoint ;
+                    schema1:name "GMRT GridServer info page" ;
+                    schema1:url "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid" ] ] ;
+    schema1:subjectOf <urn:uuid:ecrr-service-catalog-record> ;
+    schema1:url "https://www.gmrt.org/services/GridServer/" .
+
+<urn:uuid:ecrr-service-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2900003> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

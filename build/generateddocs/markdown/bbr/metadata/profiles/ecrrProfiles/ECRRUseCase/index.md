@@ -32,25 +32,26 @@ Example metadata instance for ECRRUseCase profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-usecase",
   "@type": [
-    "schema:CreativeWork"
+    "schema:CreativeWork",
+    "schema:Dataset"
   ],
   "schema:name": "Integrated Seismic Hazard Analysis Workflow",
   "schema:additionalType": [
     "EC Use Case"
   ],
   "schema:description": "A use case describing an end-to-end workflow for seismic hazard analysis, integrating USGS earthquake catalog data with community velocity models and site characterization datasets.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-usecase",
+  "schema:url": "http://n2t.net/ark:/23942/g2example-usecase",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000205",
@@ -64,8 +65,9 @@ Example metadata instance for ECRRUseCase profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-usecase-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -84,15 +86,20 @@ Example metadata instance for ECRRUseCase profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Person",
-      "schema:name": "Jane Geophysicist",
-      "schema:identifier": "https://orcid.org/0000-0002-1234-5678"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-usecase"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Person",
+        "schema:name": "Jane Geophysicist",
+        "schema:identifier": "https://orcid.org/0000-0002-1234-5678"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -158,24 +165,27 @@ Example metadata instance for ECRRUseCase profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
   ],
   "@id": "http://n2t.net/ark:/23942/g2example-usecase",
   "@type": [
-    "schema:CreativeWork"
+    "schema:CreativeWork",
+    "schema:Dataset"
   ],
   "schema:name": "Integrated Seismic Hazard Analysis Workflow",
   "schema:additionalType": [
     "EC Use Case"
   ],
   "schema:description": "A use case describing an end-to-end workflow for seismic hazard analysis, integrating USGS earthquake catalog data with community velocity models and site characterization datasets.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-usecase",
+  "schema:url": "http://n2t.net/ark:/23942/g2example-usecase",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000205",
@@ -189,8 +199,9 @@ Example metadata instance for ECRRUseCase profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-usecase-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -209,15 +220,20 @@ Example metadata instance for ECRRUseCase profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Person",
-      "schema:name": "Jane Geophysicist",
-      "schema:identifier": "https://orcid.org/0000-0002-1234-5678"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-usecase"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Person",
+        "schema:name": "Jane Geophysicist",
+        "schema:identifier": "https://orcid.org/0000-0002-1234-5678"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -276,9 +292,11 @@ Example metadata instance for ECRRUseCase profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
-<http://n2t.net/ark:/23942/g2example-usecase> a schema1:CreativeWork ;
+<http://n2t.net/ark:/23942/g2example-usecase> a schema1:CreativeWork,
+        schema1:Dataset ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
             schema1:propertyID "ecrro:ECRRO_0000017" ;
@@ -309,10 +327,12 @@ Example metadata instance for ECRRUseCase profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000048" ;
             schema1:name "Seismology" ] ;
     schema1:additionalType "EC Use Case" ;
-    schema1:creator [ a schema1:Person ;
-            schema1:identifier "https://orcid.org/0000-0002-1234-5678" ;
-            schema1:name "Jane Geophysicist" ] ;
+    schema1:creator ( [ a schema1:Person ;
+                schema1:identifier "https://orcid.org/0000-0002-1234-5678" ;
+                schema1:name "Jane Geophysicist" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "A use case describing an end-to-end workflow for seismic hazard analysis, integrating USGS earthquake catalog data with community velocity models and site characterization datasets." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-usecase" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
             schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
@@ -320,13 +340,17 @@ Example metadata instance for ECRRUseCase profile.
             schema1:name "Use Case" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000205" ] ;
     schema1:name "Integrated Seismic Hazard Analysis Workflow" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-usecase-catalog-record> ;
+    schema1:url "http://n2t.net/ark:/23942/g2example-usecase" .
+
+<urn:uuid:ecrr-usecase-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRUseCase>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-usecase> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

@@ -32,26 +32,27 @@ Example metadata instance for ECRRPlatform profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-platform",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "CyberGISX JupyterHub Platform",
   "schema:additionalType": [
     "EC Platform"
   ],
   "schema:description": "CyberGISX is a cyberGIS science gateway platform based on JupyterHub that provides access to high-performance geospatial computing resources, geospatial software tools, and community-contributed geospatial notebooks for reproducible geoscience research.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-platform",
+  "schema:url": "https://cybergisxhub.cigi.illinois.edu/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000211",
@@ -65,8 +66,9 @@ Example metadata instance for ECRRPlatform profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-platform-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -85,14 +87,19 @@ Example metadata instance for ECRRPlatform profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "CyberGIS Center, University of Illinois"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-platform"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "CyberGIS Center, University of Illinois"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -170,11 +177,10 @@ Example metadata instance for ECRRPlatform profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -182,13 +188,17 @@ Example metadata instance for ECRRPlatform profile.
   "@id": "http://n2t.net/ark:/23942/g2example-platform",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "CyberGISX JupyterHub Platform",
   "schema:additionalType": [
     "EC Platform"
   ],
   "schema:description": "CyberGISX is a cyberGIS science gateway platform based on JupyterHub that provides access to high-performance geospatial computing resources, geospatial software tools, and community-contributed geospatial notebooks for reproducible geoscience research.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-platform",
+  "schema:url": "https://cybergisxhub.cigi.illinois.edu/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000211",
@@ -202,8 +212,9 @@ Example metadata instance for ECRRPlatform profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-platform-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -222,14 +233,19 @@ Example metadata instance for ECRRPlatform profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "CyberGIS Center, University of Illinois"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-platform"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "CyberGIS Center, University of Illinois"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -300,9 +316,11 @@ Example metadata instance for ECRRPlatform profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-platform> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -335,14 +353,16 @@ Example metadata instance for ECRRPlatform profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC Platform" ;
     schema1:audience [ a schema1:Audience ;
-            schema1:audienceType "Scientists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Developers" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ] ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "CyberGIS Center, University of Illinois" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Scientists" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "CyberGIS Center, University of Illinois" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "CyberGISX is a cyberGIS science gateway platform based on JupyterHub that provides access to high-performance geospatial computing resources, geospatial software tools, and community-contributed geospatial notebooks for reproducible geoscience research." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-platform" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Apache License 2.0" ;
             schema1:url "https://www.apache.org/licenses/LICENSE-2.0" ] ;
@@ -350,13 +370,17 @@ Example metadata instance for ECRRPlatform profile.
             schema1:name "Platform" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000211" ] ;
     schema1:name "CyberGISX JupyterHub Platform" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-platform-catalog-record> ;
+    schema1:url "https://cybergisxhub.cigi.illinois.edu/" .
+
+<urn:uuid:ecrr-platform-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRPlatform>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-platform> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

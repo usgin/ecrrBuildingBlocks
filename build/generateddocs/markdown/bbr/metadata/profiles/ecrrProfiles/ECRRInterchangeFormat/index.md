@@ -32,26 +32,27 @@ Example metadata instance for ECRRInterchangeFormat profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-interchange",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "NetCDF (Network Common Data Form)",
   "schema:additionalType": [
     "EC Interchange Format"
   ],
   "schema:description": "NetCDF is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. It is widely used in atmospheric and ocean sciences for gridded data interchange.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-interchange",
+  "schema:url": "https://www.unidata.ucar.edu/software/netcdf/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208",
@@ -64,8 +65,9 @@ Example metadata instance for ECRRInterchangeFormat profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-interchangeformat-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -84,14 +86,19 @@ Example metadata instance for ECRRInterchangeFormat profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "Unidata/UCAR"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-interchange"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "Unidata/UCAR"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -162,11 +169,10 @@ Example metadata instance for ECRRInterchangeFormat profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -174,13 +180,17 @@ Example metadata instance for ECRRInterchangeFormat profile.
   "@id": "http://n2t.net/ark:/23942/g2example-interchange",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "NetCDF (Network Common Data Form)",
   "schema:additionalType": [
     "EC Interchange Format"
   ],
   "schema:description": "NetCDF is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. It is widely used in atmospheric and ocean sciences for gridded data interchange.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-interchange",
+  "schema:url": "https://www.unidata.ucar.edu/software/netcdf/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208",
@@ -193,8 +203,9 @@ Example metadata instance for ECRRInterchangeFormat profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-interchangeformat-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -213,14 +224,19 @@ Example metadata instance for ECRRInterchangeFormat profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "Unidata/UCAR"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-interchange"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "Unidata/UCAR"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -284,9 +300,11 @@ Example metadata instance for ECRRInterchangeFormat profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-interchange> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -321,22 +339,28 @@ Example metadata instance for ECRRInterchangeFormat profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
             schema1:name "Oceanography" ] ;
     schema1:additionalType "EC Interchange Format" ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "Unidata/UCAR" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "Unidata/UCAR" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "NetCDF is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. It is widely used in atmospheric and ocean sciences for gridded data interchange." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-interchange" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
             schema1:name "Interchange Format" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
     schema1:name "NetCDF (Network Common Data Form)" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-interchangeformat-catalog-record> ;
+    schema1:url "https://www.unidata.ucar.edu/software/netcdf/" .
+
+<urn:uuid:ecrr-interchangeformat-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-interchange> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

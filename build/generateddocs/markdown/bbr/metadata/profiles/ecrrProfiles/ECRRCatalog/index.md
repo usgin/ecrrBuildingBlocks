@@ -33,26 +33,27 @@ Example metadata instance for ECRRCatalog profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-catalog",
   "@type": [
     "schema:CreativeWork",
-    "schema:DataCatalog"
+    "schema:DataCatalog",
+    "schema:Dataset"
   ],
   "schema:name": "EarthCube GeoCodes Metadata Catalog",
   "schema:additionalType": [
     "EC CatalogRegistry"
   ],
   "schema:description": "A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-catalog",
+  "schema:url": "https://www.earthcube.org/datasets",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000212",
@@ -66,8 +67,9 @@ Example metadata instance for ECRRCatalog profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-catalog-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -86,14 +88,19 @@ Example metadata instance for ECRRCatalog profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "EarthCube"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-catalog"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "EarthCube"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -169,11 +176,10 @@ Example metadata instance for ECRRCatalog profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -181,13 +187,17 @@ Example metadata instance for ECRRCatalog profile.
   "@id": "http://n2t.net/ark:/23942/g2example-catalog",
   "@type": [
     "schema:CreativeWork",
-    "schema:DataCatalog"
+    "schema:DataCatalog",
+    "schema:Dataset"
   ],
   "schema:name": "EarthCube GeoCodes Metadata Catalog",
   "schema:additionalType": [
     "EC CatalogRegistry"
   ],
   "schema:description": "A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-catalog",
+  "schema:url": "https://www.earthcube.org/datasets",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000212",
@@ -201,8 +211,9 @@ Example metadata instance for ECRRCatalog profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-catalog-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -221,14 +232,19 @@ Example metadata instance for ECRRCatalog profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "EarthCube"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-catalog"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "EarthCube"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -297,10 +313,12 @@ Example metadata instance for ECRRCatalog profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-catalog> a schema1:CreativeWork,
-        schema1:DataCatalog ;
+        schema1:DataCatalog,
+        schema1:Dataset ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
             schema1:propertyID "ecrro:ECRRO_0000017" ;
@@ -332,12 +350,14 @@ Example metadata instance for ECRRCatalog profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC CatalogRegistry" ;
     schema1:contentType [ a schema1:Thing ;
-            schema1:name "Software" ],
+            schema1:name "Datasets" ],
         [ a schema1:Thing ;
-            schema1:name "Datasets" ] ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "EarthCube" ] ;
+            schema1:name "Software" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "EarthCube" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "A metadata catalog indexing geoscience datasets, tools, and services registered through the EarthCube GeoCodes system." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-catalog" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
             schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
@@ -345,13 +365,17 @@ Example metadata instance for ECRRCatalog profile.
             schema1:name "CatalogRegistry" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000212" ] ;
     schema1:name "EarthCube GeoCodes Metadata Catalog" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-catalog-catalog-record> ;
+    schema1:url "https://www.earthcube.org/datasets" .
+
+<urn:uuid:ecrr-catalog-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-catalog> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

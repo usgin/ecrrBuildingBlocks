@@ -46,21 +46,19 @@ Example metadata instance for ECRRSoftware profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g22914",
   "@type": [
     "schema:CreativeWork",
     "schema:Product",
-    "schema:SoftwareApplication"
+    "schema:SoftwareApplication",
+    "schema:Dataset"
   ],
   "schema:name": "Pyleoclim",
   "schema:additionalType": [
@@ -68,7 +66,9 @@ Example metadata instance for ECRRSoftware profile.
   ],
   "schema:alternateName": "Python Package for the Analysis of Paleoclimate Data",
   "schema:description": "Pyleoclim is a Python package primarily geared towards the analysis and visualization of paleoclimate data. Such data usually come in the form of timeseries with missing values and age uncertainties, so the package includes several low-level methods to deal with these issues to simplify the user's life, with intuitive, high-level analysis and plotting methods that support publication-quality scientific workflows.",
+  "schema:dateModified": "2026-03-03",
   "schema:identifier": "https://doi.org/10.5281/zenodo.4002870",
+  "schema:url": "https://pyleoclim-util.readthedocs.io/en/stable/",
   "schema:version": "0.6.2",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
@@ -82,74 +82,84 @@ Example metadata instance for ECRRSoftware profile.
       "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
     }
   ],
-  "schema:subjectOf": [
+  "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-software-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware"
+      }
+    ],
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g22914"
+    }
+  },
+  "schema:relatedLink": [
     {
-      "@type": "schema:CreativeWork",
-      "schema:name": "Pyleoclim GitHub page",
-      "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
-    },
-    {
-      "@type": [
-        "schema:CreativeWork"
-      ],
-      "schema:additionalType": [
-        "dcat:CatalogRecord"
-      ],
-      "dcterms:conformsTo": [
-        {
-          "@id": "https://w3id.org/cdif/core/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/discovery/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware"
-        }
-      ],
-      "schema:sdDatePublished": "2026-03-03"
+      "@type": "schema:LinkRole",
+      "schema:linkRelationship": "source code",
+      "schema:target": {
+        "@type": "schema:EntryPoint",
+        "schema:name": "Pyleoclim GitHub page",
+        "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
+      }
     }
   ],
-  "schema:creator": [
-    {
-      "@type": "schema:Person",
-      "schema:name": "Deborah Khider",
-      "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Feng Zhu"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Julien Emile-Geay",
-      "schema:identifier": "https://orcid.org/0000-0001-5920-4751"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Jun Hu"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Myron Kwan"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Pratheek Athreya"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Alexander James"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Daniel Garijo",
-      "schema:identifier": "https://orcid.org/0000-0003-0454-7145"
-    }
-  ],
-  "schema:keywords": "Paleoclimate",
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Person",
+        "schema:name": "Deborah Khider",
+        "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Feng Zhu"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Julien Emile-Geay",
+        "schema:identifier": "https://orcid.org/0000-0001-5920-4751"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Jun Hu"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Myron Kwan"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Pratheek Athreya"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Alexander James"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Daniel Garijo",
+        "schema:identifier": "https://orcid.org/0000-0003-0454-7145"
+      }
+    ]
+  },
+  "schema:keywords": ["Paleoclimate"],
   "schema:funding": [
     {
       "@type": "schema:MonetaryGrant",
@@ -356,11 +366,10 @@ Example metadata instance for ECRRSoftware profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -369,7 +378,8 @@ Example metadata instance for ECRRSoftware profile.
   "@type": [
     "schema:CreativeWork",
     "schema:Product",
-    "schema:SoftwareApplication"
+    "schema:SoftwareApplication",
+    "schema:Dataset"
   ],
   "schema:name": "Pyleoclim",
   "schema:additionalType": [
@@ -377,7 +387,9 @@ Example metadata instance for ECRRSoftware profile.
   ],
   "schema:alternateName": "Python Package for the Analysis of Paleoclimate Data",
   "schema:description": "Pyleoclim is a Python package primarily geared towards the analysis and visualization of paleoclimate data. Such data usually come in the form of timeseries with missing values and age uncertainties, so the package includes several low-level methods to deal with these issues to simplify the user's life, with intuitive, high-level analysis and plotting methods that support publication-quality scientific workflows.",
+  "schema:dateModified": "2026-03-03",
   "schema:identifier": "https://doi.org/10.5281/zenodo.4002870",
+  "schema:url": "https://pyleoclim-util.readthedocs.io/en/stable/",
   "schema:version": "0.6.2",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
@@ -391,74 +403,86 @@ Example metadata instance for ECRRSoftware profile.
       "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
     }
   ],
-  "schema:subjectOf": [
+  "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-software-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware"
+      }
+    ],
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g22914"
+    }
+  },
+  "schema:relatedLink": [
     {
-      "@type": "schema:CreativeWork",
-      "schema:name": "Pyleoclim GitHub page",
-      "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
-    },
-    {
-      "@type": [
-        "schema:CreativeWork"
-      ],
-      "schema:additionalType": [
-        "dcat:CatalogRecord"
-      ],
-      "dcterms:conformsTo": [
-        {
-          "@id": "https://w3id.org/cdif/core/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/discovery/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware"
-        }
-      ],
-      "schema:sdDatePublished": "2026-03-03"
+      "@type": "schema:LinkRole",
+      "schema:linkRelationship": "source code",
+      "schema:target": {
+        "@type": "schema:EntryPoint",
+        "schema:name": "Pyleoclim GitHub page",
+        "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
+      }
     }
   ],
-  "schema:creator": [
-    {
-      "@type": "schema:Person",
-      "schema:name": "Deborah Khider",
-      "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Feng Zhu"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Julien Emile-Geay",
-      "schema:identifier": "https://orcid.org/0000-0001-5920-4751"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Jun Hu"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Myron Kwan"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Pratheek Athreya"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Alexander James"
-    },
-    {
-      "@type": "schema:Person",
-      "schema:name": "Daniel Garijo",
-      "schema:identifier": "https://orcid.org/0000-0003-0454-7145"
-    }
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Person",
+        "schema:name": "Deborah Khider",
+        "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Feng Zhu"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Julien Emile-Geay",
+        "schema:identifier": "https://orcid.org/0000-0001-5920-4751"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Jun Hu"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Myron Kwan"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Pratheek Athreya"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Alexander James"
+      },
+      {
+        "@type": "schema:Person",
+        "schema:name": "Daniel Garijo",
+        "schema:identifier": "https://orcid.org/0000-0003-0454-7145"
+      }
+    ]
+  },
+  "schema:keywords": [
+    "Paleoclimate"
   ],
-  "schema:keywords": "Paleoclimate",
   "schema:funding": [
     {
       "@type": "schema:MonetaryGrant",
@@ -658,9 +682,11 @@ Example metadata instance for ECRRSoftware profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g22914> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product,
         schema1:SoftwareApplication ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
@@ -702,11 +728,11 @@ Example metadata instance for ECRRSoftware profile.
             schema1:propertyID "dct:bibliographicCitation" ;
             schema1:value "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692" ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
-            schema1:name "Climatology" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000021" ;
             schema1:name "Earth Science" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
+            schema1:name "Climatology" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
             schema1:name "Paleoceanography" ],
@@ -721,48 +747,36 @@ Example metadata instance for ECRRSoftware profile.
         "Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008",
         "Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011" ;
     schema1:audience [ a schema1:Audience ;
-            schema1:audienceType "Developers" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Members of the Public" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000009" ],
         [ a schema1:Audience ;
             schema1:audienceType "Scientists" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
         [ a schema1:Audience ;
-            schema1:audienceType "Data Users" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000002" ],
+            schema1:audienceType "Developers" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
         [ a schema1:Audience ;
             schema1:audienceType "Technologists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Data Users" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000002" ] ;
     schema1:codeRepository [ a schema1:CreativeWork ;
             schema1:name "Pyleoclim GitHub repository" ;
             schema1:url "https://github.com/LinkedEarth/Pyleoclim_util" ] ;
-    schema1:creator [ a schema1:Person ;
-            schema1:name "Feng Zhu" ],
-        [ a schema1:Person ;
-            schema1:identifier "https://orcid.org/0000-0001-5920-4751" ;
-            schema1:name "Julien Emile-Geay" ],
-        [ a schema1:Person ;
-            schema1:identifier "https://orcid.org/0000-0003-0454-7145" ;
-            schema1:name "Daniel Garijo" ],
-        [ a schema1:Person ;
-            schema1:name "Jun Hu" ],
-        [ a schema1:Person ;
-            schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
-            schema1:name "Deborah Khider" ],
-        [ a schema1:Person ;
-            schema1:name "Myron Kwan" ],
-        [ a schema1:Person ;
-            schema1:name "Alexander James" ],
-        [ a schema1:Person ;
-            schema1:name "Pratheek Athreya" ] ;
-    schema1:dependencies [ a schema1:PropertyValue ;
-            schema1:name "dependencies" ;
-            schema1:propertyID "http://purl.obolibrary.org/obo/RO_0002502" ;
-            schema1:value [ a schema1:CreativeWork ;
-                    schema1:name "Python 3.8" ;
-                    schema1:url "https://www.python.org/" ] ] ;
+    schema1:creator ( [ a schema1:Person ;
+                schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
+                schema1:name "Deborah Khider" ] [ a schema1:Person ;
+                schema1:name "Feng Zhu" ] [ a schema1:Person ;
+                schema1:identifier "https://orcid.org/0000-0001-5920-4751" ;
+                schema1:name "Julien Emile-Geay" ] [ a schema1:Person ;
+                schema1:name "Jun Hu" ] [ a schema1:Person ;
+                schema1:name "Myron Kwan" ] [ a schema1:Person ;
+                schema1:name "Pratheek Athreya" ] [ a schema1:Person ;
+                schema1:name "Alexander James" ] [ a schema1:Person ;
+                schema1:identifier "https://orcid.org/0000-0003-0454-7145" ;
+                schema1:name "Daniel Garijo" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "Pyleoclim is a Python package primarily geared towards the analysis and visualization of paleoclimate data. Such data usually come in the form of timeseries with missing values and age uncertainties, so the package includes several low-level methods to deal with these issues to simplify the user's life, with intuitive, high-level analysis and plotting methods that support publication-quality scientific workflows." ;
     schema1:funding [ a schema1:MonetaryGrant ;
             schema1:funder [ a schema1:Organization ;
@@ -775,9 +789,6 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "PyPI" ;
             schema1:url "https://pypi.org/project/pyleoclim/" ] ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Documentation" ;
-            schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Linked Paleo Data framework Publication" ;
             schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ],
         [ a schema1:CreativeWork ;
@@ -785,7 +796,10 @@ Example metadata instance for ECRRSoftware profile.
             schema1:url "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks" ],
         [ a schema1:CreativeWork ;
             schema1:name "Example Notebooks Github" ;
-            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ] ;
+            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Documentation" ;
+            schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ] ;
     schema1:keywords "Paleoclimate" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "GNU General Public License (GPL)" ;
@@ -795,24 +809,30 @@ Example metadata instance for ECRRSoftware profile.
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000206" ] ;
     schema1:name "Pyleoclim" ;
     schema1:programmingLanguage "Python 3.8" ;
+    schema1:relatedLink [ a schema1:LinkRole ;
+            schema1:linkRelationship "source code" ;
+            schema1:target [ a schema1:EntryPoint ;
+                    schema1:name "Pyleoclim GitHub page" ;
+                    schema1:url "https://github.com/LinkedEarth/Pyleoclim_util" ] ] ;
     schema1:runtimePlatform "Linux, http://cor.esipfed.org/ont/earthcube/RTE_000005" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ],
-        [ a schema1:CreativeWork ;
-            schema1:name "Pyleoclim GitHub page" ;
-            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util" ] ;
+    schema1:subjectOf <urn:uuid:ecrr-software-catalog-record> ;
     schema1:supportingData [ a schema1:DataFeed ;
             schema1:encodingFormat "application/json;type=pyleoclim",
                 "application/zip;type=LiPD",
                 "text/csv;application=pyleoclim" ;
             schema1:name "Input Data Type specification" ;
             schema1:position "input" ] ;
+    schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ;
     schema1:version "0.6.2" .
+
+<urn:uuid:ecrr-software-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g22914> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

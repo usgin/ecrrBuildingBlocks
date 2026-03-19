@@ -33,26 +33,27 @@ Example metadata instance for ECRRCollection profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-collection",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "Geochemical Reference Standards Bundle",
   "schema:additionalType": [
     "EC Bundled Object"
   ],
   "schema:description": "A curated collection of geochemical reference standard datasets, software tools, and documentation for analytical laboratory calibration.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-collection",
+  "schema:url": "http://n2t.net/ark:/23942/g2example-collection",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/SFO_0000075",
@@ -66,8 +67,9 @@ Example metadata instance for ECRRCollection profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-collection-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -86,14 +88,19 @@ Example metadata instance for ECRRCollection profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "USGS Geochemistry Lab"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-collection"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "USGS Geochemistry Lab"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -178,11 +185,10 @@ Example metadata instance for ECRRCollection profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRCollection/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -190,13 +196,17 @@ Example metadata instance for ECRRCollection profile.
   "@id": "http://n2t.net/ark:/23942/g2example-collection",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "Geochemical Reference Standards Bundle",
   "schema:additionalType": [
     "EC Bundled Object"
   ],
   "schema:description": "A curated collection of geochemical reference standard datasets, software tools, and documentation for analytical laboratory calibration.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-collection",
+  "schema:url": "http://n2t.net/ark:/23942/g2example-collection",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/SFO_0000075",
@@ -210,8 +220,9 @@ Example metadata instance for ECRRCollection profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-collection-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -230,14 +241,19 @@ Example metadata instance for ECRRCollection profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "USGS Geochemistry Lab"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-collection"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "USGS Geochemistry Lab"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -315,9 +331,11 @@ Example metadata instance for ECRRCollection profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-collection> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -349,8 +367,9 @@ Example metadata instance for ECRRCollection profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000055" ;
             schema1:name "Geochemistry" ] ;
     schema1:additionalType "EC Bundled Object" ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "USGS Geochemistry Lab" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "USGS Geochemistry Lab" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "A curated collection of geochemical reference standard datasets, software tools, and documentation for analytical laboratory calibration." ;
     schema1:hasPart [ a schema1:Dataset ;
             schema1:encodingFormat "text/csv" ;
@@ -359,6 +378,7 @@ Example metadata instance for ECRRCollection profile.
         [ a schema1:SoftwareApplication ;
             schema1:name "Standard Comparison Tool" ;
             schema1:url "https://example.org/tools/standard-compare" ] ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-collection" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
             schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
@@ -366,13 +386,17 @@ Example metadata instance for ECRRCollection profile.
             schema1:name "Bundled Object" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/SFO_0000075" ] ;
     schema1:name "Geochemical Reference Standards Bundle" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-collection-catalog-record> ;
+    schema1:url "http://n2t.net/ark:/23942/g2example-collection" .
+
+<urn:uuid:ecrr-collection-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-collection> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

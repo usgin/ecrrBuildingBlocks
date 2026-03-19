@@ -33,26 +33,26 @@ Example metadata instance for ECRRSpecification profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2800001",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "INSPIRE Data Specification on Geology",
   "schema:additionalType": [
     "EC Specification"
   ],
   "schema:identifier": "http://inspire.ec.europa.eu/tg/ge/3.0",
+  "schema:url": "https://inspire.ec.europa.eu/id/document/tg/ge",
+  "schema:dateModified": "2026-03-03",
   "schema:description": "Geology is a reference data theme that provides information for several themes of INSPIRE Annex III: Mineral resources, Natural Risk Zones, Soil, Energy resources, and it has a specific relationship with one of the most important natural resources, water, through groundwater bodies contained in aquifers. Scope is Geologic and Geophysical data interchange format.",
   "schema:mainEntity": [
     {
@@ -72,34 +72,42 @@ Example metadata instance for ECRRSpecification profile.
       "schema:name": "Public"
     }
   ],
-  "schema:subjectOf": [
+  "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-specification-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification"
+      }
+    ],
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2800001"
+    }
+  },
+  "schema:relatedLink": [
     {
-      "@type": "schema:CreativeWork",
-      "schema:name": "INSPIRE specification document",
-      "schema:url": "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3"
-    },
-    {
-      "@type": [
-        "schema:CreativeWork"
-      ],
-      "schema:additionalType": [
-        "dcat:CatalogRecord"
-      ],
-      "dcterms:conformsTo": [
-        {
-          "@id": "https://w3id.org/cdif/core/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/discovery/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification"
-        }
-      ],
-      "schema:sdDatePublished": "2026-03-03"
+      "@type": "schema:LinkRole",
+      "schema:linkRelationship": "specification document",
+      "schema:target": {
+        "@type": "schema:EntryPoint",
+        "schema:name": "INSPIRE specification document",
+        "schema:url": "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3"
+      }
     }
   ],
   "schema:funding": [
@@ -228,11 +236,10 @@ Example metadata instance for ECRRSpecification profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -240,13 +247,16 @@ Example metadata instance for ECRRSpecification profile.
   "@id": "http://n2t.net/ark:/23942/g2800001",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "INSPIRE Data Specification on Geology",
   "schema:additionalType": [
     "EC Specification"
   ],
   "schema:identifier": "http://inspire.ec.europa.eu/tg/ge/3.0",
+  "schema:url": "https://inspire.ec.europa.eu/id/document/tg/ge",
+  "schema:dateModified": "2026-03-03",
   "schema:description": "Geology is a reference data theme that provides information for several themes of INSPIRE Annex III: Mineral resources, Natural Risk Zones, Soil, Energy resources, and it has a specific relationship with one of the most important natural resources, water, through groundwater bodies contained in aquifers. Scope is Geologic and Geophysical data interchange format.",
   "schema:mainEntity": [
     {
@@ -266,34 +276,42 @@ Example metadata instance for ECRRSpecification profile.
       "schema:name": "Public"
     }
   ],
-  "schema:subjectOf": [
+  "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-specification-catalog-record",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0/"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification"
+      }
+    ],
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2800001"
+    }
+  },
+  "schema:relatedLink": [
     {
-      "@type": "schema:CreativeWork",
-      "schema:name": "INSPIRE specification document",
-      "schema:url": "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3"
-    },
-    {
-      "@type": [
-        "schema:CreativeWork"
-      ],
-      "schema:additionalType": [
-        "dcat:CatalogRecord"
-      ],
-      "dcterms:conformsTo": [
-        {
-          "@id": "https://w3id.org/cdif/core/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/discovery/1.0/"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
-        },
-        {
-          "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification"
-        }
-      ],
-      "schema:sdDatePublished": "2026-03-03"
+      "@type": "schema:LinkRole",
+      "schema:linkRelationship": "specification document",
+      "schema:target": {
+        "@type": "schema:EntryPoint",
+        "schema:name": "INSPIRE specification document",
+        "schema:url": "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3"
+      }
     }
   ],
   "schema:funding": [
@@ -418,6 +436,7 @@ Example metadata instance for ECRRSpecification profile.
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2800001> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -471,17 +490,18 @@ Example metadata instance for ECRRSpecification profile.
     schema1:audience [ a schema1:Audience ;
             schema1:audienceType "Data Facilities and Repositories" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000003" ] ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "Geology is a reference data theme that provides information for several themes of INSPIRE Annex III: Mineral resources, Natural Risk Zones, Soil, Energy resources, and it has a specific relationship with one of the most important natural resources, water, through groundwater bodies contained in aquifers. Scope is Geologic and Geophysical data interchange format." ;
     schema1:funding [ a schema1:MonetaryGrant ;
             schema1:funder [ a schema1:Organization ;
                     schema1:name "European Commission" ] ] ;
     schema1:identifier "http://inspire.ec.europa.eu/tg/ge/3.0" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
-            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Based on: GeoSciML version 3.2" ;
-            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ] ;
+            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
+            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
@@ -491,16 +511,22 @@ Example metadata instance for ECRRSpecification profile.
             schema1:name "Specification" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            schema1:name "INSPIRE specification document" ;
-            schema1:url "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3" ],
-        [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:relatedLink [ a schema1:LinkRole ;
+            schema1:linkRelationship "specification document" ;
+            schema1:target [ a schema1:EntryPoint ;
+                    schema1:name "INSPIRE specification document" ;
+                    schema1:url "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3" ] ] ;
+    schema1:subjectOf <urn:uuid:ecrr-specification-catalog-record> ;
+    schema1:url "https://inspire.ec.europa.eu/id/document/tg/ge" .
+
+<urn:uuid:ecrr-specification-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2800001> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```

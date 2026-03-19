@@ -1,5 +1,5 @@
 Validation report for ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCollection - ECRR Collection profile
-Generated 2026-03-18T20:17:53.156399+00:00
+Generated 2026-03-19T15:16:34.473258+00:00
 === Files ===
 Using exampleECRRCollection.json from examples
 JSON-LD context is present - uplifting
@@ -10,33 +10,26 @@ Output Turtle example_1_1.ttl created
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: 'schema:url' is a required property
+ValidationError: {'@list': [{'@type': 'schema:Organization', 'schema:name': 'USGS Geochemistry Lab'}]} is not of type 'array'
 
-Failed validating 'required' in schema[0]:
-    {'$schema': 'https://json-schema.org/draft/2020-12/schema',
-     'description': 'schema for a labeled link, a profile of '
-                    'schema.org/CreativeWork',
-     'properties': {'@type': {'anyOf': [{'const': 'schema:CreativeWork',
-                                         'type': 'string'},
-                                        {'contains': {'const': 'schema:CreativeWork'},
-                                         'items': {'type': 'string'},
-                                         'type': 'array'}],
-                              'default': 'schema:CreativeWork'},
-                    'schema:description': {'type': 'string'},
-                    'schema:name': {'type': 'string'},
-                    'schema:url': {'format': 'uri', 'type': 'string'}},
-     'required': ['@type', 'schema:url'],
-     'type': 'object',
-     'x-jsonld-prefixes': {'schema': 'http://schema.org/'}}
+Failed validating 'type' in schema['allOf'][1]['properties']['schema:creator']:
+    {'description': 'Authors or originators of the resource content. Array '
+                    'of Person or Organization objects. Use @list wrapper '
+                    'to preserve author order in JSON-LD.',
+     'items': {'anyOf': [{'properties': {'@id': {'description': 'reference '
+                                                                'to an '
+                                                                'agent '
+                                                                'defined '
+                                                                'elsewhere',
+                                                 'type': 'string'}},
+                          'type': 'object'},
+                         {'$ref': '#/$defs/Person'},
+                         {'$ref': '#/$defs/Organization'}]},
+     'type': 'array'}
 
-On instance:
-    {'@type': ['schema:CreativeWork'],
-     'dcterms:conformsTo': [{'@id': 'https://w3id.org/cdif/core/1.0/'},
-                            {'@id': 'https://w3id.org/cdif/discovery/1.0/'},
-                            {'@id': 'https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore'},
-                            {'@id': 'https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection'}],
-     'schema:additionalType': ['dcat:CatalogRecord'],
-     'schema:sdDatePublished': '2026-03-03'}
+On instance['schema:creator']:
+    {'@list': [{'@type': 'schema:Organization',
+                'schema:name': 'USGS Geochemistry Lab'}]}
 === End JSON Schema ===
 
 === SHACL ===
@@ -46,12 +39,6 @@ Validation result for _sources/profiles/ecrrProfiles/ECRRCollection/rules.shacl:
   Validation Report
   Conforms: False
   Results (4):
-  Validation Result in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ rdf:type sh:PropertyShape ; sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection> ; sh:message Literal("Metadata record for ECRR Collection profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection") ; sh:path dcterms:conformsTo ; sh:severity sh:Warning ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-collection>
-  	Result Path: dcterms:conformsTo
-  	Message: Metadata record for ECRR Collection profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("An ECRR Collection should include a maturity state assessment (ecrro:ECRRO_0000138).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ecrro:ECRRO_0000138 ; sh:severity sh:Warning ]
@@ -70,23 +57,23 @@ Validation result for _sources/profiles/ecrrProfiles/ECRRCollection/rules.shacl:
   	Focus Node: <http://n2t.net/ark:/23942/g2example-collection>
   	Result Path: ecrro:ECRRO_0000218
   	Message: An ECRR Collection should identify a steward (ecrro:ECRRO_0000218).
+  Validation Result in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ rdf:type sh:PropertyShape ; sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection> ; sh:message Literal("Metadata record for ECRR Collection profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection") ; sh:path dcterms:conformsTo ; sh:severity sh:Warning ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-collection>
+  	Result Path: dcterms:conformsTo
+  	Message: Metadata record for ECRR Collection profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection
   
 Focus nodes for _sources/profiles/ecrrProfiles/ECRRCollection/rules.shacl:
- - Shape cdifd:ECRRCollectionConformsToShape: *none*
  - Shape cdifd:ECRRCollectionTypeShape: *none*
+ - Shape cdifd:ECRRCollectionConformsToShape: *none*
 
 
 ** Validation error **
 Validation result for _sources/ecrrProperties/ecrrCollection/rules.shacl:
   Validation Report
   Conforms: False
-  Results (3):
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("A collection/bundled object should specify at least one component resource (schema:hasPart).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:hasPart ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Result Path: schema1:hasPart
-  	Message: A collection/bundled object should specify at least one component resource (schema:hasPart).
+  Results (2):
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("A collection/bundled object should specify at least one component resource (schema:hasPart).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:hasPart ; sh:severity sh:Warning ]
@@ -96,31 +83,19 @@ Validation result for _sources/ecrrProperties/ecrrCollection/rules.shacl:
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("A collection/bundled object should specify at least one component resource (schema:hasPart).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:hasPart ; sh:severity sh:Warning ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Result Path: schema1:hasPart
   	Message: A collection/bundled object should specify at least one component resource (schema:hasPart).
   
 Focus nodes for _sources/ecrrProperties/ecrrCollection/rules.shacl:
- - Shape cdifd:ECRRCollectionPropertiesShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:subjectOf
+ - Shape cdifd:ECRRCollectionPropertiesShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity
 
 
 ** Validation error **
 Validation result for _sources/ecrrProperties/ecrrBase/rules.shacl:
   Validation Report
   Conforms: False
-  Results (13):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("An ECRR resource must have a name (schema:name) of at least 3 characters.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minLength Literal("3", datatype=xsd:integer) ; sh:path schema1:name ; sh:severity sh:Violation ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
-  	Result Path: schema1:name
-  	Message: An ECRR resource must have a name (schema:name) of at least 3 characters.
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("An ECRR resource must have a description (schema:description) of at least 10 characters.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minLength Literal("10", datatype=xsd:integer) ; sh:path schema1:description ; sh:severity sh:Violation ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Result Path: schema1:description
-  	Message: An ECRR resource must have a description (schema:description) of at least 10 characters.
+  Results (8):
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("An ECRR resource must have a description (schema:description) of at least 10 characters.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minLength Literal("10", datatype=xsd:integer) ; sh:path schema1:description ; sh:severity sh:Violation ]
@@ -130,33 +105,21 @@ Validation result for _sources/ecrrProperties/ecrrBase/rules.shacl:
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("An ECRR resource must have a description (schema:description) of at least 10 characters.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:minLength Literal("10", datatype=xsd:integer) ; sh:path schema1:description ; sh:severity sh:Violation ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Result Path: schema1:description
   	Message: An ECRR resource must have a description (schema:description) of at least 10 characters.
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:message Literal("An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:mainEntity ; sh:severity sh:Violation ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Result Path: schema1:mainEntity
-  	Message: An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:message Literal("An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:mainEntity ; sh:severity sh:Violation ]
   	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
   	Result Path: schema1:mainEntity
   	Message: An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:message Literal("An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:mainEntity ; sh:severity sh:Violation ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Result Path: schema1:mainEntity
   	Message: An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:message Literal("An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] [ sh:class schema1:CreativeWork ] ) ; sh:path schema1:license ; sh:severity sh:Violation ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Result Path: schema1:license
-  	Message: An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:message Literal("An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] [ sh:class schema1:CreativeWork ] ) ; sh:path schema1:license ; sh:severity sh:Violation ]
@@ -166,15 +129,9 @@ Validation result for _sources/ecrrProperties/ecrrBase/rules.shacl:
   Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: [ sh:message Literal("An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] [ sh:class schema1:CreativeWork ] ) ; sh:path schema1:license ; sh:severity sh:Violation ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Result Path: schema1:license
   	Message: An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.
-  Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: cdifd:ECRRBaseShape
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Value Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Message: An ECRR resource must have an @id that is a URI (IRI).
   Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: cdifd:ECRRBaseShape
@@ -184,44 +141,29 @@ Validation result for _sources/ecrrProperties/ecrrBase/rules.shacl:
   Constraint Violation in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: cdifd:ECRRBaseShape
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
-  	Value Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
+  	Value Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Message: An ECRR resource must have an @id that is a URI (IRI).
   
 Focus nodes for _sources/ecrrProperties/ecrrBase/rules.shacl:
- - Shape _:n5713bffa136b42c091c54d43b33c4078b6: *none*
  - Shape cdifd:ECRRBaseShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n5713bffa136b42c091c54d43b33c4078b7: *none*
- - Shape cdifd:ECRRBaseShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:subjectOf
+ - Shape _:nf2f52a33381d4b41a3421f843cd6c561b7: *none*
+ - Shape cdifd:ECRRBaseShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity
+ - Shape _:nf2f52a33381d4b41a3421f843cd6c561b6: *none*
 
-
-** Validation error **
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
   Validation Report
-  Conforms: False
-  Results (2):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-collection>
-  	Result Path: schema1:url
-  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:string ; sh:message Literal("value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:url ; sh:pattern Literal("^https?:\/\/[^\s]+$") ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
-  	Result Path: schema1:url
-  	Message: value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation...
+  Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
- - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:subjectOf
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity
 
 Validation result for _sources/ecrrProperties/ecrrAssessment/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/ecrrProperties/ecrrAssessment/rules.shacl:
- - Shape cdifd:ECRRAssessmentShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:subjectOf
+ - Shape cdifd:ECRRAssessmentShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity
 
 
 ** Validation error **
@@ -238,24 +180,24 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
  - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
- - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:maintainerOrProviderContactPointShape: *none*
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
- - Shape _:ncbf00053e02c42639905b71cc6dfc399b14: *none*
  - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-collection>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
  - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
+ - Shape _:n2c541499f1c445b4b0891f280080a61fb14: *none*
  - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
  - Shape cdifd:CDIFContactPointShape: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
 
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+ - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:creator/rdf:first
  - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:creator
  - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
 
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
@@ -263,50 +205,44 @@ Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/sc
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b5: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b7: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b19: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b26: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b10: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b6: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b4: *none*
- - Shape _:nc6af061cab7c4f7fb7df7571cbdb5e77b8: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb4: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb26: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb6: *none*
  - Shape cdifd:CDIFDefinedTermShape: *none*
  - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb19: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb10: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb7: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb8: *none*
+ - Shape _:n968294ec35874f908f256b3657824f3bb5: *none*
 
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+ - Shape _:n870627217b59423b99411d37b50bc0e6b25: *none*
  - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b22: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b11: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b20: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b10: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b23: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b21: *none*
+ - Shape _:n870627217b59423b99411d37b50bc0e6b10: *none*
  - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n870627217b59423b99411d37b50bc0e6b20: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
  - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nbf202ed8c8454d83995e5a56a5a60ef7b25: *none*
+ - Shape _:n870627217b59423b99411d37b50bc0e6b21: *none*
  - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n870627217b59423b99411d37b50bc0e6b23: *none*
+ - Shape _:n870627217b59423b99411d37b50bc0e6b22: *none*
+ - Shape _:n870627217b59423b99411d37b50bc0e6b11: *none*
 
 
 ** Validation error **
 Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:
   Validation Report
   Conforms: False
-  Results (9):
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Result Path: schema1:creator
-  	Message: An ECRR resource should identify at least one creator (schema:creator).
+  Results (8):
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
@@ -316,15 +252,9 @@ Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Result Path: schema1:creator
   	Message: An ECRR resource should identify at least one creator (schema:creator).
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Result Path: schema1:keywords
-  	Message: An ECRR resource should include keywords (schema:keywords).
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
@@ -340,16 +270,9 @@ Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
-  	Focus Node: [ dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>, <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCollection>, <https://w3id.org/cdif/core/1.0/>, <https://w3id.org/cdif/discovery/1.0/> ; rdf:type schema1:CreativeWork ; schema1:additionalType Literal("dcat:CatalogRecord") ; schema1:sdDatePublished Literal("2026-03-03") ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
   	Result Path: schema1:keywords
   	Message: An ECRR resource should include keywords (schema:keywords).
-  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
-  	Value Node: Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075")
-  	Result Path: schema1:url
-  	Message: An ECRR resource should include a URL for a landing page (schema:url).
   Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
@@ -357,29 +280,43 @@ Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:
   	Value Node: Literal("https://creativecommons.org/licenses/by/4.0/")
   	Result Path: schema1:url
   	Message: An ECRR resource should include a URL for a landing page (schema:url).
+  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-collection>
+  	Value Node: Literal("http://n2t.net/ark:/23942/g2example-collection")
+  	Result Path: schema1:url
+  	Message: An ECRR resource should include a URL for a landing page (schema:url).
+  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Bundled Object") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075") ]
+  	Value Node: Literal("http://cor.esipfed.org/ont/earthcube/SFO_0000075")
+  	Result Path: schema1:url
+  	Message: An ECRR resource should include a URL for a landing page (schema:url).
   
 Focus nodes for _sources/ecrrProperties/ecrrCommon/rules.shacl:
- - Shape cdifd:ECRRCommonShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity,<http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:subjectOf
+ - Shape cdifd:ECRRCommonShape: <http://n2t.net/ark:/23942/g2example-collection>/schema1:license,<http://n2t.net/ark:/23942/g2example-collection>,<http://n2t.net/ark:/23942/g2example-collection>/schema1:mainEntity
 
 Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b15: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab11: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab17: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab3: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab14: *none*
  - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b26: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b4: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b11: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b25: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab12: *none*
  - Shape cdifd:fundingShape: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b12: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab15: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab26: *none*
  - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b17: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b13: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b5: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b14: *none*
- - Shape _:n37d0a4c703914458b741841a56d6aaf2b3: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab25: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab13: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab4: *none*
+ - Shape _:n225e8bb8341242d98fb444a335d6760ab5: *none*
 
 === End SHACL ===
 

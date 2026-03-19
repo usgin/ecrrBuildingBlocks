@@ -32,26 +32,27 @@ Example metadata instance for ECRRInterface profile.
 #### json
 ```json
 {
-  "@context": [
-    "https://schema.org/",
-    {
-      "ecrro": "http://cor.esipfed.org/ont/earthcube/",
-      "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
-    }
-  ],
+  "@context": {
+    "schema": "http://schema.org/",
+    "ecrro": "http://cor.esipfed.org/ont/earthcube/",
+    "ecrr": "https://n2t.net/ark:/23942/g2",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#"
+  },
   "@id": "http://n2t.net/ark:/23942/g2example-interface",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "OGC Web Map Service (WMS) Interface Standard",
   "schema:additionalType": [
     "EC Interface_API"
   ],
   "schema:description": "The OpenGIS Web Map Service Interface Standard (WMS) provides a simple HTTP interface for requesting geo-registered map images from one or more distributed geospatial databases.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-interface",
+  "schema:url": "https://www.ogc.org/standard/wms/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000207",
@@ -64,8 +65,9 @@ Example metadata instance for ECRRInterface profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-interface-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -84,14 +86,19 @@ Example metadata instance for ECRRInterface profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "Open Geospatial Consortium (OGC)"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-interface"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "Open Geospatial Consortium (OGC)"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -157,11 +164,10 @@ Example metadata instance for ECRRInterface profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRInterface/context.jsonld",
-    "https://schema.org/",
     {
+      "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
-      "dct": "http://purl.org/dc/terms/",
       "dcterms": "http://purl.org/dc/terms/",
       "dcat": "http://www.w3.org/ns/dcat#"
     }
@@ -169,13 +175,17 @@ Example metadata instance for ECRRInterface profile.
   "@id": "http://n2t.net/ark:/23942/g2example-interface",
   "@type": [
     "schema:CreativeWork",
-    "schema:Product"
+    "schema:Product",
+    "schema:Dataset"
   ],
   "schema:name": "OGC Web Map Service (WMS) Interface Standard",
   "schema:additionalType": [
     "EC Interface_API"
   ],
   "schema:description": "The OpenGIS Web Map Service Interface Standard (WMS) provides a simple HTTP interface for requesting geo-registered map images from one or more distributed geospatial databases.",
+  "schema:identifier": "http://n2t.net/ark:/23942/g2example-interface",
+  "schema:url": "https://www.ogc.org/standard/wms/",
+  "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
     "@type": "schema:CreativeWork",
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000207",
@@ -188,8 +198,9 @@ Example metadata instance for ECRRInterface profile.
     }
   ],
   "schema:subjectOf": {
+    "@id": "urn:uuid:ecrr-interface-catalog-record",
     "@type": [
-      "schema:CreativeWork"
+      "schema:Dataset"
     ],
     "schema:additionalType": [
       "dcat:CatalogRecord"
@@ -208,14 +219,19 @@ Example metadata instance for ECRRInterface profile.
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface"
       }
     ],
-    "schema:sdDatePublished": "2026-03-03"
-  },
-  "schema:creator": [
-    {
-      "@type": "schema:Organization",
-      "schema:name": "Open Geospatial Consortium (OGC)"
+    "schema:sdDatePublished": "2026-03-03",
+    "schema:about": {
+      "@id": "http://n2t.net/ark:/23942/g2example-interface"
     }
-  ],
+  },
+  "schema:creator": {
+    "@list": [
+      {
+        "@type": "schema:Organization",
+        "schema:name": "Open Geospatial Consortium (OGC)"
+      }
+    ]
+  },
   "schema:about": [
     {
       "@type": "schema:DefinedTerm",
@@ -274,9 +290,11 @@ Example metadata instance for ECRRInterface profile.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
 <http://n2t.net/ark:/23942/g2example-interface> a schema1:CreativeWork,
+        schema1:Dataset,
         schema1:Product ;
     ecrro:ECRRO_0000017 [ a schema1:PropertyValue ;
             schema1:name "Usage" ;
@@ -308,22 +326,28 @@ Example metadata instance for ECRRInterface profile.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000021" ;
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC Interface_API" ;
-    schema1:creator [ a schema1:Organization ;
-            schema1:name "Open Geospatial Consortium (OGC)" ] ;
+    schema1:creator ( [ a schema1:Organization ;
+                schema1:name "Open Geospatial Consortium (OGC)" ] ) ;
+    schema1:dateModified "2026-03-03" ;
     schema1:description "The OpenGIS Web Map Service Interface Standard (WMS) provides a simple HTTP interface for requesting geo-registered map images from one or more distributed geospatial databases." ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-interface" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
             schema1:name "Interface_API" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000207" ] ;
     schema1:name "OGC Web Map Service (WMS) Interface Standard" ;
-    schema1:subjectOf [ a schema1:CreativeWork ;
-            dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-                <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface>,
-                <https://w3id.org/cdif/core/1.0/>,
-                <https://w3id.org/cdif/discovery/1.0/> ;
-            schema1:additionalType "dcat:CatalogRecord" ;
-            schema1:sdDatePublished "2026-03-03" ] .
+    schema1:subjectOf <urn:uuid:ecrr-interface-catalog-record> ;
+    schema1:url "https://www.ogc.org/standard/wms/" .
+
+<urn:uuid:ecrr-interface-catalog-record> a schema1:Dataset ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
+        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterface>,
+        <https://w3id.org/cdif/core/1.0/>,
+        <https://w3id.org/cdif/discovery/1.0/> ;
+    schema1:about <http://n2t.net/ark:/23942/g2example-interface> ;
+    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:sdDatePublished "2026-03-03" .
 
 
 ```
