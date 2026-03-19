@@ -27,17 +27,11 @@
     "ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource": [
       "https://usgin.github.io/ecrrBuildingBlocks/_sources/profiles/ecrrProfiles/ECRRSemanticResource/rules.shacl"
     ],
-    "ecrr.bbr.metadata.ecrrProperties.ecrrBase": [
-      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrBase/rules.shacl"
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCommon": [
+      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
-    ],
-    "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource": [
-      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/rules.shacl"
-    ],
-    "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment": [
-      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+    "cdif.bbr.metadata.schemaorgProperties.funder": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
     ],
     "cdif.bbr.metadata.schemaorgProperties.person": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl"
@@ -51,18 +45,24 @@
     "cdif.bbr.metadata.schemaorgProperties.identifier": [
       "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl"
     ],
-    "ecrr.bbr.metadata.ecrrProperties.ecrrCommon": [
-      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCommon/rules.shacl"
+    "cdif.bbr.metadata.schemaorgProperties.labeledLink": [
+      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl"
     ],
-    "cdif.bbr.metadata.schemaorgProperties.funder": [
-      "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl"
+    "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment": [
+      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrAssessment/rules.shacl"
+    ],
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCore": [
+      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrCore/rules.shacl"
+    ],
+    "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource": [
+      "https://usgin.github.io/ecrrBuildingBlocks/_sources/ecrrProperties/ecrrSemanticResource/rules.shacl"
     ]
   },
   "dependsOn": [
-    "ecrr.bbr.metadata.ecrrProperties.ecrrBase",
-    "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource",
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
     "ecrr.bbr.metadata.ecrrProperties.ecrrAssessment",
-    "ecrr.bbr.metadata.ecrrProperties.ecrrCommon"
+    "ecrr.bbr.metadata.ecrrProperties.ecrrCore",
+    "ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource"
   ],
   "ldContext": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/context.jsonld",
   "schema": {
@@ -76,7 +76,7 @@
   "rdfData": [],
   "validationPassed": false,
   "testOutputs": "https://github.com/usgin/ecrrBuildingBlocks/blob/main/build/tests/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource/",
-  "description": "## ECRR Semantic Resource Profile\n\nComplete metadata profile for registering semantic resources (ontologies, vocabularies, thesauri, etc.) in the EarthCube Resource Registry.\n\n### Composition\n\n1. **ecrrBase** \u2014 mandatory identity and classification\n2. **ecrrCommon** \u2014 optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)\n3. **ecrrAssessment** \u2014 resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)\n4. **ecrrSemanticResource** \u2014 semantic-resource-specific (programming/representation language)\n\n### Type Requirements\n\n- `@type` must include `schema:CreativeWork`\n- `schema:additionalType` must contain `\"EC Semantic Resource\"`\n- `mainEntity` must reference `http://cor.esipfed.org/ont/earthcube/ECRRO_0000210` (Semantic Resource)\n",
+  "description": "## ECRR Semantic Resource Profile\n\nComplete metadata profile for registering semantic resources (ontologies, vocabularies, thesauri, etc.) in the EarthCube Resource Registry.\n\n### Composition\n\n1. **ecrrCore** \u2014 mandatory identity and classification\n2. **ecrrCommon** \u2014 optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)\n3. **ecrrAssessment** \u2014 resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)\n4. **ecrrSemanticResource** \u2014 semantic-resource-specific (programming/representation language)\n\n### Type Requirements\n\n- `@type` must include `schema:CreativeWork`\n- `schema:additionalType` must contain `\"EC Semantic Resource\"`\n- `mainEntity` must reference `http://cor.esipfed.org/ont/earthcube/ECRRO_0000210` (Semantic Resource)\n",
   "examples": [
     {
       "title": "ECRR Semantic Resource (synthetic example)",
@@ -106,7 +106,7 @@
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\ntitle: ECRR Semantic Resource Profile\ndescription: Complete ECRR metadata profile for semantic resource types (ontologies,\n  vocabularies, thesauri, etc.). Composes ecrrBase, ecrrCommon, ecrrAssessment, and\n  ecrrSemanticResource. Resources must have schema:additionalType containing \"EC Semantic\n  Resource\".\nallOf:\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.yaml\n- properties:\n    schema:additionalType:\n      contains:\n        enum:\n        - EC Semantic Resource\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n  dcat: http://www.w3.org/ns/dcat#\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\ntitle: ECRR Semantic Resource Profile\ndescription: Complete ECRR metadata profile for semantic resource types (ontologies,\n  vocabularies, thesauri, etc.). Composes ecrrCore, ecrrCommon, ecrrAssessment, and\n  ecrrSemanticResource. Resources must have schema:additionalType containing \"EC Semantic\n  Resource\".\nallOf:\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml\n- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.yaml\n- properties:\n    schema:additionalType:\n      contains:\n        enum:\n        - EC Semantic Resource\nx-jsonld-extra-terms:\n  ecrr: https://n2t.net/ark:/23942/g2\nx-jsonld-prefixes:\n  schema: http://schema.org/\n  ecrro: http://cor.esipfed.org/ont/earthcube/\n  dct: http://purl.org/dc/terms/\n  dcat: http://www.w3.org/ns/dcat#\n",
   "gitRepository": "https://github.com/usgin/ecrrBuildingBlocks",
   "gitPath": "_sources/profiles/ecrrProfiles/ECRRSemanticResource"
 }

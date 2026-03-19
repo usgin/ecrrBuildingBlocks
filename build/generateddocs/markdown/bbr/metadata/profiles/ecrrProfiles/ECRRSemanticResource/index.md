@@ -15,7 +15,7 @@ Complete metadata profile for registering semantic resources (ontologies, vocabu
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **ecrrSemanticResource** — semantic-resource-specific (programming/representation language)
@@ -373,11 +373,11 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Semantic Resource Profile
 description: Complete ECRR metadata profile for semantic resource types (ontologies,
-  vocabularies, thesauri, etc.). Composes ecrrBase, ecrrCommon, ecrrAssessment, and
+  vocabularies, thesauri, etc.). Composes ecrrCore, ecrrCommon, ecrrAssessment, and
   ecrrSemanticResource. Resources must have schema:additionalType containing "EC Semantic
   Resource".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/schema.yaml

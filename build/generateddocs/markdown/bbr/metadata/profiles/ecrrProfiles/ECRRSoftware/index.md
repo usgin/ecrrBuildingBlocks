@@ -17,7 +17,7 @@ Complete metadata profile for registering software and application resources in 
 
 This profile composes four building blocks using `allOf`:
 
-1. **ecrrBase** — mandatory identity, type, name, description, mainEntity classification, license
+1. **ecrrCore** — mandatory identity, type, name, description, mainEntity classification, license
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **ecrrSoftware** — software-specific (application categories, runtime platforms, programming languages, supporting data, code repository, install URL, dependencies)
@@ -705,10 +705,10 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "Stewardship" ;
             schema1:propertyID "ecrro:ECRRO_0000218" ;
             schema1:value [ a schema1:Person ;
-                    schema1:name "Feng Zhu" ],
-                [ a schema1:Person ;
                     schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
-                    schema1:name "Deborah Khider" ] ] ;
+                    schema1:name "Deborah Khider" ],
+                [ a schema1:Person ;
+                    schema1:name "Feng Zhu" ] ] ;
     ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;
             schema1:name "expected lifetime" ;
             schema1:propertyID "ecrro:ECRRO_0000219" ;
@@ -728,14 +728,14 @@ Example metadata instance for ECRRSoftware profile.
             schema1:propertyID "dct:bibliographicCitation" ;
             schema1:value "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692" ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000021" ;
-            schema1:name "Earth Science" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
             schema1:name "Climatology" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
             schema1:name "Paleoceanography" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000021" ;
+            schema1:name "Earth Science" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000043" ;
             schema1:name "Paleoclimatology" ] ;
@@ -747,20 +747,20 @@ Example metadata instance for ECRRSoftware profile.
         "Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008",
         "Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011" ;
     schema1:audience [ a schema1:Audience ;
-            schema1:audienceType "Members of the Public" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000009" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Scientists" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
         [ a schema1:Audience ;
             schema1:audienceType "Developers" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
         [ a schema1:Audience ;
-            schema1:audienceType "Technologists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Data Users" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000002" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000002" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Members of the Public" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000009" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Technologists" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ] ;
     schema1:codeRepository [ a schema1:CreativeWork ;
             schema1:name "Pyleoclim GitHub repository" ;
             schema1:url "https://github.com/LinkedEarth/Pyleoclim_util" ] ;
@@ -779,27 +779,27 @@ Example metadata instance for ECRRSoftware profile.
     schema1:dateModified "2026-03-03" ;
     schema1:description "Pyleoclim is a Python package primarily geared towards the analysis and visualization of paleoclimate data. Such data usually come in the form of timeseries with missing values and age uncertainties, so the package includes several low-level methods to deal with these issues to simplify the user's life, with intuitive, high-level analysis and plotting methods that support publication-quality scientific workflows." ;
     schema1:funding [ a schema1:MonetaryGrant ;
+            schema1:name "US NSF, ICER-1541029, AGS-2002556" ],
+        [ a schema1:MonetaryGrant ;
             schema1:funder [ a schema1:Organization ;
                     schema1:identifier "https://ror.org/021nxhr62" ;
-                    schema1:name "US National Science Foundation (US NSF)" ] ],
-        [ a schema1:MonetaryGrant ;
-            schema1:name "US NSF, ICER-1541029, AGS-2002556" ] ;
+                    schema1:name "US National Science Foundation (US NSF)" ] ] ;
     schema1:identifier "https://doi.org/10.5281/zenodo.4002870" ;
     schema1:installURL [ a schema1:CreativeWork ;
             schema1:name "PyPI" ;
             schema1:url "https://pypi.org/project/pyleoclim/" ] ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Linked Paleo Data framework Publication" ;
-            schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Example Notebooks LinkedEarth" ;
             schema1:url "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks" ],
         [ a schema1:CreativeWork ;
-            schema1:name "Example Notebooks Github" ;
-            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Documentation" ;
-            schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ] ;
+            schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Linked Paleo Data framework Publication" ;
+            schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Example Notebooks Github" ;
+            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ] ;
     schema1:keywords "Paleoclimate" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "GNU General Public License (GPL)" ;
@@ -844,12 +844,12 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Software Profile
 description: Complete ECRR metadata profile for software and application resources.
-  Composes ecrrBase (mandatory identity and classification), ecrrCommon (optional
+  Composes ecrrCore (mandatory identity and classification), ecrrCommon (optional
   shared properties), ecrrAssessment (maturity, lifetime, usage), and ecrrSoftware
   (application categories, languages, repositories, etc.). Resources must have schema:additionalType
   containing "EC Software".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSoftware/schema.yaml

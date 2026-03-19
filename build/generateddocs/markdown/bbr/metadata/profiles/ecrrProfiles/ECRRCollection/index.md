@@ -15,7 +15,7 @@ Complete metadata profile for registering bundled object (collection) resources 
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **ecrrCollection** — collection-specific (component parts with type, name, URL, description, encoding format)
@@ -371,13 +371,13 @@ Example metadata instance for ECRRCollection profile.
                 schema1:name "USGS Geochemistry Lab" ] ) ;
     schema1:dateModified "2026-03-03" ;
     schema1:description "A curated collection of geochemical reference standard datasets, software tools, and documentation for analytical laboratory calibration." ;
-    schema1:hasPart [ a schema1:Dataset ;
+    schema1:hasPart [ a schema1:SoftwareApplication ;
+            schema1:name "Standard Comparison Tool" ;
+            schema1:url "https://example.org/tools/standard-compare" ],
+        [ a schema1:Dataset ;
             schema1:encodingFormat "text/csv" ;
             schema1:name "BHVO-2 Reference Values" ;
-            schema1:url "https://example.org/standards/bhvo2" ],
-        [ a schema1:SoftwareApplication ;
-            schema1:name "Standard Comparison Tool" ;
-            schema1:url "https://example.org/tools/standard-compare" ] ;
+            schema1:url "https://example.org/standards/bhvo2" ] ;
     schema1:identifier "http://n2t.net/ark:/23942/g2example-collection" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
@@ -408,10 +408,10 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Collection Profile
 description: Complete ECRR metadata profile for bundled object (collection) resources.
-  Composes ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCollection. Resources must
+  Composes ecrrCore, ecrrCommon, ecrrAssessment, and ecrrCollection. Resources must
   have schema:additionalType containing "EC Bundled Object".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCollection/schema.yaml

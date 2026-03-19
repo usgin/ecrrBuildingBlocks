@@ -15,7 +15,7 @@ Complete metadata profile for registering specification resources in the EarthCu
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties
 3. **ecrrAssessment** — resource assessment properties
 4. **ecrrSpecification** — specification-specific (parent specifications, subtype via SPKT vocabulary)
@@ -497,19 +497,19 @@ Example metadata instance for ECRRSpecification profile.
                     schema1:name "European Commission" ] ] ;
     schema1:identifier "http://inspire.ec.europa.eu/tg/ge/3.0" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Based on: GeoSciML version 3.2" ;
-            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
-            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ] ;
+            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Based on: GeoSciML version 3.2" ;
+            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
-            schema1:name "Data Format Conventions" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Specification" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Data Format Conventions" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
     schema1:relatedLink [ a schema1:LinkRole ;
             schema1:linkRelationship "specification document" ;
@@ -538,10 +538,10 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Specification Profile
 description: Complete ECRR metadata profile for specification resources. Composes
-  ecrrBase, ecrrCommon, ecrrAssessment, and ecrrSpecification. Resources must have
+  ecrrCore, ecrrCommon, ecrrAssessment, and ecrrSpecification. Resources must have
   schema:additionalType containing "EC Specification".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/schema.yaml

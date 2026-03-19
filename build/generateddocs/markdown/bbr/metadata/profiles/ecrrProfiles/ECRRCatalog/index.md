@@ -15,7 +15,7 @@ Complete metadata profile for registering catalog and repository resources in th
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **ecrrCatalog** — catalog-specific (content types)
@@ -350,9 +350,9 @@ Example metadata instance for ECRRCatalog profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC CatalogRegistry" ;
     schema1:contentType [ a schema1:Thing ;
-            schema1:name "Datasets" ],
+            schema1:name "Software" ],
         [ a schema1:Thing ;
-            schema1:name "Software" ] ;
+            schema1:name "Datasets" ] ;
     schema1:creator ( [ a schema1:Organization ;
                 schema1:name "EarthCube" ] ) ;
     schema1:dateModified "2026-03-03" ;
@@ -387,10 +387,10 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Catalog/Registry Profile
 description: Complete ECRR metadata profile for catalog and registry resources. Composes
-  ecrrBase, ecrrCommon, ecrrAssessment, and ecrrCatalog. Resources must have schema:additionalType
+  ecrrCore, ecrrCommon, ecrrAssessment, and ecrrCatalog. Resources must have schema:additionalType
   containing "EC CatalogRegistry" or "EC Repository".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCatalog/schema.yaml

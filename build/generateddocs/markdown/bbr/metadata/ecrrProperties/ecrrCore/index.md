@@ -1,7 +1,7 @@
 
-# ECRR Base metadata (Schema)
+# ECRR Core metadata (Schema)
 
-`ecrr.bbr.metadata.ecrrProperties.ecrrBase` *v0.1*
+`ecrr.bbr.metadata.ecrrProperties.ecrrCore` *v0.1*
 
 Schema defining mandatory properties for all EarthCube Resource Registry (ECRR) resource types. Includes resource identity, type classification via mainEntity, and licensing. Defines properties: @id, @type, schema:name, schema:description, schema:mainEntity, schema:license. Uses building blocks: labeledLink (schemaorgProperties).
 
@@ -47,8 +47,8 @@ This building block is composed with `ecrrCommon`, `ecrrAssessment`, and type-sp
 
 ## Examples
 
-### Pyleoclim Software - Base Fields
-ECRR base properties for the Pyleoclim software resource, including resource
+### Pyleoclim Software - Core Fields
+ECRR core properties for the Pyleoclim software resource, including resource
 type, name, description, main entity classification, and license.
 #### json
 ```json
@@ -89,7 +89,7 @@ type, name, description, main entity classification, and license.
       "schema": "http://schema.org/",
       "ecrro": "http://cor.esipfed.org/ont/earthcube/"
     },
-    "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/context.jsonld",
+    "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/context.jsonld",
     "https://schema.org/",
     {
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
@@ -226,8 +226,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.json)
-* JSON version: [schema.json](https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml)
+* YAML version: [schema.yaml](https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.json)
+* JSON version: [schema.json](https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml)
 
 
 # JSON-LD Context
@@ -245,7 +245,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/context.jsonld)
+[context.jsonld](https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/context.jsonld)
 
 ## Sources
 
@@ -257,5 +257,5 @@ You can find the full JSON-LD context here:
 The source code for this Building Block can be found in the following repository:
 
 * URL: [https://github.com/usgin/ecrrBuildingBlocks](https://github.com/usgin/ecrrBuildingBlocks)
-* Path: `_sources/ecrrProperties/ecrrBase`
+* Path: `_sources/ecrrProperties/ecrrCore`
 

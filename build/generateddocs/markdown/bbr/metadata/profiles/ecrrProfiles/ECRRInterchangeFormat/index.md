@@ -15,7 +15,7 @@ Complete metadata profile for registering interchange format resources in the Ea
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties (creators, keywords, domains, audience, related resources, funding, citation)
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 
@@ -372,10 +372,10 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Interchange Format Profile
 description: Complete ECRR metadata profile for interchange format resources. Composes
-  ecrrBase, ecrrCommon, and ecrrAssessment. Resources must have schema:additionalType
+  ecrrCore, ecrrCommon, and ecrrAssessment. Resources must have schema:additionalType
   containing "EC Interchange Format".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - properties:

@@ -18,7 +18,7 @@ Complete metadata profile for registering dataset resources in the EarthCube Res
 This profile extends CDIFcomplete with ECRR building blocks. CDIF properties take precedence for overlapping concerns; ECRR-unique properties are included inline.
 
 1. **CDIFcomplete** — full CDIF discovery + data description profile (creator, keywords, subjectOf, distribution, spatial/temporal coverage, variables, provenance, quality)
-2. **ecrrBase** — mandatory ECRR identity: mainEntity classification, `@type` must contain `schema:CreativeWork`, requires `schema:description` and `schema:license`
+2. **ecrrCore** — mandatory ECRR identity: mainEntity classification, `@type` must contain `schema:CreativeWork`, requires `schema:description` and `schema:license`
 3. **ecrrAssessment** — resource assessment (maturity, expected lifetime, usage level, stewardship, registration metadata)
 4. **Inline ECRR-unique properties** — properties from ecrrCommon not covered by CDIF (see below)
 
@@ -476,7 +476,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Dataset Profile
 description: Complete ECRR metadata profile for dataset resources. Extends CDIFcomplete
-  with ecrrBase (mainEntity, @type contains CreativeWork, requires description and
+  with ecrrCore (mainEntity, @type contains CreativeWork, requires description and
   license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties
   take precedence for overlapping concerns (creator, keywords, subjectOf, distribution,
   etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf
@@ -485,7 +485,7 @@ description: Complete ECRR metadata profile for dataset resources. Extends CDIFc
   containing "EC Dataset".
 allOf:
 - $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/profiles/cdifProfiles/CDIFcomplete/schema.yaml
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - properties:
     schema:additionalType:

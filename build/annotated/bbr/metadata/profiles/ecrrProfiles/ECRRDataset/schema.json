@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "title": "ECRR Dataset Profile",
-  "description": "Complete ECRR metadata profile for dataset resources. Extends CDIFcomplete with ecrrBase (mainEntity, @type contains CreativeWork, requires description and license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties take precedence for overlapping concerns (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf usage (links to other metadata formats) maps to schema:relatedLink with linkRelationship \"OtherMetadataFormat\" per CDIF convention. Resources must have schema:additionalType containing \"EC Dataset\".",
+  "description": "Complete ECRR metadata profile for dataset resources. Extends CDIFcomplete with ecrrCore (mainEntity, @type contains CreativeWork, requires description and license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties take precedence for overlapping concerns (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf usage (links to other metadata formats) maps to schema:relatedLink with linkRelationship \"OtherMetadataFormat\" per CDIF convention. Resources must have schema:additionalType containing \"EC Dataset\".",
   "allOf": [
     {
       "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/profiles/cdifProfiles/CDIFcomplete/schema.json"
     },
     {
-      "$ref": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.json"
+      "$ref": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.json"
     },
     {
       "$ref": "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.json"

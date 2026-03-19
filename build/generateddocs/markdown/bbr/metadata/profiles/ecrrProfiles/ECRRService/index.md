@@ -15,7 +15,7 @@ Complete metadata profile for registering service instance resources in the Eart
 
 ### Composition
 
-1. **ecrrBase** — mandatory identity and classification
+1. **ecrrCore** — mandatory identity and classification
 2. **ecrrCommon** — optional shared properties
 3. **ecrrAssessment** — resource assessment properties
 4. **ecrrService** — service-specific (communication protocols, interface specification, supporting data, invocation)
@@ -412,11 +412,11 @@ Example metadata instance for ECRRService profile.
     schema1:description "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported." ;
     schema1:identifier "http://n2t.net/ark:/23942/g2900003" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "GMRT synthesis publication" ;
-            schema1:url "http://dx.doi.org/10.1029/2008GC002332" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Machine-readable endpoint (WADL)" ;
-            schema1:url "https://www.gmrt.org/services/GridServer/wadl" ] ;
+            schema1:url "https://www.gmrt.org/services/GridServer/wadl" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "GMRT synthesis publication" ;
+            schema1:url "http://dx.doi.org/10.1029/2008GC002332" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
@@ -450,10 +450,10 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Service Instance Profile
 description: Complete ECRR metadata profile for service instance resources. Composes
-  ecrrBase, ecrrCommon, ecrrAssessment, and ecrrService. Resources must have schema:additionalType
+  ecrrCore, ecrrCommon, ecrrAssessment, and ecrrService. Resources must have schema:additionalType
   containing "EC Service Instance".
 allOf:
-- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrBase/schema.yaml
+- $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCommon/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/schema.yaml
