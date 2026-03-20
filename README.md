@@ -38,6 +38,13 @@ imports:
 
 External `$ref` paths in ecrrProperties schemas point to published URLs at `https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/`.
 
+## Tools
+
+- `tools/resolve_schema.py` — Resolve all `$ref` into single resolvedSchema.json files
+- `tools/regenerate_schema_json.py` — Generate *Schema.json from schema.yaml sources (YAML→JSON + ref rewrite)
+
+Both tools are synced from the canonical copies in [metadataBuildingBlocks/tools/](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks/tree/main/tools). Do not edit locally — update the canonical copy and run `python tools/sync_resolve_schema.py --apply` from the metadataBuildingBlocks repo.
+
 ## Viewer
 
 Browse all building blocks at: https://usgin.github.io/ecrrBuildingBlocks/
