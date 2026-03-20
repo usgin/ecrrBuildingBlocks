@@ -1,5 +1,5 @@
 Validation report for ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource - ECRR Semantic Resource profile
-Generated 2026-03-19T21:23:34.991452+00:00
+Generated 2026-03-20T22:19:09.986860+00:00
 === Files ===
 Using exampleECRRSemanticResource.json from examples
 JSON-LD context is present - uplifting
@@ -40,12 +40,6 @@ Validation result for _sources/profiles/ecrrProfiles/ECRRSemanticResource/rules.
   Validation Report
   Conforms: False
   Results (4):
-  Validation Result in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ rdf:type sh:PropertyShape ; sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource> ; sh:message Literal("Metadata record for ECRR Semantic Resource profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource") ; sh:path dcterms:conformsTo ; sh:severity sh:Warning ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
-  	Result Path: dcterms:conformsTo
-  	Message: Metadata record for ECRR Semantic Resource profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
   	Source Shape: [ sh:message Literal("An ECRR Semantic Resource should include a maturity state assessment (ecrro:ECRRO_0000138).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ecrro:ECRRO_0000138 ; sh:severity sh:Warning ]
@@ -64,177 +58,38 @@ Validation result for _sources/profiles/ecrrProfiles/ECRRSemanticResource/rules.
   	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
   	Result Path: ecrro:ECRRO_0000218
   	Message: An ECRR Semantic Resource should identify a steward (ecrro:ECRRO_0000218).
+  Validation Result in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ rdf:type sh:PropertyShape ; sh:hasValue <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource> ; sh:message Literal("Metadata record for ECRR Semantic Resource profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource") ; sh:path dcterms:conformsTo ; sh:severity sh:Warning ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
+  	Result Path: dcterms:conformsTo
+  	Message: Metadata record for ECRR Semantic Resource profile should declare conformance to https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource
   
 Focus nodes for _sources/profiles/ecrrProfiles/ECRRSemanticResource/rules.shacl:
- - Shape cdifd:ECRRSemanticResourceConformsToShape: *none*
  - Shape cdifd:ECRRSemanticResourceTypeShape: *none*
+ - Shape cdifd:ECRRSemanticResourceConformsToShape: *none*
 
 
 ** Validation error **
-Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:
+Validation result for _sources/ecrrProperties/ecrrSemanticResource/rules.shacl:
   Validation Report
   Conforms: False
-  Results (8):
+  Results (2):
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
+  	Source Shape: [ sh:message Literal("A semantic resource should specify its representation language (schema:programmingLanguage).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:programmingLanguage ; sh:severity sh:Warning ]
   	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
-  	Result Path: schema1:creator
-  	Message: An ECRR resource should identify at least one creator (schema:creator).
+  	Result Path: schema1:programmingLanguage
+  	Message: A semantic resource should specify its representation language (schema:programmingLanguage).
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
   	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
+  	Source Shape: [ sh:message Literal("A semantic resource should specify its representation language (schema:programmingLanguage).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:programmingLanguage ; sh:severity sh:Warning ]
   	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
-  	Result Path: schema1:creator
-  	Message: An ECRR resource should identify at least one creator (schema:creator).
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
-  	Result Path: schema1:keywords
-  	Message: An ECRR resource should include keywords (schema:keywords).
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
-  	Result Path: schema1:keywords
-  	Message: An ECRR resource should include keywords (schema:keywords).
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
-  	Result Path: schema1:keywords
-  	Message: An ECRR resource should include keywords (schema:keywords).
-  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
-  	Value Node: Literal("https://creativecommons.org/licenses/by/4.0/")
-  	Result Path: schema1:url
-  	Message: An ECRR resource should include a URL for a landing page (schema:url).
-  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
-  	Value Node: Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210")
-  	Result Path: schema1:url
-  	Message: An ECRR resource should include a URL for a landing page (schema:url).
-  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
-  	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
-  	Value Node: Literal("https://geosciml.org/resource/vocabulary/cgi/")
-  	Result Path: schema1:url
-  	Message: An ECRR resource should include a URL for a landing page (schema:url).
+  	Result Path: schema1:programmingLanguage
+  	Message: A semantic resource should specify its representation language (schema:programmingLanguage).
   
-Focus nodes for _sources/ecrrProperties/ecrrCommon/rules.shacl:
- - Shape cdifd:ECRRCommonShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
- - Shape _:n12a36dee130c47efabd31665adc6dd77b15: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b12: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b14: *none*
- - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b13: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b5: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b25: *none*
- - Shape cdifd:fundingShape: *none*
- - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b26: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b4: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b17: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b3: *none*
- - Shape _:n12a36dee130c47efabd31665adc6dd77b11: *none*
-
-
-** Validation error **
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Info
-  	Source Shape: cdifd:contactPointProperty
-  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Example Registrant") ]
-  	Result Path: schema1:contactPoint
-  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
- - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
- - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
- - Shape _:n23bc88b8fb5e422eb1110af86a78cae7b14: *none*
- - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFContactPointShape: *none*
- - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-semantic>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
- - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:maintainerOrProviderContactPointShape: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
- - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:creator/rdf:first
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
- - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb6: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb19: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb4: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb8: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb26: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb7: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb10: *none*
- - Shape cdifd:CDIFDefinedTermShape: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
- - Shape _:n4565720085be4fafb36179fa3303b85cb5: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
- - Shape _:nf34b02dea91e4a33823394a7addf4962b23: *none*
- - Shape _:nf34b02dea91e4a33823394a7addf4962b10: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape cdifd:CDIFIdentifierShape: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nf34b02dea91e4a33823394a7addf4962b22: *none*
- - Shape _:nf34b02dea91e4a33823394a7addf4962b25: *none*
- - Shape _:nf34b02dea91e4a33823394a7addf4962b21: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
- - Shape _:nf34b02dea91e4a33823394a7addf4962b20: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:nf34b02dea91e4a33823394a7addf4962b11: *none*
-
-Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
- - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
-
-Validation result for _sources/ecrrProperties/ecrrAssessment/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/ecrrProperties/ecrrAssessment/rules.shacl:
- - Shape cdifd:ECRRAssessmentShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+Focus nodes for _sources/ecrrProperties/ecrrSemanticResource/rules.shacl:
+ - Shape cdifd:ECRRSemanticResourcePropertiesShape: <http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
 
 
 ** Validation error **
@@ -292,32 +147,177 @@ Validation result for _sources/ecrrProperties/ecrrCore/rules.shacl:
   	Message: An ECRR resource must have an @id that is a URI (IRI).
   
 Focus nodes for _sources/ecrrProperties/ecrrCore/rules.shacl:
- - Shape _:n4cce59a2825446e3b2ac651aa5d0da2bb7: *none*
- - Shape cdifd:ECRRBaseShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+ - Shape _:nd2bbd30f37544b2e8defaa4b04b748a5b6: *none*
+ - Shape cdifd:ECRRBaseShape: <http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+ - Shape _:nd2bbd30f37544b2e8defaa4b04b748a5b7: *none*
  - Shape cdifd:ECRRBaseShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n4cce59a2825446e3b2ac651aa5d0da2bb6: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+
+Validation result for _sources/ecrrProperties/ecrrAssessment/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/ecrrProperties/ecrrAssessment/rules.shacl:
+ - Shape cdifd:ECRRAssessmentShape: <http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFOrganizationShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:creator/rdf:first
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
+ - Shape _:n547611e984384fec8a5964d830f1ad54b7: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b26: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b4: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b10: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b8: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b5: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b6: *none*
+ - Shape _:n547611e984384fec8a5964d830f1ad54b19: *none*
+ - Shape cdifd:CDIFDefinedTermShape: *none*
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
+ - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFIdentifierShape: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b20: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b10: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b23: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b25: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b21: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b22: *none*
+ - Shape _:n027594eb76c84d59b76d091652696ce1b11: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
 
 
 ** Validation error **
-Validation result for _sources/ecrrProperties/ecrrSemanticResource/rules.shacl:
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
   Validation Report
   Conforms: False
-  Results (2):
+  Results (1):
   Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("A semantic resource should specify its representation language (schema:programmingLanguage).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:programmingLanguage ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
-  	Result Path: schema1:programmingLanguage
-  	Message: A semantic resource should specify its representation language (schema:programmingLanguage).
-  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Warning
-  	Source Shape: [ sh:message Literal("A semantic resource should specify its representation language (schema:programmingLanguage).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:programmingLanguage ; sh:severity sh:Warning ]
-  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
-  	Result Path: schema1:programmingLanguage
-  	Message: A semantic resource should specify its representation language (schema:programmingLanguage).
+  	Severity: sh:Info
+  	Source Shape: cdifd:contactPointProperty
+  	Focus Node: [ rdf:type schema1:Person ; schema1:name Literal("Example Registrant") ]
+  	Result Path: schema1:contactPoint
+  	Message: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)
   
-Focus nodes for _sources/ecrrProperties/ecrrSemanticResource/rules.shacl:
- - Shape cdifd:ECRRSemanticResourcePropertiesShape: <http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:
+ - Shape cdifd:maintainerOrProviderContactPointShape: *none*
+ - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*
+ - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:CDIFPersonShape: <http://n2t.net/ark:/23942/g2example-semantic>/ecrro:ECRRO_0001301/schema1:value/schema1:contributor
+ - Shape _:n18d27095c1ad4f4fa0426901cbf8e7bcb14: *none*
+ - Shape cdifd:CDIFContactPointShape: *none*
+ - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*
+ - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*
+
+
+** Validation error **
+Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:
+  Validation Report
+  Conforms: False
+  Results (8):
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
+  	Result Path: schema1:creator
+  	Message: An ECRR resource should identify at least one creator (schema:creator).
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("An ECRR resource should identify at least one creator (schema:creator).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
+  	Result Path: schema1:creator
+  	Message: An ECRR resource should identify at least one creator (schema:creator).
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
+  	Result Path: schema1:keywords
+  	Message: An ECRR resource should include keywords (schema:keywords).
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
+  	Result Path: schema1:keywords
+  	Message: An ECRR resource should include keywords (schema:keywords).
+  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:message Literal("An ECRR resource should include keywords (schema:keywords).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
+  	Result Path: schema1:keywords
+  	Message: An ECRR resource should include keywords (schema:keywords).
+  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
+  	Focus Node: <http://n2t.net/ark:/23942/g2example-semantic>
+  	Value Node: Literal("https://geosciml.org/resource/vocabulary/cgi/")
+  	Result Path: schema1:url
+  	Message: An ECRR resource should include a URL for a landing page (schema:url).
+  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Creative Commons Attribution 4.0") ; schema1:url Literal("https://creativecommons.org/licenses/by/4.0/") ]
+  	Value Node: Literal("https://creativecommons.org/licenses/by/4.0/")
+  	Result Path: schema1:url
+  	Message: An ECRR resource should include a URL for a landing page (schema:url).
+  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):
+  	Severity: sh:Warning
+  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("An ECRR resource should include a URL for a landing page (schema:url).") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]
+  	Focus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal("Semantic Resource") ; schema1:url Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210") ]
+  	Value Node: Literal("http://cor.esipfed.org/ont/earthcube/ECRRO_0000210")
+  	Result Path: schema1:url
+  	Message: An ECRR resource should include a URL for a landing page (schema:url).
+  
+Focus nodes for _sources/ecrrProperties/ecrrCommon/rules.shacl:
+ - Shape cdifd:ECRRCommonShape: <http://n2t.net/ark:/23942/g2example-semantic>,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:license,<http://n2t.net/ark:/23942/g2example-semantic>/schema1:mainEntity
+
+Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b13: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b17: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b3: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b12: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b26: *none*
+ - Shape cdifd:fundingShape: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b14: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b11: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b5: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b25: *none*
+ - Shape cdifd:fundingShape/sh:or/rdf:first: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b4: *none*
+ - Shape _:n3f46d5ce03654c59b7502648c3fe8504b15: *none*
 
 === End SHACL ===
 

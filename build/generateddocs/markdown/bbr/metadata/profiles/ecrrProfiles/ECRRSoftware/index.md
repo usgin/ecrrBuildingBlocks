@@ -705,10 +705,10 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "Stewardship" ;
             schema1:propertyID "ecrro:ECRRO_0000218" ;
             schema1:value [ a schema1:Person ;
-                    schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
-                    schema1:name "Deborah Khider" ],
+                    schema1:name "Feng Zhu" ],
                 [ a schema1:Person ;
-                    schema1:name "Feng Zhu" ] ] ;
+                    schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
+                    schema1:name "Deborah Khider" ] ] ;
     ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;
             schema1:name "expected lifetime" ;
             schema1:propertyID "ecrro:ECRRO_0000219" ;
@@ -728,14 +728,14 @@ Example metadata instance for ECRRSoftware profile.
             schema1:propertyID "dct:bibliographicCitation" ;
             schema1:value "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692" ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
-            schema1:name "Climatology" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
             schema1:name "Paleoceanography" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000021" ;
             schema1:name "Earth Science" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
+            schema1:name "Climatology" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000043" ;
             schema1:name "Paleoclimatology" ] ;
@@ -747,20 +747,20 @@ Example metadata instance for ECRRSoftware profile.
         "Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008",
         "Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011" ;
     schema1:audience [ a schema1:Audience ;
-            schema1:audienceType "Scientists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
-        [ a schema1:Audience ;
             schema1:audienceType "Developers" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
         [ a schema1:Audience ;
             schema1:audienceType "Data Users" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000002" ],
         [ a schema1:Audience ;
-            schema1:audienceType "Members of the Public" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000009" ],
+            schema1:audienceType "Scientists" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
         [ a schema1:Audience ;
             schema1:audienceType "Technologists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ],
+        [ a schema1:Audience ;
+            schema1:audienceType "Members of the Public" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000009" ] ;
     schema1:codeRepository [ a schema1:CreativeWork ;
             schema1:name "Pyleoclim GitHub repository" ;
             schema1:url "https://github.com/LinkedEarth/Pyleoclim_util" ] ;
@@ -789,17 +789,17 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "PyPI" ;
             schema1:url "https://pypi.org/project/pyleoclim/" ] ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Example Notebooks LinkedEarth" ;
-            schema1:url "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Documentation" ;
             schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ],
         [ a schema1:CreativeWork ;
-            schema1:name "Linked Paleo Data framework Publication" ;
-            schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ],
+            schema1:name "Example Notebooks LinkedEarth" ;
+            schema1:url "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks" ],
         [ a schema1:CreativeWork ;
             schema1:name "Example Notebooks Github" ;
-            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ] ;
+            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Linked Paleo Data framework Publication" ;
+            schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ] ;
     schema1:keywords "Paleoclimate" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "GNU General Public License (GPL)" ;

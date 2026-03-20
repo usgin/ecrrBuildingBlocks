@@ -505,11 +505,11 @@ Example metadata instance for ECRRSpecification profile.
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
-            schema1:name "Specification" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Data Format Conventions" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Specification" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
     schema1:relatedLink [ a schema1:LinkRole ;
             schema1:linkRelationship "specification document" ;

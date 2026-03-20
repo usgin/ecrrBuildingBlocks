@@ -2,7 +2,7 @@
   "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrCommon - ECRR Common optional metadata",
   "bblockName": "ECRR Common optional metadata",
   "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
-  "generated": "2026-03-19T21:23:29.220011+00:00",
+  "generated": "2026-03-20T22:19:06.709849+00:00",
   "result": false,
   "items": [
     {
@@ -65,107 +65,60 @@
             {
               "op": "shacl-report",
               "shaclFile": "_sources/ecrrProperties/ecrrCommon/rules.shacl",
-              "graph": "@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode _:N5fed6369ca3b488a8138e088be80cdec ;\n            sh:resultMessage \"An ECRR resource should include keywords (schema:keywords).\" ;\n            sh:resultPath schema1:keywords ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb3 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N5fed6369ca3b488a8138e088be80cdec ;\n            sh:resultMessage \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n            sh:resultPath schema1:creator ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N7fc960ef648944d29e5087238e078ff3 ;\n            sh:resultMessage \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb4 ;\n            sh:value \"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\" ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N561c2633a9d345088519f58b8a44e9cb ;\n            sh:resultMessage \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n            sh:resultPath schema1:creator ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N561c2633a9d345088519f58b8a44e9cb ;\n            sh:resultMessage \"An ECRR resource should include keywords (schema:keywords).\" ;\n            sh:resultPath schema1:keywords ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb3 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N5fed6369ca3b488a8138e088be80cdec ;\n            sh:resultMessage \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb4 ;\n            sh:value \"https://github.com/LinkedEarth/Pyleoclim_util\" ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N561c2633a9d345088519f58b8a44e9cb ;\n            sh:resultMessage \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb4 ;\n            sh:value \"https://pyleoclim-util.readthedocs.io/en/stable/\" ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N7fc960ef648944d29e5087238e078ff3 ;\n            sh:resultMessage \"An ECRR resource should include keywords (schema:keywords).\" ;\n            sh:resultPath schema1:keywords ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb3 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N7fc960ef648944d29e5087238e078ff3 ;\n            sh:resultMessage \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n            sh:resultPath schema1:creator ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:nd8419c192a6e4608bbf810869ac93eaeb1 ] .\n\n_:N561c2633a9d345088519f58b8a44e9cb a schema1:CreativeWork ;\n    schema1:name \"Documentation\" ;\n    schema1:url \"https://pyleoclim-util.readthedocs.io/en/stable/\" .\n\n_:N5fed6369ca3b488a8138e088be80cdec a schema1:CreativeWork ;\n    schema1:name \"Pyleoclim GitHub page\" ;\n    schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util\" .\n\n_:N7fc960ef648944d29e5087238e078ff3 a schema1:CreativeWork ;\n    schema1:name \"Example Notebooks\" ;\n    schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\" .\n\n_:nd8419c192a6e4608bbf810869ac93eaeb1 sh:message \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n    sh:minCount 1 ;\n    sh:path schema1:creator ;\n    sh:severity sh:Warning .\n\n_:nd8419c192a6e4608bbf810869ac93eaeb3 sh:message \"An ECRR resource should include keywords (schema:keywords).\" ;\n    sh:minCount 1 ;\n    sh:path schema1:keywords ;\n    sh:severity sh:Warning .\n\n_:nd8419c192a6e4608bbf810869ac93eaeb4 sh:maxCount 1 ;\n    sh:message \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n    sh:nodeKind sh:IRI ;\n    sh:path schema1:url ;\n    sh:severity sh:Warning .\n\n",
+              "graph": "@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode _:Nc766f38845fe448cac9dd25ecf87023c ;\n            sh:resultMessage \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b4 ;\n            sh:value \"https://github.com/LinkedEarth/Pyleoclim_util\" ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N6cb3e2af11974eebbd92a4a449bfdac0 ;\n            sh:resultMessage \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b4 ;\n            sh:value \"https://pyleoclim-util.readthedocs.io/en/stable/\" ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N86a5341c0bff4ef798577b17a5154363 ;\n            sh:resultMessage \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n            sh:resultPath schema1:creator ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N6cb3e2af11974eebbd92a4a449bfdac0 ;\n            sh:resultMessage \"An ECRR resource should include keywords (schema:keywords).\" ;\n            sh:resultPath schema1:keywords ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b3 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:Nc766f38845fe448cac9dd25ecf87023c ;\n            sh:resultMessage \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n            sh:resultPath schema1:creator ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:Nc766f38845fe448cac9dd25ecf87023c ;\n            sh:resultMessage \"An ECRR resource should include keywords (schema:keywords).\" ;\n            sh:resultPath schema1:keywords ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b3 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N6cb3e2af11974eebbd92a4a449bfdac0 ;\n            sh:resultMessage \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n            sh:resultPath schema1:creator ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b1 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N86a5341c0bff4ef798577b17a5154363 ;\n            sh:resultMessage \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n            sh:resultPath schema1:url ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b4 ;\n            sh:value \"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\" ],\n        [ a sh:ValidationResult ;\n            sh:focusNode _:N86a5341c0bff4ef798577b17a5154363 ;\n            sh:resultMessage \"An ECRR resource should include keywords (schema:keywords).\" ;\n            sh:resultPath schema1:keywords ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape _:n3c935f40576641ebad826e60c1384d80b3 ] .\n\n_:N6cb3e2af11974eebbd92a4a449bfdac0 a schema1:CreativeWork ;\n    schema1:name \"Documentation\" ;\n    schema1:url \"https://pyleoclim-util.readthedocs.io/en/stable/\" .\n\n_:N86a5341c0bff4ef798577b17a5154363 a schema1:CreativeWork ;\n    schema1:name \"Example Notebooks\" ;\n    schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\" .\n\n_:Nc766f38845fe448cac9dd25ecf87023c a schema1:CreativeWork ;\n    schema1:name \"Pyleoclim GitHub page\" ;\n    schema1:url \"https://github.com/LinkedEarth/Pyleoclim_util\" .\n\n_:n3c935f40576641ebad826e60c1384d80b1 sh:message \"An ECRR resource should identify at least one creator (schema:creator).\" ;\n    sh:minCount 1 ;\n    sh:path schema1:creator ;\n    sh:severity sh:Warning .\n\n_:n3c935f40576641ebad826e60c1384d80b3 sh:message \"An ECRR resource should include keywords (schema:keywords).\" ;\n    sh:minCount 1 ;\n    sh:path schema1:keywords ;\n    sh:severity sh:Warning .\n\n_:n3c935f40576641ebad826e60c1384d80b4 sh:maxCount 1 ;\n    sh:message \"An ECRR resource should include a URL for a landing page (schema:url).\" ;\n    sh:nodeKind sh:IRI ;\n    sh:path schema1:url ;\n    sh:severity sh:Warning .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (9):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should identify at least one creator (schema:creator).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Example Notebooks\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\") ]\n  \tResult Path: schema1:creator\n  \tMessage: An ECRR resource should identify at least one creator (schema:creator).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should identify at least one creator (schema:creator).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Pyleoclim GitHub page\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\") ]\n  \tResult Path: schema1:creator\n  \tMessage: An ECRR resource should identify at least one creator (schema:creator).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should identify at least one creator (schema:creator).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Documentation\") ; schema1:url Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\") ]\n  \tResult Path: schema1:creator\n  \tMessage: An ECRR resource should identify at least one creator (schema:creator).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should include keywords (schema:keywords).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Example Notebooks\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\") ]\n  \tResult Path: schema1:keywords\n  \tMessage: An ECRR resource should include keywords (schema:keywords).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should include keywords (schema:keywords).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Pyleoclim GitHub page\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\") ]\n  \tResult Path: schema1:keywords\n  \tMessage: An ECRR resource should include keywords (schema:keywords).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should include keywords (schema:keywords).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Documentation\") ; schema1:url Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\") ]\n  \tResult Path: schema1:keywords\n  \tMessage: An ECRR resource should include keywords (schema:keywords).\n  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An ECRR resource should include a URL for a landing page (schema:url).\") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Example Notebooks\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\") ]\n  \tValue Node: Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\")\n  \tResult Path: schema1:url\n  \tMessage: An ECRR resource should include a URL for a landing page (schema:url).\n  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An ECRR resource should include a URL for a landing page (schema:url).\") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Pyleoclim GitHub page\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\") ]\n  \tValue Node: Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\")\n  \tResult Path: schema1:url\n  \tMessage: An ECRR resource should include a URL for a landing page (schema:url).\n  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An ECRR resource should include a URL for a landing page (schema:url).\") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Documentation\") ; schema1:url Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\") ]\n  \tValue Node: Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\")\n  \tResult Path: schema1:url\n  \tMessage: An ECRR resource should include a URL for a landing page (schema:url).\n  "
+              "message": "Validation result for _sources/ecrrProperties/ecrrCommon/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (9):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should identify at least one creator (schema:creator).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Documentation\") ; schema1:url Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\") ]\n  \tResult Path: schema1:creator\n  \tMessage: An ECRR resource should identify at least one creator (schema:creator).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should identify at least one creator (schema:creator).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Pyleoclim GitHub page\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\") ]\n  \tResult Path: schema1:creator\n  \tMessage: An ECRR resource should identify at least one creator (schema:creator).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should identify at least one creator (schema:creator).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:creator ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Example Notebooks\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\") ]\n  \tResult Path: schema1:creator\n  \tMessage: An ECRR resource should identify at least one creator (schema:creator).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should include keywords (schema:keywords).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Documentation\") ; schema1:url Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\") ]\n  \tResult Path: schema1:keywords\n  \tMessage: An ECRR resource should include keywords (schema:keywords).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should include keywords (schema:keywords).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Pyleoclim GitHub page\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\") ]\n  \tResult Path: schema1:keywords\n  \tMessage: An ECRR resource should include keywords (schema:keywords).\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"An ECRR resource should include keywords (schema:keywords).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:keywords ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Example Notebooks\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\") ]\n  \tResult Path: schema1:keywords\n  \tMessage: An ECRR resource should include keywords (schema:keywords).\n  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An ECRR resource should include a URL for a landing page (schema:url).\") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Documentation\") ; schema1:url Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\") ]\n  \tValue Node: Literal(\"https://pyleoclim-util.readthedocs.io/en/stable/\")\n  \tResult Path: schema1:url\n  \tMessage: An ECRR resource should include a URL for a landing page (schema:url).\n  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An ECRR resource should include a URL for a landing page (schema:url).\") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Pyleoclim GitHub page\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\") ]\n  \tValue Node: Literal(\"https://github.com/LinkedEarth/Pyleoclim_util\")\n  \tResult Path: schema1:url\n  \tMessage: An ECRR resource should include a URL for a landing page (schema:url).\n  Validation Result in NodeKindConstraintComponent (http://www.w3.org/ns/shacl#NodeKindConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An ECRR resource should include a URL for a landing page (schema:url).\") ; sh:nodeKind sh:IRI ; sh:path schema1:url ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:name Literal(\"Example Notebooks\") ; schema1:url Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\") ]\n  \tValue Node: Literal(\"https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks\")\n  \tResult Path: schema1:url\n  \tMessage: An ECRR resource should include a URL for a landing page (schema:url).\n  "
             },
             {
               "shaclFile": "_sources/ecrrProperties/ecrrCommon/rules.shacl",
               "focusNodes": {
                 "cdifd:ECRRCommonShape": {
                   "nodes": [
-                    "_:N5fed6369ca3b488a8138e088be80cdec",
-                    "_:N7fc960ef648944d29e5087238e078ff3",
-                    "_:N561c2633a9d345088519f58b8a44e9cb"
+                    "_:N6cb3e2af11974eebbd92a4a449bfdac0",
+                    "_:Nc766f38845fe448cac9dd25ecf87023c",
+                    "_:N86a5341c0bff4ef798577b17a5154363"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/ecrrProperties/ecrrCommon/rules.shacl:\n - Shape cdifd:ECRRCommonShape: _:N5fed6369ca3b488a8138e088be80cdec,_:N7fc960ef648944d29e5087238e078ff3,_:N561c2633a9d345088519f58b8a44e9cb\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl",
-              "focusNodes": {
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b17": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b14": {
-                  "nodes": []
-                },
-                "cdifd:fundingShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b25": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b4": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b15": {
-                  "nodes": []
-                },
-                "cdifd:fundingShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b11": {
-                  "nodes": []
-                },
-                "cdifd:fundingShape": {
-                  "nodes": [
-                    "_:N2e2d04fb35504e1b91bcec0b399c7e39",
-                    "_:N6d17e3e9ed0b420d8cee013f92fdbf45"
-                  ]
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b13": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b12": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b3": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b26": {
-                  "nodes": []
-                },
-                "_:n8c56b58da1dc475f81acdcf6ebf41f95b5": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b17: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b14: *none*\n - Shape cdifd:fundingShape/sh:or/rdf:first: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b25: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b4: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b15: *none*\n - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b11: *none*\n - Shape cdifd:fundingShape: _:N2e2d04fb35504e1b91bcec0b399c7e39,_:N6d17e3e9ed0b420d8cee013f92fdbf45\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b13: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b12: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b3: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b26: *none*\n - Shape _:n8c56b58da1dc475f81acdcf6ebf41f95b5: *none*\n"
+              "message": "Focus nodes for _sources/ecrrProperties/ecrrCommon/rules.shacl:\n - Shape cdifd:ECRRCommonShape: _:N6cb3e2af11974eebbd92a4a449bfdac0,_:Nc766f38845fe448cac9dd25ecf87023c,_:N86a5341c0bff4ef798577b17a5154363\n"
             },
             {
               "op": "shacl-report",
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl",
-              "graph": "@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .\n@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Jun Hu\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0003-0454-7145\" ;\n                    schema1:name \"Daniel Garijo\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0001-7501-8430\" ;\n                    schema1:name \"Deborah Khider\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0001-5920-4751\" ;\n                    schema1:name \"Julien Emile-Geay\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Pratheek Athreya\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Feng Zhu\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Alexander James\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Myron Kwan\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ] .\n\n",
+              "graph": "@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .\n@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Pratheek Athreya\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0001-5920-4751\" ;\n                    schema1:name \"Julien Emile-Geay\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Jun Hu\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0001-7501-8430\" ;\n                    schema1:name \"Deborah Khider\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:identifier \"https://orcid.org/0000-0003-0454-7145\" ;\n                    schema1:name \"Daniel Garijo\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Alexander James\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Feng Zhu\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ],\n        [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:Person ;\n                    schema1:name \"Myron Kwan\" ] ;\n            sh:resultMessage \"A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\" ;\n            sh:resultPath schema1:contactPoint ;\n            sh:resultSeverity sh:Info ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape cdifd:contactPointProperty ] .\n\n",
               "isError": true,
-              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (8):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Feng Zhu\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Myron Kwan\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:identifier Literal(\"https://orcid.org/0000-0003-0454-7145\") ; schema1:name Literal(\"Daniel Garijo\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:identifier Literal(\"https://orcid.org/0000-0001-7501-8430\") ; schema1:name Literal(\"Deborah Khider\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Pratheek Athreya\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Jun Hu\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:identifier Literal(\"https://orcid.org/0000-0001-5920-4751\") ; schema1:name Literal(\"Julien Emile-Geay\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Alexander James\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  "
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (8):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:identifier Literal(\"https://orcid.org/0000-0001-7501-8430\") ; schema1:name Literal(\"Deborah Khider\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Alexander James\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Feng Zhu\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Jun Hu\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Pratheek Athreya\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:name Literal(\"Myron Kwan\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:identifier Literal(\"https://orcid.org/0000-0001-5920-4751\") ; schema1:name Literal(\"Julien Emile-Geay\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Info\n  \tSource Shape: cdifd:contactPointProperty\n  \tFocus Node: [ rdf:type schema1:Person ; schema1:identifier Literal(\"https://orcid.org/0000-0003-0454-7145\") ; schema1:name Literal(\"Daniel Garijo\") ]\n  \tResult Path: schema1:contactPoint\n  \tMessage: A Person should have a contactPoint (schema:ContactPoint or mailto: IRI)\n  "
             },
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl",
               "focusNodes": {
-                "_:n6a7c5a28bc824c75a6fa2ca25067289bb14": {
-                  "nodes": []
-                },
-                "cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first": {
+                "cdifd:maintainerOrProviderContactPointShape": {
                   "nodes": []
                 },
                 "cdifd:affiliationProperty/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "cdifd:CDIFPersonShape/sh:or/rdf:first": {
+                "cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "_:nf54baf59154b4702accf2245b53c1d8ab14": {
+                  "nodes": []
+                },
+                "cdifd:CDIFPersonShape": {
+                  "nodes": [
+                    "_:N278159f9b92a4c59828cf4153e3fac0e",
+                    "_:Nbb716f930a1248dd9c54204fabe78e74",
+                    "_:N91667abeba144c43878140316c1dcd30",
+                    "_:N9f2d6f4dbbf54bfa8b41b5254b1a6dfb",
+                    "_:N4b8b552efb4541489b7505f87f7e9173",
+                    "_:N85046853b02a44d4b1b248673940f5cb",
+                    "_:Ncd71cc14615d4febbc15d119ed9161f9",
+                    "_:Nc3402e9b99b640b7b788e62138810f9e"
+                  ]
                 },
                 "cdifd:contactPointProperty/sh:or/rdf:first": {
                   "nodes": []
@@ -176,27 +129,15 @@
                 "cdifd:CDIFContactPointShape": {
                   "nodes": []
                 },
-                "cdifd:CDIFPersonShape": {
-                  "nodes": [
-                    "_:N1e2fbef811944fc9b63e770b27216f63",
-                    "_:N032bacec996f48848013854d2bb2b996",
-                    "_:N11ff24c11e734e74a54336987c8f340c",
-                    "_:N6823408ac2464f4fa563fa87a507afbf",
-                    "_:N89787412d37a4ae2a820727569928d5a",
-                    "_:N55388c03f4df472fbc8a3444dfa4b182",
-                    "_:N4a663c59043741b58a45fb155c97a9be",
-                    "_:N9232dcaf6e10475aba26d437b265ab90"
-                  ]
-                },
-                "cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first": {
+                "cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "cdifd:maintainerOrProviderContactPointShape": {
+                "cdifd:CDIFPersonShape/sh:or/rdf:first": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n - Shape _:n6a7c5a28bc824c75a6fa2ca25067289bb14: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFContactPointShape: *none*\n - Shape cdifd:CDIFPersonShape: _:N1e2fbef811944fc9b63e770b27216f63,_:N032bacec996f48848013854d2bb2b996,_:N11ff24c11e734e74a54336987c8f340c,_:N6823408ac2464f4fa563fa87a507afbf,_:N89787412d37a4ae2a820727569928d5a,_:N55388c03f4df472fbc8a3444dfa4b182,_:N4a663c59043741b58a45fb155c97a9be,_:N9232dcaf6e10475aba26d437b265ab90\n - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/rules.shacl:\n - Shape cdifd:maintainerOrProviderContactPointShape: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:first: *none*\n - Shape cdifd:affiliationProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:maintainerOrProviderContactPointShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:nf54baf59154b4702accf2245b53c1d8ab14: *none*\n - Shape cdifd:CDIFPersonShape: _:N278159f9b92a4c59828cf4153e3fac0e,_:Nbb716f930a1248dd9c54204fabe78e74,_:N91667abeba144c43878140316c1dcd30,_:N9f2d6f4dbbf54bfa8b41b5254b1a6dfb,_:N4b8b552efb4541489b7505f87f7e9173,_:N85046853b02a44d4b1b248673940f5cb,_:Ncd71cc14615d4febbc15d119ed9161f9,_:Nc3402e9b99b640b7b788e62138810f9e\n - Shape cdifd:contactPointProperty/sh:or/rdf:first: *none*\n - Shape cdifd:contactPointProperty/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFContactPointShape: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFPersonShape/sh:or/rdf:first: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -208,20 +149,20 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl",
               "focusNodes": {
+                "cdifd:CDIFOrganizationShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
                 "cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "cdifd:CDIFOrganizationShape": {
                   "nodes": [
-                    "_:N55883110783e4808843ae8690057bb07"
+                    "_:Nf3b5afd9568d4856b8c72cb8d9017dc2"
                   ]
-                },
-                "cdifd:CDIFOrganizationShape/sh:or/rdf:first": {
-                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape: _:N55883110783e4808843ae8690057bb07\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/rules.shacl:\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFOrganizationShape: _:Nf3b5afd9568d4856b8c72cb8d9017dc2\n"
             },
             {
               "op": "shacl-report",
@@ -233,45 +174,45 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl",
               "focusNodes": {
-                "cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first": {
+                "_:n68911f266d084c268eed3d20efe3508bb8": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b5": {
+                "_:n68911f266d084c268eed3d20efe3508bb19": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b7": {
+                "_:n68911f266d084c268eed3d20efe3508bb7": {
                   "nodes": []
                 },
-                "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
+                "_:n68911f266d084c268eed3d20efe3508bb5": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b19": {
-                  "nodes": []
-                },
-                "_:n971b53eddfba4216954c65cb111abc48b26": {
+                "_:n68911f266d084c268eed3d20efe3508bb4": {
                   "nodes": []
                 },
                 "cdifd:CDIFDefinedTermShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b8": {
+                "_:n68911f266d084c268eed3d20efe3508bb6": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b6": {
+                "cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b10": {
+                "_:n68911f266d084c268eed3d20efe3508bb26": {
                   "nodes": []
                 },
-                "_:n971b53eddfba4216954c65cb111abc48b4": {
+                "cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "cdifd:CDIFDefinedTermShape": {
                   "nodes": []
+                },
+                "_:n68911f266d084c268eed3d20efe3508bb10": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b5: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b7: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b19: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b26: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b8: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b6: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b10: *none*\n - Shape _:n971b53eddfba4216954c65cb111abc48b4: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:\n - Shape _:n68911f266d084c268eed3d20efe3508bb8: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb19: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb7: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb5: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb4: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb6: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb26: *none*\n - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFDefinedTermShape: *none*\n - Shape _:n68911f266d084c268eed3d20efe3508bb10: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -283,16 +224,13 @@
             {
               "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl",
               "focusNodes": {
-                "_:nc4fd0946725e4506935f85cdb76701e1b20": {
+                "cdifd:CDIFIdentifierTypeTermShape": {
                   "nodes": []
                 },
-                "_:nc4fd0946725e4506935f85cdb76701e1b10": {
+                "_:n55afb4127673495787faa62acdf69c02b11": {
                   "nodes": []
                 },
-                "_:nc4fd0946725e4506935f85cdb76701e1b22": {
-                  "nodes": []
-                },
-                "cdifd:CDIFIdentifierShape/sh:or/rdf:first": {
+                "_:n55afb4127673495787faa62acdf69c02b20": {
                   "nodes": []
                 },
                 "cdifd:CDIFIdentifierShape": {
@@ -301,30 +239,33 @@
                 "cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "_:nc4fd0946725e4506935f85cdb76701e1b23": {
-                  "nodes": []
-                },
                 "cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "cdifd:CDIFIdentifierTypeTermShape": {
+                "_:n55afb4127673495787faa62acdf69c02b22": {
                   "nodes": []
                 },
-                "_:nc4fd0946725e4506935f85cdb76701e1b21": {
+                "_:n55afb4127673495787faa62acdf69c02b21": {
                   "nodes": []
                 },
-                "_:nc4fd0946725e4506935f85cdb76701e1b11": {
-                  "nodes": []
-                },
-                "_:nc4fd0946725e4506935f85cdb76701e1b25": {
+                "cdifd:CDIFIdentifierShape/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first": {
                   "nodes": []
+                },
+                "_:n55afb4127673495787faa62acdf69c02b10": {
+                  "nodes": []
+                },
+                "_:n55afb4127673495787faa62acdf69c02b23": {
+                  "nodes": []
+                },
+                "_:n55afb4127673495787faa62acdf69c02b25": {
+                  "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b20: *none*\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b10: *none*\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b22: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierShape: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b23: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape: *none*\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b21: *none*\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b11: *none*\n - Shape _:nc4fd0946725e4506935f85cdb76701e1b25: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:\n - Shape cdifd:CDIFIdentifierTypeTermShape: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b11: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b20: *none*\n - Shape cdifd:CDIFIdentifierShape: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b22: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b21: *none*\n - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*\n - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b10: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b23: *none*\n - Shape _:n55afb4127673495787faa62acdf69c02b25: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -338,14 +279,73 @@
               "focusNodes": {
                 "cdifd:CDIFLabeledLinkShape": {
                   "nodes": [
-                    "_:N5fed6369ca3b488a8138e088be80cdec",
-                    "_:N7fc960ef648944d29e5087238e078ff3",
-                    "_:N561c2633a9d345088519f58b8a44e9cb"
+                    "_:N6cb3e2af11974eebbd92a4a449bfdac0",
+                    "_:Nc766f38845fe448cac9dd25ecf87023c",
+                    "_:N86a5341c0bff4ef798577b17a5154363"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: _:N5fed6369ca3b488a8138e088be80cdec,_:N7fc960ef648944d29e5087238e078ff3,_:N561c2633a9d345088519f58b8a44e9cb\n"
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:\n - Shape cdifd:CDIFLabeledLinkShape: _:N6cb3e2af11974eebbd92a4a449bfdac0,_:Nc766f38845fe448cac9dd25ecf87023c,_:N86a5341c0bff4ef798577b17a5154363\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl",
+              "focusNodes": {
+                "cdifd:fundingShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb25": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb5": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb26": {
+                  "nodes": []
+                },
+                "cdifd:fundingShape": {
+                  "nodes": [
+                    "_:Nb40c35f286fd442fa1d640090cadb1af",
+                    "_:N81bbf38a87024ee99e856f2b615ef499"
+                  ]
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb17": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb12": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb13": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb14": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb11": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb3": {
+                  "nodes": []
+                },
+                "cdifd:fundingShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb4": {
+                  "nodes": []
+                },
+                "_:n78194985f9a24417854c7af63af9a78eb15": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/rules.shacl:\n - Shape cdifd:fundingShape/sh:or/rdf:first: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb25: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb5: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb26: *none*\n - Shape cdifd:fundingShape: _:Nb40c35f286fd442fa1d640090cadb1af,_:N81bbf38a87024ee99e856f2b615ef499\n - Shape _:n78194985f9a24417854c7af63af9a78eb17: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb12: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb13: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb14: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb11: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb3: *none*\n - Shape cdifd:fundingShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb4: *none*\n - Shape _:n78194985f9a24417854c7af63af9a78eb15: *none*\n"
             }
           ]
         }
