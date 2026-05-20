@@ -41,82 +41,12 @@
       "description": "ECRR resource type classification. Array of labeled links (CreativeWork objects) with name and url pointing to ECRRO resource type URIs. The first entry identifies the base resource type (e.g. Software, Service Instance, Specification). Additional entries may specify subtypes from SPKT_ or srt_ vocabularies.",
       "anyOf": [
         {
-          "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
-          "type": "object",
-          "properties": {
-            "@type": {
-              "default": "schema:CreativeWork",
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "schema:CreativeWork"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  },
-                  "contains": {
-                    "const": "schema:CreativeWork"
-                  }
-                }
-              ]
-            },
-            "schema:name": {
-              "type": "string"
-            },
-            "schema:description": {
-              "type": "string"
-            },
-            "schema:url": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "required": [
-            "@type",
-            "schema:url"
-          ]
+          "$ref": "#/$defs/LabeledLink"
         },
         {
           "type": "array",
           "items": {
-            "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
-            "type": "object",
-            "properties": {
-              "@type": {
-                "default": "schema:CreativeWork",
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "const": "schema:CreativeWork"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "contains": {
-                      "const": "schema:CreativeWork"
-                    }
-                  }
-                ]
-              },
-              "schema:name": {
-                "type": "string"
-              },
-              "schema:description": {
-                "type": "string"
-              },
-              "schema:url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": [
-              "@type",
-              "schema:url"
-            ]
+            "$ref": "#/$defs/LabeledLink"
           },
           "minItems": 1
         }
@@ -141,42 +71,7 @@
             }
           },
           {
-            "description": "schema for a labeled link, a profile of schema.org/CreativeWork",
-            "type": "object",
-            "properties": {
-              "@type": {
-                "default": "schema:CreativeWork",
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "const": "schema:CreativeWork"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "contains": {
-                      "const": "schema:CreativeWork"
-                    }
-                  }
-                ]
-              },
-              "schema:name": {
-                "type": "string"
-              },
-              "schema:description": {
-                "type": "string"
-              },
-              "schema:url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": [
-              "@type",
-              "schema:url"
-            ]
+            "$ref": "#/$defs/LabeledLink"
           }
         ]
       }
@@ -189,5 +84,10 @@
     "schema:description",
     "schema:mainEntity",
     "schema:license"
-  ]
+  ],
+  "$defs": {
+    "LabeledLink": {
+      "$comment": "failed to fetch URL: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml"
+    }
+  }
 }
