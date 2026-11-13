@@ -38,9 +38,13 @@ properties:
             - type: object
               properties:
                 '@type':
-                  type: string
-                  const: schema:ComputerLanguage
-                  default: schema:ComputerLanguage
+                  type: array
+                  items:
+                    type: string
+                  contains:
+                    const: schema:ComputerLanguage
+                  minItems: 1
+                  default: [schema:ComputerLanguage]
                 schema:name:
                   type: string
                 schema:identifier:
@@ -100,9 +104,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: http://purl.obolibrary.org/obo/RO_0002502
@@ -120,16 +128,20 @@ properties:
       - schema:propertyID
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
   Action:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/schema.yaml
   DataFeedSpec:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:DataFeed
-        default: schema:DataFeed
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:DataFeed
+        minItems: 1
+        default: [schema:DataFeed]
       schema:name:
         type: string
       schema:position:

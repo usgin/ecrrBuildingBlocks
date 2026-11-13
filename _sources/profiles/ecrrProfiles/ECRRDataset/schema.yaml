@@ -4,7 +4,7 @@ type: object
 title: ECRR Dataset Profile
 description: >-
   Complete ECRR metadata profile for dataset resources.
-  Extends CDIFcomplete with ecrrCore (mainEntity, @type contains CreativeWork,
+  Extends CDIF CoreDiscovery (core + discovery) with ecrrCore (mainEntity, @type contains CreativeWork,
   requires description and license) and ecrrAssessment (maturity, lifetime,
   usage, stewardship). CDIF properties take precedence for overlapping concerns
   (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties
@@ -13,7 +13,7 @@ description: >-
   "OtherMetadataFormat" per CDIF convention.
   Resources must have schema:additionalType containing "EC Dataset".
 allOf:
-  - $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/schema.yaml
+  - $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/profiles/cdifCompositeProfile/CoreDiscovery/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrCore/schema.yaml
   - $ref: ../../../ecrrProperties/ecrrAssessment/schema.yaml
   - properties:
@@ -56,9 +56,13 @@ allOf:
           type: object
           properties:
             '@type':
-              type: string
-              const: schema:Audience
-              default: schema:Audience
+              type: array
+              items:
+                type: string
+              contains:
+                const: schema:Audience
+              minItems: 1
+              default: [schema:Audience]
             schema:audienceType:
               type: string
               description: >-
@@ -77,9 +81,13 @@ allOf:
         type: object
         properties:
           '@type':
-            type: string
-            const: schema:PropertyValue
-            default: schema:PropertyValue
+            type: array
+            items:
+              type: string
+            contains:
+              const: schema:PropertyValue
+            minItems: 1
+            default: [schema:PropertyValue]
           schema:propertyID:
             type: string
             const: dct:bibliographicCitation
@@ -94,8 +102,8 @@ allOf:
           - schema:value
 $defs:
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
   Person:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml
   Organization:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml

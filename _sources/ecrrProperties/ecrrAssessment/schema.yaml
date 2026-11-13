@@ -16,9 +16,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000138
@@ -38,9 +42,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000219
@@ -60,9 +68,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000017
@@ -82,9 +94,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000218
@@ -110,9 +126,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000600
@@ -132,9 +152,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0001301
@@ -145,9 +169,13 @@ properties:
         type: object
         properties:
           '@type':
-            type: string
-            const: schema:StructuredValue
-            default: schema:StructuredValue
+            type: array
+            items:
+              type: string
+            contains:
+              const: schema:StructuredValue
+            minItems: 1
+            default: [schema:StructuredValue]
           schema:additionalType:
             type: string
             const: ecrro:ECRRO_0000156
@@ -167,8 +195,8 @@ properties:
       - schema:value
 $defs:
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
   Person:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml
   Organization:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml
