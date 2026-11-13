@@ -13,10 +13,17 @@
         },
         "schema:runtimePlatform": {
             "description": "Runtime environments on which the software operates. Array of strings referencing the ECRR RTE (Runtime Environment) vocabulary (e.g. Linux, Browser, HPC).",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
         },
         "schema:programmingLanguage": {
             "description": "Programming languages used to implement the software. Can be a simple string or an array of ComputerLanguage objects with name and identifier.",
@@ -216,10 +223,17 @@
                     ]
                 },
                 "schema:encodingFormat": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    ]
                 }
             },
             "required": [
