@@ -37,9 +37,11 @@ properties:
           description: Brief description of the component.
         schema:encodingFormat:
           description: Format(s) of the component resource.
-          type: array
-          items:
-            type: string
+          anyOf:
+            - &encodingFormatItem4
+              type: string
+            - type: array
+              items: *encodingFormatItem4
       required:
         - schema:name
     minItems: 1

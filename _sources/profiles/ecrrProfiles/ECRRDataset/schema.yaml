@@ -51,29 +51,31 @@ allOf:
         description: >-
           Target user communities for the resource. Array of Audience objects
           with audienceType labels and identifiers from the AUT vocabulary.
-        type: array
-        items:
-          type: object
-          properties:
-            '@type':
-              type: array
-              items:
+        anyOf:
+          - &audienceItem2
+            type: object
+            properties:
+              '@type':
+                type: array
+                items:
+                  type: string
+                contains:
+                  const: schema:Audience
+                minItems: 1
+                default: [schema:Audience]
+              schema:audienceType:
                 type: string
-              contains:
-                const: schema:Audience
-              minItems: 1
-              default: [schema:Audience]
-            schema:audienceType:
-              type: string
-              description: >-
-                Label for the target audience (e.g. Data Producers, Scientists,
-                Developers). Values from ECRR AUT vocabulary.
-            schema:identifier:
-              type: string
-              description: URI from the ECRR AUT_ vocabulary.
-          required:
-            - '@type'
-            - schema:audienceType
+                description: >-
+                  Label for the target audience (e.g. Data Producers, Scientists,
+                  Developers). Values from ECRR AUT vocabulary.
+              schema:identifier:
+                type: string
+                description: URI from the ECRR AUT_ vocabulary.
+            required:
+              - '@type'
+              - schema:audienceType
+          - type: array
+            items: *audienceItem2
       "dct:bibliographicCitation":
         description: >-
           Preferred bibliographic citation for the resource, encoded as a
