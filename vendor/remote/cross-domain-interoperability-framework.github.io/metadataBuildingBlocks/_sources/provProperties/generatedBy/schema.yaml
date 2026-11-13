@@ -1,0 +1,43 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Activity that generated the resource (CDIF core)
+description: >-
+  The CDIF core definition of a prov:wasGeneratedBy value: a prov:Activity whose
+  prov:used items are strings or @id references. Any further structure belongs to
+  the profiles that extend it (cdifProvActivity for the schema.org implementation,
+  provActivity for the PROV-O one), which may only narrow it.
+type: object                     # open: extending profiles add properties
+required:
+- '@type'
+properties:
+  '@type':
+    type: array
+    items:
+      type: string
+    minItems: 1
+    contains:
+      const: prov:Activity
+    description: >-
+      Must include prov:Activity. Stated as "contains" rather than a single value so
+      an extending profile can add types (cdifProvActivity adds schema:Action).
+  'prov:used':
+    type: array
+    description: >-
+      Entities the activity used. Optional. Each item is a string (an IRI or a
+      free-text name) or an object that identifies the entity by @id. The @id
+      reference is deliberately NOT sealed: an extending profile may describe the
+      entity in place as long as it keeps the @id, and a profile that wants only bare
+      references can seal it itself. Role-keyed wrappers (an object whose key names a
+      role, with no @id) are not accepted; in the schema.org implementation what an
+      activity used is recorded with schema:instrument and schema:object instead.
+    items:
+      anyOf:
+      - type: string
+        description: an IRI or a free-text name of the entity used
+      - type: object
+        description: an entity used, identified by @id; it may also be described in place
+        required:
+        - '@id'
+        properties:
+          '@id':
+            type: string

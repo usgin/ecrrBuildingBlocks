@@ -1,0 +1,68 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+properties:
+  '@id':
+    type: string
+  '@type':
+    default: ['schema:Organization']
+    type: array
+    items:
+      anyOf:
+      - type: string
+        enum:
+        - schema:Organization
+        - schema:FundingAgency
+        - schema:Consortium
+        - schema:Corporation
+        - schema:EducationalOrganization
+        - schema:FundingScheme
+        - schema:GovernmentOrganization
+        - schema:NGO
+        - schema:Project
+        - schema:ResearchOrganization
+    contains:
+      const: schema:Organization
+    minItems: 1
+  schema:additionalType:
+    type: array
+    items:
+      $ref: '#/$defs/cdifConceptOrTermOrString'
+  'schema:name':
+    type: string
+    description: string label for organization that is meaningful for human users
+  'schema:alternateName':
+    description: >-
+      other labels by which the organization might be known. A list when there are
+      several; a single label may be a plain string, as JSON-LD framing writes a
+      one-item list.
+    anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+  'schema:description':
+    type: string
+    description: additional information about the agent or their relation to the described resource
+  'schema:identifier':
+    description: identifier for organization
+    anyOf:
+    - $ref: ../identifier/schema.yaml
+    - type: string
+  'schema:sameAs':
+    type: array
+    description: other identifiers for the organization
+    items:
+      anyOf:
+      - type: string
+      - $ref: ../../cdifDataType/objectReference/schema.yaml
+allOf:
+- required:
+  - '@type'
+- anyOf:
+  - required:
+    - schema:name
+  - required:
+    - schema:identifier
+$defs:
+  cdifConceptOrTermOrString:
+    $ref: ../../cdifDataType/cdifConceptOrTermOrString/schema.yaml

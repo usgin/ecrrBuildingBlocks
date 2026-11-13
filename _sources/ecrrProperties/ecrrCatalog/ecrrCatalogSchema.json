@@ -11,8 +11,13 @@
                 "type": "object",
                 "properties": {
                     "@type": {
-                        "type": "string",
-                        "default": "schema:Thing"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "default": [
+                            "schema:Thing"
+                        ]
                     },
                     "schema:name": {
                         "type": "string",

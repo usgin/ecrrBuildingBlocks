@@ -2,10 +2,10 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "title": "ECRR Dataset Profile",
-    "description": "Complete ECRR metadata profile for dataset resources. Extends CDIFcomplete with ecrrCore (mainEntity, @type contains CreativeWork, requires description and license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties take precedence for overlapping concerns (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf usage (links to other metadata formats) maps to schema:relatedLink with linkRelationship \"OtherMetadataFormat\" per CDIF convention. Resources must have schema:additionalType containing \"EC Dataset\".",
+    "description": "Complete ECRR metadata profile for dataset resources. Extends CDIF CoreDiscovery (core + discovery) with ecrrCore (mainEntity, @type contains CreativeWork, requires description and license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties take precedence for overlapping concerns (creator, keywords, subjectOf, distribution, etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf usage (links to other metadata formats) maps to schema:relatedLink with linkRelationship \"OtherMetadataFormat\" per CDIF convention. Resources must have schema:additionalType containing \"EC Dataset\".",
     "allOf": [
         {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/profiles/cdifProfiles/CDIFcomplete/CDIFcompleteSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/profiles/cdifCompositeProfile/CoreDiscovery/CoreDiscoverySchema.json"
         },
         {
             "$ref": "../../../ecrrProperties/ecrrCore/ecrrCoreSchema.json"
@@ -72,9 +72,17 @@
                         "type": "object",
                         "properties": {
                             "@type": {
-                                "type": "string",
-                                "const": "schema:Audience",
-                                "default": "schema:Audience"
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "contains": {
+                                    "const": "schema:Audience"
+                                },
+                                "minItems": 1,
+                                "default": [
+                                    "schema:Audience"
+                                ]
                             },
                             "schema:audienceType": {
                                 "type": "string",
@@ -96,9 +104,17 @@
                     "type": "object",
                     "properties": {
                         "@type": {
-                            "type": "string",
-                            "const": "schema:PropertyValue",
-                            "default": "schema:PropertyValue"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "contains": {
+                                "const": "schema:PropertyValue"
+                            },
+                            "minItems": 1,
+                            "default": [
+                                "schema:PropertyValue"
+                            ]
                         },
                         "schema:propertyID": {
                             "type": "string",
@@ -123,13 +139,13 @@
     ],
     "$defs": {
         "DefinedTerm": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/definedTermSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/definedTermSchema.json"
         },
         "Person": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/personSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/personSchema.json"
         },
         "Organization": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/organizationSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/organizationSchema.json"
         }
     }
 }

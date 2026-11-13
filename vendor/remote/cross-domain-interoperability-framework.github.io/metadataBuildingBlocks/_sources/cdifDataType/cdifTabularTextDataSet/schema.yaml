@@ -1,0 +1,120 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Tabular Text DataSet
+description: Dataset-level physical layout properties of a delimited or fixed-width text
+  dataset (CSV, TSV, fixed-width). A subclass of cdi:PhysicalDataSet, carried on a
+  schema:DataDownload distribution dual-typed cdi:TabularTextDataSet. DDI-CDI
+  TabularTextDataSet. This is an attribute mixin (no @type of its own); the @type token
+  is carried by the distribution. Per-field mappings are cdifTextMapping (on
+  cdif:hasPhysicalMapping).
+type: object
+properties:
+  cdi:arrayBase:
+    type: integer
+    default: 1
+    description: Index of the first element/column (TabularTextDataSet.arrayBase).
+  cdi:commentPrefix:
+    type: string
+    description: Character(s) that mark a line as a comment.
+  cdi:delimiter:
+    type: string
+    description: Field delimiter (e.g., "," or tab).
+  cdi:escapeCharacter:
+    type: string
+  cdi:hasHeader:
+    type: boolean
+    default: true
+  cdi:headerIsCaseSensitive:
+    type: boolean
+    default: false
+  cdi:headerRowCount:
+    type: integer
+    default: 1
+  cdi:isDelimited:
+    type: boolean
+    default: true
+  cdi:isFixedWidth:
+    type: boolean
+    default: false
+  cdi:lineTerminator:
+    type: array
+    items:
+      type: string
+    description: Allowed line terminators, in order (default [CRLF, LF]).
+  cdi:nullSequence:
+    type: string
+    description: Value interpreted as null at the dataset level.
+  cdi:quoteCharacter:
+    type: string
+    default: '"'
+  cdi:skipBlankRows:
+    type: boolean
+    default: false
+  cdi:skipDataColumns:
+    type: integer
+    default: 0
+  cdi:skipInitialSpace:
+    type: boolean
+    default: true
+  cdi:skipRows:
+    type: integer
+    default: 0
+  cdi:tableDirection:
+    type: string
+    default: Auto
+    enum:
+    - Auto
+    - Ltr
+    - Rtl
+    description: Direction in which columns are arranged in each row (DDI-CDI
+      TabularTextDataSet.tableDirection, TableDirectionValues enumeration).
+  cdi:textDirection:
+    type: string
+    enum:
+    - Auto
+    - Inherit
+    - Ltr
+    - Rtl
+    description: Reading order of text within cells (DDI-CDI TabularTextDataSet.textDirection,
+      TextDirectionValues enumeration).
+  cdi:treatConsecutiveDelimitersAsOne:
+    type: boolean
+    default: false
+  cdi:trim:
+    type: string
+    enum:
+    - Both
+    - End
+    - Neither
+    - Start
+    description: Which spaces to remove from a data value (DDI-CDI TabularTextDataSet.trim,
+      TrimValues enumeration).
+
+# A TabularTextDataSet is a physical layout, and a layout that does not say which
+# column holds which variable describes nothing usable -- the mappings are the
+# point of the class rather than an optional extra. Two layers already said so and
+# neither reached this path:
+#
+#   * cdifTabularData, the near-duplicate of this block that cdifManifest refs,
+#     has carried `required: [cdif:hasPhysicalMapping]` since it was written.
+#   * cdifd:tabularDataShape enforces it at sh:Violation on any node typed
+#     cdi:TabularTextDataSet, with a message asserting it is "required by the
+#     JSON Schema" -- true on the manifest path only.
+#
+# cdifDataDescription refs THIS block, where nothing required it; and the shape
+# does not reach that profile's bundle either, because rules.shacl travels the
+# $ref graph and this block has none. So a data-description distribution could
+# omit its mappings and hear nothing from either layer, while the rule that
+# would have caught it sat at Violation severity in a bundle it never joined.
+#
+# The property itself is declared by cdifDataDescription's schema:DataDownload
+# branch as an anyOf over the three mapping kinds; declaring it here too would be
+# a second definition free to drift from that one, so this states the requirement
+# alone. @type is deliberately absent: this is an attribute mixin and the type
+# token is carried by the distribution. Measured 2026-11-06, all nine
+# cdi:TabularTextDataSet distributions in the corpus already carry the mappings,
+# so this codifies practice rather than changing it -- but the domain repos
+# resolve this block over the network at their own build time and are not
+# measured here.
+required:
+- 'cdif:hasPhysicalMapping'

@@ -56,19 +56,19 @@
     },
     "$defs": {
         "DataDownload": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/dataDownloadSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/dataDownloadSchema.json"
         },
         "WebAPI": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/webAPISchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/webAPISchema.json"
         },
         "SpatialExtent": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/spatialExtentSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/spatialExtentSchema.json"
         },
         "TemporalExtent": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/temporalExtentSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/temporalExtentSchema.json"
         },
         "VariableMeasured": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/variableMeasuredSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/variableMeasuredSchema.json"
         },
         "DataCatalogRef": {
             "type": "object",
@@ -77,9 +77,17 @@
                     "type": "string"
                 },
                 "@type": {
-                    "type": "string",
-                    "const": "schema:DataCatalog",
-                    "default": "schema:DataCatalog"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "contains": {
+                        "const": "schema:DataCatalog"
+                    },
+                    "minItems": 1,
+                    "default": [
+                        "schema:DataCatalog"
+                    ]
                 },
                 "schema:name": {
                     "type": "string"
