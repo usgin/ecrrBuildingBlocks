@@ -122,8 +122,10 @@ $defs:
           - input
           - output
       schema:encodingFormat:
-        type: array
-        items:
-          type: string
+        anyOf:
+          - &encodingFormatItem3
+            type: string
+          - type: array
+            items: *encodingFormatItem3
     required:
       - '@type'

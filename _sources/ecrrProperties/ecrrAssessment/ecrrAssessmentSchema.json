@@ -241,16 +241,44 @@
                             ]
                         },
                         "schema:additionalType": {
-                            "type": "string",
-                            "const": "ecrro:ECRRO_0000156"
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "const": "ecrro:ECRRO_0000156"
+                                },
+                                {
+                                    "type": "array",
+                                    "contains": {
+                                        "const": "ecrro:ECRRO_0000156"
+                                    },
+                                    "minItems": 1
+                                }
+                            ]
                         },
                         "schema:contributor": {
                             "anyOf": [
                                 {
-                                    "$ref": "#/$defs/Person"
+                                    "anyOf": [
+                                        {
+                                            "$ref": "#/$defs/Person"
+                                        },
+                                        {
+                                            "$ref": "#/$defs/Organization"
+                                        }
+                                    ]
                                 },
                                 {
-                                    "$ref": "#/$defs/Organization"
+                                    "type": "array",
+                                    "items": {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/$defs/Person"
+                                            },
+                                            {
+                                                "$ref": "#/$defs/Organization"
+                                            }
+                                        ]
+                                    }
                                 }
                             ]
                         },

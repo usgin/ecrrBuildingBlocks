@@ -1204,37 +1204,71 @@
     },
     "schema:audience": {
       "description": "Target user communities for the resource. Array of Audience objects with audienceType labels and identifiers from the AUT vocabulary.",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "@type": {
-            "type": "array",
-            "items": {
-              "type": "string"
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "contains": {
+                "const": "schema:Audience"
+              },
+              "minItems": 1,
+              "default": [
+                "schema:Audience"
+              ]
             },
-            "contains": {
-              "const": "schema:Audience"
+            "schema:audienceType": {
+              "type": "string",
+              "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary."
             },
-            "minItems": 1,
-            "default": [
-              "schema:Audience"
-            ]
+            "schema:identifier": {
+              "type": "string",
+              "description": "URI from the ECRR AUT_ vocabulary."
+            }
           },
-          "schema:audienceType": {
-            "type": "string",
-            "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary."
-          },
-          "schema:identifier": {
-            "type": "string",
-            "description": "URI from the ECRR AUT_ vocabulary."
-          }
+          "required": [
+            "@type",
+            "schema:audienceType"
+          ]
         },
-        "required": [
-          "@type",
-          "schema:audienceType"
-        ]
-      }
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "contains": {
+                  "const": "schema:Audience"
+                },
+                "minItems": 1,
+                "default": [
+                  "schema:Audience"
+                ]
+              },
+              "schema:audienceType": {
+                "type": "string",
+                "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary."
+              },
+              "schema:identifier": {
+                "type": "string",
+                "description": "URI from the ECRR AUT_ vocabulary."
+              }
+            },
+            "required": [
+              "@type",
+              "schema:audienceType"
+            ]
+          }
+        }
+      ]
     },
     "schema:subjectOf": {
       "description": "Metadata about this resource: the CDIF catalog record for this metadata (typed schema:Dataset, with dcat:CatalogRecord as its schema:additionalType), and/or labeled links (CreativeWork objects with name and url) to formal metadata records or web pages about the resource.",
@@ -3184,10 +3218,17 @@
     },
     "schema:encodingFormat": {
       "description": "Representation formats for the resource content (e.g. MIME types, format names like RDF/XML, Turtle, JSON-LD).",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
     },
     "dct:bibliographicCitation": {
       "description": "Preferred bibliographic citation for the resource, encoded as a PropertyValue with propertyID of dct:bibliographicCitation.",
@@ -3468,16 +3509,44 @@
               ]
             },
             "schema:additionalType": {
-              "type": "string",
-              "const": "ecrro:ECRRO_0000156"
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "ecrro:ECRRO_0000156"
+                },
+                {
+                  "type": "array",
+                  "contains": {
+                    "const": "ecrro:ECRRO_0000156"
+                  },
+                  "minItems": 1
+                }
+              ]
             },
             "schema:contributor": {
               "anyOf": [
                 {
-                  "$ref": "#/$defs/EcrrAssessment_Person"
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/EcrrAssessment_Person"
+                    },
+                    {
+                      "$ref": "#/$defs/EcrrAssessment_Organization"
+                    }
+                  ]
                 },
                 {
-                  "$ref": "#/$defs/EcrrAssessment_Organization"
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/EcrrAssessment_Person"
+                      },
+                      {
+                        "$ref": "#/$defs/EcrrAssessment_Organization"
+                      }
+                    ]
+                  }
                 }
               ]
             },
@@ -3533,10 +3602,17 @@
           },
           "schema:encodingFormat": {
             "description": "Format(s) of the component resource.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
           }
         },
         "required": [

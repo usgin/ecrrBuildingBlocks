@@ -39,10 +39,17 @@
                     },
                     "schema:encodingFormat": {
                         "description": "Format(s) of the component resource.",
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
                     }
                 },
                 "required": [

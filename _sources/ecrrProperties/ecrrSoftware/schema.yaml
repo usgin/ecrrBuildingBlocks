@@ -22,9 +22,11 @@ properties:
       Runtime environments on which the software operates. Array of strings
       referencing the ECRR RTE (Runtime Environment) vocabulary
       (e.g. Linux, Browser, HPC).
-    type: array
-    items:
-      type: string
+    anyOf:
+      - &runtimePlatformItem1
+        type: string
+      - type: array
+        items: *runtimePlatformItem1
   schema:programmingLanguage:
     description: >-
       Programming languages used to implement the software. Can be a simple
@@ -152,8 +154,10 @@ $defs:
           - input
           - output
       schema:encodingFormat:
-        type: array
-        items:
-          type: string
+        anyOf:
+          - &encodingFormatItem2
+            type: string
+          - type: array
+            items: *encodingFormatItem2
     required:
       - '@type'
