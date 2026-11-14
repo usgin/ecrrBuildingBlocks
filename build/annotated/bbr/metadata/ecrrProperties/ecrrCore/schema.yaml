@@ -31,10 +31,12 @@ properties:
   schema:name:
     type: string
     description: The name of the resource.
+    x-jsonld-id: http://schema.org/name
   schema:description:
     type: string
     description: A text description of the resource, providing enough detail for discovery
       and basic understanding of the resource purpose and content.
+    x-jsonld-id: http://schema.org/description
   schema:mainEntity:
     description: ECRR resource type classification. Array of labeled links (CreativeWork
       objects) with name and url pointing to ECRRO resource type URIs. The first entry
@@ -46,6 +48,7 @@ properties:
       items:
         $ref: '#/$defs/LabeledLink'
       minItems: 1
+    x-jsonld-id: http://schema.org/mainEntity
   schema:license:
     description: Legal conditions governing use and access. Array of labeled links
       identifying the license(s), ideally with URIs from https://spdx.org/licenses/
@@ -61,6 +64,7 @@ properties:
             type: string
             description: a reference to a license definition
       - $ref: '#/$defs/LabeledLink'
+    x-jsonld-id: http://schema.org/license
 required:
 - '@id'
 - '@type'
@@ -70,10 +74,15 @@ required:
 - schema:license
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCore
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'

@@ -50,17 +50,23 @@ specification and output data formats.
 ```json
 {
   "ecrro:ECRRO_0000503": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000503",
     "schema:name": "Interface specification",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "HTTP"
     }
   },
   "schema:supportingData": [
     {
-      "@type": "schema:DataFeed",
+      "@type": [
+        "schema:DataFeed"
+      ],
       "schema:name": "Output Data Formats",
       "schema:position": "output",
       "schema:encodingFormat": [
@@ -85,17 +91,23 @@ specification and output data formats.
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrService/context.jsonld"
   ],
   "ecrro:ECRRO_0000503": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000503",
     "schema:name": "Interface specification",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "HTTP"
     }
   },
   "schema:supportingData": [
     {
-      "@type": "schema:DataFeed",
+      "@type": [
+        "schema:DataFeed"
+      ],
       "schema:name": "Output Data Formats",
       "schema:position": "output",
       "schema:encodingFormat": [
@@ -145,25 +157,34 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000502
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: communication protocols
+        x-jsonld-id: http://schema.org/name
       schema:value:
         anyOf:
         - $ref: '#/$defs/DefinedTerm'
         - type: array
           items:
             $ref: '#/$defs/DefinedTerm'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000502
   ecrro:ECRRO_0000503:
     description: Interface specification that the service implements. PropertyValue
       wrapping an array of labeled links to specification documents (e.g. WADL, WSDL,
@@ -171,15 +192,22 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000503
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: Interface specification
+        x-jsonld-id: http://schema.org/name
       schema:value:
         anyOf:
         - $ref: '#/$defs/LabeledLink'
@@ -190,13 +218,18 @@ properties:
           description: Simple reference with identifier
           properties:
             '@type':
-              type: string
+              type: array
+              items:
+                type: string
             schema:identifier:
               type: string
+              x-jsonld-id: http://schema.org/identifier
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000503
   schema:supportingData:
     description: Input and output data format specifications for the service. Array
       of DataFeed objects with position (input/output) and encodingFormat.
@@ -205,37 +238,49 @@ properties:
     - type: array
       items:
         $ref: '#/$defs/DataFeedSpec'
+    x-jsonld-id: http://schema.org/supportingData
   schema:potentialAction:
     description: Service invocation details. Uses the Action building block pattern
       to describe how to call the service endpoint.
     type: array
     items:
       $ref: '#/$defs/Action'
+    x-jsonld-id: http://schema.org/potentialAction
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
   Action:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/action/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/action/schema.yaml
   DataFeedSpec:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:DataFeed
-        default: schema:DataFeed
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:DataFeed
+        minItems: 1
+        default:
+        - schema:DataFeed
       schema:name:
         type: string
+        x-jsonld-id: http://schema.org/name
       schema:position:
         type: string
         enum:
         - input
         - output
+        x-jsonld-id: http://schema.org/position
       schema:encodingFormat:
-        type: array
-        items:
-          type: string
+        anyOf:
+        - type: string
+        - type: array
+          items:
+            type: string
+        x-jsonld-id: http://schema.org/encodingFormat
     required:
     - '@type'
 x-jsonld-extra-terms:
@@ -244,6 +289,11 @@ x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrService
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -262,6 +312,10 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "cdif": "https://w3id.org/cdif/",
     "@version": 1.1
   }
 }

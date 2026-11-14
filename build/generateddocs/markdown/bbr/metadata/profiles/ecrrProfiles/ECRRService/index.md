@@ -54,13 +54,17 @@ Example metadata instance for ECRRService profile.
   "schema:url": "https://www.gmrt.org/services/GridServer/",
   "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000202",
     "schema:name": "Service Instance"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Public"
     }
   ],
@@ -70,17 +74,13 @@ Example metadata instance for ECRRService profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService"
@@ -93,10 +93,14 @@ Example metadata instance for ECRRService profile.
   },
   "schema:relatedLink": [
     {
-      "@type": "schema:LinkRole",
+      "@type": [
+        "schema:LinkRole"
+      ],
       "schema:linkRelationship": "documentation",
       "schema:target": {
-        "@type": "schema:EntryPoint",
+        "@type": [
+          "schema:EntryPoint"
+        ],
         "schema:name": "GMRT GridServer info page",
         "schema:url": "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid"
       }
@@ -104,83 +108,115 @@ Example metadata instance for ECRRService profile.
   ],
   "schema:audience": [
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Scientists",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000007"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Developers",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000006"
     }
   ],
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Marine Geology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000065"
     }
   ],
   "schema:isRelatedTo": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "GMRT synthesis publication",
       "schema:url": "http://dx.doi.org/10.1029/2008GC002332"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Machine-readable endpoint (WADL)",
       "schema:url": "https://www.gmrt.org/services/GridServer/wadl"
     }
   ],
   "ecrro:ECRRO_0000503": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000503",
     "schema:name": "Interface specification",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "HTTP"
     }
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Unknown",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000004"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-02-10"
@@ -223,13 +259,17 @@ Example metadata instance for ECRRService profile.
   "schema:url": "https://www.gmrt.org/services/GridServer/",
   "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000202",
     "schema:name": "Service Instance"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Public"
     }
   ],
@@ -239,17 +279,13 @@ Example metadata instance for ECRRService profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService"
@@ -262,10 +298,14 @@ Example metadata instance for ECRRService profile.
   },
   "schema:relatedLink": [
     {
-      "@type": "schema:LinkRole",
+      "@type": [
+        "schema:LinkRole"
+      ],
       "schema:linkRelationship": "documentation",
       "schema:target": {
-        "@type": "schema:EntryPoint",
+        "@type": [
+          "schema:EntryPoint"
+        ],
         "schema:name": "GMRT GridServer info page",
         "schema:url": "https://www.gmrt.org/services/GridServer/info#!/services/getGMRTGrid"
       }
@@ -273,83 +313,115 @@ Example metadata instance for ECRRService profile.
   ],
   "schema:audience": [
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Scientists",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000007"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Developers",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000006"
     }
   ],
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Marine Geology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000065"
     }
   ],
   "schema:isRelatedTo": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "GMRT synthesis publication",
       "schema:url": "http://dx.doi.org/10.1029/2008GC002332"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Machine-readable endpoint (WADL)",
       "schema:url": "https://www.gmrt.org/services/GridServer/wadl"
     }
   ],
   "ecrro:ECRRO_0000503": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000503",
     "schema:name": "Interface specification",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "HTTP"
     }
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Unknown",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000004"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-02-10"
@@ -360,6 +432,7 @@ Example metadata instance for ECRRService profile.
 
 #### ttl
 ```ttl
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
 @prefix schema1: <http://schema.org/> .
@@ -412,11 +485,11 @@ Example metadata instance for ECRRService profile.
     schema1:description "The GridServer service provides access to gridded data from the Global Multi-resolution Topography (GMRT) Synthesis. Requested data may be up to 2GB, or approximately 20 by 20 degrees at 100 meters per node (maximum available resolution). A variety of output formats are supported." ;
     schema1:identifier "http://n2t.net/ark:/23942/g2900003" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Machine-readable endpoint (WADL)" ;
-            schema1:url "https://www.gmrt.org/services/GridServer/wadl" ],
-        [ a schema1:CreativeWork ;
             schema1:name "GMRT synthesis publication" ;
-            schema1:url "http://dx.doi.org/10.1029/2008GC002332" ] ;
+            schema1:url "http://dx.doi.org/10.1029/2008GC002332" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Machine-readable endpoint (WADL)" ;
+            schema1:url "https://www.gmrt.org/services/GridServer/wadl" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
@@ -432,12 +505,10 @@ Example metadata instance for ECRRService profile.
     schema1:url "https://www.gmrt.org/services/GridServer/" .
 
 <urn:uuid:ecrr-service-catalog-record> a schema1:Dataset ;
-    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService>,
-        <https://w3id.org/cdif/core/1.0/>,
-        <https://w3id.org/cdif/discovery/1.0/> ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRService>,
+        <https://w3id.org/cdif/core/1.1> ;
     schema1:about <http://n2t.net/ark:/23942/g2900003> ;
-    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
 
 
@@ -462,6 +533,7 @@ allOf:
       contains:
         enum:
         - EC Service Instance
+      x-jsonld-id: http://schema.org/additionalType
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
@@ -469,6 +541,11 @@ x-jsonld-prefixes:
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRService
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -487,7 +564,12 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "cdif": "https://w3id.org/cdif/",
     "@version": 1.1
   }
 }

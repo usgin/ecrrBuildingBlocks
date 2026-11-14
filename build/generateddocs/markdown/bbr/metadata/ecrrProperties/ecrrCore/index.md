@@ -62,17 +62,25 @@ type, name, description, main entity classification, and license.
     }
   ],
   "@id": "http://n2t.net/ark:/23942/g22914",
-  "@type": ["schema:CreativeWork", "schema:Product", "schema:SoftwareApplication"],
+  "@type": [
+    "schema:CreativeWork",
+    "schema:Product",
+    "schema:SoftwareApplication"
+  ],
   "schema:name": "Pyleoclim",
   "schema:description": "Pyleoclim is a Python package primarily geared towards the analysis and visualization of paleoclimate data. Such data usually come in the form of timeseries with missing values and age uncertainties, so the package includes several low-level methods to deal with these issues.",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000206",
     "schema:name": "Software"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "GNU General Public License (GPL)",
       "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
     }
@@ -106,13 +114,17 @@ type, name, description, main entity classification, and license.
   "schema:name": "Pyleoclim",
   "schema:description": "Pyleoclim is a Python package primarily geared towards the analysis and visualization of paleoclimate data. Such data usually come in the form of timeseries with missing values and age uncertainties, so the package includes several low-level methods to deal with these issues.",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000206",
     "schema:name": "Software"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "GNU General Public License (GPL)",
       "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
     }
@@ -175,10 +187,12 @@ properties:
   schema:name:
     type: string
     description: The name of the resource.
+    x-jsonld-id: http://schema.org/name
   schema:description:
     type: string
     description: A text description of the resource, providing enough detail for discovery
       and basic understanding of the resource purpose and content.
+    x-jsonld-id: http://schema.org/description
   schema:mainEntity:
     description: ECRR resource type classification. Array of labeled links (CreativeWork
       objects) with name and url pointing to ECRRO resource type URIs. The first entry
@@ -190,6 +204,7 @@ properties:
       items:
         $ref: '#/$defs/LabeledLink'
       minItems: 1
+    x-jsonld-id: http://schema.org/mainEntity
   schema:license:
     description: Legal conditions governing use and access. Array of labeled links
       identifying the license(s), ideally with URIs from https://spdx.org/licenses/
@@ -205,6 +220,7 @@ properties:
             type: string
             description: a reference to a license definition
       - $ref: '#/$defs/LabeledLink'
+    x-jsonld-id: http://schema.org/license
 required:
 - '@id'
 - '@type'
@@ -214,13 +230,18 @@ required:
 - schema:license
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCore
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -239,6 +260,9 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
     "@version": 1.1
   }
 }

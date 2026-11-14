@@ -2,8 +2,8 @@
   "title": "Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrCollection - ECRR Collection/Bundled Object properties",
   "bblockName": "ECRR Collection/Bundled Object properties",
   "bblockId": "ecrr.bbr.metadata.ecrrProperties.ecrrCollection",
-  "generated": "2026-03-20T22:19:04.430414+00:00",
-  "result": false,
+  "generated": "2026-11-14T00:20:12.534728+00:00",
+  "result": true,
   "items": [
     {
       "source": {
@@ -15,7 +15,8 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": false,
+      "result": true,
+      "hasWarnings": true,
       "sections": [
         {
           "name": "FILES",
@@ -66,20 +67,35 @@
               "op": "shacl-report",
               "shaclFile": "_sources/ecrrProperties/ecrrCollection/rules.shacl",
               "graph": "@prefix schema1: <http://schema.org/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a schema1:CreativeWork ;\n                    schema1:encodingFormat \"text/html\" ;\n                    schema1:name \"User Documentation\" ;\n                    schema1:url \"https://example.org/docs\" ] ;\n            sh:resultMessage \"A collection/bundled object should specify at least one component resource (schema:hasPart).\" ;\n            sh:resultPath schema1:hasPart ;\n            sh:resultSeverity sh:Warning ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"A collection/bundled object should specify at least one component resource (schema:hasPart).\" ;\n                    sh:minCount 1 ;\n                    sh:path schema1:hasPart ;\n                    sh:severity sh:Warning ] ] .\n\n",
-              "isError": true,
-              "message": "Validation result for _sources/ecrrProperties/ecrrCollection/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Validation Result in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Warning\n  \tSource Shape: [ sh:message Literal(\"A collection/bundled object should specify at least one component resource (schema:hasPart).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path schema1:hasPart ; sh:severity sh:Warning ]\n  \tFocus Node: [ rdf:type schema1:CreativeWork ; schema1:encodingFormat Literal(\"text/html\") ; schema1:name Literal(\"User Documentation\") ; schema1:url Literal(\"https://example.org/docs\") ]\n  \tResult Path: schema1:hasPart\n  \tMessage: A collection/bundled object should specify at least one component resource (schema:hasPart).\n  "
+              "isError": false,
+              "message": "Validation result for _sources/ecrrProperties/ecrrCollection/rules.shacl: 1 warning"
+            },
+            {
+              "op": "shacl-result",
+              "resultSeverity": "http://www.w3.org/ns/shacl#Warning",
+              "focusNode": "Ncf2e1c6fa45f4b2b982351b9e2ec3552",
+              "resultPath": "schema1:hasPart",
+              "sourceConstraintComponent": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+              "sourceShape": null,
+              "sourceShapeDescription": "cdifd:ECRRCollectionPropertiesShape/sh:property (path schema1:hasPart)",
+              "value": null,
+              "resultMessage": "A collection/bundled object should specify at least one component resource (schema:hasPart).",
+              "shaclFile": "_sources/ecrrProperties/ecrrCollection/rules.shacl",
+              "isError": false,
+              "severity": "warning",
+              "message": "Warning (sh:MinCountConstraintComponent):\n  Source shape: cdifd:ECRRCollectionPropertiesShape/sh:property (path schema1:hasPart)\n  Focus node: _:Ncf2e1c6fa45f4b2b982351b9e2ec3552\n  Result path: schema1:hasPart\n  Message: A collection/bundled object should specify at least one component resource (schema:hasPart)."
             },
             {
               "shaclFile": "_sources/ecrrProperties/ecrrCollection/rules.shacl",
               "focusNodes": {
                 "cdifd:ECRRCollectionPropertiesShape": {
                   "nodes": [
-                    "_:N4ddb0b39cde947c3827aa6970c95da17"
+                    "_:Ncf2e1c6fa45f4b2b982351b9e2ec3552"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/ecrrProperties/ecrrCollection/rules.shacl:\n - Shape cdifd:ECRRCollectionPropertiesShape: _:N4ddb0b39cde947c3827aa6970c95da17\n"
+              "message": "Focus nodes for _sources/ecrrProperties/ecrrCollection/rules.shacl:\n - Shape cdifd:ECRRCollectionPropertiesShape: _:Ncf2e1c6fa45f4b2b982351b9e2ec3552\n"
             }
           ]
         }
@@ -87,9 +103,10 @@
     }
   ],
   "globalErrors": {},
+  "hasWarnings": true,
   "counts": {
     "total": 1,
-    "passed": 0,
-    "failed": 1
+    "passed": 1,
+    "failed": 0
   }
 }

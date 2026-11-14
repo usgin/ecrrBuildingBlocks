@@ -59,60 +59,84 @@ registration metadata using ECRRO property identifiers.
 ```json
 {
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "1 - 5 years",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000003"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Some usage (10-50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000002"
     }
   },
   "ecrro:ECRRO_0000218": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000218",
     "schema:name": "Stewardship",
     "schema:value": [
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Deborah Khider",
         "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Feng Zhu"
       }
     ]
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-03-02"
@@ -133,60 +157,84 @@ registration metadata using ECRRO property identifiers.
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/context.jsonld"
   ],
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "1 - 5 years",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000003"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Some usage (10-50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000002"
     }
   },
   "ecrro:ECRRO_0000218": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000218",
     "schema:name": "Stewardship",
     "schema:value": [
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Deborah Khider",
         "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Feng Zhu"
       }
     ]
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-03-02"
@@ -256,78 +304,112 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000138
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: has maturity state
+        x-jsonld-id: http://schema.org/name
       schema:value:
         $ref: '#/$defs/DefinedTerm'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000138
   ecrro:ECRRO_0000219:
     description: Expected lifetime of the resource. Value is a DefinedTerm from the
       ELT (Expected Lifetime) vocabulary (e.g. Long-term, >5 years, 1-5 years).
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000219
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: expected lifetime
+        x-jsonld-id: http://schema.org/name
       schema:value:
         $ref: '#/$defs/DefinedTerm'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000219
   ecrro:ECRRO_0000017:
     description: Current usage level of the resource. Value is a DefinedTerm from
       the UBA (Usage) vocabulary (e.g. Wide usage, Some usage, Low usage).
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000017
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: Usage
+        x-jsonld-id: http://schema.org/name
       schema:value:
         $ref: '#/$defs/DefinedTerm'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000017
   ecrro:ECRRO_0000218:
     description: Stewardship or maintainer of the resource. Value is an agent (Person
       or Organization) or array of agents responsible for maintenance.
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000218
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: Stewardship
+        x-jsonld-id: http://schema.org/name
       schema:value:
         anyOf:
         - $ref: '#/$defs/Person'
@@ -337,82 +419,126 @@ properties:
             anyOf:
             - $ref: '#/$defs/Person'
             - $ref: '#/$defs/Organization'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000218
   ecrro:ECRRO_0000600:
     description: Primary publication about the resource. Value is a citation string.
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000600
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: primary publication
+        x-jsonld-id: http://schema.org/name
       schema:value:
         type: string
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000600
   ecrro:ECRRO_0001301:
     description: Registration metadata recording who registered the resource and when.
       Value is a StructuredValue with contributor (Person) and datePublished.
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0001301
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: registration metadata
+        x-jsonld-id: http://schema.org/name
       schema:value:
         type: object
         properties:
           '@type':
-            type: string
-            const: schema:StructuredValue
-            default: schema:StructuredValue
+            type: array
+            items:
+              type: string
+            contains:
+              const: schema:StructuredValue
+            minItems: 1
+            default:
+            - schema:StructuredValue
           schema:additionalType:
-            type: string
-            const: ecrro:ECRRO_0000156
+            anyOf:
+            - type: string
+              const: ecrro:ECRRO_0000156
+            - type: array
+              contains:
+                const: ecrro:ECRRO_0000156
+              minItems: 1
+            x-jsonld-id: http://schema.org/additionalType
           schema:contributor:
             anyOf:
-            - $ref: '#/$defs/Person'
-            - $ref: '#/$defs/Organization'
+            - anyOf:
+              - $ref: '#/$defs/Person'
+              - $ref: '#/$defs/Organization'
+            - type: array
+              items:
+                anyOf:
+                - $ref: '#/$defs/Person'
+                - $ref: '#/$defs/Organization'
+            x-jsonld-id: http://schema.org/contributor
           schema:datePublished:
             type: string
+            x-jsonld-id: http://schema.org/datePublished
         required:
         - '@type'
         - schema:contributor
         - schema:datePublished
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0001301
 $defs:
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
   Person:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.yaml
   Organization:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.yaml
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrAssessment
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -431,6 +557,7 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "@version": 1.1
   }
 }

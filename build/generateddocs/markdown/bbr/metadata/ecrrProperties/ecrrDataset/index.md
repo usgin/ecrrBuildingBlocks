@@ -51,33 +51,51 @@ Synthetic example of ECRR dataset-specific properties.
 {
   "schema:distribution": [
     {
-      "@type": ["schema:DataDownload"],
+      "@type": [
+        "schema:DataDownload"
+      ],
       "schema:contentUrl": "https://example.org/data/observations.csv",
-      "schema:encodingFormat": ["text/csv"],
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
       "schema:name": "Observation data CSV download",
-      "dcterms:conformsTo": [{"@id": "http://www.opengis.net/def/nil/OGC/0/missing"}]
+      "dcterms:conformsTo": [
+        {
+          "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+        }
+      ]
     }
   ],
   "schema:spatialCoverage": [
     {
-      "@type": "schema:Place",
-      "schema:name": ["Global"],
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Global",
       "schema:geo": {
-        "@type": "schema:GeoShape",
+        "@type": [
+          "schema:GeoShape"
+        ],
         "schema:box": "-90 -180 90 180"
       }
     }
   ],
-  "schema:temporalCoverage": ["2010-01-01/2023-12-31"],
+  "schema:temporalCoverage": [
+    "2010-01-01/2023-12-31"
+  ],
   "schema:variableMeasured": [
     {
-      "@type": ["schema:PropertyValue"],
+      "@type": [
+        "schema:PropertyValue"
+      ],
       "schema:name": "Temperature",
       "schema:description": "Surface air temperature measurements"
     }
   ],
   "schema:includedInDataCatalog": {
-    "@type": "schema:DataCatalog",
+    "@type": [
+      "schema:DataCatalog"
+    ],
     "schema:name": "EarthCube Data Catalog",
     "schema:url": "https://www.earthcube.org/datasets"
   }
@@ -114,12 +132,14 @@ Synthetic example of ECRR dataset-specific properties.
   ],
   "schema:spatialCoverage": [
     {
-      "@type": "schema:Place",
-      "schema:name": [
-        "Global"
+      "@type": [
+        "schema:Place"
       ],
+      "schema:name": "Global",
       "schema:geo": {
-        "@type": "schema:GeoShape",
+        "@type": [
+          "schema:GeoShape"
+        ],
         "schema:box": "-90 -180 90 180"
       }
     }
@@ -137,7 +157,9 @@ Synthetic example of ECRR dataset-specific properties.
     }
   ],
   "schema:includedInDataCatalog": {
-    "@type": "schema:DataCatalog",
+    "@type": [
+      "schema:DataCatalog"
+    ],
     "schema:name": "EarthCube Data Catalog",
     "schema:url": "https://www.earthcube.org/datasets"
   }
@@ -146,11 +168,11 @@ Synthetic example of ECRR dataset-specific properties.
 
 #### ttl
 ```ttl
-@prefix ns1: <dcterms:> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schema1: <http://schema.org/> .
 
 [] schema1:distribution [ a schema1:DataDownload ;
-            ns1:conformsTo <http://www.opengis.net/def/nil/OGC/0/missing> ;
+            dcterms:conformsTo <http://www.opengis.net/def/nil/OGC/0/missing> ;
             schema1:contentUrl "https://example.org/data/observations.csv" ;
             schema1:encodingFormat "text/csv" ;
             schema1:name "Observation data CSV download" ] ;
@@ -187,22 +209,26 @@ properties:
       anyOf:
       - $ref: '#/$defs/DataDownload'
       - $ref: '#/$defs/WebAPI'
+    x-jsonld-id: http://schema.org/distribution
   schema:spatialCoverage:
     description: Geographic area covered by the dataset.
     type: array
     items:
       $ref: '#/$defs/SpatialExtent'
+    x-jsonld-id: http://schema.org/spatialCoverage
   schema:temporalCoverage:
     description: Time period covered by the dataset. Can be ISO 8601 date ranges or
       structured temporal extent objects.
     type: array
     items:
       $ref: '#/$defs/TemporalExtent'
+    x-jsonld-id: http://schema.org/temporalCoverage
   schema:variableMeasured:
     description: What the dataset measures (e.g. temperature, pressure).
     type: array
     items:
       $ref: '#/$defs/VariableMeasured'
+    x-jsonld-id: http://schema.org/variableMeasured
   schema:includedInDataCatalog:
     description: The data catalog that contains this dataset. Object with @id, name,
       and url identifying the containing catalog.
@@ -211,31 +237,39 @@ properties:
     - type: array
       items:
         $ref: '#/$defs/DataCatalogRef'
+    x-jsonld-id: http://schema.org/includedInDataCatalog
 $defs:
   DataDownload:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/dataDownload/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/dataDownload/schema.yaml
   WebAPI:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/webAPI/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/webAPI/schema.yaml
   SpatialExtent:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/spatialExtent/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/spatialExtent/schema.yaml
   TemporalExtent:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/temporalExtent/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/temporalExtent/schema.yaml
   VariableMeasured:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/variableMeasured/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/variableMeasured/schema.yaml
   DataCatalogRef:
     type: object
     properties:
       '@id':
         type: string
       '@type':
-        type: string
-        const: schema:DataCatalog
-        default: schema:DataCatalog
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:DataCatalog
+        minItems: 1
+        default:
+        - schema:DataCatalog
       schema:name:
         type: string
+        x-jsonld-id: http://schema.org/name
       schema:url:
         type: string
         format: uri
+        x-jsonld-id: http://schema.org/url
     required:
     - '@type'
     - schema:name
@@ -245,6 +279,11 @@ x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrDataset
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -261,8 +300,12 @@ Links to the schema:
   "@context": {
     "ecrr": "https://n2t.net/ark:/23942/g2",
     "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "cdif": "https://w3id.org/cdif/",
     "time": "http://www.w3.org/2006/time#",
     "@version": 1.1
   }

@@ -55,13 +55,17 @@ Example metadata instance for ECRRSemanticResource profile.
   "schema:url": "https://geosciml.org/resource/vocabulary/cgi/",
   "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000210",
     "schema:name": "Semantic Resource"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Creative Commons Attribution 4.0",
       "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
@@ -72,17 +76,13 @@ Example metadata instance for ECRRSemanticResource profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
@@ -96,61 +96,85 @@ Example metadata instance for ECRRSemanticResource profile.
   "schema:creator": {
     "@list": [
       {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "IUGS Commission for Geoscience Information (CGI)"
       }
     ]
   },
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Geology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000056"
     }
   ],
   "schema:programmingLanguage": {
-    "@type": "schema:ComputerLanguage",
+    "@type": [
+      "schema:ComputerLanguage"
+    ],
     "schema:name": "SKOS (Simple Knowledge Organization System)"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Long-term",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000001"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Example Registrant"
       },
       "schema:datePublished": "2024-05-10"
@@ -193,13 +217,17 @@ Example metadata instance for ECRRSemanticResource profile.
   "schema:url": "https://geosciml.org/resource/vocabulary/cgi/",
   "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000210",
     "schema:name": "Semantic Resource"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Creative Commons Attribution 4.0",
       "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
@@ -210,17 +238,13 @@ Example metadata instance for ECRRSemanticResource profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
@@ -234,61 +258,85 @@ Example metadata instance for ECRRSemanticResource profile.
   "schema:creator": {
     "@list": [
       {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "IUGS Commission for Geoscience Information (CGI)"
       }
     ]
   },
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Geology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000056"
     }
   ],
   "schema:programmingLanguage": {
-    "@type": "schema:ComputerLanguage",
+    "@type": [
+      "schema:ComputerLanguage"
+    ],
     "schema:name": "SKOS (Simple Knowledge Organization System)"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Long-term",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000001"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Example Registrant"
       },
       "schema:datePublished": "2024-05-10"
@@ -299,6 +347,7 @@ Example metadata instance for ECRRSemanticResource profile.
 
 #### ttl
 ```ttl
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -355,12 +404,10 @@ Example metadata instance for ECRRSemanticResource profile.
     schema1:url "https://geosciml.org/resource/vocabulary/cgi/" .
 
 <urn:uuid:ecrr-semanticresource-catalog-record> a schema1:Dataset ;
-    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource>,
-        <https://w3id.org/cdif/core/1.0/>,
-        <https://w3id.org/cdif/discovery/1.0/> ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource>,
+        <https://w3id.org/cdif/core/1.1> ;
     schema1:about <http://n2t.net/ark:/23942/g2example-semantic> ;
-    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
 
 
@@ -386,6 +433,7 @@ allOf:
       contains:
         enum:
         - EC Semantic Resource
+      x-jsonld-id: http://schema.org/additionalType
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
@@ -393,6 +441,11 @@ x-jsonld-prefixes:
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -411,7 +464,11 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "@version": 1.1
   }
 }

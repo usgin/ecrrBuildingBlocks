@@ -1,3 +1,4 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
 @prefix schema1: <http://schema.org/> .
@@ -72,11 +73,11 @@
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
-            schema1:name "Data Format Conventions" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Specification" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Data Format Conventions" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
     schema1:relatedLink [ a schema1:LinkRole ;
             schema1:linkRelationship "specification document" ;
@@ -87,11 +88,9 @@
     schema1:url "https://inspire.ec.europa.eu/id/document/tg/ge" .
 
 <urn:uuid:ecrr-specification-catalog-record> a schema1:Dataset ;
-    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
-        <https://w3id.org/cdif/core/1.0/>,
-        <https://w3id.org/cdif/discovery/1.0/> ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
+        <https://w3id.org/cdif/core/1.1> ;
     schema1:about <http://n2t.net/ark:/23942/g2800001> ;
-    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
 

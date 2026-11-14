@@ -71,13 +71,17 @@ Example metadata instance for ECRRSoftware profile.
   "schema:url": "https://pyleoclim-util.readthedocs.io/en/stable/",
   "schema:version": "0.6.2",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000206",
     "schema:name": "Software"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "GNU General Public License (GPL)",
       "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
     }
@@ -88,17 +92,13 @@ Example metadata instance for ECRRSoftware profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware"
@@ -111,10 +111,14 @@ Example metadata instance for ECRRSoftware profile.
   },
   "schema:relatedLink": [
     {
-      "@type": "schema:LinkRole",
+      "@type": [
+        "schema:LinkRole"
+      ],
       "schema:linkRelationship": "source code",
       "schema:target": {
-        "@type": "schema:EntryPoint",
+        "@type": [
+          "schema:EntryPoint"
+        ],
         "schema:name": "Pyleoclim GitHub page",
         "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
       }
@@ -123,124 +127,174 @@ Example metadata instance for ECRRSoftware profile.
   "schema:creator": {
     "@list": [
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Deborah Khider",
         "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Feng Zhu"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Julien Emile-Geay",
         "schema:identifier": "https://orcid.org/0000-0001-5920-4751"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Jun Hu"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Myron Kwan"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Pratheek Athreya"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Alexander James"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Daniel Garijo",
         "schema:identifier": "https://orcid.org/0000-0003-0454-7145"
       }
     ]
   },
-  "schema:keywords": ["Paleoclimate"],
+  "schema:keywords": [
+    "Paleoclimate"
+  ],
   "schema:funding": [
     {
-      "@type": "schema:MonetaryGrant",
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
       "schema:funder": {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "US National Science Foundation (US NSF)",
         "schema:identifier": "https://ror.org/021nxhr62"
       }
     },
     {
-      "@type": "schema:MonetaryGrant",
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
       "schema:name": "US NSF, ICER-1541029, AGS-2002556"
     }
   ],
   "schema:audience": [
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Data Users",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000002"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Technologists",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000004"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Developers",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000006"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Scientists",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000007"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Members of the Public",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000009"
     }
   ],
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Climatology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000035"
     },
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Earth Science",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000021"
     },
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Paleoclimatology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000043"
     },
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Paleoceanography",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000051"
     }
   ],
   "schema:isRelatedTo": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Documentation",
       "schema:url": "https://pyleoclim-util.readthedocs.io/en/stable/"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Example Notebooks LinkedEarth",
       "schema:url": "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Example Notebooks Github",
       "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Linked Paleo Data framework Publication",
       "schema:url": "https://cp.copernicus.org/articles/12/1093/2016/"
     }
@@ -257,17 +311,23 @@ Example metadata instance for ECRRSoftware profile.
   ],
   "schema:programmingLanguage": "Python 3.8",
   "schema:codeRepository": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "Pyleoclim GitHub repository",
     "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
   },
   "schema:installURL": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "PyPI",
     "schema:url": "https://pypi.org/project/pyleoclim/"
   },
   "schema:supportingData": {
-    "@type": "schema:DataFeed",
+    "@type": [
+      "schema:DataFeed"
+    ],
     "schema:name": "Input Data Type specification",
     "schema:position": "input",
     "schema:encodingFormat": [
@@ -277,76 +337,106 @@ Example metadata instance for ECRRSoftware profile.
     ]
   },
   "dependencies": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "http://purl.obolibrary.org/obo/RO_0002502",
     "schema:name": "dependencies",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Python 3.8",
       "schema:url": "https://www.python.org/"
     }
   },
   "dct:bibliographicCitation": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "dct:bibliographicCitation",
     "schema:name": "Bibliographic citation",
     "schema:value": "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "1 - 5 years",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000003"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Some usage (10-50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000002"
     }
   },
   "ecrro:ECRRO_0000218": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000218",
     "schema:name": "Stewardship",
     "schema:value": [
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Deborah Khider",
         "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Feng Zhu"
       }
     ]
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-03-02"
@@ -392,13 +482,17 @@ Example metadata instance for ECRRSoftware profile.
   "schema:url": "https://pyleoclim-util.readthedocs.io/en/stable/",
   "schema:version": "0.6.2",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000206",
     "schema:name": "Software"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "GNU General Public License (GPL)",
       "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
     }
@@ -409,17 +503,13 @@ Example metadata instance for ECRRSoftware profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware"
@@ -432,10 +522,14 @@ Example metadata instance for ECRRSoftware profile.
   },
   "schema:relatedLink": [
     {
-      "@type": "schema:LinkRole",
+      "@type": [
+        "schema:LinkRole"
+      ],
       "schema:linkRelationship": "source code",
       "schema:target": {
-        "@type": "schema:EntryPoint",
+        "@type": [
+          "schema:EntryPoint"
+        ],
         "schema:name": "Pyleoclim GitHub page",
         "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
       }
@@ -444,37 +538,53 @@ Example metadata instance for ECRRSoftware profile.
   "schema:creator": {
     "@list": [
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Deborah Khider",
         "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Feng Zhu"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Julien Emile-Geay",
         "schema:identifier": "https://orcid.org/0000-0001-5920-4751"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Jun Hu"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Myron Kwan"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Pratheek Athreya"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Alexander James"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Daniel Garijo",
         "schema:identifier": "https://orcid.org/0000-0003-0454-7145"
       }
@@ -485,85 +595,117 @@ Example metadata instance for ECRRSoftware profile.
   ],
   "schema:funding": [
     {
-      "@type": "schema:MonetaryGrant",
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
       "schema:funder": {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "US National Science Foundation (US NSF)",
         "schema:identifier": "https://ror.org/021nxhr62"
       }
     },
     {
-      "@type": "schema:MonetaryGrant",
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
       "schema:name": "US NSF, ICER-1541029, AGS-2002556"
     }
   ],
   "schema:audience": [
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Data Users",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000002"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Technologists",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000004"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Developers",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000006"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Scientists",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000007"
     },
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Members of the Public",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000009"
     }
   ],
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Climatology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000035"
     },
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Earth Science",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000021"
     },
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Paleoclimatology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000043"
     },
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Paleoceanography",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000051"
     }
   ],
   "schema:isRelatedTo": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Documentation",
       "schema:url": "https://pyleoclim-util.readthedocs.io/en/stable/"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Example Notebooks LinkedEarth",
       "schema:url": "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Example Notebooks Github",
       "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Linked Paleo Data framework Publication",
       "schema:url": "https://cp.copernicus.org/articles/12/1093/2016/"
     }
@@ -580,17 +722,23 @@ Example metadata instance for ECRRSoftware profile.
   ],
   "schema:programmingLanguage": "Python 3.8",
   "schema:codeRepository": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "Pyleoclim GitHub repository",
     "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
   },
   "schema:installURL": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "PyPI",
     "schema:url": "https://pypi.org/project/pyleoclim/"
   },
   "schema:supportingData": {
-    "@type": "schema:DataFeed",
+    "@type": [
+      "schema:DataFeed"
+    ],
     "schema:name": "Input Data Type specification",
     "schema:position": "input",
     "schema:encodingFormat": [
@@ -600,76 +748,106 @@ Example metadata instance for ECRRSoftware profile.
     ]
   },
   "dependencies": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "http://purl.obolibrary.org/obo/RO_0002502",
     "schema:name": "dependencies",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Python 3.8",
       "schema:url": "https://www.python.org/"
     }
   },
   "dct:bibliographicCitation": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "dct:bibliographicCitation",
     "schema:name": "Bibliographic citation",
     "schema:value": "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "1 - 5 years",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000003"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Some usage (10-50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000002"
     }
   },
   "ecrro:ECRRO_0000218": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000218",
     "schema:name": "Stewardship",
     "schema:value": [
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Deborah Khider",
         "schema:identifier": "https://orcid.org/0000-0001-7501-8430"
       },
       {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Feng Zhu"
       }
     ]
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-03-02"
@@ -680,6 +858,7 @@ Example metadata instance for ECRRSoftware profile.
 
 #### ttl
 ```ttl
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -705,10 +884,10 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "Stewardship" ;
             schema1:propertyID "ecrro:ECRRO_0000218" ;
             schema1:value [ a schema1:Person ;
-                    schema1:name "Feng Zhu" ],
-                [ a schema1:Person ;
                     schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
-                    schema1:name "Deborah Khider" ] ] ;
+                    schema1:name "Deborah Khider" ],
+                [ a schema1:Person ;
+                    schema1:name "Feng Zhu" ] ] ;
     ecrro:ECRRO_0000219 [ a schema1:PropertyValue ;
             schema1:name "expected lifetime" ;
             schema1:propertyID "ecrro:ECRRO_0000219" ;
@@ -728,9 +907,6 @@ Example metadata instance for ECRRSoftware profile.
             schema1:propertyID "dct:bibliographicCitation" ;
             schema1:value "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692" ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
-            schema1:name "Paleoceanography" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000021" ;
             schema1:name "Earth Science" ],
         [ a schema1:DefinedTerm ;
@@ -738,7 +914,10 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "Climatology" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000043" ;
-            schema1:name "Paleoclimatology" ] ;
+            schema1:name "Paleoclimatology" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
+            schema1:name "Paleoceanography" ] ;
     schema1:additionalType "EC Software" ;
     schema1:alternateName "Python Package for the Analysis of Paleoclimate Data" ;
     schema1:applicationCategory "Data Analysis, http://cor.esipfed.org/ont/earthcube/SFO_0000010",
@@ -747,14 +926,14 @@ Example metadata instance for ECRRSoftware profile.
         "Data Processing / Modeling, http://cor.esipfed.org/ont/earthcube/SFO_0000008",
         "Visualization, http://cor.esipfed.org/ont/earthcube/SFO_0000011" ;
     schema1:audience [ a schema1:Audience ;
+            schema1:audienceType "Scientists" ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
+        [ a schema1:Audience ;
             schema1:audienceType "Developers" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ],
         [ a schema1:Audience ;
             schema1:audienceType "Data Users" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000002" ],
-        [ a schema1:Audience ;
-            schema1:audienceType "Scientists" ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000007" ],
         [ a schema1:Audience ;
             schema1:audienceType "Technologists" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000004" ],
@@ -792,14 +971,14 @@ Example metadata instance for ECRRSoftware profile.
             schema1:name "Documentation" ;
             schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ],
         [ a schema1:CreativeWork ;
+            schema1:name "Linked Paleo Data framework Publication" ;
+            schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ],
+        [ a schema1:CreativeWork ;
             schema1:name "Example Notebooks LinkedEarth" ;
             schema1:url "https://github.com/LinkedEarth/LiPDbooks/tree/master/notebooks" ],
         [ a schema1:CreativeWork ;
             schema1:name "Example Notebooks Github" ;
-            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ],
-        [ a schema1:CreativeWork ;
-            schema1:name "Linked Paleo Data framework Publication" ;
-            schema1:url "https://cp.copernicus.org/articles/12/1093/2016/" ] ;
+            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ] ;
     schema1:keywords "Paleoclimate" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "GNU General Public License (GPL)" ;
@@ -826,12 +1005,10 @@ Example metadata instance for ECRRSoftware profile.
     schema1:version "0.6.2" .
 
 <urn:uuid:ecrr-software-catalog-record> a schema1:Dataset ;
-    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware>,
-        <https://w3id.org/cdif/core/1.0/>,
-        <https://w3id.org/cdif/discovery/1.0/> ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSoftware>,
+        <https://w3id.org/cdif/core/1.1> ;
     schema1:about <http://n2t.net/ark:/23942/g22914> ;
-    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
 
 
@@ -858,6 +1035,7 @@ allOf:
       contains:
         enum:
         - EC Software
+      x-jsonld-id: http://schema.org/additionalType
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
@@ -865,6 +1043,11 @@ x-jsonld-prefixes:
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSoftware
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -883,7 +1066,12 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "cdif": "https://w3id.org/cdif/",
     "@version": 1.1
   }
 }

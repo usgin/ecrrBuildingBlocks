@@ -16,28 +16,32 @@
             "$ref": "#/$defs/WebAPI"
           }
         ]
-      }
+      },
+      "x-jsonld-id": "http://schema.org/distribution"
     },
     "schema:spatialCoverage": {
       "description": "Geographic area covered by the dataset.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/SpatialExtent"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/spatialCoverage"
     },
     "schema:temporalCoverage": {
       "description": "Time period covered by the dataset. Can be ISO 8601 date ranges or structured temporal extent objects.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/TemporalExtent"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/temporalCoverage"
     },
     "schema:variableMeasured": {
       "description": "What the dataset measures (e.g. temperature, pressure).",
       "type": "array",
       "items": {
         "$ref": "#/$defs/VariableMeasured"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/variableMeasured"
     },
     "schema:includedInDataCatalog": {
       "description": "The data catalog that contains this dataset. Object with @id, name, and url identifying the containing catalog.",
@@ -51,24 +55,25 @@
             "$ref": "#/$defs/DataCatalogRef"
           }
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/includedInDataCatalog"
     }
   },
   "$defs": {
     "DataDownload": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/dataDownload/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/dataDownload/schema.json"
     },
     "WebAPI": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/webAPI/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/webAPI/schema.json"
     },
     "SpatialExtent": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/spatialExtent/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/spatialExtent/schema.json"
     },
     "TemporalExtent": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/temporalExtent/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/temporalExtent/schema.json"
     },
     "VariableMeasured": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/variableMeasured/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/variableMeasured/schema.json"
     },
     "DataCatalogRef": {
       "type": "object",
@@ -77,16 +82,26 @@
           "type": "string"
         },
         "@type": {
-          "type": "string",
-          "const": "schema:DataCatalog",
-          "default": "schema:DataCatalog"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "schema:DataCatalog"
+          },
+          "minItems": 1,
+          "default": [
+            "schema:DataCatalog"
+          ]
         },
         "schema:name": {
-          "type": "string"
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/name"
         },
         "schema:url": {
           "type": "string",
-          "format": "uri"
+          "format": "uri",
+          "x-jsonld-id": "http://schema.org/url"
         }
       },
       "required": [
@@ -102,5 +117,11 @@
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrDataset",
+    "register": "https://usgin.github.io/ecrrBuildingBlocks/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-14"
   }
 }

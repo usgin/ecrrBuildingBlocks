@@ -56,19 +56,25 @@ Example metadata instance for ECRRSpecification profile.
   "schema:description": "Geology is a reference data theme that provides information for several themes of INSPIRE Annex III: Mineral resources, Natural Risk Zones, Soil, Energy resources, and it has a specific relationship with one of the most important natural resources, water, through groundwater bodies contained in aquifers. Scope is Geologic and Geophysical data interchange format.",
   "schema:mainEntity": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204",
       "schema:name": "Specification"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Data Format Conventions",
       "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208"
     }
   ],
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Public"
     }
   ],
@@ -78,17 +84,13 @@ Example metadata instance for ECRRSpecification profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification"
@@ -101,10 +103,14 @@ Example metadata instance for ECRRSpecification profile.
   },
   "schema:relatedLink": [
     {
-      "@type": "schema:LinkRole",
+      "@type": [
+        "schema:LinkRole"
+      ],
       "schema:linkRelationship": "specification document",
       "schema:target": {
-        "@type": "schema:EntryPoint",
+        "@type": [
+          "schema:EntryPoint"
+        ],
         "schema:name": "INSPIRE specification document",
         "schema:url": "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3"
       }
@@ -112,111 +118,153 @@ Example metadata instance for ECRRSpecification profile.
   ],
   "schema:funding": [
     {
-      "@type": "schema:MonetaryGrant",
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
       "schema:funder": {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "European Commission"
       }
     }
   ],
   "schema:audience": [
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Data Facilities and Repositories",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000003"
     }
   ],
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Geology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000056"
     }
   ],
   "schema:isRelatedTo": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Based on: GeoSciML version 3.2",
       "schema:url": "http://geosciml.org/doc/geosciml/3.2/documentation/"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Legal basis: Directive 2007/2/EC of the European Parliament",
       "schema:url": "http://data.europa.eu/eli/dir/2007/2/oj"
     }
   ],
   "ecrro:ECRRO_0000501": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000501",
     "schema:name": "profile of",
     "schema:value": [
       {
-        "@type": "schema:CreativeWork",
+        "@type": [
+          "schema:CreativeWork"
+        ],
         "schema:name": "GeoSciML version 3.2",
         "schema:url": "http://geosciml.org/doc/geosciml/3.2/documentation/"
       }
     ]
   },
   "dct:bibliographicCitation": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "dct:bibliographicCitation",
     "schema:name": "Bibliographic citation",
     "schema:value": "INSPIRE Thematic Working Group Geology, 2013-12-10, D2.8.II.4 INSPIRE Data Specification on Geology - Technical Guidelines: European Commission Joint Research Centre D2.8.II.4_v3.0"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "1 - 5 years",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000003"
     }
   },
   "ecrro:ECRRO_0000600": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000600",
     "schema:name": "primary publication",
     "schema:value": "INSPIRE Thematic Working Group Geology, 2013-12-10, D2.8.II.4 INSPIRE Data Specification on Geology - Technical Guidelines: European Commission Joint Research Centre D2.8.II.4_v3.0"
   },
   "ecrro:ECRRO_0000218": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000218",
     "schema:name": "Stewardship",
     "schema:value": {
-      "@type": "schema:Organization",
+      "@type": [
+        "schema:Organization"
+      ],
       "schema:name": "European Commission Joint Research Centre"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-02-10"
@@ -260,19 +308,25 @@ Example metadata instance for ECRRSpecification profile.
   "schema:description": "Geology is a reference data theme that provides information for several themes of INSPIRE Annex III: Mineral resources, Natural Risk Zones, Soil, Energy resources, and it has a specific relationship with one of the most important natural resources, water, through groundwater bodies contained in aquifers. Scope is Geologic and Geophysical data interchange format.",
   "schema:mainEntity": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204",
       "schema:name": "Specification"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Data Format Conventions",
       "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208"
     }
   ],
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Public"
     }
   ],
@@ -282,17 +336,13 @@ Example metadata instance for ECRRSpecification profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification"
@@ -305,10 +355,14 @@ Example metadata instance for ECRRSpecification profile.
   },
   "schema:relatedLink": [
     {
-      "@type": "schema:LinkRole",
+      "@type": [
+        "schema:LinkRole"
+      ],
       "schema:linkRelationship": "specification document",
       "schema:target": {
-        "@type": "schema:EntryPoint",
+        "@type": [
+          "schema:EntryPoint"
+        ],
         "schema:name": "INSPIRE specification document",
         "schema:url": "https://inspire.ec.europa.eu/file/1519/download?token=IGCGbum3"
       }
@@ -316,111 +370,153 @@ Example metadata instance for ECRRSpecification profile.
   ],
   "schema:funding": [
     {
-      "@type": "schema:MonetaryGrant",
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
       "schema:funder": {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "European Commission"
       }
     }
   ],
   "schema:audience": [
     {
-      "@type": "schema:Audience",
+      "@type": [
+        "schema:Audience"
+      ],
       "schema:audienceType": "Data Facilities and Repositories",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/AUT_0000003"
     }
   ],
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Geology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000056"
     }
   ],
   "schema:isRelatedTo": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Based on: GeoSciML version 3.2",
       "schema:url": "http://geosciml.org/doc/geosciml/3.2/documentation/"
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Legal basis: Directive 2007/2/EC of the European Parliament",
       "schema:url": "http://data.europa.eu/eli/dir/2007/2/oj"
     }
   ],
   "ecrro:ECRRO_0000501": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000501",
     "schema:name": "profile of",
     "schema:value": [
       {
-        "@type": "schema:CreativeWork",
+        "@type": [
+          "schema:CreativeWork"
+        ],
         "schema:name": "GeoSciML version 3.2",
         "schema:url": "http://geosciml.org/doc/geosciml/3.2/documentation/"
       }
     ]
   },
   "dct:bibliographicCitation": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "dct:bibliographicCitation",
     "schema:name": "Bibliographic citation",
     "schema:value": "INSPIRE Thematic Working Group Geology, 2013-12-10, D2.8.II.4 INSPIRE Data Specification on Geology - Technical Guidelines: European Commission Joint Research Centre D2.8.II.4_v3.0"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "1 - 5 years",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000003"
     }
   },
   "ecrro:ECRRO_0000600": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000600",
     "schema:name": "primary publication",
     "schema:value": "INSPIRE Thematic Working Group Geology, 2013-12-10, D2.8.II.4 INSPIRE Data Specification on Geology - Technical Guidelines: European Commission Joint Research Centre D2.8.II.4_v3.0"
   },
   "ecrro:ECRRO_0000218": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000218",
     "schema:name": "Stewardship",
     "schema:value": {
-      "@type": "schema:Organization",
+      "@type": [
+        "schema:Organization"
+      ],
       "schema:name": "European Commission Joint Research Centre"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Stephen M. Richard"
       },
       "schema:datePublished": "2021-02-10"
@@ -431,6 +527,7 @@ Example metadata instance for ECRRSpecification profile.
 
 #### ttl
 ```ttl
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
 @prefix schema1: <http://schema.org/> .
@@ -505,11 +602,11 @@ Example metadata instance for ECRRSpecification profile.
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Public" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
-            schema1:name "Data Format Conventions" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Specification" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Data Format Conventions" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
     schema1:relatedLink [ a schema1:LinkRole ;
             schema1:linkRelationship "specification document" ;
@@ -520,12 +617,10 @@ Example metadata instance for ECRRSpecification profile.
     schema1:url "https://inspire.ec.europa.eu/id/document/tg/ge" .
 
 <urn:uuid:ecrr-specification-catalog-record> a schema1:Dataset ;
-    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
-        <https://w3id.org/cdif/core/1.0/>,
-        <https://w3id.org/cdif/discovery/1.0/> ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSpecification>,
+        <https://w3id.org/cdif/core/1.1> ;
     schema1:about <http://n2t.net/ark:/23942/g2800001> ;
-    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
 
 
@@ -550,6 +645,7 @@ allOf:
       contains:
         enum:
         - EC Specification
+      x-jsonld-id: http://schema.org/additionalType
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
@@ -557,6 +653,11 @@ x-jsonld-prefixes:
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -575,7 +676,11 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "@version": 1.1
   }
 }

@@ -63,12 +63,16 @@ ECRR specification properties for the INSPIRE Geology data specification.
 ```json
 {
   "ecrro:ECRRO_0000501": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000501",
     "schema:name": "profile of",
     "schema:value": [
       {
-        "@type": "schema:CreativeWork",
+        "@type": [
+          "schema:CreativeWork"
+        ],
         "schema:name": "GeoSciML version 3.2",
         "schema:url": "http://geosciml.org/doc/geosciml/3.2/documentation/"
       }
@@ -89,12 +93,16 @@ ECRR specification properties for the INSPIRE Geology data specification.
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSpecification/context.jsonld"
   ],
   "ecrro:ECRRO_0000501": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000501",
     "schema:name": "profile of",
     "schema:value": [
       {
-        "@type": "schema:CreativeWork",
+        "@type": [
+          "schema:CreativeWork"
+        ],
         "schema:name": "GeoSciML version 3.2",
         "schema:url": "http://geosciml.org/doc/geosciml/3.2/documentation/"
       }
@@ -136,34 +144,48 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000501
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: profile of
+        x-jsonld-id: http://schema.org/name
       schema:value:
         anyOf:
         - $ref: '#/$defs/LabeledLink'
         - type: array
           items:
             $ref: '#/$defs/LabeledLink'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
     - schema:value
+    x-jsonld-id: http://cor.esipfed.org/ont/earthcube/ECRRO_0000501
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrSpecification
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -182,6 +204,9 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
     "@version": 1.1
   }
 }

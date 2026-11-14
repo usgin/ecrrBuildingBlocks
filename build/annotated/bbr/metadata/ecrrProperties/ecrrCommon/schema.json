@@ -13,23 +13,27 @@
         {
           "type": "string"
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/identifier"
     },
     "schema:url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of a landing page or web resource describing the resource."
+      "description": "URL of a landing page or web resource describing the resource.",
+      "x-jsonld-id": "http://schema.org/url"
     },
     "schema:datePublished": {
       "type": "string",
-      "description": "ISO 8601 formatted date when the resource was published or released."
+      "description": "ISO 8601 formatted date when the resource was published or released.",
+      "x-jsonld-id": "http://schema.org/datePublished"
     },
     "schema:version": {
       "type": [
         "string",
         "number"
       ],
-      "description": "Version number or identifier for this resource."
+      "description": "Version number or identifier for this resource.",
+      "x-jsonld-id": "http://schema.org/version"
     },
     "schema:alternateName": {
       "description": "Alternative names by which the resource is known.",
@@ -43,37 +47,36 @@
             "type": "string"
           }
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/alternateName"
     },
     "schema:sameAs": {
       "description": "Other identifiers or URIs for the same resource.",
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/sameAs"
     },
     "schema:creator": {
-      "description": "Authors or originators of the resource content. Array of Person or Organization objects. Use @list wrapper to preserve author order in JSON-LD.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "properties": {
-              "@id": {
-                "type": "string",
-                "description": "reference to an agent defined elsewhere"
-              }
+      "description": "Authors or originators of the resource content: an array of Person or Organization objects, or that array in a JSON-LD @list wrapper to preserve author order (CDIF's form).",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Agents"
+        },
+        {
+          "type": "object",
+          "required": [
+            "@list"
+          ],
+          "properties": {
+            "@list": {
+              "$ref": "#/$defs/Agents"
             }
-          },
-          {
-            "$ref": "#/$defs/Person"
-          },
-          {
-            "$ref": "#/$defs/Organization"
           }
-        ]
-      }
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/creator"
     },
     "schema:contributor": {
       "description": "Other parties who contributed to the resource.",
@@ -95,7 +98,8 @@
             "$ref": "#/$defs/Organization"
           }
         ]
-      }
+      },
+      "x-jsonld-id": "http://schema.org/contributor"
     },
     "schema:publisher": {
       "description": "Party that made the resource publicly available.",
@@ -114,7 +118,8 @@
         {
           "$ref": "#/$defs/Organization"
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/publisher"
     },
     "schema:editor": {
       "description": "Editors of the resource.",
@@ -136,14 +141,16 @@
             "$ref": "#/$defs/Organization"
           }
         ]
-      }
+      },
+      "x-jsonld-id": "http://schema.org/editor"
     },
     "schema:funding": {
       "description": "Funding sources and grants that supported the resource.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/Funder"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/funding"
     },
     "schema:keywords": {
       "description": "Free-text keywords describing the resource content.",
@@ -157,129 +164,237 @@
             "type": "string"
           }
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/keywords"
     },
     "schema:about": {
       "description": "Science domains that the resource addresses. Array of DefinedTerm objects referencing the ECRR ADO (Academic Discipline Ontology) vocabulary.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/DefinedTerm"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/about"
     },
     "schema:audience": {
       "description": "Target user communities for the resource. Array of Audience objects with audienceType labels and identifiers from the AUT vocabulary.",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "@type": {
-            "type": "string",
-            "const": "schema:Audience",
-            "default": "schema:Audience"
-          },
-          "schema:audienceType": {
-            "type": "string",
-            "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary."
-          },
-          "schema:identifier": {
-            "type": "string",
-            "description": "URI from the ECRR AUT_ vocabulary."
-          }
-        },
-        "required": [
-          "@type",
-          "schema:audienceType"
-        ]
-      }
-    },
-    "schema:subjectOf": {
-      "description": "Links to formal metadata records or web pages about this resource. Array of labeled links (CreativeWork objects with name and url).",
       "anyOf": [
         {
-          "$ref": "#/$defs/LabeledLink"
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "contains": {
+                "const": "schema:Audience"
+              },
+              "minItems": 1,
+              "default": [
+                "schema:Audience"
+              ]
+            },
+            "schema:audienceType": {
+              "type": "string",
+              "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary.",
+              "x-jsonld-id": "http://schema.org/audienceType"
+            },
+            "schema:identifier": {
+              "type": "string",
+              "description": "URI from the ECRR AUT_ vocabulary.",
+              "x-jsonld-id": "http://schema.org/identifier"
+            }
+          },
+          "required": [
+            "@type",
+            "schema:audienceType"
+          ]
         },
         {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/LabeledLink"
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "contains": {
+                  "const": "schema:Audience"
+                },
+                "minItems": 1,
+                "default": [
+                  "schema:Audience"
+                ]
+              },
+              "schema:audienceType": {
+                "type": "string",
+                "description": "Label for the target audience (e.g. Data Producers, Scientists, Developers). Values from ECRR AUT vocabulary.",
+                "x-jsonld-id": "http://schema.org/audienceType"
+              },
+              "schema:identifier": {
+                "type": "string",
+                "description": "URI from the ECRR AUT_ vocabulary.",
+                "x-jsonld-id": "http://schema.org/identifier"
+              }
+            },
+            "required": [
+              "@type",
+              "schema:audienceType"
+            ]
           }
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/audience"
+    },
+    "schema:subjectOf": {
+      "description": "Metadata about this resource: the CDIF catalog record for this metadata (typed schema:Dataset, with dcat:CatalogRecord as its schema:additionalType), and/or labeled links (CreativeWork objects with name and url) to formal metadata records or web pages about the resource.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SubjectOfItem"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SubjectOfItem"
+          }
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/subjectOf"
     },
     "schema:isRelatedTo": {
       "description": "Related resources such as documentation, publications, or tools. Array of labeled links.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/LabeledLink"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/isRelatedTo"
     },
     "schema:isBasedOn": {
       "description": "Resources (e.g. semantic resources, specifications) that this resource is based on or derived from. Array of labeled links.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/LabeledLink"
-      }
+      },
+      "x-jsonld-id": "http://schema.org/isBasedOn"
     },
     "schema:encodingFormat": {
       "description": "Representation formats for the resource content (e.g. MIME types, format names like RDF/XML, Turtle, JSON-LD).",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "x-jsonld-id": "http://schema.org/encodingFormat"
     },
     "dct:bibliographicCitation": {
       "description": "Preferred bibliographic citation for the resource, encoded as a PropertyValue with propertyID of dct:bibliographicCitation.",
       "type": "object",
       "properties": {
         "@type": {
-          "type": "string",
-          "const": "schema:PropertyValue",
-          "default": "schema:PropertyValue"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "schema:PropertyValue"
+          },
+          "minItems": 1,
+          "default": [
+            "schema:PropertyValue"
+          ]
         },
         "schema:propertyID": {
           "type": "string",
-          "const": "dct:bibliographicCitation"
+          "const": "dct:bibliographicCitation",
+          "x-jsonld-id": "http://schema.org/propertyID"
         },
         "schema:name": {
           "type": "string",
-          "default": "Bibliographic citation"
+          "default": "Bibliographic citation",
+          "x-jsonld-id": "http://schema.org/name"
         },
         "schema:value": {
-          "type": "string"
+          "type": "string",
+          "x-jsonld-id": "http://schema.org/value"
         }
       },
       "required": [
         "@type",
         "schema:propertyID",
         "schema:value"
-      ]
+      ],
+      "x-jsonld-id": "http://purl.org/dc/terms/bibliographicCitation"
     },
     "dct:conformsTo": {
       "description": "Specifications or standards that the resource conforms to. Array of labeled links.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/LabeledLink"
-      }
+      },
+      "x-jsonld-id": "http://purl.org/dc/terms/conformsTo"
     }
   },
   "$defs": {
     "LabeledLink": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
     },
     "Identifier": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/identifier/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/identifier/schema.json"
     },
     "DefinedTerm": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.json"
     },
     "Person": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.json"
     },
     "Organization": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.json"
     },
     "Funder": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/funder/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/monetaryGrant/schema.json"
+    },
+    "Agents": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "@id": {
+                "type": "string",
+                "description": "reference to an agent defined elsewhere"
+              }
+            }
+          },
+          {
+            "$ref": "#/$defs/Person"
+          },
+          {
+            "$ref": "#/$defs/Organization"
+          }
+        ]
+      }
+    },
+    "CatalogRecord": {
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/cdifDataType/cdifCatalogRecord/schema.json"
+    },
+    "SubjectOfItem": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CatalogRecord"
+        },
+        {
+          "$ref": "#/$defs/LabeledLink"
+        }
+      ]
     }
   },
   "x-jsonld-extra-terms": {
@@ -289,5 +404,11 @@
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrCommon",
+    "register": "https://usgin.github.io/ecrrBuildingBlocks/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-14"
   }
 }

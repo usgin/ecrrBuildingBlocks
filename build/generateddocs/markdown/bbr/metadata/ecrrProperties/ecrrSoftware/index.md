@@ -74,17 +74,23 @@ install URL, supporting data formats, and dependencies.
   ],
   "schema:programmingLanguage": "Python 3.8",
   "schema:codeRepository": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "Pyleoclim GitHub repository",
     "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
   },
   "schema:installURL": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "PyPI",
     "schema:url": "https://pypi.org/project/pyleoclim/"
   },
   "schema:supportingData": {
-    "@type": "schema:DataFeed",
+    "@type": [
+      "schema:DataFeed"
+    ],
     "schema:name": "Input Data Type specification",
     "schema:position": "input",
     "schema:encodingFormat": [
@@ -94,11 +100,15 @@ install URL, supporting data formats, and dependencies.
     ]
   },
   "dependencies": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "http://purl.obolibrary.org/obo/RO_0002502",
     "schema:name": "dependencies",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Python 3.8",
       "schema:url": "https://www.python.org/"
     }
@@ -129,17 +139,23 @@ install URL, supporting data formats, and dependencies.
   ],
   "schema:programmingLanguage": "Python 3.8",
   "schema:codeRepository": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "Pyleoclim GitHub repository",
     "schema:url": "https://github.com/LinkedEarth/Pyleoclim_util"
   },
   "schema:installURL": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:name": "PyPI",
     "schema:url": "https://pypi.org/project/pyleoclim/"
   },
   "schema:supportingData": {
-    "@type": "schema:DataFeed",
+    "@type": [
+      "schema:DataFeed"
+    ],
     "schema:name": "Input Data Type specification",
     "schema:position": "input",
     "schema:encodingFormat": [
@@ -149,11 +165,15 @@ install URL, supporting data formats, and dependencies.
     ]
   },
   "dependencies": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "http://purl.obolibrary.org/obo/RO_0002502",
     "schema:name": "dependencies",
     "schema:value": {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Python 3.8",
       "schema:url": "https://www.python.org/"
     }
@@ -206,13 +226,17 @@ properties:
     type: array
     items:
       type: string
+    x-jsonld-id: http://schema.org/applicationCategory
   schema:runtimePlatform:
     description: Runtime environments on which the software operates. Array of strings
       referencing the ECRR RTE (Runtime Environment) vocabulary (e.g. Linux, Browser,
       HPC).
-    type: array
-    items:
-      type: string
+    anyOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+    x-jsonld-id: http://schema.org/runtimePlatform
   schema:programmingLanguage:
     description: Programming languages used to implement the software. Can be a simple
       string or an array of ComputerLanguage objects with name and identifier.
@@ -225,15 +249,23 @@ properties:
         - type: object
           properties:
             '@type':
-              type: string
-              const: schema:ComputerLanguage
-              default: schema:ComputerLanguage
+              type: array
+              items:
+                type: string
+              contains:
+                const: schema:ComputerLanguage
+              minItems: 1
+              default:
+              - schema:ComputerLanguage
             schema:name:
               type: string
+              x-jsonld-id: http://schema.org/name
             schema:identifier:
               type: string
+              x-jsonld-id: http://schema.org/identifier
           required:
           - schema:name
+    x-jsonld-id: http://schema.org/programmingLanguage
   schema:supportingData:
     description: Input and output data format specifications. Array of DataFeed objects
       with position (input/output) and encodingFormat indicating supported data formats.
@@ -242,6 +274,7 @@ properties:
     - type: array
       items:
         $ref: '#/$defs/DataFeedSpec'
+    x-jsonld-id: http://schema.org/supportingData
   schema:codeRepository:
     description: Source code repositories for the software. Array of labeled links
       (CreativeWork objects with name and url) or simple URL strings.
@@ -255,6 +288,7 @@ properties:
         - type: string
           format: uri
         - $ref: '#/$defs/LabeledLink'
+    x-jsonld-id: http://schema.org/codeRepository
   schema:installURL:
     description: Locations where the software can be installed from (e.g. PyPI, CRAN,
       npm). Array of labeled links or URL strings.
@@ -268,12 +302,14 @@ properties:
         - type: string
           format: uri
         - $ref: '#/$defs/LabeledLink'
+    x-jsonld-id: http://schema.org/installURL
   schema:potentialAction:
     description: Web application invocation details for software accessible via a
       web interface. Uses the Action building block pattern.
     type: array
     items:
       $ref: '#/$defs/Action'
+    x-jsonld-id: http://schema.org/potentialAction
   dependencies:
     description: Software dependencies encoded as a PropertyValue wrapping an array
       of labeled links. Uses propertyID http://purl.obolibrary.org/obo/RO_0002502
@@ -281,48 +317,66 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default:
+        - schema:PropertyValue
       schema:propertyID:
         type: string
         const: http://purl.obolibrary.org/obo/RO_0002502
+        x-jsonld-id: http://schema.org/propertyID
       schema:name:
         type: string
         default: dependencies
+        x-jsonld-id: http://schema.org/name
       schema:value:
         anyOf:
         - $ref: '#/$defs/LabeledLink'
         - type: array
           items:
             $ref: '#/$defs/LabeledLink'
+        x-jsonld-id: http://schema.org/value
     required:
     - '@type'
     - schema:propertyID
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.yaml
   Action:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/action/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/action/schema.yaml
   DataFeedSpec:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:DataFeed
-        default: schema:DataFeed
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:DataFeed
+        minItems: 1
+        default:
+        - schema:DataFeed
       schema:name:
         type: string
+        x-jsonld-id: http://schema.org/name
       schema:position:
         type: string
         description: Indicates whether this is an input or output data specification.
         enum:
         - input
         - output
+        x-jsonld-id: http://schema.org/position
       schema:encodingFormat:
-        type: array
-        items:
-          type: string
+        anyOf:
+        - type: string
+        - type: array
+          items:
+            type: string
+        x-jsonld-id: http://schema.org/encodingFormat
     required:
     - '@type'
 x-jsonld-extra-terms:
@@ -331,6 +385,11 @@ x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrSoftware
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -349,6 +408,10 @@ Links to the schema:
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "cdif": "https://w3id.org/cdif/",
     "@version": 1.1
   }
 }

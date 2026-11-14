@@ -78,7 +78,8 @@ Example metadata instance for ECRRDataset profile.
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "ecrr": "https://n2t.net/ark:/23942/g2",
     "dcterms": "http://purl.org/dc/terms/",
-    "dcat": "http://www.w3.org/ns/dcat#"
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
   },
   "@id": "http://n2t.net/ark:/23942/g2example-dataset",
   "@type": [
@@ -94,13 +95,17 @@ Example metadata instance for ECRRDataset profile.
   "schema:url": "https://example.org/data/global-surface-temperature-anomalies",
   "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000214",
     "schema:name": "Dataset"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Creative Commons Attribution 4.0",
       "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
@@ -111,17 +116,16 @@ Example metadata instance for ECRRDataset profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/discovery/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset"
@@ -135,14 +139,18 @@ Example metadata instance for ECRRDataset profile.
   "schema:creator": {
     "@list": [
       {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "Example Climate Institute"
       }
     ]
   },
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Climatology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000035"
     }
@@ -161,12 +169,14 @@ Example metadata instance for ECRRDataset profile.
   ],
   "schema:spatialCoverage": [
     {
-      "@type": "schema:Place",
-      "schema:name": [
-        "Global"
+      "@type": [
+        "schema:Place"
       ],
+      "schema:name": "Global",
       "schema:geo": {
-        "@type": "schema:GeoShape",
+        "@type": [
+          "schema:GeoShape"
+        ],
         "schema:box": "-90 -180 90 180"
       }
     }
@@ -175,49 +185,69 @@ Example metadata instance for ECRRDataset profile.
     "1880-01-01/2023-12-31"
   ],
   "schema:includedInDataCatalog": {
-    "@type": "schema:DataCatalog",
+    "@type": [
+      "schema:DataCatalog"
+    ],
     "schema:name": "EarthCube Data Catalog",
     "schema:url": "https://www.earthcube.org/datasets"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Long-term",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000001"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Example Registrant"
       },
       "schema:datePublished": "2024-01-15"
@@ -242,7 +272,8 @@ Example metadata instance for ECRRDataset profile.
       "ecrro": "http://cor.esipfed.org/ont/earthcube/",
       "ecrr": "https://n2t.net/ark:/23942/g2",
       "dcterms": "http://purl.org/dc/terms/",
-      "dcat": "http://www.w3.org/ns/dcat#"
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "prov": "http://www.w3.org/ns/prov#"
     }
   ],
   "@id": "http://n2t.net/ark:/23942/g2example-dataset",
@@ -259,13 +290,17 @@ Example metadata instance for ECRRDataset profile.
   "schema:url": "https://example.org/data/global-surface-temperature-anomalies",
   "schema:dateModified": "2026-03-03",
   "schema:mainEntity": {
-    "@type": "schema:CreativeWork",
+    "@type": [
+      "schema:CreativeWork"
+    ],
     "schema:url": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000214",
     "schema:name": "Dataset"
   },
   "schema:license": [
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "Creative Commons Attribution 4.0",
       "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
@@ -276,17 +311,16 @@ Example metadata instance for ECRRDataset profile.
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.0/"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
-        "@id": "https://w3id.org/cdif/discovery/1.0/"
-      },
-      {
-        "@id": "https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore"
+        "@id": "https://w3id.org/cdif/discovery/1.1"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset"
@@ -300,14 +334,18 @@ Example metadata instance for ECRRDataset profile.
   "schema:creator": {
     "@list": [
       {
-        "@type": "schema:Organization",
+        "@type": [
+          "schema:Organization"
+        ],
         "schema:name": "Example Climate Institute"
       }
     ]
   },
   "schema:about": [
     {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Climatology",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ADO_0000035"
     }
@@ -326,12 +364,14 @@ Example metadata instance for ECRRDataset profile.
   ],
   "schema:spatialCoverage": [
     {
-      "@type": "schema:Place",
-      "schema:name": [
-        "Global"
+      "@type": [
+        "schema:Place"
       ],
+      "schema:name": "Global",
       "schema:geo": {
-        "@type": "schema:GeoShape",
+        "@type": [
+          "schema:GeoShape"
+        ],
         "schema:box": "-90 -180 90 180"
       }
     }
@@ -340,49 +380,69 @@ Example metadata instance for ECRRDataset profile.
     "1880-01-01/2023-12-31"
   ],
   "schema:includedInDataCatalog": {
-    "@type": "schema:DataCatalog",
+    "@type": [
+      "schema:DataCatalog"
+    ],
     "schema:name": "EarthCube Data Catalog",
     "schema:url": "https://www.earthcube.org/datasets"
   },
   "ecrro:ECRRO_0000138": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000138",
     "schema:name": "has maturity state",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "In production",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MTU_0000002"
     }
   },
   "ecrro:ECRRO_0000219": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000219",
     "schema:name": "expected lifetime",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Long-term",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/ELT_0000001"
     }
   },
   "ecrro:ECRRO_0000017": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0000017",
     "schema:name": "Usage",
     "schema:value": {
-      "@type": "schema:DefinedTerm",
+      "@type": [
+        "schema:DefinedTerm"
+      ],
       "schema:name": "Wide usage (>50 adopters)",
       "schema:identifier": "http://cor.esipfed.org/ont/earthcube/UBA_0000001"
     }
   },
   "ecrro:ECRRO_0001301": {
-    "@type": "schema:PropertyValue",
+    "@type": [
+      "schema:PropertyValue"
+    ],
     "schema:propertyID": "ecrro:ECRRO_0001301",
     "schema:name": "registration metadata",
     "schema:value": {
-      "@type": "schema:StructuredValue",
+      "@type": [
+        "schema:StructuredValue"
+      ],
       "schema:additionalType": "ecrro:ECRRO_0000156",
       "schema:contributor": {
-        "@type": "schema:Person",
+        "@type": [
+          "schema:Person"
+        ],
         "schema:name": "Example Registrant"
       },
       "schema:datePublished": "2024-01-15"
@@ -393,6 +453,7 @@ Example metadata instance for ECRRDataset profile.
 
 #### ttl
 ```ttl
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ecrro: <http://cor.esipfed.org/ont/earthcube/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -458,12 +519,11 @@ Example metadata instance for ECRRDataset profile.
     schema1:url "https://example.org/data/global-surface-temperature-anomalies" .
 
 <urn:uuid:ecrr-dataset-catalog-record> a schema1:Dataset ;
-    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/cdifProperties/cdifCore>,
-        <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>,
-        <https://w3id.org/cdif/core/1.0/>,
-        <https://w3id.org/cdif/discovery/1.0/> ;
+    dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRDataset>,
+        <https://w3id.org/cdif/core/1.1>,
+        <https://w3id.org/cdif/discovery/1.1> ;
     schema1:about <http://n2t.net/ark:/23942/g2example-dataset> ;
-    schema1:additionalType "dcat:CatalogRecord" ;
+    schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
 
 
@@ -475,16 +535,16 @@ Example metadata instance for ECRRDataset profile.
 $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 title: ECRR Dataset Profile
-description: Complete ECRR metadata profile for dataset resources. Extends CDIFcomplete
-  with ecrrCore (mainEntity, @type contains CreativeWork, requires description and
-  license) and ecrrAssessment (maturity, lifetime, usage, stewardship). CDIF properties
-  take precedence for overlapping concerns (creator, keywords, subjectOf, distribution,
-  etc.). ECRR-unique properties from ecrrCommon are included inline. ECRR subjectOf
-  usage (links to other metadata formats) maps to schema:relatedLink with linkRelationship
-  "OtherMetadataFormat" per CDIF convention. Resources must have schema:additionalType
-  containing "EC Dataset".
+description: Complete ECRR metadata profile for dataset resources. Extends CDIF CoreDiscovery
+  (core + discovery) with ecrrCore (mainEntity, @type contains CreativeWork, requires
+  description and license) and ecrrAssessment (maturity, lifetime, usage, stewardship).
+  CDIF properties take precedence for overlapping concerns (creator, keywords, subjectOf,
+  distribution, etc.). ECRR-unique properties from ecrrCommon are included inline.
+  ECRR subjectOf usage (links to other metadata formats) maps to schema:relatedLink
+  with linkRelationship "OtherMetadataFormat" per CDIF convention. Resources must
+  have schema:additionalType containing "EC Dataset".
 allOf:
-- $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/profiles/cdifProfiles/CDIFcomplete/schema.yaml
+- $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/profiles/cdifCompositeProfile/CoreDiscovery/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrCore/schema.yaml
 - $ref: https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrAssessment/schema.yaml
 - properties:
@@ -492,6 +552,7 @@ allOf:
       contains:
         enum:
         - EC Dataset
+      x-jsonld-id: http://schema.org/additionalType
     schema:alternateName:
       description: Alternative names by which the resource is known.
       anyOf:
@@ -499,6 +560,7 @@ allOf:
       - type: array
         items:
           type: string
+      x-jsonld-id: http://schema.org/alternateName
     schema:editor:
       description: Editors of the resource.
       type: array
@@ -510,61 +572,104 @@ allOf:
               type: string
         - $ref: '#/$defs/Person'
         - $ref: '#/$defs/Organization'
+      x-jsonld-id: http://schema.org/editor
     schema:about:
       description: Science domains that the resource addresses. Array of DefinedTerm
         objects referencing the ECRR ADO (Academic Discipline Ontology) vocabulary.
       type: array
       items:
         $ref: '#/$defs/DefinedTerm'
+      x-jsonld-id: http://schema.org/about
     schema:audience:
       description: Target user communities for the resource. Array of Audience objects
         with audienceType labels and identifiers from the AUT vocabulary.
-      type: array
-      items:
-        type: object
+      anyOf:
+      - type: object
         properties:
           '@type':
-            type: string
-            const: schema:Audience
-            default: schema:Audience
+            type: array
+            items:
+              type: string
+            contains:
+              const: schema:Audience
+            minItems: 1
+            default:
+            - schema:Audience
           schema:audienceType:
             type: string
             description: Label for the target audience (e.g. Data Producers, Scientists,
               Developers). Values from ECRR AUT vocabulary.
+            x-jsonld-id: http://schema.org/audienceType
           schema:identifier:
             type: string
             description: URI from the ECRR AUT_ vocabulary.
+            x-jsonld-id: http://schema.org/identifier
         required:
         - '@type'
         - schema:audienceType
+      - type: array
+        items:
+          type: object
+          properties:
+            '@type':
+              type: array
+              items:
+                type: string
+              contains:
+                const: schema:Audience
+              minItems: 1
+              default:
+              - schema:Audience
+            schema:audienceType:
+              type: string
+              description: Label for the target audience (e.g. Data Producers, Scientists,
+                Developers). Values from ECRR AUT vocabulary.
+              x-jsonld-id: http://schema.org/audienceType
+            schema:identifier:
+              type: string
+              description: URI from the ECRR AUT_ vocabulary.
+              x-jsonld-id: http://schema.org/identifier
+          required:
+          - '@type'
+          - schema:audienceType
+      x-jsonld-id: http://schema.org/audience
     dct:bibliographicCitation:
       description: Preferred bibliographic citation for the resource, encoded as a
         PropertyValue with propertyID of dct:bibliographicCitation.
       type: object
       properties:
         '@type':
-          type: string
-          const: schema:PropertyValue
-          default: schema:PropertyValue
+          type: array
+          items:
+            type: string
+          contains:
+            const: schema:PropertyValue
+          minItems: 1
+          default:
+          - schema:PropertyValue
         schema:propertyID:
           type: string
           const: dct:bibliographicCitation
+          x-jsonld-id: http://schema.org/propertyID
         schema:name:
           type: string
           default: Bibliographic citation
+          x-jsonld-id: http://schema.org/name
         schema:value:
           type: string
+          x-jsonld-id: http://schema.org/value
       required:
       - '@type'
       - schema:propertyID
       - schema:value
+      x-jsonld-id: http://purl.org/dc/terms/bibliographicCitation
 $defs:
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/definedTerm/schema.yaml
   Person:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/person/schema.yaml
   Organization:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/organization/schema.yaml
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
@@ -572,6 +677,11 @@ x-jsonld-prefixes:
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRDataset
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 
@@ -588,20 +698,19 @@ Links to the schema:
   "@context": {
     "ecrr": "https://n2t.net/ark:/23942/g2",
     "schema": "http://schema.org/",
-    "ex": "https://example.org/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "dcterms": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
+    "cdif": "https://w3id.org/cdif/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "spdx": "http://spdx.org/rdf/terms#",
     "time": "http://www.w3.org/2006/time#",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "prov": "http://www.w3.org/ns/prov#",
-    "csvw": "http://www.w3.org/ns/csvw#",
-    "xas": "https://xas.org/dictionary/",
-    "nxs": "http://purl.org/nexusformat/definitions/",
-    "ada": "https://ada.astromat.org/metadata/",
+    "xas": "cdif:xas/",
+    "nxs": "https://manual.nexusformat.org/classes/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/",
     "@version": 1.1

@@ -45,11 +45,15 @@ data repository.
 {
   "schema:contentType": [
     {
-      "@type": "schema:Thing",
+      "@type": [
+        "schema:Thing"
+      ],
       "schema:name": "Rock magnetic data"
     },
     {
-      "@type": "schema:Thing",
+      "@type": [
+        "schema:Thing"
+      ],
       "schema:name": "Paleomagnetic data"
     }
   ]
@@ -69,11 +73,15 @@ data repository.
   ],
   "schema:contentType": [
     {
-      "@type": "schema:Thing",
+      "@type": [
+        "schema:Thing"
+      ],
       "schema:name": "Rock magnetic data"
     },
     {
-      "@type": "schema:Thing",
+      "@type": [
+        "schema:Thing"
+      ],
       "schema:name": "Paleomagnetic data"
     }
   ]
@@ -110,22 +118,33 @@ properties:
       type: object
       properties:
         '@type':
-          type: string
-          default: schema:Thing
+          type: array
+          items:
+            type: string
+          default:
+          - schema:Thing
         schema:name:
           type: string
           description: Label for the type of cataloged content.
+          x-jsonld-id: http://schema.org/name
         schema:identifier:
           type: string
           description: URI identifying the content type concept.
+          x-jsonld-id: http://schema.org/identifier
       required:
       - schema:name
+    x-jsonld-id: http://schema.org/contentType
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCatalog
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 

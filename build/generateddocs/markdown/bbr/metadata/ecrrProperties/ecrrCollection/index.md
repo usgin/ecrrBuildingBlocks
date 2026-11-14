@@ -55,22 +55,33 @@ parts including software, dataset, and documentation components.
 {
   "schema:hasPart": [
     {
-      "@type": "schema:SoftwareApplication",
+      "@type": [
+        "schema:SoftwareApplication"
+      ],
       "schema:name": "Analysis Tool v2.0",
       "schema:url": "https://example.org/analysis-tool",
       "schema:description": "Main analysis software component"
     },
     {
-      "@type": "schema:Dataset",
+      "@type": [
+        "schema:Dataset"
+      ],
       "schema:name": "Sample Observation Data",
       "schema:url": "https://example.org/sample-data",
-      "schema:encodingFormat": ["text/csv", "application/json"]
+      "schema:encodingFormat": [
+        "text/csv",
+        "application/json"
+      ]
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "User Documentation",
       "schema:url": "https://example.org/docs",
-      "schema:encodingFormat": ["text/html"]
+      "schema:encodingFormat": [
+        "text/html"
+      ]
     }
   ]
 }
@@ -89,13 +100,17 @@ parts including software, dataset, and documentation components.
   ],
   "schema:hasPart": [
     {
-      "@type": "schema:SoftwareApplication",
+      "@type": [
+        "schema:SoftwareApplication"
+      ],
       "schema:name": "Analysis Tool v2.0",
       "schema:url": "https://example.org/analysis-tool",
       "schema:description": "Main analysis software component"
     },
     {
-      "@type": "schema:Dataset",
+      "@type": [
+        "schema:Dataset"
+      ],
       "schema:name": "Sample Observation Data",
       "schema:url": "https://example.org/sample-data",
       "schema:encodingFormat": [
@@ -104,7 +119,9 @@ parts including software, dataset, and documentation components.
       ]
     },
     {
-      "@type": "schema:CreativeWork",
+      "@type": [
+        "schema:CreativeWork"
+      ],
       "schema:name": "User Documentation",
       "schema:url": "https://example.org/docs",
       "schema:encodingFormat": [
@@ -119,19 +136,19 @@ parts including software, dataset, and documentation components.
 ```ttl
 @prefix schema1: <http://schema.org/> .
 
-[] schema1:hasPart [ a schema1:CreativeWork ;
-            schema1:encodingFormat "text/html" ;
-            schema1:name "User Documentation" ;
-            schema1:url "https://example.org/docs" ],
+[] schema1:hasPart [ a schema1:SoftwareApplication ;
+            schema1:description "Main analysis software component" ;
+            schema1:name "Analysis Tool v2.0" ;
+            schema1:url "https://example.org/analysis-tool" ],
         [ a schema1:Dataset ;
             schema1:encodingFormat "application/json",
                 "text/csv" ;
             schema1:name "Sample Observation Data" ;
             schema1:url "https://example.org/sample-data" ],
-        [ a schema1:SoftwareApplication ;
-            schema1:description "Main analysis software component" ;
-            schema1:name "Analysis Tool v2.0" ;
-            schema1:url "https://example.org/analysis-tool" ] .
+        [ a schema1:CreativeWork ;
+            schema1:encodingFormat "text/html" ;
+            schema1:name "User Documentation" ;
+            schema1:url "https://example.org/docs" ] .
 
 
 ```
@@ -165,27 +182,39 @@ properties:
         schema:name:
           type: string
           description: Name of the component resource.
+          x-jsonld-id: http://schema.org/name
         schema:url:
           type: string
           format: uri
           description: URL where the component can be accessed.
+          x-jsonld-id: http://schema.org/url
         schema:description:
           type: string
           description: Brief description of the component.
+          x-jsonld-id: http://schema.org/description
         schema:encodingFormat:
           description: Format(s) of the component resource.
-          type: array
-          items:
-            type: string
+          anyOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+          x-jsonld-id: http://schema.org/encodingFormat
       required:
       - schema:name
     minItems: 1
+    x-jsonld-id: http://schema.org/hasPart
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCollection
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 

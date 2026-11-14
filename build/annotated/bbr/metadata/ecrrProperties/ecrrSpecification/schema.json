@@ -9,17 +9,27 @@
       "type": "object",
       "properties": {
         "@type": {
-          "type": "string",
-          "const": "schema:PropertyValue",
-          "default": "schema:PropertyValue"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "contains": {
+            "const": "schema:PropertyValue"
+          },
+          "minItems": 1,
+          "default": [
+            "schema:PropertyValue"
+          ]
         },
         "schema:propertyID": {
           "type": "string",
-          "const": "ecrro:ECRRO_0000501"
+          "const": "ecrro:ECRRO_0000501",
+          "x-jsonld-id": "http://schema.org/propertyID"
         },
         "schema:name": {
           "type": "string",
-          "default": "profile of"
+          "default": "profile of",
+          "x-jsonld-id": "http://schema.org/name"
         },
         "schema:value": {
           "anyOf": [
@@ -32,19 +42,21 @@
                 "$ref": "#/$defs/LabeledLink"
               }
             }
-          ]
+          ],
+          "x-jsonld-id": "http://schema.org/value"
         }
       },
       "required": [
         "@type",
         "schema:propertyID",
         "schema:value"
-      ]
+      ],
+      "x-jsonld-id": "http://cor.esipfed.org/ont/earthcube/ECRRO_0000501"
     }
   },
   "$defs": {
     "LabeledLink": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
     }
   },
   "x-jsonld-extra-terms": {
@@ -54,5 +66,11 @@
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrSpecification",
+    "register": "https://usgin.github.io/ecrrBuildingBlocks/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-14"
   }
 }

@@ -63,7 +63,9 @@ ECRR semantic resource properties for the LiPD (Linked Paleo Data) ontology.
 ```json
 {
   "schema:programmingLanguage": {
-    "@type": "schema:ComputerLanguage",
+    "@type": [
+      "schema:ComputerLanguage"
+    ],
     "schema:name": "OWL",
     "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MOLA_0000001"
   }
@@ -82,7 +84,9 @@ ECRR semantic resource properties for the LiPD (Linked Paleo Data) ontology.
     "https://usgin.github.io/ecrrBuildingBlocks/build/annotated/bbr/metadata/ecrrProperties/ecrrSemanticResource/context.jsonld"
   ],
   "schema:programmingLanguage": {
-    "@type": "schema:ComputerLanguage",
+    "@type": [
+      "schema:ComputerLanguage"
+    ],
     "schema:name": "OWL",
     "schema:identifier": "http://cor.esipfed.org/ont/earthcube/MOLA_0000001"
   }
@@ -121,23 +125,36 @@ properties:
     - type: object
       properties:
         '@type':
-          type: string
-          const: schema:ComputerLanguage
-          default: schema:ComputerLanguage
+          type: array
+          items:
+            type: string
+          contains:
+            const: schema:ComputerLanguage
+          minItems: 1
+          default:
+          - schema:ComputerLanguage
         schema:name:
           type: string
           description: Name of the representation language (e.g. OWL, SKOS, RDF/XML)
+          x-jsonld-id: http://schema.org/name
         schema:identifier:
           type: string
           description: URI from the MOLA vocabulary
+          x-jsonld-id: http://schema.org/identifier
       required:
       - schema:name
+    x-jsonld-id: http://schema.org/programmingLanguage
 x-jsonld-extra-terms:
   ecrr: https://n2t.net/ark:/23942/g2
 x-jsonld-prefixes:
   schema: http://schema.org/
   ecrro: http://cor.esipfed.org/ont/earthcube/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrSemanticResource
+  register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-14'
 
 ```
 

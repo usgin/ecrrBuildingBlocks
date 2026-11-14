@@ -31,11 +31,13 @@
     },
     "schema:name": {
       "type": "string",
-      "description": "The name of the resource."
+      "description": "The name of the resource.",
+      "x-jsonld-id": "http://schema.org/name"
     },
     "schema:description": {
       "type": "string",
-      "description": "A text description of the resource, providing enough detail for discovery and basic understanding of the resource purpose and content."
+      "description": "A text description of the resource, providing enough detail for discovery and basic understanding of the resource purpose and content.",
+      "x-jsonld-id": "http://schema.org/description"
     },
     "schema:mainEntity": {
       "description": "ECRR resource type classification. Array of labeled links (CreativeWork objects) with name and url pointing to ECRRO resource type URIs. The first entry identifies the base resource type (e.g. Software, Service Instance, Specification). Additional entries may specify subtypes from SPKT_ or srt_ vocabularies.",
@@ -50,7 +52,8 @@
           },
           "minItems": 1
         }
-      ]
+      ],
+      "x-jsonld-id": "http://schema.org/mainEntity"
     },
     "schema:license": {
       "description": "Legal conditions governing use and access. Array of labeled links identifying the license(s), ideally with URIs from https://spdx.org/licenses/ or http://cor.esipfed.org/ont/earthcube/swl.",
@@ -74,7 +77,8 @@
             "$ref": "#/$defs/LabeledLink"
           }
         ]
-      }
+      },
+      "x-jsonld-id": "http://schema.org/license"
     }
   },
   "required": [
@@ -87,7 +91,7 @@
   ],
   "$defs": {
     "LabeledLink": {
-      "$ref": "https://usgin.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
+      "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/build/annotated/bbr/metadata/schemaorgProperties/labeledLink/schema.json"
     }
   },
   "x-jsonld-extra-terms": {
@@ -97,5 +101,11 @@
     "schema": "http://schema.org/",
     "ecrro": "http://cor.esipfed.org/ont/earthcube/",
     "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "ecrr.bbr.metadata.ecrrProperties.ecrrCore",
+    "register": "https://usgin.github.io/ecrrBuildingBlocks/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-14"
   }
 }
