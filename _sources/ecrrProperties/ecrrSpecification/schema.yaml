@@ -16,9 +16,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000501
@@ -37,4 +41,4 @@ properties:
       - schema:value
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml

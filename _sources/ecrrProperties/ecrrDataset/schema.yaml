@@ -45,24 +45,28 @@ properties:
           $ref: '#/$defs/DataCatalogRef'
 $defs:
   DataDownload:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/dataDownload/schema.yaml
   WebAPI:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/webAPI/schema.yaml
   SpatialExtent:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/spatialExtent/schema.yaml
   TemporalExtent:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/temporalExtent/schema.yaml
   VariableMeasured:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/variableMeasured/schema.yaml
   DataCatalogRef:
     type: object
     properties:
       '@id':
         type: string
       '@type':
-        type: string
-        const: schema:DataCatalog
-        default: schema:DataCatalog
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:DataCatalog
+        minItems: 1
+        default: [schema:DataCatalog]
       schema:name:
         type: string
       schema:url:

@@ -40,18 +40,17 @@ properties:
       type: string
   schema:creator:
     description: >-
-      Authors or originators of the resource content. Array of Person or Organization
-      objects. Use @list wrapper to preserve author order in JSON-LD.
-    type: array
-    items:
-      anyOf:
-        - type: object
-          properties:
-            '@id':
-              type: string
-              description: reference to an agent defined elsewhere
-        - $ref: '#/$defs/Person'
-        - $ref: '#/$defs/Organization'
+      Authors or originators of the resource content: an array of Person or
+      Organization objects, or that array in a JSON-LD @list wrapper to preserve
+      author order (CDIF's form).
+    anyOf:
+      - $ref: '#/$defs/Agents'
+      - type: object
+        required:
+          - '@list'
+        properties:
+          '@list':
+            $ref: '#/$defs/Agents'
   schema:contributor:
     description: Other parties who contributed to the resource.
     type: array
@@ -111,9 +110,13 @@ properties:
       type: object
       properties:
         '@type':
-          type: string
-          const: schema:Audience
-          default: schema:Audience
+          type: array
+          items:
+            type: string
+          contains:
+            const: schema:Audience
+          minItems: 1
+          default: [schema:Audience]
         schema:audienceType:
           type: string
           description: >-
@@ -127,13 +130,15 @@ properties:
         - schema:audienceType
   schema:subjectOf:
     description: >-
-      Links to formal metadata records or web pages about this resource.
-      Array of labeled links (CreativeWork objects with name and url).
+      Metadata about this resource: the CDIF catalog record for this metadata (typed
+      schema:Dataset, with dcat:CatalogRecord as its schema:additionalType), and/or
+      labeled links (CreativeWork objects with name and url) to formal metadata records
+      or web pages about the resource.
     anyOf:
-      - $ref: '#/$defs/LabeledLink'
+      - $ref: '#/$defs/SubjectOfItem'
       - type: array
         items:
-          $ref: '#/$defs/LabeledLink'
+          $ref: '#/$defs/SubjectOfItem'
   schema:isRelatedTo:
     description: >-
       Related resources such as documentation, publications, or tools.
@@ -162,9 +167,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: dct:bibliographicCitation
@@ -186,14 +195,31 @@ properties:
       $ref: '#/$defs/LabeledLink'
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
   Identifier:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/schema.yaml
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
   Person:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/schema.yaml
   Organization:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/schema.yaml
   Funder:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/monetaryGrant/schema.yaml
+  Agents:
+    type: array
+    items:
+      anyOf:
+        - type: object
+          properties:
+            '@id':
+              type: string
+              description: reference to an agent defined elsewhere
+        - $ref: '#/$defs/Person'
+        - $ref: '#/$defs/Organization'
+  CatalogRecord:
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/cdifDataType/cdifCatalogRecord/schema.yaml
+  SubjectOfItem:
+    anyOf:
+      - $ref: '#/$defs/CatalogRecord'
+      - $ref: '#/$defs/LabeledLink'

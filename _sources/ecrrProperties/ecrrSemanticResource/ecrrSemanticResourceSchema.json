@@ -14,9 +14,17 @@
                     "type": "object",
                     "properties": {
                         "@type": {
-                            "type": "string",
-                            "const": "schema:ComputerLanguage",
-                            "default": "schema:ComputerLanguage"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "contains": {
+                                "const": "schema:ComputerLanguage"
+                            },
+                            "minItems": 1,
+                            "default": [
+                                "schema:ComputerLanguage"
+                            ]
                         },
                         "schema:name": {
                             "type": "string",

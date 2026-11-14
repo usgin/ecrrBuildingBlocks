@@ -16,9 +16,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000502
@@ -43,9 +47,13 @@ properties:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:PropertyValue
-        default: schema:PropertyValue
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:PropertyValue
+        minItems: 1
+        default: [schema:PropertyValue]
       schema:propertyID:
         type: string
         const: ecrro:ECRRO_0000503
@@ -62,7 +70,9 @@ properties:
             description: Simple reference with identifier
             properties:
               '@type':
-                type: string
+                type: array
+                items:
+                  type: string
               schema:identifier:
                 type: string
     required:
@@ -88,18 +98,22 @@ properties:
       $ref: '#/$defs/Action'
 $defs:
   LabeledLink:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/schema.yaml
   DefinedTerm:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/schema.yaml
   Action:
-    $ref: https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/schema.yaml
+    $ref: https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/schema.yaml
   DataFeedSpec:
     type: object
     properties:
       '@type':
-        type: string
-        const: schema:DataFeed
-        default: schema:DataFeed
+        type: array
+        items:
+          type: string
+        contains:
+          const: schema:DataFeed
+        minItems: 1
+        default: [schema:DataFeed]
       schema:name:
         type: string
       schema:position:

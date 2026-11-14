@@ -1,33 +1,51 @@
 {
   "schema:distribution": [
     {
-      "@type": ["schema:DataDownload"],
+      "@type": [
+        "schema:DataDownload"
+      ],
       "schema:contentUrl": "https://example.org/data/observations.csv",
-      "schema:encodingFormat": ["text/csv"],
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
       "schema:name": "Observation data CSV download",
-      "dcterms:conformsTo": [{"@id": "http://www.opengis.net/def/nil/OGC/0/missing"}]
+      "dcterms:conformsTo": [
+        {
+          "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+        }
+      ]
     }
   ],
   "schema:spatialCoverage": [
     {
-      "@type": "schema:Place",
-      "schema:name": ["Global"],
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "Global",
       "schema:geo": {
-        "@type": "schema:GeoShape",
+        "@type": [
+          "schema:GeoShape"
+        ],
         "schema:box": "-90 -180 90 180"
       }
     }
   ],
-  "schema:temporalCoverage": ["2010-01-01/2023-12-31"],
+  "schema:temporalCoverage": [
+    "2010-01-01/2023-12-31"
+  ],
   "schema:variableMeasured": [
     {
-      "@type": ["schema:PropertyValue"],
+      "@type": [
+        "schema:PropertyValue"
+      ],
       "schema:name": "Temperature",
       "schema:description": "Surface air temperature measurements"
     }
   ],
   "schema:includedInDataCatalog": {
-    "@type": "schema:DataCatalog",
+    "@type": [
+      "schema:DataCatalog"
+    ],
     "schema:name": "EarthCube Data Catalog",
     "schema:url": "https://www.earthcube.org/datasets"
   }

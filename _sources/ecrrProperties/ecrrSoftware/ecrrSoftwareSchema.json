@@ -35,9 +35,17 @@
                                 "type": "object",
                                 "properties": {
                                     "@type": {
-                                        "type": "string",
-                                        "const": "schema:ComputerLanguage",
-                                        "default": "schema:ComputerLanguage"
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "contains": {
+                                            "const": "schema:ComputerLanguage"
+                                        },
+                                        "minItems": 1,
+                                        "default": [
+                                            "schema:ComputerLanguage"
+                                        ]
                                     },
                                     "schema:name": {
                                         "type": "string"
@@ -133,9 +141,17 @@
             "type": "object",
             "properties": {
                 "@type": {
-                    "type": "string",
-                    "const": "schema:PropertyValue",
-                    "default": "schema:PropertyValue"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "contains": {
+                        "const": "schema:PropertyValue"
+                    },
+                    "minItems": 1,
+                    "default": [
+                        "schema:PropertyValue"
+                    ]
                 },
                 "schema:propertyID": {
                     "type": "string",
@@ -167,18 +183,26 @@
     },
     "$defs": {
         "LabeledLink": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/labeledLinkSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/labeledLinkSchema.json"
         },
         "Action": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/actionSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/action/actionSchema.json"
         },
         "DataFeedSpec": {
             "type": "object",
             "properties": {
                 "@type": {
-                    "type": "string",
-                    "const": "schema:DataFeed",
-                    "default": "schema:DataFeed"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "contains": {
+                        "const": "schema:DataFeed"
+                    },
+                    "minItems": 1,
+                    "default": [
+                        "schema:DataFeed"
+                    ]
                 },
                 "schema:name": {
                     "type": "string"

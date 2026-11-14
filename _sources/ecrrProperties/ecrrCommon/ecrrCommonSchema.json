@@ -53,27 +53,23 @@
             }
         },
         "schema:creator": {
-            "description": "Authors or originators of the resource content. Array of Person or Organization objects. Use @list wrapper to preserve author order in JSON-LD.",
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "type": "object",
-                        "properties": {
-                            "@id": {
-                                "type": "string",
-                                "description": "reference to an agent defined elsewhere"
-                            }
+            "description": "Authors or originators of the resource content: an array of Person or Organization objects, or that array in a JSON-LD @list wrapper to preserve author order (CDIF's form).",
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/Agents"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "@list"
+                    ],
+                    "properties": {
+                        "@list": {
+                            "$ref": "#/$defs/Agents"
                         }
-                    },
-                    {
-                        "$ref": "#/$defs/Person"
-                    },
-                    {
-                        "$ref": "#/$defs/Organization"
                     }
-                ]
-            }
+                }
+            ]
         },
         "schema:contributor": {
             "description": "Other parties who contributed to the resource.",
@@ -173,9 +169,17 @@
                 "type": "object",
                 "properties": {
                     "@type": {
-                        "type": "string",
-                        "const": "schema:Audience",
-                        "default": "schema:Audience"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "contains": {
+                            "const": "schema:Audience"
+                        },
+                        "minItems": 1,
+                        "default": [
+                            "schema:Audience"
+                        ]
                     },
                     "schema:audienceType": {
                         "type": "string",
@@ -193,15 +197,15 @@
             }
         },
         "schema:subjectOf": {
-            "description": "Links to formal metadata records or web pages about this resource. Array of labeled links (CreativeWork objects with name and url).",
+            "description": "Metadata about this resource: the CDIF catalog record for this metadata (typed schema:Dataset, with dcat:CatalogRecord as its schema:additionalType), and/or labeled links (CreativeWork objects with name and url) to formal metadata records or web pages about the resource.",
             "anyOf": [
                 {
-                    "$ref": "#/$defs/LabeledLink"
+                    "$ref": "#/$defs/SubjectOfItem"
                 },
                 {
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/LabeledLink"
+                        "$ref": "#/$defs/SubjectOfItem"
                     }
                 }
             ]
@@ -232,9 +236,17 @@
             "type": "object",
             "properties": {
                 "@type": {
-                    "type": "string",
-                    "const": "schema:PropertyValue",
-                    "default": "schema:PropertyValue"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "contains": {
+                        "const": "schema:PropertyValue"
+                    },
+                    "minItems": 1,
+                    "default": [
+                        "schema:PropertyValue"
+                    ]
                 },
                 "schema:propertyID": {
                     "type": "string",
@@ -264,22 +276,57 @@
     },
     "$defs": {
         "LabeledLink": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/labeledLinkSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/labeledLinkSchema.json"
         },
         "Identifier": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/identifierSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/identifierSchema.json"
         },
         "DefinedTerm": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/definedTermSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/definedTermSchema.json"
         },
         "Person": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/personSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/person/personSchema.json"
         },
         "Organization": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/organizationSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/organization/organizationSchema.json"
         },
         "Funder": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/funder/funderSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/monetaryGrant/monetaryGrantSchema.json"
+        },
+        "Agents": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "description": "reference to an agent defined elsewhere"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/$defs/Person"
+                    },
+                    {
+                        "$ref": "#/$defs/Organization"
+                    }
+                ]
+            }
+        },
+        "CatalogRecord": {
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/cdifDataType/cdifCatalogRecord/cdifCatalogRecordSchema.json"
+        },
+        "SubjectOfItem": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/CatalogRecord"
+                },
+                {
+                    "$ref": "#/$defs/LabeledLink"
+                }
+            ]
         }
     }
 }

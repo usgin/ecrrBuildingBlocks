@@ -9,9 +9,17 @@
             "type": "object",
             "properties": {
                 "@type": {
-                    "type": "string",
-                    "const": "schema:PropertyValue",
-                    "default": "schema:PropertyValue"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "contains": {
+                        "const": "schema:PropertyValue"
+                    },
+                    "minItems": 1,
+                    "default": [
+                        "schema:PropertyValue"
+                    ]
                 },
                 "schema:propertyID": {
                     "type": "string",
@@ -44,7 +52,7 @@
     },
     "$defs": {
         "LabeledLink": {
-            "$ref": "https://usgin.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/labeledLinkSchema.json"
+            "$ref": "https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/labeledLinkSchema.json"
         }
     }
 }
