@@ -84,6 +84,20 @@ class ChainResolver:
         return next((r for r in (x.shacl(uri) for x in self.resolvers) if r is not None), None)
 
 
+def is_record(doc):
+    """A CDIF record: its schema:subjectOf is a catalog record (dcat:CatalogRecord as
+    its type or additionalType), not a labeled link to some web page."""
+    subj = doc.get("schema:subjectOf")
+    if not isinstance(subj, dict):
+        return False
+    marks = []
+    for key in ("@type", "schema:additionalType"):
+        v = subj.get(key)
+        for x in v if isinstance(v, list) else [v]:
+            marks.append(x.get("@id") if isinstance(x, dict) else x)
+    return "dcat:CatalogRecord" in marks
+
+
 def conforms_to(doc):
     subj = doc.get("schema:subjectOf")
     subj = subj if isinstance(subj, dict) else {}
@@ -128,7 +142,7 @@ def main():
              if not args.filter or args.filter in str(e)]
     for example, _schema in pairs:
         doc = json.loads(example.read_text(encoding="utf-8"))
-        if not isinstance(doc.get("schema:subjectOf"), dict):
+        if not is_record(doc):
             # A building block's fragment example, not a record: no catalog record to
             # declare conformance in. tools/validate_examples.py checks it.
             skipped += 1
