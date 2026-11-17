@@ -371,6 +371,30 @@ def _register_url_base(cache_path, parsed, url_path, host) -> None:
             _URL_BASE_REGISTRY[cache_prefix] = url_prefix
 
 
+def _should_refetch(file_path: Path) -> bool:
+    """True when an EXISTING $ref target must still go through the fetch path.
+
+    --refresh-remote is honoured in one place only, `_fetch_url_schema`. A $ref reached as a
+    RELATIVE path from a file already in vendor/remote never arrives there: the resolver turns
+    it into a cache path, the file is on disk, and the vendored copy is read as-is however old
+    it is. So a refresh silently skipped every block reached ONLY through another vendored
+    block -- a composite's modules, say -- while remote-lock.json still printed the full pinned
+    count and a second pass still reported "0 updated, N already current". A refresh that skips
+    a file was indistinguishable from one that finds it current.
+
+    Measured 2026-11-17 in the domain repos, where the mechanism is live (nothing in mBB
+    declares a URL $ref, so this is inert here and could not have surfaced locally).
+    ecrrBuildingBlocks reaches cdifCore and cdifDiscovery only through the CoreDiscovery
+    composite's relative refs, so --refresh-remote left its vendored cdifCore demanding
+    cdif/core/1.1 after mBB moved to 2.0 and an example failed a `contains` naming the very
+    URI it declared. ddeBuildingBlocks, which refs cdifCore directly by URL, still had 14 of
+    32 copies stale for the same reason one level down.
+
+    The workaround was to delete vendor/remote and re-vendor from empty.
+    """
+    return _ALLOW_FETCH and str(file_path).startswith(str(_URL_CACHE_DIR))
+
+
 def _fetch_relative_in_cache(file_path: Path) -> Path | None:
     """If file_path is inside the URL cache dir but doesn't exist, reconstruct
     the URL it would correspond to and fetch it.
@@ -540,10 +564,52 @@ _SCHEMA_DEF_KEYS = frozenset({"type", "oneOf", "anyOf", "allOf", "$ref"})
 # A conditional is one construct: these keys travel together or not at all.
 _CONDITIONAL_KEYS = ("if", "then", "else")
 
+# Array-level keywords a property can state beside its `items`.
+_ARRAY_CONSTRAINT_KEYS = ("minItems", "maxItems", "uniqueItems",
+                          "contains", "minContains", "maxContains")
+
+
+# Keywords that make a schema a CHOICE between shapes rather than one shape.
+# Two of these cannot be merged without deciding which wins, so a property
+# definition carrying any of them is replaced rather than combined.
+_CHOICE_KEYS = frozenset({"oneOf", "anyOf", "allOf", "$ref", "not",
+                          "if", "then", "else"})
+
 
 def _is_complete_schema(d: dict) -> bool:
     """Return True if d looks like a complete schema definition (has type, composition, or $ref)."""
     return bool(d.keys() & _SCHEMA_DEF_KEYS)
+
+
+def _is_plain_object_schema(d: dict) -> bool:
+    """One object shape stated as properties, with no choice between shapes.
+
+    Two of these describe the same object from different angles, so merging
+    them loses nothing and replacing one with the other loses whatever only
+    it declared. That is the case the blanket replacement below got wrong:
+    every module states the record's ``@context`` as a plain object of
+    prefixes, so in a composite only the last module's prefixes survived --
+    `cdifCore`'s five pins and its ``required`` reached no composite at all.
+    """
+    if d.get("type") != "object" or "properties" not in d:
+        return False
+    return not (d.keys() & _CHOICE_KEYS)
+
+
+def _contains_entries(d: dict) -> list:
+    """Every ``contains`` constraint a property definition carries.
+
+    They live either directly on the definition or, after an earlier merge
+    accumulated several, as ``{"contains": ...}`` entries in its ``allOf``.
+    Returned as allOf-ready entries so a replacement can re-attach them.
+    """
+    out = []
+    if "contains" in d:
+        out.append({"contains": copy.deepcopy(d["contains"])})
+    for entry in d.get("allOf") or []:
+        if isinstance(entry, dict) and "contains" in entry:
+            out.append(copy.deepcopy(entry))
+    return out
 
 
 def deep_merge(base: dict, overlay: dict) -> dict:
@@ -614,9 +680,51 @@ def _deep_merge_inner(base: dict, overlay: dict, in_properties: bool) -> dict:
                         new_items_allof = [base_items, overlay_items]
                     overlay_schema = copy.deepcopy(v)
                     overlay_schema["items"] = {"allOf": new_items_allof}
+                    # The array-level constraints sit beside items, not in it,
+                    # so replacing the base with the overlay dropped them:
+                    # xasCore's prov:wasGeneratedBy minItems + contains (the
+                    # required analysis event) vanished under xasOptional's
+                    # items-only patch. Keep the base's where the overlay
+                    # states none of its own.
+                    for kw in _ARRAY_CONSTRAINT_KEYS:
+                        if kw in result[k] and kw not in overlay_schema:
+                            overlay_schema[kw] = result[k][kw]
                     result[k] = overlay_schema
+                elif _is_plain_object_schema(result[k]) \
+                        and _is_plain_object_schema(v):
+                    # Two statements of the same object shape: merge, do not
+                    # choose. `required` is the union -- both modules' demands
+                    # hold -- which the generic merge below would not do,
+                    # because a list there is replaced wholesale.
+                    union = sorted(set(result[k].get("required") or [])
+                                   | set(v.get("required") or []))
+                    result[k] = _deep_merge_inner(result[k], v,
+                                                  in_properties=False)
+                    if union:
+                        result[k]["required"] = union
                 else:
+                    # Replacement is right -- the two state different shapes --
+                    # but a `contains` the base accumulated is a separate
+                    # constraint, not part of the shape, so it survives. Four
+                    # merges of `dcterms:conformsTo` dropped a base holding
+                    # nothing but accumulated `contains` entries, which is how
+                    # a composite came to demand one module's profile URI and
+                    # forget the rest.
+                    carried = _contains_entries(result[k])
                     result[k] = copy.deepcopy(v)
+                    if carried:
+                        kept = _contains_entries(result[k])
+                        for entry in kept:
+                            if entry not in carried:
+                                carried.append(entry)
+                        result[k].pop("contains", None)
+                        residual = [e for e in (result[k].get("allOf") or [])
+                                    if not (isinstance(e, dict)
+                                            and "contains" in e)]
+                        if len(carried) == 1 and not residual:
+                            result[k]["contains"] = carried[0]["contains"]
+                        else:
+                            result[k]["allOf"] = residual + carried
             elif k == "properties":
                 result[k] = _deep_merge_inner(result[k], v, in_properties=True)
             elif k == "contains":
@@ -826,13 +934,13 @@ def _resolve_ref(ref: str, base_dir: Path, defs: dict, seen: set) -> Any:
     else:
         file_path = (base_dir / file_part).resolve()
 
-    if not file_path.exists():
-        # If the path is inside the URL cache, the file just hasn't been
-        # fetched yet — reconstruct the URL and fetch it.
+    if not file_path.exists() or _should_refetch(file_path):
+        # Inside the URL cache the target may be absent (never fetched) or present but stale.
+        # Both go through the fetch path, the only place --refresh-remote applies.
         fetched = _fetch_relative_in_cache(file_path)
         if fetched is not None:
             file_path = fetched
-        else:
+        elif not file_path.exists():
             return {"$comment": f"file not found: {_display_source(file_path)}"}
 
     # For cross-file $defs fragment refs, resolve the defs from the raw schema
@@ -1216,11 +1324,11 @@ def _resolve_ref_structured(ref: str, base_dir: Path, local_defs: dict,
     else:
         file_path = (base_dir / file_part).resolve()
 
-    if not file_path.exists():
+    if not file_path.exists() or _should_refetch(file_path):
         fetched = _fetch_relative_in_cache(file_path)
         if fetched is not None:
             file_path = fetched
-        else:
+        elif not file_path.exists():
             return {"$comment": f"file not found: {_display_source(file_path)}"}
 
     # If the target file (without fragment) is a known $def, emit a $ref
