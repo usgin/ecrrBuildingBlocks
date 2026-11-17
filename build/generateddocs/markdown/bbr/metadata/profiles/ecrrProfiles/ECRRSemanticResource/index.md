@@ -82,7 +82,7 @@ Example metadata instance for ECRRSemanticResource profile.
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.1"
+        "@id": "https://w3id.org/cdif/core/2.0"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
@@ -244,7 +244,7 @@ Example metadata instance for ECRRSemanticResource profile.
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.1"
+        "@id": "https://w3id.org/cdif/core/2.0"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource"
@@ -405,7 +405,7 @@ Example metadata instance for ECRRSemanticResource profile.
 
 <urn:uuid:ecrr-semanticresource-catalog-record> a schema1:Dataset ;
     dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRSemanticResource>,
-        <https://w3id.org/cdif/core/1.1> ;
+        <https://w3id.org/cdif/core/2.0> ;
     schema1:about <http://n2t.net/ark:/23942/g2example-semantic> ;
     schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
@@ -445,7 +445,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSemanticResource
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-14'
+  dateOfLastChange: '2026-11-17'
 
 ```
 

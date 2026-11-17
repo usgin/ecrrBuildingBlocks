@@ -82,7 +82,7 @@ Example metadata instance for ECRRCatalog profile.
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.1"
+        "@id": "https://w3id.org/cdif/core/2.0"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog"
@@ -252,7 +252,7 @@ Example metadata instance for ECRRCatalog profile.
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.1"
+        "@id": "https://w3id.org/cdif/core/2.0"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog"
@@ -403,9 +403,9 @@ Example metadata instance for ECRRCatalog profile.
             schema1:name "Earth Science" ] ;
     schema1:additionalType "EC CatalogRegistry" ;
     schema1:contentType [ a schema1:Thing ;
-            schema1:name "Datasets" ],
+            schema1:name "Software" ],
         [ a schema1:Thing ;
-            schema1:name "Software" ] ;
+            schema1:name "Datasets" ] ;
     schema1:creator ( [ a schema1:Organization ;
                 schema1:name "EarthCube" ] ) ;
     schema1:dateModified "2026-03-03" ;
@@ -423,7 +423,7 @@ Example metadata instance for ECRRCatalog profile.
 
 <urn:uuid:ecrr-catalog-catalog-record> a schema1:Dataset ;
     dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRCatalog>,
-        <https://w3id.org/cdif/core/1.1> ;
+        <https://w3id.org/cdif/core/2.0> ;
     schema1:about <http://n2t.net/ark:/23942/g2example-catalog> ;
     schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
@@ -463,7 +463,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRCatalog
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-14'
+  dateOfLastChange: '2026-11-17'
 
 ```
 

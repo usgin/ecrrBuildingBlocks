@@ -80,7 +80,7 @@ Example metadata instance for ECRRInterchangeFormat profile.
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.1"
+        "@id": "https://w3id.org/cdif/core/2.0"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat"
@@ -242,7 +242,7 @@ Example metadata instance for ECRRInterchangeFormat profile.
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/core/1.1"
+        "@id": "https://w3id.org/cdif/core/2.0"
       },
       {
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat"
@@ -382,11 +382,11 @@ Example metadata instance for ECRRInterchangeFormat profile.
                             schema1:name "Example Registrant" ] ;
                     schema1:datePublished "2024-07-20" ] ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
-            schema1:name "Oceanography" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000030" ;
-            schema1:name "Atmospheric Science" ] ;
+            schema1:name "Atmospheric Science" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
+            schema1:name "Oceanography" ] ;
     schema1:additionalType "EC Interchange Format" ;
     schema1:creator ( [ a schema1:Organization ;
                 schema1:name "Unidata/UCAR" ] ) ;
@@ -404,7 +404,7 @@ Example metadata instance for ECRRInterchangeFormat profile.
 
 <urn:uuid:ecrr-interchangeformat-catalog-record> a schema1:Dataset ;
     dct:conformsTo <https://w3id.org/cdif/bbr/metadata/profiles/ecrrProfiles/ECRRInterchangeFormat>,
-        <https://w3id.org/cdif/core/1.1> ;
+        <https://w3id.org/cdif/core/2.0> ;
     schema1:about <http://n2t.net/ark:/23942/g2example-interchange> ;
     schema1:additionalType dcat:CatalogRecord ;
     schema1:sdDatePublished "2026-03-03" .
@@ -442,7 +442,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-14'
+  dateOfLastChange: '2026-11-17'
 
 ```
 
