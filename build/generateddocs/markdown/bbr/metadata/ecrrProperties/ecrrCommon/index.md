@@ -206,7 +206,16 @@ all ECRR resource types.
     "schema:propertyID": "dct:bibliographicCitation",
     "schema:name": "Bibliographic citation",
     "schema:value": "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692"
-  }
+  },
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "GNU General Public License (GPL)",
+      "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
+    }
+  ]
 }
 
 ```
@@ -374,7 +383,16 @@ all ECRR resource types.
     "schema:propertyID": "dct:bibliographicCitation",
     "schema:name": "Bibliographic citation",
     "schema:value": "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692"
-  }
+  },
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "GNU General Public License (GPL)",
+      "schema:url": "http://cor.esipfed.org/ont/earthcube/SWL_0000017"
+    }
+  ]
 }
 ```
 
@@ -391,11 +409,11 @@ all ECRR resource types.
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
             schema1:name "Climatology" ],
         [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
-            schema1:name "Paleoceanography" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000043" ;
-            schema1:name "Paleoclimatology" ] ;
+            schema1:name "Paleoclimatology" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
+            schema1:name "Paleoceanography" ] ;
     schema1:alternateName "Python Package for the Analysis of Paleoclimate Data" ;
     schema1:audience [ a schema1:Audience ;
             schema1:audienceType "Scientists" ;
@@ -413,10 +431,7 @@ all ECRR resource types.
         [ a schema1:Person ;
             schema1:name "Pratheek Athreya" ],
         [ a schema1:Person ;
-            schema1:identifier "https://orcid.org/0000-0003-0454-7145" ;
-            schema1:name "Daniel Garijo" ],
-        [ a schema1:Person ;
-            schema1:name "Jun Hu" ],
+            schema1:name "Myron Kwan" ],
         [ a schema1:Person ;
             schema1:identifier "https://orcid.org/0000-0001-5920-4751" ;
             schema1:name "Julien Emile-Geay" ],
@@ -424,7 +439,10 @@ all ECRR resource types.
             schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
             schema1:name "Deborah Khider" ],
         [ a schema1:Person ;
-            schema1:name "Myron Kwan" ] ;
+            schema1:identifier "https://orcid.org/0000-0003-0454-7145" ;
+            schema1:name "Daniel Garijo" ],
+        [ a schema1:Person ;
+            schema1:name "Jun Hu" ] ;
     schema1:funding [ a schema1:MonetaryGrant ;
             schema1:name "US NSF, ICER-1541029, AGS-2002556" ],
         [ a schema1:MonetaryGrant ;
@@ -433,12 +451,15 @@ all ECRR resource types.
                     schema1:name "US National Science Foundation (US NSF)" ] ] ;
     schema1:identifier "https://doi.org/10.5281/zenodo.4002870" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Documentation" ;
-            schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Example Notebooks" ;
-            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ] ;
+            schema1:url "https://github.com/LinkedEarth/Pyleoclim_util/tree/master/example_notebooks" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Documentation" ;
+            schema1:url "https://pyleoclim-util.readthedocs.io/en/stable/" ] ;
     schema1:keywords "Paleoclimate" ;
+    schema1:license [ a schema1:CreativeWork ;
+            schema1:name "GNU General Public License (GPL)" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/SWL_0000017" ] ;
     schema1:subjectOf [ a schema1:CreativeWork ;
             schema1:name "Pyleoclim GitHub page" ;
             schema1:url "https://github.com/LinkedEarth/Pyleoclim_util" ] ;

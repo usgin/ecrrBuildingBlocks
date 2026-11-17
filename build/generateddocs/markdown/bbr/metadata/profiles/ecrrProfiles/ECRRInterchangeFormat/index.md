@@ -65,7 +65,8 @@ Example metadata instance for ECRRInterchangeFormat profile.
       "@type": [
         "schema:CreativeWork"
       ],
-      "schema:name": "Public"
+      "schema:name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "schema:url": "https://spdx.org/licenses/BSD-3-Clause.html"
     }
   ],
   "schema:subjectOf": {
@@ -227,7 +228,8 @@ Example metadata instance for ECRRInterchangeFormat profile.
       "@type": [
         "schema:CreativeWork"
       ],
-      "schema:name": "Public"
+      "schema:name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "schema:url": "https://spdx.org/licenses/BSD-3-Clause.html"
     }
   ],
   "schema:subjectOf": {
@@ -394,7 +396,8 @@ Example metadata instance for ECRRInterchangeFormat profile.
     schema1:description "NetCDF is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. It is widely used in atmospheric and ocean sciences for gridded data interchange." ;
     schema1:identifier "http://n2t.net/ark:/23942/g2example-interchange" ;
     schema1:license [ a schema1:CreativeWork ;
-            schema1:name "Public" ] ;
+            schema1:name "BSD 3-Clause \"New\" or \"Revised\" License" ;
+            schema1:url "https://spdx.org/licenses/BSD-3-Clause.html" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
             schema1:name "Interchange Format" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;

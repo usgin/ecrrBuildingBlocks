@@ -75,7 +75,8 @@ Example metadata instance for ECRRSpecification profile.
       "@type": [
         "schema:CreativeWork"
       ],
-      "schema:name": "Public"
+      "schema:name": "Creative Commons Attribution 4.0",
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
   ],
   "schema:subjectOf": {
@@ -327,7 +328,8 @@ Example metadata instance for ECRRSpecification profile.
       "@type": [
         "schema:CreativeWork"
       ],
-      "schema:name": "Public"
+      "schema:name": "Creative Commons Attribution 4.0",
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
   ],
   "schema:subjectOf": {
@@ -600,7 +602,8 @@ Example metadata instance for ECRRSpecification profile.
             schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
             schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ] ;
     schema1:license [ a schema1:CreativeWork ;
-            schema1:name "Public" ] ;
+            schema1:name "Creative Commons Attribution 4.0" ;
+            schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
             schema1:name "Data Format Conventions" ;
             schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ],

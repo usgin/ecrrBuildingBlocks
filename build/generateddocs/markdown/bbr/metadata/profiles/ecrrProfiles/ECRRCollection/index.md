@@ -117,6 +117,7 @@ Example metadata instance for ECRRCollection profile.
   ],
   "schema:hasPart": [
     {
+      "@id": "http://n2t.net/ark:/23942/g2example-bhvo2",
       "@type": [
         "schema:Dataset"
       ],
@@ -124,6 +125,17 @@ Example metadata instance for ECRRCollection profile.
       "schema:url": "https://example.org/standards/bhvo2",
       "schema:encodingFormat": [
         "text/csv"
+      ],
+      "schema:identifier": "http://n2t.net/ark:/23942/g2example-bhvo2",
+      "schema:dateModified": "2026-03-03",
+      "schema:license": [
+        {
+          "@type": [
+            "schema:CreativeWork"
+          ],
+          "schema:name": "Creative Commons Attribution 4.0",
+          "schema:url": "https://creativecommons.org/licenses/by/4.0/"
+        }
       ]
     },
     {
@@ -295,6 +307,7 @@ Example metadata instance for ECRRCollection profile.
   ],
   "schema:hasPart": [
     {
+      "@id": "http://n2t.net/ark:/23942/g2example-bhvo2",
       "@type": [
         "schema:Dataset"
       ],
@@ -302,6 +315,17 @@ Example metadata instance for ECRRCollection profile.
       "schema:url": "https://example.org/standards/bhvo2",
       "schema:encodingFormat": [
         "text/csv"
+      ],
+      "schema:identifier": "http://n2t.net/ark:/23942/g2example-bhvo2",
+      "schema:dateModified": "2026-03-03",
+      "schema:license": [
+        {
+          "@type": [
+            "schema:CreativeWork"
+          ],
+          "schema:name": "Creative Commons Attribution 4.0",
+          "schema:url": "https://creativecommons.org/licenses/by/4.0/"
+        }
       ]
     },
     {
@@ -385,6 +409,16 @@ Example metadata instance for ECRRCollection profile.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 
+<http://n2t.net/ark:/23942/g2example-bhvo2> a schema1:Dataset ;
+    schema1:dateModified "2026-03-03" ;
+    schema1:encodingFormat "text/csv" ;
+    schema1:identifier "http://n2t.net/ark:/23942/g2example-bhvo2" ;
+    schema1:license [ a schema1:CreativeWork ;
+            schema1:name "Creative Commons Attribution 4.0" ;
+            schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
+    schema1:name "BHVO-2 Reference Values" ;
+    schema1:url "https://example.org/standards/bhvo2" .
+
 <http://n2t.net/ark:/23942/g2example-collection> a schema1:CreativeWork,
         schema1:Dataset,
         schema1:Product ;
@@ -425,10 +459,7 @@ Example metadata instance for ECRRCollection profile.
     schema1:hasPart [ a schema1:SoftwareApplication ;
             schema1:name "Standard Comparison Tool" ;
             schema1:url "https://example.org/tools/standard-compare" ],
-        [ a schema1:Dataset ;
-            schema1:encodingFormat "text/csv" ;
-            schema1:name "BHVO-2 Reference Values" ;
-            schema1:url "https://example.org/standards/bhvo2" ] ;
+        <http://n2t.net/ark:/23942/g2example-bhvo2> ;
     schema1:identifier "http://n2t.net/ark:/23942/g2example-collection" ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
