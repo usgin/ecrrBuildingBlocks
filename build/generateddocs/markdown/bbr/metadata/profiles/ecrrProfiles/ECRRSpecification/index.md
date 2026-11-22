@@ -596,20 +596,20 @@ Example metadata instance for ECRRSpecification profile.
                     schema1:name "European Commission" ] ] ;
     schema1:identifier "http://inspire.ec.europa.eu/tg/ge/3.0" ;
     schema1:isRelatedTo [ a schema1:CreativeWork ;
-            schema1:name "Based on: GeoSciML version 3.2" ;
-            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Legal basis: Directive 2007/2/EC of the European Parliament" ;
-            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ] ;
+            schema1:url "http://data.europa.eu/eli/dir/2007/2/oj" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Based on: GeoSciML version 3.2" ;
+            schema1:url "http://geosciml.org/doc/geosciml/3.2/documentation/" ] ;
     schema1:license [ a schema1:CreativeWork ;
             schema1:name "Creative Commons Attribution 4.0" ;
             schema1:url "https://creativecommons.org/licenses/by/4.0/" ] ;
     schema1:mainEntity [ a schema1:CreativeWork ;
-            schema1:name "Specification" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ],
-        [ a schema1:CreativeWork ;
             schema1:name "Data Format Conventions" ;
-            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ] ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000208" ],
+        [ a schema1:CreativeWork ;
+            schema1:name "Specification" ;
+            schema1:url "http://cor.esipfed.org/ont/earthcube/ECRRO_0000204" ] ;
     schema1:name "INSPIRE Data Specification on Geology" ;
     schema1:relatedLink [ a schema1:LinkRole ;
             schema1:linkRelationship "specification document" ;
@@ -660,7 +660,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRSpecification
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-17'
+  dateOfLastChange: '2026-11-22'
 
 ```
 

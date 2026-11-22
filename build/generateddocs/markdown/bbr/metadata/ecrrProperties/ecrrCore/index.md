@@ -241,7 +241,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCore
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-17'
+  dateOfLastChange: '2026-11-22'
 
 ```
 

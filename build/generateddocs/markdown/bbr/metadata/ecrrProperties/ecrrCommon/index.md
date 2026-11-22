@@ -406,14 +406,14 @@ all ECRR resource types.
             schema1:propertyID "dct:bibliographicCitation" ;
             schema1:value "Deborah Khider, Feng Zhu, Julien Emile-Geay, Jun Hu, Alexander James, Pratheek Athreya, Myron Kwan, Daniel Garijo. (2021). Pyleoclim: v0.6.1 Release. Zenodo. http://doi.org/10.5281/zenodo.1212692" ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
-            schema1:name "Climatology" ],
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000043" ;
+            schema1:name "Paleoclimatology" ],
         [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000051" ;
             schema1:name "Paleoceanography" ],
         [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000043" ;
-            schema1:name "Paleoclimatology" ] ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000035" ;
+            schema1:name "Climatology" ] ;
     schema1:alternateName "Python Package for the Analysis of Paleoclimate Data" ;
     schema1:audience [ a schema1:Audience ;
             schema1:audienceType "Scientists" ;
@@ -425,24 +425,24 @@ all ECRR resource types.
             schema1:audienceType "Developers" ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/AUT_0000006" ] ;
     schema1:creator [ a schema1:Person ;
-            schema1:name "Pratheek Athreya" ],
-        [ a schema1:Person ;
-            schema1:name "Jun Hu" ],
-        [ a schema1:Person ;
             schema1:name "Feng Zhu" ],
         [ a schema1:Person ;
             schema1:name "Alexander James" ],
         [ a schema1:Person ;
+            schema1:identifier "https://orcid.org/0000-0003-0454-7145" ;
+            schema1:name "Daniel Garijo" ],
+        [ a schema1:Person ;
             schema1:identifier "https://orcid.org/0000-0001-5920-4751" ;
             schema1:name "Julien Emile-Geay" ],
+        [ a schema1:Person ;
+            schema1:name "Pratheek Athreya" ],
+        [ a schema1:Person ;
+            schema1:name "Myron Kwan" ],
         [ a schema1:Person ;
             schema1:identifier "https://orcid.org/0000-0001-7501-8430" ;
             schema1:name "Deborah Khider" ],
         [ a schema1:Person ;
-            schema1:name "Myron Kwan" ],
-        [ a schema1:Person ;
-            schema1:identifier "https://orcid.org/0000-0003-0454-7145" ;
-            schema1:name "Daniel Garijo" ] ;
+            schema1:name "Jun Hu" ] ;
     schema1:funding [ a schema1:MonetaryGrant ;
             schema1:name "US NSF, ICER-1541029, AGS-2002556" ],
         [ a schema1:MonetaryGrant ;
@@ -746,7 +746,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCommon
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-17'
+  dateOfLastChange: '2026-11-22'
 
 ```
 

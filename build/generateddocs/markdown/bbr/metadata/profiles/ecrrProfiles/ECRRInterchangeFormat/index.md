@@ -384,11 +384,11 @@ Example metadata instance for ECRRInterchangeFormat profile.
                             schema1:name "Example Registrant" ] ;
                     schema1:datePublished "2024-07-20" ] ] ;
     schema1:about [ a schema1:DefinedTerm ;
-            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000030" ;
-            schema1:name "Atmospheric Science" ],
-        [ a schema1:DefinedTerm ;
             schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000039" ;
-            schema1:name "Oceanography" ] ;
+            schema1:name "Oceanography" ],
+        [ a schema1:DefinedTerm ;
+            schema1:identifier "http://cor.esipfed.org/ont/earthcube/ADO_0000030" ;
+            schema1:name "Atmospheric Science" ] ;
     schema1:additionalType "EC Interchange Format" ;
     schema1:creator ( [ a schema1:Organization ;
                 schema1:name "Unidata/UCAR" ] ) ;
@@ -445,7 +445,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.profiles.ecrrProfiles.ECRRInterchangeFormat
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-17'
+  dateOfLastChange: '2026-11-22'
 
 ```
 

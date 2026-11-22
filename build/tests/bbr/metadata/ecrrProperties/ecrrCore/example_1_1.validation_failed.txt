@@ -1,5 +1,5 @@
 Validation report for ecrr.bbr.metadata.ecrrProperties.ecrrCore - ECRR Core metadata
-Generated 2026-11-17T18:57:34.321898+00:00
+Generated 2026-11-22T14:51:55.462049+00:00
 === Files ===
 Using examplePyleoclimCore.json from examples
 JSON-LD context is present - uplifting
@@ -17,119 +17,119 @@ Validation result for _sources/ecrrProperties/ecrrCore/rules.shacl: 8 violations
 ** Validation error **
 Violation (sh:NodeKindConstraintComponent):
   Source shape: cdifd:ECRRBaseShape
-  Focus node: _:N94170810e9154049975efdb5fad86ff1
-  Value: _:N94170810e9154049975efdb5fad86ff1
+  Focus node: _:N30a860f76e48489e92f5d2f651076f3b
+  Value: _:N30a860f76e48489e92f5d2f651076f3b
   Message: An ECRR resource must have an @id that is a URI (IRI).
 
 ** Validation error **
 Violation (sh:NodeKindConstraintComponent):
   Source shape: cdifd:ECRRBaseShape
-  Focus node: _:Na9a7ff6ef5e84d019dd6b8dfa6bc83d8
-  Value: _:Na9a7ff6ef5e84d019dd6b8dfa6bc83d8
+  Focus node: _:N90a609920ce348bab561de73de7152f3
+  Value: _:N90a609920ce348bab561de73de7152f3
   Message: An ECRR resource must have an @id that is a URI (IRI).
 
 ** Validation error **
 Violation (sh:MinCountConstraintComponent):
   Source shape: cdifd:ECRRBaseShape/sh:property (path schema1:description)
-  Focus node: _:N94170810e9154049975efdb5fad86ff1
+  Focus node: _:N30a860f76e48489e92f5d2f651076f3b
   Result path: schema1:description
   Message: An ECRR resource must have a description (schema:description) of at least 10 characters.
 
 ** Validation error **
 Violation (sh:MinCountConstraintComponent):
   Source shape: cdifd:ECRRBaseShape/sh:property (path schema1:description)
-  Focus node: _:Na9a7ff6ef5e84d019dd6b8dfa6bc83d8
+  Focus node: _:N90a609920ce348bab561de73de7152f3
   Result path: schema1:description
   Message: An ECRR resource must have a description (schema:description) of at least 10 characters.
 
 ** Validation error **
 Violation (sh:MinCountConstraintComponent):
   Source shape: cdifd:ECRRBaseShape/sh:property (path schema1:mainEntity)
-  Focus node: _:N94170810e9154049975efdb5fad86ff1
+  Focus node: _:N30a860f76e48489e92f5d2f651076f3b
   Result path: schema1:mainEntity
   Message: An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.
 
 ** Validation error **
 Violation (sh:MinCountConstraintComponent):
   Source shape: cdifd:ECRRBaseShape/sh:property (path schema1:mainEntity)
-  Focus node: _:Na9a7ff6ef5e84d019dd6b8dfa6bc83d8
+  Focus node: _:N90a609920ce348bab561de73de7152f3
   Result path: schema1:mainEntity
   Message: An ECRR resource must specify its resource type classification (schema:mainEntity) using a labeled link to an ECRRO resource type URI.
 
 ** Validation error **
 Violation (sh:MinCountConstraintComponent):
   Source shape: cdifd:ECRRBaseShape/sh:property (path schema1:license)
-  Focus node: _:N94170810e9154049975efdb5fad86ff1
+  Focus node: _:N30a860f76e48489e92f5d2f651076f3b
   Result path: schema1:license
   Message: An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.
 
 ** Validation error **
 Violation (sh:MinCountConstraintComponent):
   Source shape: cdifd:ECRRBaseShape/sh:property (path schema1:license)
-  Focus node: _:Na9a7ff6ef5e84d019dd6b8dfa6bc83d8
+  Focus node: _:N90a609920ce348bab561de73de7152f3
   Result path: schema1:license
   Message: An ECRR resource must specify licensing (schema:license) as a URI, string, or labeled link.
 Focus nodes for _sources/ecrrProperties/ecrrCore/rules.shacl:
- - Shape cdifd:ECRRBaseShape: <http://n2t.net/ark:/23942/g22914>/schema1:license,<http://n2t.net/ark:/23942/g22914>,<http://n2t.net/ark:/23942/g22914>/schema1:mainEntity
+ - Shape cdifd:ECRRBaseShape: <http://n2t.net/ark:/23942/g22914>/schema1:mainEntity,<http://n2t.net/ark:/23942/g22914>/schema1:license,<http://n2t.net/ark:/23942/g22914>
+ - Shape _:nc277df6aa816478985847af009c2a8dcb6: *none*
+ - Shape _:nc277df6aa816478985847af009c2a8dcb7: *none*
  - Shape cdifd:ECRRBaseShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n703892826823459fb98b89142e96e76cb7: *none*
- - Shape _:n703892826823459fb98b89142e96e76cb6: *none*
 
-Validation result for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl: 1 violation
+Validation result for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl: 1 warning
 
-** Validation error **
-Violation (sh:MinCountConstraintComponent):
+** Validation warning **
+Warning (sh:MinCountConstraintComponent):
   Source shape: cdifd:CDIFLabeledLinkShape/sh:property (path schema1:url)
   Focus node: <http://n2t.net/ark:/23942/g22914>
   Result path: schema1:url
-  Message: schema:url must be an http(s), ftp(s), sftp, s3 or gs URL. Whether it resolves is not tested.
+  Message: A schema:CreativeWork should have a schema:url, an http(s), ftp(s), sftp, s3 or gs URL. Whether it resolves is not tested.
 Focus nodes for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/labeledLink/rules.shacl:
- - Shape _:n414f690cdfd743b9b10ec02a2058c640b6: *none*
  - Shape cdifd:CDIFRelationShape: *none*
+ - Shape _:nb9bd1956cbad42d9be465b8c1107acd5b6: *none*
+ - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g22914>/schema1:mainEntity,<http://n2t.net/ark:/23942/g22914>/schema1:license,<http://n2t.net/ark:/23942/g22914>
  - Shape cdifd:CDIFRelationShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nb9bd1956cbad42d9be465b8c1107acd5b7: *none*
+ - Shape _:nb9bd1956cbad42d9be465b8c1107acd5b4: *none*
+ - Shape _:nb9bd1956cbad42d9be465b8c1107acd5b15: *none*
+ - Shape _:nb9bd1956cbad42d9be465b8c1107acd5b5: *none*
  - Shape cdifd:CDIFRelationShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n414f690cdfd743b9b10ec02a2058c640b15: *none*
- - Shape _:n414f690cdfd743b9b10ec02a2058c640b5: *none*
- - Shape _:n414f690cdfd743b9b10ec02a2058c640b4: *none*
- - Shape cdifd:CDIFLabeledLinkShape: <http://n2t.net/ark:/23942/g22914>/schema1:license,<http://n2t.net/ark:/23942/g22914>,<http://n2t.net/ark:/23942/g22914>/schema1:mainEntity
- - Shape _:n414f690cdfd743b9b10ec02a2058c640b7: *none*
 
 Validation result for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl: no results
 Focus nodes for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/definedTerm/rules.shacl:
- - Shape _:n91d62b5824504760a514823512c779d0b4: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
  - Shape cdifd:CDIFDefinedTermShape: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b10: *none*
- - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b6: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b8: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b5: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b19: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b7: *none*
- - Shape _:n91d62b5824504760a514823512c779d0b26: *none*
  - Shape cdifd:CDIFDefinedTermShape/sh:property/sh:or/rdf:first: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:first: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b4: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b10: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b5: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b19: *none*
+ - Shape cdifd:CDIFDefinedTermShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b8: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b26: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b7: *none*
+ - Shape _:n5cfa2611bb4e4865b37ae07c1e16af11b6: *none*
 
 Validation result for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl: no results
 Focus nodes for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/schemaorgProperties/identifier/rules.shacl:
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b10: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b21: *none*
- - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
- - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b23: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b10: *none*
  - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:first: *none*
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b22: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b25: *none*
+ - Shape cdifd:CDIFIdentifierTypeTermShape: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b22: *none*
+ - Shape cdifd:CDIFIdentifierShape/sh:property/sh:or/rdf:first: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b11: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b20: *none*
+ - Shape _:nf3a430633baa488eb9ccfa4ea427c9b2b21: *none*
  - Shape cdifd:CDIFIdentifierShape: *none*
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b25: *none*
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b20: *none*
  - Shape cdifd:CDIFIdentifierTypeTermShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b23: *none*
- - Shape _:n0f7b3112cd9c4c7f96200f683ed83d54b11: *none*
 
 Validation result for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/skosProperties/skosConcept/rules.shacl: no results
 Focus nodes for https://cross-domain-interoperability-framework.github.io/metadataBuildingBlocks/_sources/skosProperties/skosConcept/rules.shacl:
- - Shape skosv:ConceptShape: *none*
- - Shape skosv:prefLabelUniqueLangShape: *none*
  - Shape skosv:conceptBroaderNotSelfShape: *none*
+ - Shape skosv:prefLabelUniqueLangShape: *none*
+ - Shape skosv:ConceptShape: *none*
 
 === End SHACL ===
 

@@ -93,9 +93,9 @@ data repository.
 @prefix schema1: <http://schema.org/> .
 
 [] schema1:contentType [ a schema1:Thing ;
-            schema1:name "Paleomagnetic data" ],
+            schema1:name "Rock magnetic data" ],
         [ a schema1:Thing ;
-            schema1:name "Rock magnetic data" ] .
+            schema1:name "Paleomagnetic data" ] .
 
 
 ```
@@ -144,7 +144,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCatalog
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-17'
+  dateOfLastChange: '2026-11-22'
 
 ```
 

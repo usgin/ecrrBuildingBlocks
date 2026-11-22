@@ -136,14 +136,14 @@ parts including software, dataset, and documentation components.
 ```ttl
 @prefix schema1: <http://schema.org/> .
 
-[] schema1:hasPart [ a schema1:CreativeWork ;
-            schema1:encodingFormat "text/html" ;
-            schema1:name "User Documentation" ;
-            schema1:url "https://example.org/docs" ],
-        [ a schema1:SoftwareApplication ;
+[] schema1:hasPart [ a schema1:SoftwareApplication ;
             schema1:description "Main analysis software component" ;
             schema1:name "Analysis Tool v2.0" ;
             schema1:url "https://example.org/analysis-tool" ],
+        [ a schema1:CreativeWork ;
+            schema1:encodingFormat "text/html" ;
+            schema1:name "User Documentation" ;
+            schema1:url "https://example.org/docs" ],
         [ a schema1:Dataset ;
             schema1:encodingFormat "application/json",
                 "text/csv" ;
@@ -214,7 +214,7 @@ x-bblocks-metadata:
   itemIdentifier: ecrr.bbr.metadata.ecrrProperties.ecrrCollection
   register: https://usgin.github.io/ecrrBuildingBlocks/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-17'
+  dateOfLastChange: '2026-11-22'
 
 ```
 
